@@ -8,7 +8,7 @@
 #include <jni.h>
 #include <app.h>
 
-//static tango_augmented_reality::AugmentedRealityApp app;
+static ARDog::APP app;
 
 #ifdef __cplusplus
 extern "C" {

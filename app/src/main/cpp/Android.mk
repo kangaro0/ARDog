@@ -18,26 +18,29 @@ PROJECT_ROOT_FROM_JNI:= ../../../..
 PROJECT_ROOT:= $(call my-dir)/../../../..
 
 include $(CLEAR_VARS)
-LOCAL_MODULE    := native-lib
+LOCAL_MODULE    := libnative-lib
 LOCAL_SHARED_LIBRARIES := tango_client_api tango_support
 LOCAL_STATIC_LIBRARIES := png
 LOCAL_CFLAGS    := -std=c++11
 
-LOCAL_SRC_FILES := native-lib.cpp \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/bounding_box.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/camera.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/conversions.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/drawable_object.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/frustum.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/gesture_camera.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/line.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/meshes.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/shaders.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/tango_gl.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/texture.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/transform.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/util.cc \
-                   $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/video_overlay.cc
+LOCAL_SRC_FILES :=  app.cpp \
+                    native-lib.cpp \
+                    scene.cpp \
+                    tango_event_data.cpp \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/bounding_box.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/camera.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/conversions.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/drawable_object.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/frustum.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/gesture_camera.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/line.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/meshes.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/shaders.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/tango_gl.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/texture.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/transform.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/util.cc \
+                    $(PROJECT_ROOT_FROM_JNI)/tango_gl/src/video_overlay.cc
 
 LOCAL_C_INCLUDES := $(PROJECT_ROOT)/tango_gl/include \
                     $(PROJECT_ROOT)/third_party/glm/ \
