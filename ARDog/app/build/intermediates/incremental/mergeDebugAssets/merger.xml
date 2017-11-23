@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config=":cpp_example_util"><source path="D:\Android\code\ARDog\ARDog\cpp_example_util\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="D:\Android\code\ARDog\ARDog\app\src\main\assets"/><source path="D:\Android\code\ARDog\ARDog\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\Android\code\ARDog\ARDog\app\src\debug\assets"/></dataSet></merger>

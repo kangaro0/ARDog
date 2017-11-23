@@ -1,0 +1,33 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:16:1-25:12
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:16:1-25:12
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:16:1-25:12
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:16:1-25:12
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:16:1-25:12
+	package
+		ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:17:5-42
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:19:5-28
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:16:11-69
+	android:versionCode
+		ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:18:5-28
+uses-sdk
+ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:21:5-23:41
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:21:5-23:41
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:21:5-23:41
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:21:5-23:41
+INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:21:5-23:41
+	android:targetSdkVersion
+		ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:23:9-38
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml:22:9-35
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\code\tango-examples-c\cpp_example_util\app\src\main\AndroidManifest.xml
