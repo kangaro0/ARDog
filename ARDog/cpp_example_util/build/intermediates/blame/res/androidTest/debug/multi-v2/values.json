@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Android\\code\\tango-examples-c\\cpp_example_util\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Android\\code\\tango-examples-c\\cpp_example_util\\app\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,109,400",
+                        "endLines": "2,9,12",
+                        "endColumns": "53,12,12",
+                        "endOffsets": "104,395,555"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Android\\code\\ARDog\\ARDog\\cpp_example_util\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Android\\code\\ARDog\\ARDog\\cpp_example_util\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,109,400",
+                        "endLines": "2,9,12",
+                        "endColumns": "53,12,12",
+                        "endOffsets": "104,395,555"
+                    }
+                }
+            ]
+        }
+    ]
+}
