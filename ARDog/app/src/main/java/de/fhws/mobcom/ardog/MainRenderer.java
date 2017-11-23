@@ -17,14 +17,14 @@ public class MainRenderer implements GLSurfaceView.Renderer {
     public MainRenderer( AssetManager assetManager ) { mAssetManager = assetManager; }
 
     public void onDrawFrame( GL10 gl ){
-
+        JNINative.onGlSurfaceDrawFrame();
     }
 
-    public void onSurfaceChanged( GL10 gl, int witdth, int height ){
-
+    public void onSurfaceChanged( GL10 gl, int width, int height ){
+        JNINative.onGlSurfaceChanged(width, height);
     }
 
     public void onSurfaceCreated( GL10 gl, EGLConfig config ){
-
+        JNINative.onGlSurfaceCreated(mAssetManager);
     }
 }

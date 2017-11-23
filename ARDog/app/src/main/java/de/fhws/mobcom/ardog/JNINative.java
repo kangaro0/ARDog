@@ -30,7 +30,7 @@ public class JNINative {
 
     public static native void onGlSurfaceCreated( AssetManager assetManager );
 
-    public static native void onGlSurfaceChanges( int width, int height );
+    public static native void onGlSurfaceChanged( int width, int height );
 
     public static native void onGlSurfaceDrawFrame();
 

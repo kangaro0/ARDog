@@ -21,49 +21,49 @@ jint JNI_OnLoad(JavaVM* vm, void*) {
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onCreate(
+Java_de_fhws_mobcom_ardog_JNINative_onCreate(
         JNIEnv* env, jobject, jobject activity, int display_orientation) {
     app.onCreate(env, activity, display_orientation);
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onTangoServiceConnected(
+Java_de_fhws_mobcom_ardog_JNINative_onTangoServiceConnected(
         JNIEnv* env, jobject, jobject iBinder) {
     app.onTangoServiceConnected(env, iBinder);
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onPause(
+Java_de_fhws_mobcom_ardog_JNINative_onPause(
         JNIEnv*, jobject) {
     app.onPause();
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onDestroy(
+Java_de_fhws_mobcom_ardog_JNINative_onDestroy(
         JNIEnv*, jobject) {
     app.onDestroy();
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onGlSurfaceCreated(
+Java_de_fhws_mobcom_ardog_JNINative_onGlSurfaceCreated(
         JNIEnv* env, jobject, jobject j_asset_manager) {
     AAssetManager* aasset_manager = AAssetManager_fromJava(env, j_asset_manager);
     app.onSurfaceCreated(aasset_manager);
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onGlSurfaceChanged(
+Java_de_fhws_mobcom_ardog_JNINative_onGlSurfaceChanged(
         JNIEnv*, jobject, jint width, jint height) {
     app.onSurfaceChanged(width, height);
 }
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onGlSurfaceDrawFrame(
+Java_de_fhws_mobcom_ardog_JNINative_onGlSurfaceDrawFrame(
         JNIEnv*, jobject) {
     app.onDrawFrame();}
 
 JNIEXPORT void JNICALL
-Java_com_projecttango_examples_cpp_augmentedreality_TangoJNINative_onConfigurationChanged(
+Java_de_fhws_mobcom_ardog_JNINative_onConfigurationChanged(
         JNIEnv*, jobject, int display_orientation) {
     app.onDeviceRotationChanged(display_orientation);
 }
