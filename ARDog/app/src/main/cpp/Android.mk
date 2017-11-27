@@ -21,7 +21,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    := libnative-lib
 LOCAL_SHARED_LIBRARIES := tango_client_api tango_support
 LOCAL_STATIC_LIBRARIES := png
-LOCAL_CFLAGS    := -std=c++11
+LOCAL_CFLAGS    := -std=c++14
 
 LOCAL_SRC_FILES :=  app.cpp \
                     native-lib.cpp \
