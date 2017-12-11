@@ -13,14 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 LOCAL_PATH := $(call my-dir)
 PROJECT_ROOT_FROM_JNI:= ../../../..
 PROJECT_ROOT:= $(call my-dir)/../../../..
 
+# GLTF
+include $(CLEAR_VARS)
+LOCAL_MODULE    := gltf2-loader
+LOCAL_SRC_FILES := $(PROJECT_ROOT)/third_party/gltf2-loader/libgltf2-loader.a
+LOCAL_EXPORT_C_INCLUDES =: $(PROJECT_ROOT)/third_party/gltf2-loader/include/gltf2
+include $(PREBUILT_STATIC_LIBRARY)
+
+# PROJECT
 include $(CLEAR_VARS)
 LOCAL_MODULE    := libnative-lib
 LOCAL_SHARED_LIBRARIES := tango_client_api tango_support
-LOCAL_STATIC_LIBRARIES := png
+LOCAL_STATIC_LIBRARIES := png gltf2-loader
 LOCAL_CFLAGS    := -std=c++14
 
 LOCAL_SRC_FILES :=  app.cpp \

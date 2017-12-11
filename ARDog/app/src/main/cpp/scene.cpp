@@ -10,7 +10,10 @@
 #include <tango-gl/shaders.h>
 #include <tango-gl/meshes.h>
 
+#include <glTF2.hpp>
+
 #include "scene.h"
+
 
 namespace {
 // We want to represent the device properly with respect to the ground so we'll

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android\\code\\ARDog\\ARDog\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "C:\\Users\\kanga\\Desktop\\ARDog\\ARDog\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "D:\\Android\\code\\ARDog\\ARDog\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "source": "C:\\Users\\kanga\\Desktop\\ARDog\\ARDog\\app\\src\\main\\res\\values-v11\\styles.xml",
                     "from": {
                         "startLines": "6",
                         "startColumns": "4",
