@@ -1,0 +1,26 @@
+<map id="Urho3D::Texture2D::SetSize" name="Urho3D::Texture2D::SetSize">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_object.html#a7d9d061f4cf32f5fd5531e11a72834b6" title="Subscribe to an event that can be sent by any sender. " alt="" coords="205,198,384,239"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_texture2_d.html#a024726411f9f3414a4833e2b290abf05" title="Handle render surface update event. " alt="" coords="199,67,391,109"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_object.html#a153b96c4397e045b2ca2b2d5471d097c" title="Unsubscribe from an event. " alt="" coords="197,318,392,359"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_texture2_d.html#a337afef5ad75a9fdac1e63373954a2cf" title="Create the GPU texture. " alt="" coords="223,730,367,771"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_event_handler.html#abe76f0245895dadac146b7a4b7d78713" title="Set sender and event type. " alt="" coords="470,99,647,141"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_object.html#a8114b82012a47b70b1ca6473c20997f5" title="Find the first event handler with specific sender. " alt="" coords="462,230,655,271"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_context.html#ae3e0c5db85e2395f3d34941003c816ad" title="Add event receiver. " alt="" coords="465,165,652,206"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_event_handler.html#a133e5cd8d70e86d7ca2d7a9adfcd37ea" title="Return event sender. Null if the handler is non&#45;specific. " alt="" coords="761,259,916,301"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_renderer.html#afeb454d44341ed3f84ab04880a7553f5" title="Queue a render surface&#39;s viewports for rendering. Called by the surface, or by View. " alt="" coords="451,34,667,75"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_render_surface.html#a9ca6e6bf4a7d85b09474795a261c7e89" title="Return number of viewports. " alt="" coords="757,5,920,46"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_renderer.html#a8faee04d4f315f7bb12e54965d79c4f4" title="Queue a viewport for rendering. Null surface means backbuffer. " alt="" coords="726,71,951,97"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_object.html#a1c9bb9f6c78ee5b859de8557bfdef7e0" title="Find the first event handler with no specific sender. " alt="" coords="469,413,649,454"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_context.html#a7b5bd076e695054df7930255c3eee18b" title="Remove event receiver from specific events. " alt="" coords="453,347,665,389"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_texture2_d.html#ad83473aadefa975808ef87993e0f696f" title="Release the texture. " alt="" coords="487,881,631,922"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_texture.html#af0adf78530abb05a692b52c0df297c9f" title="Return whether is using sRGB sampling and writing. " alt="" coords="465,947,652,973"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_texture.html#af633d70298690db00993d6c89b2f0a50" title="Convert format to sRGB. Not used on Direct3D9. " alt="" coords="445,997,672,1024"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_texture.html#a09c2fc9bd5347131e3a0126b109d07ab" title="Return the non&#45;internal texture format corresponding to an OpenGL internal format. " alt="" coords="461,1049,657,1090"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_texture.html#a60c268d6f819bd4fdc219ba8f5f3820c" title="Return the data type corresponding to an OpenGL internal format. " alt="" coords="456,479,661,505"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_graphics.html#a609ba19c78432946e8334cc3a7bcb92e" title="Return the API&#45;specific hardware depth&#45;stencil texture format. " alt="" coords="463,530,654,571"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_graphics.html#af39a9a2972752ace04fa2aac273ecc9e" title="Return whether is using an OpenGL 3 context. Return always false on Direct3D9 &amp; Direct3D11. " alt="" coords="749,643,929,685"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_texture.html#a14478383cb81ad270fbc540e698a899b" title="Return whether the texture format is compressed. " alt="" coords="453,647,665,673"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_texture.html#a8672316692e6b78cb6482cbcecfe409c" title="Regenerate mipmap levels for a rendertarget after rendering and before sampling. Called internally by..." alt="" coords="461,698,656,739"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_texture.html#a0dc9b5632a502d45cf001c0cdaebd8e5" title="Check maximum allowed mip levels for a specific texture size. " alt="" coords="463,763,654,805"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_texture.html#a7eaf51cf81ac775bdc87e00ec1a47979" title="Update dirty parameters to the texture object. Called by Graphics when assigning the texture..." alt="" coords="441,829,677,856"/>
+</map>

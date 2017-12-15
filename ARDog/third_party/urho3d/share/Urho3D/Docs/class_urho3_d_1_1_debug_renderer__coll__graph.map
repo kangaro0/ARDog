@@ -1,0 +1,26 @@
+<map id="Urho3D::DebugRenderer" name="Urho3D::DebugRenderer">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="1297,556,1439,583"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="517,675,657,701"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="933,453,1040,480"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="54,641,197,668"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::AttributeAnimationInfo \&gt; \&gt;" alt="" coords="5,692,245,748"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::ObjectAnimation \&gt;" alt="" coords="32,771,219,813"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; const\l Urho3D::AttributeInfo * \&gt;" alt="" coords="40,575,211,617"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="1312,409,1424,436"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="481,153,693,194"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="517,453,656,480"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="468,218,705,259"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="54,225,197,252"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="465,349,709,390"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Node \&gt; \&gt;" alt="" coords="483,505,691,546"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::DebugLine \&gt;" alt="" coords="734,43,887,85"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::DebugTriangle \&gt;" alt="" coords="1086,106,1261,147"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="527,867,647,893"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_frustum.html" title="Convex constructed of 6 planes. " alt="" coords="1307,712,1429,739"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_plane.html" title="Surface in three&#45;dimensional space. " alt="" coords="933,867,1041,893"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::NodeImpl \&gt;" alt="" coords="513,283,660,325"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_matrix3x4.html" title="3x4 matrix for scene node transform calculations. " alt="" coords="521,624,653,651"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::VertexBuffer \&gt;" alt="" coords="1286,763,1450,805"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_vertex_buffer.html" title="Hardware vertex buffer. " alt="" coords="913,917,1061,944"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_matrix4.html" title="4x4 matrix for arbitrary linear transforms including projection. " alt="" coords="1309,883,1427,909"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="Urho3D::PhysicsWorld2D::ContactInfo" name="Urho3D::PhysicsWorld2D::ContactInfo">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::CollisionShape2D \&gt;" alt="" coords="2656,383,2851,425"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_collision_shape2_d.html" title="2D collision shape component. " alt="" coords="2379,537,2557,564"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="603,455,746,481"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_rigid_body2_d.html" title="2D rigid body component. " alt="" coords="1680,368,1832,395"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_physics_world2_d.html" title="2D physics simulation world component. Should be added only to the root scene node. " alt="" coords="936,355,1109,381"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="58,719,198,745"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="400,233,507,260"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="619,113,731,140"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Node \&gt;" alt="" coords="771,135,912,177"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="22,5,234,46"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="59,109,197,136"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="9,161,247,202"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="6,226,250,267"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="68,564,188,591"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::NodeImpl \&gt;" alt="" coords="55,291,201,333"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Node \&gt; \&gt;" alt="" coords="24,357,232,398"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_matrix3x4.html" title="3x4 matrix for scene node transform calculations. " alt="" coords="62,668,194,695"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::RigidBody2D \&gt;" alt="" coords="1979,490,2162,531"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::RigidBody2D \&gt;" alt="" coords="2187,313,2355,354"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::PhysicsWorld2D \&gt;" alt="" coords="1313,323,1495,365"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="615,355,735,381"/>
+<area shape="rect" id="node21" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="957,505,1088,532"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Collision\lShape2D \&gt; \&gt;" alt="" coords="1306,244,1502,300"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Constraint2D \&gt; \&gt;" alt="" coords="1281,389,1527,430"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="Urho3D::IKSolver::SetAlgorithm" name="Urho3D::IKSolver::SetAlgorithm">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_i_k_solver.html#afe4c1364201933e830b92ac7b6712f6a" title="Urho3D::IKSolver::ApplyOriginal\lPoseToScene" alt="" coords="261,142,472,183"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_i_k_solver.html#aad4ab41a3accf0ff067ad591d0f7c67e" title="Destroys the solver&#39;s tree. " alt="" coords="523,171,728,197"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_i_k_solver.html#a215740ec5753a2347b9da9ec9d84cc07" title="Builds the solver&#39;s tree to match the scene graph&#39;s tree. If a tree already exists, it is first destroyed. " alt="" coords="265,295,468,321"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_i_k_solver.html#a47e782eedb4819ac1f24020a3cce5eaa" title="Creates the ik library node and sets the current rotation/position and user data correctly. " alt="" coords="795,462,967,503"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_node.html#a9f096d8f7c61f7be195c5f0e22a60404" title="Return all components. " alt="" coords="521,419,730,445"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_i_k_solver.html#ae77ddb3022b6ed2a2a19bad8dc500f47" title="Urho3D::IKSolver::Component\lIsInOurSubtree" alt="" coords="525,353,725,394"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_i_k_solver.html#afaa45ef02d8aee5717b9eabece7ac883" title="Builds a chain of nodes up to the node of the specified effector component. " alt="" coords="531,222,719,263"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_i_k_solver.html#a33218dc2749da6a94ea2d6e6df62f8c8" title="Indicates that the internal structures of the IK library need to be updated. See the documentation of..." alt="" coords="524,287,727,329"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_node.html#a72efea5341191c1951129467f5cb55f3" title="Return ID. " alt="" coords="1067,147,1216,173"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_node.html#a92372a305fa427e9ce58df7f37a684ba" title="Return position in world space. " alt="" coords="1033,499,1249,525"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_node.html#aa0f97335ff8b25e10e0a89ee9a87a253" title="Return rotation in world space. " alt="" coords="1032,549,1251,576"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_node.html#a96978345db2ceb1a473bb43f0024dbe7" title="Return component by type. If there are several, returns the first. " alt="" coords="1040,701,1243,728"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_component.html#aaf7a7d9aea4ae4bcc527a5f0c33f3f1a" title="Return scene node. " alt="" coords="1066,237,1217,278"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_node.html#a3c19eb87f2855894c1757659ede5a509" title="Return name. " alt="" coords="1056,600,1227,627"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_string.html#a6b405eba451da6c0f216a8649adf79aa" title="Return the C string. " alt="" coords="1061,651,1222,677"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_i_k_effector.html#ac0dd6e86c446116462d1732946952825" title="Intended to be used only by IKSolver. " alt="" coords="1074,302,1209,343"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_i_k_effector.html#a09db0f188e5400c909d922a73c969116" title="Intended to be used only by IKSolver. " alt="" coords="1071,367,1211,409"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_i_k_constraint.html#a46f02fc8f472d9675e60bd01a1ac4344" title="Intended to be used only by IKSolver. " alt="" coords="1064,433,1219,474"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_node.html#ae2f6e5318815bc21dd93febb3dc5b95e" title="Return parent scene node. " alt="" coords="795,360,968,387"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_p_o_d_vector.html#a3eb78093c096ab9e9d68595facc56470" title="Add an element at the end. " alt="" coords="791,157,971,184"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_node.html#a4afbcf5a6fce4ab11ed2a6ba1c9b90cd" title="Return whether has a specific component. " alt="" coords="779,208,984,235"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_p_o_d_vector.html#a4fe0251ca70afca844721a4a44717c83" title="Return number of elements. " alt="" coords="793,259,969,285"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_p_o_d_vector.html#ae5b2d81c68a5669b4d05820082bca924" title="Return last element. " alt="" coords="791,5,971,32"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_p_o_d_vector.html#a76e8bca181c0ab7e7ebbe5b325c35aa2" title="Remove the last element. " alt="" coords="795,56,968,83"/>
+</map>

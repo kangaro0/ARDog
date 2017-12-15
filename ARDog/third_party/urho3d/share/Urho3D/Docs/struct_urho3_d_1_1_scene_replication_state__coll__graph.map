@@ -1,0 +1,26 @@
+<map id="Urho3D::SceneReplicationState" name="Urho3D::SceneReplicationState">
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_connection.html" title="Connection to a remote network host. " alt="" coords="1712,433,1853,459"/>
+<area shape="rect" id="node2" href="$struct_urho3_d_1_1_replication_state.html" title="Base class for per&#45;user network replication states. " alt="" coords="1976,110,2147,137"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="1422,289,1535,315"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="503,338,649,365"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="978,377,1099,403"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="470,427,682,468"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="983,427,1095,454"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_controls.html" title="Controls sent over the network. " alt="" coords="1195,534,1319,561"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="283,358,419,385"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; unsigned \&gt;" alt="" coords="475,242,677,269"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lPackageUpload \&gt;" alt="" coords="722,669,910,725"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lPackageDownload \&gt;" alt="" coords="722,881,910,937"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l Urho3D::PODVector\&lt; unsigned\l char \&gt; \&gt;" alt="" coords="1152,117,1363,173"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l Urho3D::NodeReplicationState \&gt;" alt="" coords="707,41,925,83"/>
+<area shape="rect" id="node9" href="$struct_urho3_d_1_1_hash_node_base.html" title="Hash set/map node base class. " alt="" coords="6,302,173,329"/>
+<area shape="rect" id="node10" href="$struct_urho3_d_1_1_allocator_block.html" title="Allocator memory block. " alt="" coords="10,391,169,418"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="949,260,1128,301"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Scene \&gt;" alt="" coords="1387,340,1570,381"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="521,557,631,583"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="1409,558,1548,585"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_vector_buffer.html" title="Dynamically sized buffer that can be read and written to as a stream. " alt="" coords="1405,659,1553,686"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="1419,902,1539,929"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::RemoteEvent \&gt;" alt="" coords="1393,953,1564,995"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="1425,33,1533,59"/>
+</map>

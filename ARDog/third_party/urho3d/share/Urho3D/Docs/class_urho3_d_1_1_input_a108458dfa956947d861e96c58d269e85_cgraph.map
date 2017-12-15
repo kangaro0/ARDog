@@ -1,0 +1,26 @@
+<map id="Urho3D::Input::AddScreenJoystick" name="Urho3D::Input::AddScreenJoystick">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_resource_cache.html#aa1657db0fcf2a1578bcb4bd5a00146ca" title="Return a resource by type and name. Load if not loaded yet. Return null if not found or if fails..." alt="" coords="230,125,399,166"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_vector.html#a06762e9e70b9851f54a845555f28cd4b" title="Return size of vector. " alt="" coords="683,37,829,64"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_string.html#a6dffd447850e4d687096a79dafe8bdac" title="Return whether starts with a string. " alt="" coords="667,117,845,144"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_string.html#ade8095f1798d6e1d4ed03d43d9919611" title="Return a substring from position to end. " alt="" coords="670,175,842,201"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_string.html#a11572e3c07f60de65ac5d0c1ca5b6ba3" title="Return length. " alt="" coords="678,236,834,263"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_u_i.html#aeb17cee1b62a29b57c557bbaab230243" title="Load a UI layout from an XML file. Optionally specify another XML file for element style..." alt="" coords="233,292,397,319"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_u_i.html#a0a91caff1edbcab1038879d9c79a4e44" title="Return root UI element. " alt="" coords="241,343,388,369"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_u_i_element.html#aa1d4bf467b99749011b103227deb3004" title="Return size. " alt="" coords="242,394,387,435"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_u_i_element.html#a76a4d4fc652ea858d46846ac2739ee98" title="Add a child element. " alt="" coords="242,459,387,501"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_u_i_element.html#a17892be3e5745eb71075f35038c0dea8" title="Return immediate child elements. " alt="" coords="242,525,387,566"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector.html#aa20f23bae4cf1d7cda06f6c3b47c7504" title="Return iterator to the beginning. " alt="" coords="237,591,392,617"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector.html#af79ffb0683568b08fe130ee028bfd1ef" title="Return iterator to the end. " alt="" coords="243,641,387,668"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_u_i_element.html#a784af86dd836d5257b7c807f8cb9b072" title="Return name. " alt="" coords="242,693,387,734"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_u_i_element.html#a60ca2f5cb5f011368ef3f40e6cd4ef64" title="Template version of returning child element by index using dynamic cast. May return 0 when casting fa..." alt="" coords="238,758,391,799"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_u_i_element.html#a8a0131dfc7f06ce10cdb77418ec830a9" title="Set whether is visible. Visibility propagates to child elements. " alt="" coords="242,823,387,865"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_text.html#a0c97b8f60cad489151940e742be739ba" title="Return text. " alt="" coords="237,889,393,916"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_hash_map.html#a9dc4e5c0ad1feb3eec2d2f1f1714698d" title="Return iterator to the pair with key, or end iterator if not found. " alt="" coords="233,940,397,967"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_hash_map.html#a47eb201d8441d4e4be8626e615cb562d" title="Return iterator to the end. " alt="" coords="233,991,396,1017"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_string.html#a6b405eba451da6c0f216a8649adf79aa" title="Return the C string. " alt="" coords="453,1067,614,1093"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_u_i_element.html#a7a085bb6b90aad996999804bd7e8a3e7" title="Set a user variable. " alt="" coords="242,1143,387,1185"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_string.html#a3d2477d745f6e572795b77ac69075c5d" title="Return whether contains a specific occurrence of a string. " alt="" coords="230,1209,399,1236"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_string.html#a4dc53d77ff4ceff2adfbabc0d5e64eea" title="Return substrings split by a separator char. By default don&#39;t return empty strings. " alt="" coords="243,1041,386,1068"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_vector.html#a5d21ed173348c7bca276c417ed7d38e2" title="Resize the vector. " alt="" coords="233,1260,396,1287"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_resource_cache.html#acaf617b205d693cd493febfc01c330a8" title="Remove unsupported constructs from the resource name to prevent ambiguity, and normalize absolute fil..." alt="" coords="449,125,618,166"/>
+</map>

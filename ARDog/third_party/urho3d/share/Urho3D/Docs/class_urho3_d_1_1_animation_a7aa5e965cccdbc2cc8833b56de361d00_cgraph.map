@@ -1,0 +1,4 @@
+<map id="Urho3D::Animation::CreateTrack" name="Urho3D::Animation::CreateTrack">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_animation.html#a85ea89da6cbc133a83ce8a4ceec6871d" title="Return animation track by index. " alt="" coords="195,5,336,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animation.html#a0418971fada298aee7d56883ceb8275f" title="Return number of animation tracks. " alt="" coords="384,5,525,46"/>
+</map>

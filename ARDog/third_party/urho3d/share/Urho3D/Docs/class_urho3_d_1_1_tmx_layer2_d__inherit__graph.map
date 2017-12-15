@@ -1,0 +1,6 @@
+<map id="Urho3D::TmxLayer2D" name="Urho3D::TmxLayer2D">
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_tmx_image_layer2_d.html" title="Tmx image layer. " alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_tmx_object_group2_d.html" title="Tmx objects layer. " alt="" coords="217,155,407,181"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_tmx_tile_layer2_d.html" title="Tmx tile layer. " alt="" coords="432,155,603,181"/>
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="239,5,384,32"/>
+</map>

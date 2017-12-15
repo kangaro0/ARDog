@@ -1,0 +1,5 @@
+<map id="Urho3D::FontFace" name="Urho3D::FontFace">
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_font_face_bitmap.html" title="Bitmap font face description. " alt="" coords="5,155,176,181"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_font_face_free_type.html" title="Free type font face description. " alt="" coords="201,155,385,181"/>
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="119,5,264,32"/>
+</map>

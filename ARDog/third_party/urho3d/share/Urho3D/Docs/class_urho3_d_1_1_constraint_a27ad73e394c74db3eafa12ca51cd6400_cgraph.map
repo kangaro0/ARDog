@@ -1,0 +1,5 @@
+<map id="Urho3D::Constraint::OnMarkedDirty" name="Urho3D::Constraint::OnMarkedDirty">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_node.html#a863d9699737000ae9d83e63496c415de" title="Return scale in world space. " alt="" coords="373,5,576,32"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_constraint.html#a83814fcb7cbae0372f386b96d969cabd" title="Apply constraint frames. " alt="" coords="190,53,325,94"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_unique_ptr.html#a1deb88f6de1c9fc0bc6a61eb6418f6b0" title="Return the raw pointer. " alt="" coords="393,60,556,87"/>
+</map>

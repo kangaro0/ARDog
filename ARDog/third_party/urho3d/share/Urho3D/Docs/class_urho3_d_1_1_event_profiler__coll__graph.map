@@ -1,0 +1,26 @@
+<map id="Urho3D::EventProfiler" name="Urho3D::EventProfiler">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_profiler.html" title="Hierarchical performance profiler subsystem. " alt="" coords="1571,37,1687,64"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="525,111,638,137"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_event_handler.html" title="Internal helper class for invoking event handler functions. " alt="" coords="865,223,1020,249"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="257,324,402,351"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="1325,563,1446,589"/>
+<area shape="rect" id="node5" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,324,136,351"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Object *, Urho3D::HashMap\l\&lt; Urho3D::StringHash, Urho3D\l::SharedPtr\&lt; Urho3D::EventReceiverGroup \&gt; \&gt; \&gt;" alt="" coords="787,826,1098,897"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="513,768,649,795"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::EventReceiver\lGroup \&gt; \&gt;" alt="" coords="827,921,1058,991"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="837,761,1049,802"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::Object \&gt; \&gt;" alt="" coords="839,1016,1046,1072"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::ObjectFactory \&gt; \&gt;" alt="" coords="817,601,1068,657"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::Vector\l\&lt; Urho3D::StringHash \&gt; \&gt;" alt="" coords="849,681,1037,737"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lVector\&lt; Urho3D::AttributeInfo \&gt; \&gt;" alt="" coords="833,521,1053,577"/>
+<area shape="rect" id="node9" href="$struct_urho3_d_1_1_hash_node_base.html" title="Hash set/map node base class. " alt="" coords="246,768,413,795"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Object * \&gt;" alt="" coords="867,457,1018,498"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="510,407,653,433"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::HashMap * \&gt;" alt="" coords="865,391,1021,433"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::ProfilerBlock * \&gt;" alt="" coords="855,274,1030,315"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="1296,37,1475,78"/>
+<area shape="rect" id="node14" href="$struct_urho3_d_1_1_linked_list_node.html" title="Singly&#45;linked list node base class. " alt="" coords="499,200,664,227"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="511,289,651,316"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_profiler_block.html" title="Profiling data for one block in the profiling tree. " alt="" coords="1311,141,1460,168"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_hires_timer.html" title="High&#45;resolution operating system timer used in profiling. " alt="" coords="873,109,1012,136"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Urho3D::IKSolver::ApplyOriginalPoseToScene" name="Urho3D::IKSolver::ApplyOriginalPoseToScene">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_i_k_solver.html#a78158a230b7e123b9ca73f82d51824d5" title="Selects the solver algorithm. Default is FABRIK. Note that this may not be the most efficient algorit..." alt="" coords="264,35,472,61"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_i_k_solver.html#a6b6320894254a5a6a248e7e6f7964f58" title="Destroys and creates the tree. " alt="" coords="267,85,469,112"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_i_k_solver.html#acec072f80435bb30c78fa98e3f13edcc" title="Construct an IK root component. " alt="" coords="521,5,703,32"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_i_k_solver.html#ad5339a36d93aab3d3302ed48ede3157e" title="Registers this class to the context. " alt="" coords="521,57,703,98"/>
+</map>

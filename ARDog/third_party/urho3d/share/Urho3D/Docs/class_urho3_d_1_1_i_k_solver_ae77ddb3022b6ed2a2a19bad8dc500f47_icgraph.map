@@ -1,0 +1,11 @@
+<map id="Urho3D::IKSolver::ComponentIsInOurSubtree" name="Urho3D::IKSolver::ComponentIsInOurSubtree">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_i_k_solver.html#a215740ec5753a2347b9da9ec9d84cc07" title="Builds the solver&#39;s tree to match the scene graph&#39;s tree. If a tree already exists, it is first destroyed. " alt="" coords="253,121,456,148"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_i_k_solver.html#a78158a230b7e123b9ca73f82d51824d5" title="Selects the solver algorithm. Default is FABRIK. Note that this may not be the most efficient algorit..." alt="" coords="504,64,712,91"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_i_k_solver.html#ad37fe0e1e1a31fff36b3f3f923853373" title="Invokes the solver. The solution is applied back to the scene graph automatically. " alt="" coords="525,121,691,148"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_i_k_solver.html#a6b6320894254a5a6a248e7e6f7964f58" title="Destroys and creates the tree. " alt="" coords="507,172,709,199"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_i_k_solver.html#acec072f80435bb30c78fa98e3f13edcc" title="Construct an IK root component. " alt="" coords="771,5,954,32"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_i_k_solver.html#ad5339a36d93aab3d3302ed48ede3157e" title="Registers this class to the context. " alt="" coords="771,57,954,98"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_i_k_solver.html#a33f6db3304063adb8c43f713c5be3b7a" title="Invokes the IK solver. " alt="" coords="760,122,965,163"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_i_k_solver.html#aeed941e6a5f53cb2d6890fc5e5a5ed2c" title="Enable or disable a certain feature (see IKSolver::Feature) " alt="" coords="1019,104,1216,131"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_i_k_solver.html#abc49219593786fcc85bf7f1037e7bba2" title="Subscribe to drawable update finished event here. " alt="" coords="1014,155,1221,181"/>
+</map>

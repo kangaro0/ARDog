@@ -1,0 +1,8 @@
+<map id="Urho3D::SoundSource3D" name="Urho3D::SoundSource3D">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_sound_source.html" title="Sound source component with stereo position. A sound source needs to be created to a node to be consi..." alt="" coords="14,379,167,405"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="19,304,161,331"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="21,229,160,256"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="19,155,161,181"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="34,80,147,107"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="18,5,163,32"/>
+</map>

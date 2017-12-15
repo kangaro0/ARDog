@@ -1,0 +1,26 @@
+<map id="Urho3D::Audio" name="Urho3D::Audio">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="687,903,801,929"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_event_handler.html" title="Internal helper class for invoking event handler functions. " alt="" coords="1009,825,1164,852"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="294,903,439,929"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="1469,404,1590,431"/>
+<area shape="rect" id="node4" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="20,1171,151,1197"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_shared_array_ptr.html" title="Urho3D::SharedArrayPtr\l\&lt; int \&gt;" alt="" coords="483,1174,647,1215"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::SoundListener \&gt;" alt="" coords="275,1245,458,1286"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Object *, Urho3D::HashMap\l\&lt; Urho3D::StringHash, Urho3D\l::SharedPtr\&lt; Urho3D::EventReceiverGroup \&gt; \&gt; \&gt;" alt="" coords="931,507,1242,578"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="676,529,812,556"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::EventReceiver\lGroup \&gt; \&gt;" alt="" coords="971,602,1202,673"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="981,697,1193,738"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::Object \&gt; \&gt;" alt="" coords="983,187,1190,243"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::ObjectFactory \&gt; \&gt;" alt="" coords="961,267,1212,323"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::Vector\l\&lt; Urho3D::StringHash \&gt; \&gt;" alt="" coords="993,347,1181,403"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lVector\&lt; Urho3D::AttributeInfo \&gt; \&gt;" alt="" coords="977,427,1197,483"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lVariant \&gt;" alt="" coords="993,1005,1181,1061"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; Urho3D\l::StringHash \&gt;" alt="" coords="995,1085,1178,1126"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Object * \&gt;" alt="" coords="1011,70,1162,111"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="673,69,815,96"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::HashMap * \&gt;" alt="" coords="1009,5,1165,46"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::SoundSource * \&gt;" alt="" coords="997,877,1176,918"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="1440,889,1619,930"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_sound_listener.html" title="Sound listener component " alt="" coords="6,1261,165,1288"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_mutex.html" title="Operating system mutual exclusion primitive. " alt="" coords="1031,1303,1142,1329"/>
+</map>

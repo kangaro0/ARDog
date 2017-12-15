@@ -1,0 +1,26 @@
+<map id="Urho3D::Texture3D" name="Urho3D::Texture3D">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_texture.html" title="Base class for texture resources. " alt="" coords="982,548,1101,575"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_graphics.html" title="Graphics subsystem. Manages the application window, rendering state and GPU resources. " alt="" coords="1271,389,1398,416"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Texture \&gt;" alt="" coords="1264,510,1405,551"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_resource_with_metadata.html" title="Base class for resources that support arbitrary metadata stored. Metadata serialization shall be impl..." alt="" coords="630,687,842,713"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="313,189,444,216"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_image.html" title="Image resource. " alt="" coords="681,87,791,113"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_x_m_l_file.html" title="XML document resource. " alt="" coords="675,189,797,216"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="21,147,134,173"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="23,197,131,224"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="23,337,132,364"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="7,96,147,123"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="273,711,485,753"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="9,719,145,745"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; String \&gt;" alt="" coords="293,660,464,687"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="6,660,149,687"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_g_p_u_object.html" title="Base class for GPU resources. " alt="" coords="1774,389,1917,416"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Graphics \&gt;" alt="" coords="1481,382,1663,423"/>
+<area shape="rect" id="node16" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="12,7,143,33"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_shared_array_ptr.html" title="Urho3D::SharedArrayPtr\l\&lt; unsigned char \&gt;" alt="" coords="297,58,461,99"/>
+<area shape="rect" id="node17" href="$union_urho3_d_1_1_g_p_u_object_handle.html" title="API&#45;specific GPU object representation. " alt="" coords="1481,331,1663,357"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_color.html" title="RGBA color. " alt="" coords="683,636,789,663"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Image \&gt;" alt="" coords="971,117,1112,158"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::XMLFile \&gt;" alt="" coords="971,182,1112,223"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l pugi::xml_document \&gt;" alt="" coords="301,123,456,165"/>
+</map>

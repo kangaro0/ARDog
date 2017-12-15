@@ -1,0 +1,25 @@
+<map id="Urho3D::DelayedWorldTransform" name="Urho3D::DelayedWorldTransform">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="467,315,605,341"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_rigid_body.html" title="Physics rigid body component. " alt="" coords="2043,573,2178,600"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="772,371,879,397"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_smoothed_transform.html" title="Transform smoothing component for network updates. " alt="" coords="1347,413,1541,440"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="476,147,596,173"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="1051,480,1194,507"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_physics_world.html" title="Physics simulation world component. Should be added only to the root scene node. " alt="" coords="1366,624,1522,651"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="466,449,606,476"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="54,348,197,375"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::AttributeAnimationInfo \&gt; \&gt;" alt="" coords="5,399,245,455"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::ObjectAnimation \&gt;" alt="" coords="32,478,219,519"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; const\l Urho3D::AttributeInfo * \&gt;" alt="" coords="40,543,211,585"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="1067,371,1179,397"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l btRigidBody \&gt;" alt="" coords="1688,749,1829,790"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_vector_buffer.html" title="Dynamically sized buffer that can be read and written to as a stream. " alt="" coords="1049,673,1197,700"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_abstract_file.html" title="A common root class for objects that implement both Serializer and Deserializer. " alt="" coords="753,693,898,720"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l unsigned char \&gt;" alt="" coords="750,627,901,669"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="465,599,607,625"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Constraint * \&gt;" alt="" coords="1043,569,1203,610"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::PhysicsWorld \&gt;" alt="" coords="1667,631,1850,673"/>
+<area shape="rect" id="node22" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="1379,568,1509,595"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::SmoothedTransform \&gt;" alt="" coords="1667,566,1850,607"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l btCompoundShape \&gt;" alt="" coords="1684,814,1833,855"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Urho3D::Renderer::GetScreenBuffer" name="Urho3D::Renderer::GetScreenBuffer">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_graphics.html#a609ba19c78432946e8334cc3a7bcb92e" title="Return the API&#45;specific hardware depth&#45;stencil texture format. " alt="" coords="263,5,454,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_graphics.html#a1c014d24c89e047d834767e3c926630e" title="Return the API&#45;specific readable hardware depth format, or 0 if not supported. " alt="" coords="253,70,464,111"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_texture.html#a60c268d6f819bd4fdc219ba8f5f3820c" title="Return the data type corresponding to an OpenGL internal format. " alt="" coords="256,136,461,163"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_resource.html#ad851573ccc5bb7ea1508da7cc0d58ce9" title="Reset last used timer. " alt="" coords="259,187,458,229"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_timer.html#a4cb8d7b146c6a0b136a02c9a01d8d8c1" title="Reset the timer. " alt="" coords="513,195,663,221"/>
+</map>

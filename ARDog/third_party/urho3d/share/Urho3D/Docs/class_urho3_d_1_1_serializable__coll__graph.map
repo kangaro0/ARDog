@@ -1,0 +1,26 @@
+<map id="Urho3D::Serializable" name="Urho3D::Serializable">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="458,63,571,89"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_event_handler.html" title="Internal helper class for invoking event handler functions. " alt="" coords="767,63,921,89"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="246,609,391,636"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="1226,552,1347,579"/>
+<area shape="rect" id="node4" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,609,136,636"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Object *, Urho3D::HashMap\l\&lt; Urho3D::StringHash, Urho3D\l::SharedPtr\&lt; Urho3D::EventReceiverGroup \&gt; \&gt; \&gt;" alt="" coords="689,227,999,298"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="447,472,583,499"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::EventReceiver\lGroup \&gt; \&gt;" alt="" coords="729,322,959,393"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="738,737,950,778"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::Object \&gt; \&gt;" alt="" coords="741,417,947,473"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::ObjectFactory \&gt; \&gt;" alt="" coords="719,497,969,553"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::Vector\l\&lt; Urho3D::StringHash \&gt; \&gt;" alt="" coords="750,577,938,633"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lVector\&lt; Urho3D::AttributeInfo \&gt; \&gt;" alt="" coords="734,657,954,713"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_hash_map.html" title="Hash map template class. " alt="" coords="753,113,935,140"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Object * \&gt;" alt="" coords="769,854,919,895"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="443,992,586,1019"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::HashMap * \&gt;" alt="" coords="766,919,922,961"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::Variant \&gt;" alt="" coords="759,1115,929,1157"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::ReplicationState * \&gt;" alt="" coords="746,985,942,1026"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::AttributeInfo \&gt;" alt="" coords="759,1050,929,1091"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="1197,27,1376,69"/>
+<area shape="rect" id="node20" href="$struct_urho3_d_1_1_network_state.html" title="Per&#45;object attribute state for network replication, allocated on demand. " alt="" coords="1209,992,1364,1019"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::NetworkState \&gt;" alt="" coords="1571,362,1741,403"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::HashMap \&gt;" alt="" coords="1400,86,1547,127"/>
+</map>

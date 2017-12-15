@@ -1,0 +1,9 @@
+<map id="Urho3D::Thread" name="Urho3D::Thread">
+<area shape="rect" id="node2" title="Base class for async execution requests. " alt="" coords="169,31,359,57"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_background_loader.html" title="Background loader of resources. Owned by the ResourceCache. " alt="" coords="173,81,355,108"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_file_watcher.html" title="Watches a directory and its subdirectories for files being modified. " alt="" coords="191,132,337,159"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_http_request.html" title="An HTTP connection with response data stream. " alt="" coords="189,183,339,209"/>
+<area shape="rect" id="node8" title="Worker thread managed by the work queue. " alt="" coords="185,233,343,260"/>
+<area shape="rect" id="node3" title="Async system command operation. " alt="" coords="409,5,626,32"/>
+<area shape="rect" id="node4" title="Async system run operation. " alt="" coords="427,56,608,83"/>
+</map>

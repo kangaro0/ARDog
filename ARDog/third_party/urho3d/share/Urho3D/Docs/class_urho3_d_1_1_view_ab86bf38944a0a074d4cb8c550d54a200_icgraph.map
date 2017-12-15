@@ -1,0 +1,4 @@
+<map id="Urho3D::View::PrepareInstancingBuffer" name="Urho3D::View::PrepareInstancingBuffer">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_view.html#a124582e02f0e82ba799467b20b162436" title="Render batches. " alt="" coords="272,12,427,39"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_view.html#a2dd8e9237f495ba4ec4a69b195988cfa" title="Execute render commands. " alt="" coords="475,5,677,46"/>
+</map>

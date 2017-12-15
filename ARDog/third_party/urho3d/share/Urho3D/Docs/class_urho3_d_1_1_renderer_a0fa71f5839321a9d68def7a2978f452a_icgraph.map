@@ -1,0 +1,7 @@
+<map id="Urho3D::Renderer::UpdateQueuedViewport" name="Urho3D::Renderer::UpdateQueuedViewport">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_renderer.html#a993f63f35d27a9ea6df861962018f354" title="Update for rendering. Called by HandleRenderUpdate(). " alt="" coords="232,12,411,39"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_renderer.html#adf594e7a524f6e003e8370cf23dbee13" title="Handle render update event. " alt="" coords="459,5,637,46"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_renderer.html#ae0d765a240f7cf5f829ddc95cb2729c9" title="Initialize when screen mode initially set. " alt="" coords="685,12,869,39"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_renderer.html#a8e41f9dda2e33e9e208c5ccfd0d1c6ac" title="Construct. " alt="" coords="1144,12,1333,39"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_renderer.html#ade42fa3aa8f7f48620bffc61ab32c635" title="Handle screen mode event. " alt="" coords="918,34,1095,75"/>
+</map>

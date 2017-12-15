@@ -1,0 +1,26 @@
+<map id="Urho3D::FontFaceFreeType" name="Urho3D::FontFaceFreeType">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_font_face.html" title="Font face description. " alt="" coords="1775,220,1905,247"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="257,555,402,581"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="641,555,754,581"/>
+<area shape="rect" id="node4" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,581,136,608"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_shared_array_ptr.html" title="Urho3D::SharedArrayPtr\l\&lt; unsigned char \&gt;" alt="" coords="438,598,602,639"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Texture2D \&gt; \&gt;" alt="" coords="1334,254,1573,295"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="917,253,1059,280"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::IntRect \&gt;" alt="" coords="1378,331,1529,373"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l Urho3D::FontGlyph \&gt;" alt="" coords="1110,134,1309,175"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="629,141,765,168"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l float \&gt;" alt="" coords="1110,75,1309,117"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; int,\l Urho3D::SharedPtr\&lt; Urho3D\l::FontFace \&gt; \&gt;" alt="" coords="891,304,1085,360"/>
+<area shape="rect" id="node9" href="$struct_urho3_d_1_1_hash_node_base.html" title="Hash set/map node base class. " alt="" coords="246,163,413,189"/>
+<area shape="rect" id="node10" href="$struct_urho3_d_1_1_allocator_block.html" title="Allocator memory block. " alt="" coords="250,44,409,71"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_font.html" title="Font resource. " alt="" coords="1403,520,1504,547"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="923,547,1053,573"/>
+<area shape="rect" id="node23" title="FreeType library subsystem. " alt="" coords="903,811,1073,837"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="643,325,751,352"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="643,415,752,441"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="627,504,767,531"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="928,496,1048,523"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_int_vector2.html" title="Two&#45;dimensional vector with integer values. " alt="" coords="921,760,1055,787"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_area_allocator.html" title="Rectangular area allocator. " alt="" coords="1763,521,1917,548"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l FreeTypeLibrary \&gt;" alt="" coords="1597,595,1739,637"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Urho3D::JSONValue::GetVariantMap" name="Urho3D::JSONValue::GetVariantMap">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_j_s_o_n_value.html#ae13d6c8ae672a24770bb19d8e1252b05" title="Return a variant with type. " alt="" coords="213,27,365,69"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_value_animation.html#abb90d4733017bb3e85f68f344a4a9571" title="Load from JSON data. Return true if successful. " alt="" coords="206,93,373,134"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_scene.html#a96adc07853e2b6104564db2d10b22fdb" title="Preload resources from a JSON scene or object prefab file. " alt="" coords="422,5,685,32"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_serializable.html#aeda18b3f4b5477071a3f6a7cd620417b" title="Load from JSON data. When setInstanceDefault is set to true, after setting the attribute value..." alt="" coords="482,57,625,98"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_scene.html#aa66ba16b03bd936a00b96e18da703947" title="Load from a JSON file asynchronously. Return true if started successfully. The LOAD_RESOURCES_ONLY mo..." alt="" coords="733,5,955,32"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_animatable.html#a107ac53ba6e7d1d51d26abd4bd308294" title="Load from JSON data. When setInstanceDefault is set to true, after setting the attribute value..." alt="" coords="774,57,914,98"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_animated_model.html#a03010ad7ae8211a4306aadb907468ac1" title="Load from JSON data. Return true if successful. " alt="" coords="1009,27,1175,69"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_node.html#a5e1c150d8d013c7550537c5251bf86f7" title="Load components from XML data and optionally load child nodes. " alt="" coords="1003,93,1181,120"/>
+</map>

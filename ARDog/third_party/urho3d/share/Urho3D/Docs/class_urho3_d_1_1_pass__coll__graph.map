@@ -1,0 +1,12 @@
+<map id="Urho3D::Pass" name="Urho3D::Pass">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="838,7,983,33"/>
+<area shape="rect" id="node3" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="529,7,660,33"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::ShaderVariation \&gt; \&gt;" alt="" coords="776,58,1045,99"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="523,65,666,92"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lVector\&lt; Urho3D::SharedPtr\l\&lt; Urho3D::ShaderVariation \&gt; \&gt; \&gt;" alt="" coords="803,123,1018,194"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="527,145,663,172"/>
+<area shape="rect" id="node8" href="$struct_urho3_d_1_1_hash_node_base.html" title="Hash set/map node base class. " alt="" coords="246,89,413,116"/>
+<area shape="rect" id="node9" href="$struct_urho3_d_1_1_allocator_block.html" title="Allocator memory block. " alt="" coords="250,179,409,205"/>
+<area shape="rect" id="node10" href="$struct_urho3_d_1_1_allocator_node.html" title="Allocator node. " alt="" coords="5,179,163,205"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="856,332,965,359"/>
+</map>

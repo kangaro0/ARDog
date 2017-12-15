@@ -1,0 +1,7 @@
+<map id="Urho3D::Decal" name="Urho3D::Decal">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l unsigned short \&gt;" alt="" coords="241,5,391,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="6,12,149,39"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::DecalVertex \&gt;" alt="" coords="235,70,397,111"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_bounding_box.html" title="Three&#45;dimensional axis&#45;aligned bounding box. " alt="" coords="240,153,392,180"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="17,204,137,231"/>
+</map>

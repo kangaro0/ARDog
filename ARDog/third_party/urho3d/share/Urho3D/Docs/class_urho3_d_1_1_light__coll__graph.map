@@ -1,0 +1,26 @@
+<map id="Urho3D::Light" name="Urho3D::Light">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_drawable.html" title="Base class for visible components. " alt="" coords="1053,816,1184,843"/>
+<area shape="rect" id="node19" href="$struct_urho3_d_1_1_light_batch_queue.html" title="Queue for light related draw calls. " alt="" coords="1342,195,1517,221"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_zone.html" title="Component that describes global rendering properties. " alt="" coords="1377,768,1481,795"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="670,1032,813,1059"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="6,1088,146,1115"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="340,1059,447,1085"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_matrix3x4.html" title="3x4 matrix for scene node transform calculations. " alt="" coords="10,908,142,935"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Zone \&gt;" alt="" coords="1699,761,1882,802"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Texture \&gt;" alt="" coords="323,353,464,394"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_texture.html" title="Base class for texture resources. " alt="" coords="682,332,801,359"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_texture2_d.html" title="2D texture resource. " alt="" coords="1051,289,1187,316"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_color.html" title="RGBA color. " alt="" coords="340,755,447,781"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_bounding_box.html" title="Three&#45;dimensional axis&#45;aligned bounding box. " alt="" coords="317,1203,469,1229"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_octant.html" title="Octree octant " alt="" coords="684,1136,799,1163"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Light * \&gt;" alt="" coords="666,135,817,177"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="322,143,465,169"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Camera * \&gt;" alt="" coords="666,201,817,242"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SourceBatch \&gt;" alt="" coords="656,266,827,307"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::ShadowBatchQueue \&gt;" alt="" coords="851,11,1021,53"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Batch \&gt;" alt="" coords="666,70,817,111"/>
+<area shape="rect" id="node18" href="$struct_urho3_d_1_1_cascade_parameters.html" title="Cascaded shadow map parameters. " alt="" coords="296,856,491,883"/>
+<area shape="rect" id="node21" href="$struct_urho3_d_1_1_batch_queue.html" title="Queue that contains both instanced and non&#45;instanced draw calls. " alt="" coords="1045,80,1192,107"/>
+<area shape="rect" id="node24" href="$struct_urho3_d_1_1_focus_parameters.html" title="Shadow map focusing parameters. " alt="" coords="304,969,483,996"/>
+<area shape="rect" id="node25" href="$struct_urho3_d_1_1_bias_parameters.html" title="Depth bias parameters. Used both by lights (for shadow mapping) and materials. " alt="" coords="309,805,477,832"/>
+</map>

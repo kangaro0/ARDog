@@ -1,0 +1,26 @@
+<map id="Urho3D::Node" name="Urho3D::Node">
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="1296,445,1408,472"/>
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="517,443,657,469"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="54,341,197,368"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::AttributeAnimationInfo \&gt; \&gt;" alt="" coords="5,392,245,448"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::ObjectAnimation \&gt;" alt="" coords="32,471,219,513"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; const\l Urho3D::AttributeInfo * \&gt;" alt="" coords="40,537,211,578"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_scene_resolver.html" title="Utility class that resolves node &amp; component IDs after a scene or partial scene load. " alt="" coords="886,24,1050,51"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lPODVector\&lt; Urho3D::Node * \&gt; \&gt;" alt="" coords="859,75,1077,131"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Package\lFile \&gt; \&gt;" alt="" coords="866,155,1070,211"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l Urho3D::Component * \&gt;" alt="" coords="869,234,1067,275"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Component * \&gt;" alt="" coords="885,299,1051,341"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lString \&gt;" alt="" coords="874,364,1062,420"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="481,377,693,418"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="913,635,1023,661"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; unsigned \&gt;" alt="" coords="867,685,1069,712"/>
+<area shape="rect" id="node17" href="$struct_urho3_d_1_1_async_progress.html" title="Asynchronous loading progress of a scene. " alt="" coords="886,736,1050,763"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l Urho3D::Node * \&gt;" alt="" coords="869,787,1067,829"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="517,532,656,559"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="468,583,705,625"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="465,649,709,690"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="527,856,647,883"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::NodeImpl \&gt;" alt="" coords="513,907,660,949"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Node \&gt; \&gt;" alt="" coords="483,973,691,1014"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_matrix3x4.html" title="3x4 matrix for scene node transform calculations. " alt="" coords="521,1092,653,1119"/>
+</map>

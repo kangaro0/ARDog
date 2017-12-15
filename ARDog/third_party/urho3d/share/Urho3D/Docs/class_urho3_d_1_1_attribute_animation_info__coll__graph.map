@@ -1,0 +1,26 @@
+<map id="Urho3D::AttributeAnimationInfo" name="Urho3D::AttributeAnimationInfo">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_value_animation_info.html" title="Base class for a value animation instance, which includes animation runtime information and updates t..." alt="" coords="2057,264,2245,291"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="246,185,391,212"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="849,135,962,161"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="471,185,593,212"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_attribute_accessor.html" title="Abstract base class for invoking attribute accessors. " alt="" coords="645,593,824,620"/>
+<area shape="rect" id="node4" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,60,136,87"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Object \&gt;" alt="" coords="1057,127,1239,169"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="1083,287,1213,313"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="443,119,621,161"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::ValueAnimation \&gt;" alt="" coords="1755,313,1938,354"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_value_animation.html" title="Value animation class. " alt="" coords="1441,345,1607,372"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="851,673,960,700"/>
+<area shape="rect" id="node16" href="$struct_urho3_d_1_1_attribute_info.html" title="Description of an automatically serializable variable. " alt="" coords="1773,800,1920,827"/>
+<area shape="rect" id="node20" href="$struct_urho3_d_1_1_resource_ref.html" title="Typed resource reference. " alt="" coords="1072,673,1224,700"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::VAnimEventFrame \&gt;" alt="" coords="1063,338,1233,379"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Variant \&gt;" alt="" coords="1059,404,1237,431"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::VAnimKeyFrame \&gt;" alt="" coords="1063,455,1233,497"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_variant.html" title="Variable that supports a fixed set of types. " alt="" coords="1466,677,1582,704"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_vector.html" title="Vector template class. " alt="" coords="1075,623,1221,649"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l unsigned char \&gt;" alt="" coords="1073,725,1223,766"/>
+<area shape="rect" id="node21" href="$struct_urho3_d_1_1_resource_ref_list.html" title="List of typed resource references. " alt="" coords="1061,791,1235,817"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_hash_map.html" title="Hash map template class. " alt="" coords="1057,521,1239,548"/>
+<area shape="rect" id="node23" href="$struct_urho3_d_1_1_variant_value.html" title="Union for the possible variant values. Also stores non&#45;POD objects such as String and math objects (e..." alt="" coords="1073,572,1223,599"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::AttributeAccessor \&gt;" alt="" coords="1427,893,1621,934"/>
+</map>

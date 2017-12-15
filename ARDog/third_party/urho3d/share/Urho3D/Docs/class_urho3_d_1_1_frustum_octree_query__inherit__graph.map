@@ -1,0 +1,6 @@
+<map id="Urho3D::FrustumOctreeQuery" name="Urho3D::FrustumOctreeQuery">
+<area shape="rect" id="node3" title="Frustum octree query with occlusion. " alt="" coords="449,5,666,46"/>
+<area shape="rect" id="node4" title="Frustum octree query for shadowcasters. " alt="" coords="457,70,657,111"/>
+<area shape="rect" id="node5" title="Frustum octree query for zones and occluders. " alt="" coords="460,135,655,177"/>
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_octree_query.html" title="Base class for octree queries. " alt="" coords="5,77,155,104"/>
+</map>

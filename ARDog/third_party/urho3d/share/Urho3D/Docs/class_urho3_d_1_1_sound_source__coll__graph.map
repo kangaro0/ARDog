@@ -1,0 +1,26 @@
+<map id="Urho3D::SoundSource" name="Urho3D::SoundSource">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="1138,581,1281,608"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="517,616,657,643"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="875,299,981,325"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="54,515,197,541"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::AttributeAnimationInfo \&gt; \&gt;" alt="" coords="5,565,245,621"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::ObjectAnimation \&gt;" alt="" coords="32,645,219,686"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; const\l Urho3D::AttributeInfo * \&gt;" alt="" coords="40,710,211,751"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="1153,300,1265,327"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="481,5,693,46"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="873,671,983,697"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="517,175,656,201"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="468,226,705,267"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="465,291,709,333"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="527,499,647,525"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::NodeImpl \&gt;" alt="" coords="513,550,660,591"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Node \&gt; \&gt;" alt="" coords="483,70,691,111"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Audio \&gt;" alt="" coords="1118,734,1301,775"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_audio.html" title="Audio subsystem. " alt="" coords="874,721,982,748"/>
+<area shape="rect" id="node20" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="863,772,993,799"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::SoundStream \&gt;" alt="" coords="1124,799,1295,841"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_sound_stream.html" title="Base class for sound streams. " alt="" coords="851,823,1005,849"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Sound \&gt;" alt="" coords="1139,865,1280,906"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_sound.html" title="Sound resource. " alt="" coords="872,873,984,900"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="1139,969,1279,996"/>
+</map>

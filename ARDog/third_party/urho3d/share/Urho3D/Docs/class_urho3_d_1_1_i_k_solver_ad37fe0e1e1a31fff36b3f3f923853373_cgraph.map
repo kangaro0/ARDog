@@ -1,0 +1,26 @@
+<map id="Urho3D::IKSolver::Solve" name="Urho3D::IKSolver::Solve">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_i_k_solver.html#a215740ec5753a2347b9da9ec9d84cc07" title="Builds the solver&#39;s tree to match the scene graph&#39;s tree. If a tree already exists, it is first destroyed. " alt="" coords="225,208,428,235"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_i_k_solver.html#a75ebc853336630a79e4b6ec7857cd78d" title="Updates the solver&#39;s internal data structures, which is required whenever the tree is modified in any..." alt="" coords="238,259,415,301"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_i_k_solver.html#ad8f4b4e76fa2ac3404e77f7af10ad8e4" title="Returns false if calling Solve() would cause the IK library to abort. Urho3D&#39;s error handling philoso..." alt="" coords="236,325,417,366"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_i_k_solver.html#afff682e8ed5f30b4f9f87ef5d1ba6740" title="Urho3D::IKSolver::ApplyScene\lToOriginalPose" alt="" coords="225,390,428,431"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_i_k_solver.html#a4b857cf9c23cd910eb4b08f2952b28b7" title="Urho3D::IKSolver::ApplyScene\lToActivePose" alt="" coords="225,455,428,497"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_i_k_solver.html#a36875cec883b9efb373f6b87f5bbf210" title="Urho3D::IKSolver::ApplyOriginal\lPoseToActivePose" alt="" coords="221,521,432,562"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_i_k_solver.html#af540808afa75e025e732014817ff4b4a" title="Urho3D::IKSolver::ApplyActive\lPoseToScene" alt="" coords="225,586,428,627"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_i_k_solver.html#aad4ab41a3accf0ff067ad591d0f7c67e" title="Destroys the solver&#39;s tree. " alt="" coords="483,55,688,81"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_i_k_solver.html#a47e782eedb4819ac1f24020a3cce5eaa" title="Creates the ik library node and sets the current rotation/position and user data correctly. " alt="" coords="739,231,911,273"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_node.html#a9f096d8f7c61f7be195c5f0e22a60404" title="Return all components. " alt="" coords="481,288,690,315"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_i_k_solver.html#ae77ddb3022b6ed2a2a19bad8dc500f47" title="Urho3D::IKSolver::Component\lIsInOurSubtree" alt="" coords="485,171,685,213"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_i_k_solver.html#afaa45ef02d8aee5717b9eabece7ac883" title="Builds a chain of nodes up to the node of the specified effector component. " alt="" coords="491,106,679,147"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_i_k_solver.html#a33218dc2749da6a94ea2d6e6df62f8c8" title="Indicates that the internal structures of the IK library need to be updated. See the documentation of..." alt="" coords="484,339,687,381"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_node.html#a72efea5341191c1951129467f5cb55f3" title="Return ID. " alt="" coords="995,5,1144,32"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_node.html#a92372a305fa427e9ce58df7f37a684ba" title="Return position in world space. " alt="" coords="961,188,1177,215"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_node.html#aa0f97335ff8b25e10e0a89ee9a87a253" title="Return rotation in world space. " alt="" coords="960,239,1179,265"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_node.html#a96978345db2ceb1a473bb43f0024dbe7" title="Return component by type. If there are several, returns the first. " alt="" coords="968,523,1171,549"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_component.html#aaf7a7d9aea4ae4bcc527a5f0c33f3f1a" title="Return scene node. " alt="" coords="994,57,1145,98"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_node.html#a3c19eb87f2855894c1757659ede5a509" title="Return name. " alt="" coords="984,289,1155,316"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_string.html#a6b405eba451da6c0f216a8649adf79aa" title="Return the C string. " alt="" coords="989,340,1150,367"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_i_k_effector.html#ac0dd6e86c446116462d1732946952825" title="Intended to be used only by IKSolver. " alt="" coords="1002,391,1137,433"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_i_k_effector.html#a09db0f188e5400c909d922a73c969116" title="Intended to be used only by IKSolver. " alt="" coords="999,457,1139,498"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_i_k_constraint.html#a46f02fc8f472d9675e60bd01a1ac4344" title="Intended to be used only by IKSolver. " alt="" coords="992,122,1147,163"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_node.html#ae2f6e5318815bc21dd93febb3dc5b95e" title="Return parent scene node. " alt="" coords="739,120,912,147"/>
+</map>

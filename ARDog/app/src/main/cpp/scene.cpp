@@ -11,6 +11,7 @@
 #include <tango-gl/meshes.h>
 
 #include <glTF2.hpp>
+#include <Urho3D/Scene/Scene.h>
 
 #include "scene.h"
 
@@ -40,6 +41,7 @@ namespace ARDog{
         // All of these objects are for visualization purposes.
         video_overlay_ = new tango_gl::VideoOverlay();
         camera_ = new tango_gl::Camera();
+
 
         // Init earth mesh and material
         //earth_mesh_ = tango_gl::meshes::MakeSphereMesh(20, 20, 1.0f);

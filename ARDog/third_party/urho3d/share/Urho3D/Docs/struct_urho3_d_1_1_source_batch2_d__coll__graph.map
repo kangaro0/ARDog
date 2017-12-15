@@ -1,0 +1,26 @@
+<map id="Urho3D::SourceBatch2D" name="Urho3D::SourceBatch2D">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::Vertex2D \&gt;" alt="" coords="376,6,547,47"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="6,177,149,204"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Light * \&gt;" alt="" coords="201,170,351,211"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Camera * \&gt;" alt="" coords="201,53,351,94"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SourceBatch2D \&gt;" alt="" coords="376,217,547,258"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::TechniqueEntry \&gt;" alt="" coords="376,646,547,687"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Drawable2D \&gt;" alt="" coords="1251,278,1434,319"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_drawable2_d.html" title="Base class for 2D visible components. " alt="" coords="1029,220,1176,247"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_drawable.html" title="Base class for visible components. " alt="" coords="629,117,760,144"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_zone.html" title="Component that describes global rendering properties. " alt="" coords="1051,105,1155,132"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="205,119,347,145"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Renderer2D \&gt;" alt="" coords="603,257,786,298"/>
+<area shape="rect" id="node13" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="211,323,341,349"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Scene \&gt;" alt="" coords="603,374,786,415"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Material \&gt;" alt="" coords="1272,427,1413,469"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_material.html" title="Describes how to render 3D geometries. " alt="" coords="1042,680,1163,707"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="629,1033,760,1060"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="221,969,331,996"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lMaterialShaderParameter \&gt;" alt="" coords="601,439,789,495"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::ShaderParameter\lAnimationInfo \&gt; \&gt;" alt="" coords="571,519,818,590"/>
+<area shape="rect" id="node22" href="$struct_urho3_d_1_1_bias_parameters.html" title="Depth bias parameters. Used both by lights (for shadow mapping) and materials. " alt="" coords="611,615,779,641"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Texture\lUnit, Urho3D::SharedPtr\l\&lt; Urho3D::Texture \&gt; \&gt;" alt="" coords="601,665,788,721"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::JSONFile \&gt;" alt="" coords="621,809,769,850"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::XMLFile \&gt;" alt="" coords="624,967,765,1009"/>
+</map>

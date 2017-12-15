@@ -1,0 +1,6 @@
+<map id="Urho3D::Animation" name="Urho3D::Animation">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_resource_with_metadata.html" title="Base class for resources that support arbitrary metadata stored. Metadata serialization shall be impl..." alt="" coords="5,229,216,256"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="45,155,175,181"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="54,80,167,107"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="38,5,183,32"/>
+</map>

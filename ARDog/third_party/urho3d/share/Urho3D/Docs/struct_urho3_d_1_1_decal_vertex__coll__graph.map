@@ -1,0 +1,5 @@
+<map id="Urho3D::DecalVertex" name="Urho3D::DecalVertex">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="5,51,125,77"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="217,51,337,77"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_vector4.html" title="Four&#45;dimensional vector. " alt="" coords="456,51,576,77"/>
+</map>

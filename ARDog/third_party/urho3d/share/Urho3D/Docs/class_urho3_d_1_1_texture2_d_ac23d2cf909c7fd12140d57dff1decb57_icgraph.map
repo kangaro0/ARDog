@@ -1,0 +1,5 @@
+<map id="Urho3D::Texture2D::SetSize" name="Urho3D::Texture2D::SetSize">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_texture2_d.html#ab49167ad05742f9610fd938c2f9f29ce" title="Set data from an image. Return true if successful. Optionally make a single channel image alpha&#45;only..." alt="" coords="211,5,355,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animation_set2_d.html#a3b678397fa1bdef4df12c0009df462f1" title="Finish load scml. " alt="" coords="197,70,368,111"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_animation_set2_d.html#a57ba86fdfbd295f23a63f3650fcc6be7" title="Finish resource loading. Always called from the main thread. Return true if successful. " alt="" coords="416,70,587,111"/>
+</map>

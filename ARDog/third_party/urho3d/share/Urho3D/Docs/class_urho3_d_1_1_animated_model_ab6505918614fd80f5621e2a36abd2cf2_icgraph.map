@@ -1,0 +1,6 @@
+<map id="Urho3D::AnimatedModel::UpdateBoneBoundingBox" name="Urho3D::AnimatedModel::UpdateBoneBoundingBox">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_animated_model.html#a9ea4b851811b37bb2ef96a0f91b360a3" title="Update before octree reinsertion. Is called from a worker thread. " alt="" coords="659,5,824,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animated_model.html#ae9b801066aad3b39204f6c72507e3ac8" title="Apply all animation states to nodes. " alt="" coords="232,63,397,105"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_animated_model.html#a4490aea6f65d9c5c617f8f6a4f762401" title="Recalculate animations. Called from Update(). " alt="" coords="445,63,611,105"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_animated_model.html#ae78d0e2c3f1d73b0f950e83796748058" title="Prepare geometry for rendering. Called from a worker thread if possible (no GPU update.) " alt="" coords="659,70,824,111"/>
+</map>

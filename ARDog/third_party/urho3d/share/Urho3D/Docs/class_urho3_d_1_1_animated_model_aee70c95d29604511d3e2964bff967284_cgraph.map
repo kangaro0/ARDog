@@ -1,0 +1,8 @@
+<map id="Urho3D::AnimatedModel::OnWorldBoundingBoxUpdate" name="Urho3D::AnimatedModel::OnWorldBoundingBoxUpdate">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_bounding_box.html#aa75dc3b9cce0c3c6ea4e34e4f8f125c2" title="Return transformed by a 3x3 matrix. " alt="" coords="292,5,444,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_node.html#acbf5c9951a685acdbe75d1d39eeb7045" title="Return world space transform matrix. " alt="" coords="254,71,482,97"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_node.html#a96978345db2ceb1a473bb43f0024dbe7" title="Return component by type. If there are several, returns the first. " alt="" coords="267,121,469,148"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_drawable.html#a3930dc9342c0aefcfd4c94eb8079e365" title="Return world&#45;space bounding box. " alt="" coords="271,175,465,217"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_component.html#ad08f2476047f1bab081256374710431d" title="Return component in the same scene node by type. If there are several, returns the first..." alt="" coords="550,114,701,155"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_drawable.html#af146747caaf6fd85ab71fda4e364bde4" title="Recalculate the world&#45;space bounding box. " alt="" coords="531,179,720,221"/>
+</map>

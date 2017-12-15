@@ -1,0 +1,12 @@
+<map id="Urho3D::GPUObject" name="Urho3D::GPUObject">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_constant_buffer.html" title="Hardware constant buffer. " alt="" coords="200,5,363,32"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_index_buffer.html" title="Hardware index buffer. " alt="" coords="210,56,353,83"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_shader_program.html" title="Linked shader program on the GPU. " alt="" coords="199,107,364,133"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_shader_variation.html" title="Vertex or pixel shader on the GPU. " alt="" coords="198,157,365,184"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_texture.html" title="Base class for texture resources. " alt="" coords="222,208,341,235"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_vertex_buffer.html" title="Hardware vertex buffer. " alt="" coords="207,259,355,285"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_texture2_d.html" title="2D texture resource. " alt="" coords="429,132,565,159"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_texture2_d_array.html" title="2D texture array resource. " alt="" coords="414,183,581,209"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_texture3_d.html" title="3D texture resource. " alt="" coords="429,233,565,260"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_texture_cube.html" title="Cube texture resource. " alt="" coords="422,284,573,311"/>
+</map>

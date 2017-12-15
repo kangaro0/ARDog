@@ -1,0 +1,26 @@
+<map id="Urho3D::AnimationSet2D" name="Urho3D::AnimationSet2D">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="853,464,984,491"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_sprite2_d.html" title="Sprite. " alt="" coords="2025,513,2151,540"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_sprite_sheet2_d.html" title="Sprite sheet. " alt="" coords="1256,639,1416,665"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="539,583,653,609"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="6,553,151,580"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="231,583,353,609"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="203,634,381,675"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="542,443,650,469"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="541,231,651,257"/>
+<area shape="rect" id="node25" href="$struct_urho3_d_1_1_spriter_1_1_spriter_data.html" title="Spriter data. " alt="" coords="825,20,1012,47"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="526,532,666,559"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Sprite2D \&gt;" alt="" coords="2278,501,2421,542"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_int_rect.html" title="Two&#45;dimensional bounding rectangle with integer values. " alt="" coords="1649,720,1767,747"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="1648,300,1768,327"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::SpriteSheet2D \&gt;" alt="" coords="1617,615,1799,657"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::SpriteSheet2D \&gt;" alt="" coords="1824,754,2000,795"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::Sprite2D \&gt; \&gt;" alt="" coords="825,752,1013,808"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="528,808,664,835"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; int,\l Urho3D::SharedPtr\&lt; Urho3D\l::Sprite2D \&gt; \&gt;" alt="" coords="1037,815,1232,871"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::JSONFile \&gt;" alt="" coords="845,622,993,663"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::XMLFile \&gt;" alt="" coords="848,687,989,729"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Texture2D \&gt;" alt="" coords="843,557,995,598"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_int_vector2.html" title="Two&#45;dimensional vector with integer values. " alt="" coords="1641,513,1775,540"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Spriter::SpriterData \&gt;" alt="" coords="1441,10,1591,51"/>
+</map>

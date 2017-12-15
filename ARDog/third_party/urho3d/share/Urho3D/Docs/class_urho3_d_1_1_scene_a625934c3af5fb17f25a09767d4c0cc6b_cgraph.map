@@ -1,0 +1,26 @@
+<map id="Urho3D::Scene::UpdateAsyncLoading" name="Urho3D::Scene::UpdateAsyncLoading">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_scene.html#a019a062421bf4e2d4f5f213245008f28" title="Finish asynchronous loading. " alt="" coords="273,340,465,381"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_object.html#ab8dbe9844094c04463def7df1fa650d5" title="Return a preallocated map for event data. Used for optimization to avoid constant re&#45;allocation of ev..." alt="" coords="789,74,965,116"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_object.html#a32020dbf77c196b9777eca479e8abb36" title="Send event to all subscribers. " alt="" coords="785,140,970,167"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_x_m_l_element.html#a0f3cc1f4e6b77f356185789e7bcf431a" title="Return an unsigned integer attribute, or zero if missing. " alt="" coords="559,640,710,681"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_node.html#af38b633b6f35ad2a430adb650e3b354f" title="Create a child scene node (with specified ID if provided). " alt="" coords="278,86,461,112"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_scene_resolver.html#ab1d8eba7016a02851c191e203be845c9" title="Remember a created node. " alt="" coords="553,522,717,564"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_node.html#ac36784ed3c7e7f41b68bef4e91d6a646" title="Load from XML data. Return true if successful. " alt="" coords="285,459,454,486"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_x_m_l_element.html#aa151f57fcb4eca0607acc2412a5eda5b" title="Return next sibling element. " alt="" coords="802,764,953,805"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_j_s_o_n_value.html#a68e25b80f65553d9c65b2aeb0981dbdd" title="Return JSON value with key. " alt="" coords="548,588,721,615"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_j_s_o_n_value.html#ac285ea23fdd26b125c281dd3e2505642" title="Return unsigned integer value. " alt="" coords="559,705,711,746"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_node.html#a47509b77f32e5388e2f4161764efa1da" title="Load from JSON data. Return true if successful. " alt="" coords="280,560,459,587"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_node.html#aed2e490abd9969275d53949f9cd56213" title="Load from binary data. Return true if successful. " alt="" coords="298,408,441,435"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_hires_timer.html#a1318b8d783b6c773813903a18e41da23" title="Return elapsed microseconds and optionally reset. " alt="" coords="300,822,439,864"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_scene.html#a4a752062cb0edf73acda03e4848a9111" title="Return asynchronous loading progress between 0.0 and 1.0, or 1.0 if not in progress. " alt="" coords="254,888,485,915"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_scene_resolver.html#a4322ce210921b372aa621462408597cc" title="Resolve component and node ID attributes and reset. " alt="" coords="553,457,717,498"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_node.html#a4da7020e1322e1e66600aed5b8b5e2d9" title="Apply attribute changes that can not be applied immediately recursively to child nodes and components..." alt="" coords="533,406,736,432"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_scene.html#aad4b930c9f2dc906c9cf960b2dfeebb3" title="Finish loading. Sets the scene filename and checksum. " alt="" coords="535,288,735,315"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_scene.html#a08f99dc8b2497499e581f2eb7ce1a082" title="Stop asynchronous loading. " alt="" coords="543,340,727,381"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_x_m_l_element.html#a0f9070917f31e8b8ef0755a787b4941a" title="Return attribute, or empty if missing. " alt="" coords="802,698,953,740"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_string.html#a6b405eba451da6c0f216a8649adf79aa" title="Return the C string. " alt="" coords="1019,739,1181,766"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_node.html#a4fe38a2be941c8ca1fa59b9639775c09" title="Set name of the scene node. Names are not required to be unique. " alt="" coords="550,86,719,112"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_j_s_o_n_value.html#ab23258ef629725c2dfca813ff3d67da1" title="Return value type. " alt="" coords="801,633,953,674"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_hash_map.html#a9dc4e5c0ad1feb3eec2d2f1f1714698d" title="Return iterator to the pair with key, or end iterator if not found. " alt="" coords="795,531,959,558"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_hash_map.html#a47eb201d8441d4e4be8626e615cb562d" title="Return iterator to the end. " alt="" coords="796,582,959,608"/>
+</map>

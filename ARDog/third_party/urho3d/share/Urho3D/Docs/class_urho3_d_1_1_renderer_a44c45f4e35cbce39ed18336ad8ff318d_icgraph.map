@@ -1,0 +1,8 @@
+<map id="Urho3D::Renderer::GetScreenBuffer" name="Urho3D::Renderer::GetScreenBuffer">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_renderer.html#aa8239321fb6b01bc3be5fb4df152983f" title="Allocate a depth&#45;stencil surface that does not need to be readable. Should only be called during actu..." alt="" coords="253,5,445,46"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_renderer.html#a4e44255580c9a9665ae72d4a4f77c705" title="Blur the shadow map. " alt="" coords="494,41,725,68"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_renderer.html#ad3cd417832137ad7fca7704fb0f40af1" title="Set shadow quality mode. See the SHADOWQUALITY enum in GraphicsDefs.h. " alt="" coords="773,34,976,75"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_renderer.html#ae0d765a240f7cf5f829ddc95cb2729c9" title="Initialize when screen mode initially set. " alt="" coords="1024,41,1208,68"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_renderer.html#a8e41f9dda2e33e9e208c5ccfd0d1c6ac" title="Construct. " alt="" coords="1483,41,1672,68"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_renderer.html#ade42fa3aa8f7f48620bffc61ab32c635" title="Handle screen mode event. " alt="" coords="1257,63,1434,105"/>
+</map>

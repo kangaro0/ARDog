@@ -1,0 +1,5 @@
+<map id="Urho3D::MemoryBuffer" name="Urho3D::MemoryBuffer">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_abstract_file.html" title="A common root class for objects that implement both Serializer and Deserializer. " alt="" coords="85,80,229,107"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_deserializer.html" title="Abstract stream for reading. " alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_serializer.html" title="Abstract stream for writing. " alt="" coords="174,5,303,32"/>
+</map>

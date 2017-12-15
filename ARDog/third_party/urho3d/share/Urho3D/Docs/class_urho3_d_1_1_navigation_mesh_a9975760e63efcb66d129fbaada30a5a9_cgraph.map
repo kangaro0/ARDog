@@ -1,0 +1,26 @@
+<map id="Urho3D::NavigationMesh::CollectGeometries" name="Urho3D::NavigationMesh::CollectGeometries">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_hash_set.html#a2f418238fbfa023388fb141c2759534a" title="Return whether contains a key. " alt="" coords="233,5,420,32"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_node.html#a4afbcf5a6fce4ab11ed2a6ba1c9b90cd" title="Return whether has a specific component. " alt="" coords="224,56,429,83"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_hash_set.html#a14064ab8bc6c6c6782961cb95295a2ee" title="Insert a key. Return an iterator to it. " alt="" coords="243,107,410,133"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_node.html#acbf5c9951a685acdbe75d1d39eeb7045" title="Return world space transform matrix. " alt="" coords="478,224,706,251"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_matrix3x4.html#adbf4f5c122e4dbee49ab99550cc70315" title="Return inverse. " alt="" coords="522,275,662,317"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_node.html#a9f096d8f7c61f7be195c5f0e22a60404" title="Return all components. " alt="" coords="487,343,697,369"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_p_o_d_vector.html#a4fe0251ca70afca844721a4a44717c83" title="Return number of elements. " alt="" coords="239,595,415,621"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_component.html#a73cc05aee9060f5618ea1ef72668ba01" title="Return whether is effectively enabled (node is also enabled.) " alt="" coords="517,397,667,438"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_collision_shape.html#ab53e080fc12b027c7c9356a0017eeeb3" title="Return shape type. " alt="" coords="245,646,408,687"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_collision_shape.html#a7278e523bab47786d5753ff6754e76c2" title="Return Bullet collision shape. " alt="" coords="245,711,408,753"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_collision_shape.html#ae9b0af751f841044ff3054b7eb16d0f7" title="Return offset position. " alt="" coords="245,777,408,818"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_collision_shape.html#a1a5001463cb1e6e88fbe077a527118b6" title="Return offset rotation. " alt="" coords="245,842,408,883"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_collision_shape.html#a64d28e7aee4ab24661925f1a57e52736" title="Return shape size. " alt="" coords="245,907,408,949"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_collision_shape.html#a6968b6da91828a07b6ed36453c0e6e89" title="Return world&#45;space bounding box. " alt="" coords="245,158,408,199"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_bounding_box.html#aa75dc3b9cce0c3c6ea4e34e4f8f125c2" title="Return transformed by a 3x3 matrix. " alt="" coords="516,467,668,509"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_vector.html#a083b39861b996df82f811a9a4ebff109" title="Add an element at the end. " alt="" coords="517,543,667,569"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_node.html#ab4e6e26c370d143d455df9b5e8d1f2fc" title="Return components derived from class. " alt="" coords="237,973,417,1014"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_object.html#a4c7af660afc8467a99d1f17c8d099b3b" title="Return type hash. " alt="" coords="241,1039,412,1065"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_drawable.html#a3930dc9342c0aefcfd4c94eb8079e365" title="Return world&#45;space bounding box. " alt="" coords="230,1090,423,1131"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_node.html#a4ef6ab6cc51590e85a20f8f851659916" title="Return immediate child scene nodes. " alt="" coords="235,1156,418,1183"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_vector.html#a06762e9e70b9851f54a845555f28cd4b" title="Return size of vector. " alt="" coords="253,1207,400,1233"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_navigation_mesh.html#a841b7dc758f63dcec5908322d5fa0895" title="Collect geometry from under Navigable components. " alt="" coords="242,377,411,418"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_node.html#a8becd372b2db8397831009114dee147f" title="Return whether is enabled. Disables nodes effectively disable all their components. " alt="" coords="755,404,927,431"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_rigid_body.html#aa622b94639213f71fd97a7e0c2f711e6" title="Return rigid body position in world space. " alt="" coords="521,158,663,199"/>
+</map>

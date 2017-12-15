@@ -1,0 +1,20 @@
+<map id="Urho3D::CollisionShape::UpdateDerivedShape" name="Urho3D::CollisionShape::UpdateDerivedShape">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_collision_shape.html#a5ecb900b219e57ddf9696a1fb194f33a" title="Update the collision shape after attribute changes. " alt="" coords="216,527,379,569"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_collision_shape.html#a35e919c80bd3ea90e008a16ad206e716" title="Apply attribute changes that can not be applied immediately. Called after scene load or a network upd..." alt="" coords="433,5,596,46"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_collision_shape.html#ad9e299a6c86b484341d773e58234d5c0" title="Set as a box. " alt="" coords="433,70,596,111"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_collision_shape.html#a4e39c1e7938e919db056af37d2a68b1b" title="Set as a sphere. " alt="" coords="433,135,596,177"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_collision_shape.html#a93229f5987d5463be093aaa4c1ec552f" title="Set as a static plane. " alt="" coords="433,201,596,242"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_collision_shape.html#ae1d34b5ff1cf54027cfee1840d8ca77d" title="Set as a cylinder. " alt="" coords="433,266,596,307"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_collision_shape.html#a03ddfc306e33f21ac8a9c68fe4d06829" title="Set as a capsule. " alt="" coords="433,331,596,373"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_collision_shape.html#a9c273d22686ec3e209bac95e49eb99b1" title="Set as a cone. " alt="" coords="433,397,596,438"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_collision_shape.html#a5d96bf4e72ca19cb6678fb329081253e" title="Set as a triangle mesh from Model. If you update a model&#39;s geometry and want to reapply the shape..." alt="" coords="433,462,596,503"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_collision_shape.html#ae003977d5c7497a5ddb882c121d7a08f" title="Set as a triangle mesh from CustomGeometry. " alt="" coords="427,527,602,569"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_collision_shape.html#ad182f272c6ba5748eb719160f494a085" title="Set as a convex hull from Model. " alt="" coords="433,593,596,634"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_collision_shape.html#ad48332cd76e2d45239d6bb1fd8ae24bf" title="Set as a convex hull from CustomGeometry. " alt="" coords="433,658,597,699"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_collision_shape.html#a7b3b2940440ee7e9288288aa4d07a8cb" title="Set as a terrain. Only works if the same scene node contains a Terrain component. ..." alt="" coords="433,723,596,765"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_collision_shape.html#a778bca197135e500e0aed8b6a510bb91" title="Set shape type. " alt="" coords="433,789,596,830"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_collision_shape.html#ad23602b90cf2194e3d096af9a5a7b045" title="Set shape size. " alt="" coords="433,854,596,895"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_collision_shape.html#a6609535c4f1f418d0f14550db0921699" title="Set triangle mesh / convex hull model. " alt="" coords="433,919,596,961"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_collision_shape.html#a0ab3423b993623d136057dc4efd0da2d" title="Set model LOD level. " alt="" coords="433,985,596,1026"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_collision_shape.html#ad9b87b2455952bb6ed11ca2a3ea356dd" title="Handle scene being assigned. " alt="" coords="433,1050,596,1091"/>
+</map>

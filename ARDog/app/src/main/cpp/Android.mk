@@ -22,14 +22,21 @@ PROJECT_ROOT:= $(call my-dir)/../../../..
 include $(CLEAR_VARS)
 LOCAL_MODULE    := gltf2-loader
 LOCAL_SRC_FILES := $(PROJECT_ROOT)/third_party/gltf2-loader/libgltf2-loader.a
-LOCAL_EXPORT_C_INCLUDES =: $(PROJECT_ROOT)/third_party/gltf2-loader/include/gltf2
+LOCAL_EXPORT_C_INCLUDES := $(PROJECT_ROOT)/third_party/gltf2-loader/include/gltf2
+include $(PREBUILT_STATIC_LIBRARY)
+
+# Urho3D
+include $(CLEAR_VARS)
+LOCAL_MODULE    := urho3d
+LOCAL_SRC_FILES := $(PROJECT_ROOT)/third_party/urho3d/libs/armeabi-v7a/Urho3D/libUrho3D.a
+LOCAL_EXPORT_C_INCLUDES := $(PROJECT_ROOT)/third_party/urho3d/include
 include $(PREBUILT_STATIC_LIBRARY)
 
 # PROJECT
 include $(CLEAR_VARS)
 LOCAL_MODULE    := libnative-lib
 LOCAL_SHARED_LIBRARIES := tango_client_api tango_support
-LOCAL_STATIC_LIBRARIES := png gltf2-loader
+LOCAL_STATIC_LIBRARIES := png gltf2-loader urho3d
 LOCAL_CFLAGS    := -std=c++14
 
 LOCAL_SRC_FILES :=  app.cpp \

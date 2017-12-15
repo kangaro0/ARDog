@@ -1,0 +1,25 @@
+<map id="Urho3D::PhysicsWorld" name="Urho3D::PhysicsWorld">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="1087,211,1230,237"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_debug_renderer.html" title="Debug geometry rendering component. Should be added only to the root scene node. " alt="" coords="1486,188,1653,215"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="229,208,369,235"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="715,173,821,200"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="1103,107,1215,133"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::Scene \&gt;" alt="" coords="1478,122,1661,163"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="193,93,405,134"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="5,328,141,355"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Pair\&lt; Urho3D::Model\l *, unsigned \&gt;, Urho3D\l::SharedPtr\&lt; Urho3D::CollisionGeometry\lData \&gt; \&gt;" alt="" coords="430,264,690,349"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Pair\&lt; Urho3D::WeakPtr\l\&lt; Urho3D::RigidBody \&gt;, Urho3D\l::WeakPtr\&lt; Urho3D::RigidBody\l \&gt; \&gt;, Urho3D::ManifoldPair \&gt;" alt="" coords="846,319,1058,404"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::RigidBody *, Urho3D\l::DelayedWorldTransform \&gt;" alt="" coords="1259,395,1447,451"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l btDiscreteDynamicsWorld \&gt;" alt="" coords="1474,509,1665,550"/>
+<area shape="rect" id="node11" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="1093,157,1224,184"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector_buffer.html" title="Dynamically sized buffer that can be read and written to as a stream. " alt="" coords="1495,575,1643,601"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_abstract_file.html" title="A common root class for objects that implement both Serializer and Deserializer. " alt="" coords="1086,545,1231,572"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l unsigned char \&gt;" alt="" coords="1083,597,1234,638"/>
+<area shape="rect" id="node17" href="$struct_urho3_d_1_1_physics_world_config.html" title="Custom overrides of physics internals. To use overrides, must be set before the physics component is ..." alt="" coords="1472,625,1667,652"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Constraint * \&gt;" alt="" coords="1489,677,1649,718"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l btDispatcher \&gt;" alt="" coords="1499,742,1640,783"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::RigidBody * \&gt;" alt="" coords="1489,807,1649,849"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l btBroadphaseInterface \&gt;" alt="" coords="1485,873,1654,914"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::CollisionShape * \&gt;" alt="" coords="1476,938,1663,979"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l btConstraintSolver \&gt;" alt="" coords="1496,1003,1643,1045"/>
+</map>

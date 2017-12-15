@@ -1,0 +1,12 @@
+<map id="Urho3D::CollisionShape2D" name="Urho3D::CollisionShape2D">
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_collision_box2_d.html" title="2D box collision component. " alt="" coords="1175,5,1340,32"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_collision_chain2_d.html" title="2D chain collision component. " alt="" coords="1169,56,1345,83"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_collision_circle2_d.html" title="2D circle collision component. " alt="" coords="1169,107,1345,133"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_collision_edge2_d.html" title="2D edge collision component. " alt="" coords="1171,157,1343,184"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_collision_polygon2_d.html" title="2D polygon collision component. " alt="" coords="1163,208,1352,235"/>
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="745,107,887,133"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="555,107,695,133"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="363,107,506,133"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="201,107,314,133"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="6,107,151,133"/>
+</map>

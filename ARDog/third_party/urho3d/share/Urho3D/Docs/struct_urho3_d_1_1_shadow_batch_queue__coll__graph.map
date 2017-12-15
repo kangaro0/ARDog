@@ -1,0 +1,26 @@
+<map id="Urho3D::ShadowBatchQueue" name="Urho3D::ShadowBatchQueue">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_int_rect.html" title="Two&#45;dimensional bounding rectangle with integer values. " alt="" coords="1006,261,1125,288"/>
+<area shape="rect" id="node3" href="$struct_urho3_d_1_1_batch_queue.html" title="Queue that contains both instanced and non&#45;instanced draw calls. " alt="" coords="992,312,1139,339"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned\l short, unsigned short \&gt;" alt="" coords="616,95,811,137"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="327,168,463,195"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; unsigned,\l unsigned \&gt;" alt="" coords="614,161,813,202"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::BatchGroupKey, Urho3D\l::BatchGroup \&gt;" alt="" coords="619,225,807,281"/>
+<area shape="rect" id="node6" href="$struct_urho3_d_1_1_hash_node_base.html" title="Hash set/map node base class. " alt="" coords="6,217,173,244"/>
+<area shape="rect" id="node7" href="$struct_urho3_d_1_1_allocator_block.html" title="Allocator memory block. " alt="" coords="10,99,169,125"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::BatchGroup * \&gt;" alt="" coords="629,370,798,411"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="323,377,466,404"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Batch \&gt;" alt="" coords="638,435,789,477"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Batch * \&gt;" alt="" coords="638,305,789,346"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="659,540,768,567"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="643,44,783,71"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_camera.html" title="Camera component. " alt="" coords="1005,733,1126,760"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="642,591,785,617"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="19,505,159,532"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="341,595,448,621"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="29,801,149,828"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_plane.html" title="Surface in three&#45;dimensional space. " alt="" coords="341,828,449,855"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_frustum.html" title="Convex constructed of 6 planes. " alt="" coords="652,733,775,760"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_matrix3x4.html" title="3x4 matrix for scene node transform calculations. " alt="" coords="23,609,155,636"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="653,980,773,1007"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_matrix4.html" title="4x4 matrix for arbitrary linear transforms including projection. " alt="" coords="654,1084,773,1111"/>
+</map>

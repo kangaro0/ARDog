@@ -1,0 +1,26 @@
+<map id="Urho3D::Sprite2D" name="Urho3D::Sprite2D">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="1389,117,1520,144"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_sprite_sheet2_d.html" title="Sprite sheet. " alt="" coords="1691,348,1851,375"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="1099,7,1213,33"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="329,5,474,32"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="783,32,905,59"/>
+<area shape="rect" id="node5" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,501,136,528"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::SpriteSheet2D \&gt;" alt="" coords="1979,455,2162,497"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Object *, Urho3D::HashMap\l\&lt; Urho3D::StringHash, Urho3D\l::SharedPtr\&lt; Urho3D::EventReceiverGroup \&gt; \&gt; \&gt;" alt="" coords="246,57,557,127"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="755,83,933,125"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="1102,147,1210,173"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="1101,236,1211,263"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="1086,96,1226,123"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_int_rect.html" title="Two&#45;dimensional bounding rectangle with integer values. " alt="" coords="2011,241,2130,268"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="2011,404,2131,431"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::Sprite2D \&gt; \&gt;" alt="" coords="1361,297,1549,353"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::JSONFile \&gt;" alt="" coords="1381,377,1529,418"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::XMLFile \&gt;" alt="" coords="773,433,915,474"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_texture2_d.html" title="2D texture resource. " alt="" coords="1088,521,1224,548"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Texture2D \&gt;" alt="" coords="1379,514,1531,555"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_texture.html" title="Base class for texture resources. " alt="" coords="785,499,903,525"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Image \&gt;" alt="" coords="773,550,915,591"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::RenderSurface \&gt;" alt="" coords="755,615,933,657"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::PListFile \&gt;" alt="" coords="1383,169,1526,210"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_int_vector2.html" title="Two&#45;dimensional vector with integer values. " alt="" coords="2003,684,2138,711"/>
+</map>

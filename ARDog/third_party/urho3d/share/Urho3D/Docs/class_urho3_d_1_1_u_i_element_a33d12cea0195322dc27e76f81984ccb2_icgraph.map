@@ -1,0 +1,9 @@
+<map id="Urho3D::UIElement::SortChildren" name="Urho3D::UIElement::SortChildren">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_u_i.html#af624d70754d1a1e9c1e45ee28792689c" title="Generate batches from an UI element recursively. Skip the cursor element. " alt="" coords="206,12,373,39"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_u_i.html#a64c370ff3f5dcbee044573fae5db7a43" title="Return UI element at screen position recursively. " alt="" coords="200,63,379,89"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_u_i.html#aa007010436204316b3fe4859db32458e" title="Update the UI for rendering. Called by HandleRenderUpdate(). " alt="" coords="427,12,608,39"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_u_i.html#a05bd51bad1a135929174fcd7fe5fcf96" title="Handle render update event. " alt="" coords="657,5,837,46"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_u_i.html#a5bb71ed105d2bb465a10f66c9bfcb275" title="Initialize when screen mode initially set. " alt="" coords="886,12,1031,39"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_u_i.html#a2c011c43ca66ff4270e98601e4f9c4cf" title="Construct. " alt="" coords="1339,12,1450,39"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_u_i.html#aefd3544d155762334a00429ef8196bae" title="Handle screen mode event. " alt="" coords="1080,37,1291,64"/>
+</map>

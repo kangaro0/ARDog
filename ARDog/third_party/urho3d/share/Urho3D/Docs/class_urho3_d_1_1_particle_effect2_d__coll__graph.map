@@ -1,0 +1,26 @@
+<map id="Urho3D::ParticleEffect2D" name="Urho3D::ParticleEffect2D">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="981,589,1112,616"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_sprite2_d.html" title="Sprite. " alt="" coords="1426,301,1553,328"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="638,727,751,753"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_event_handler.html" title="Internal helper class for invoking event handler functions. " alt="" coords="969,697,1124,724"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="246,727,391,753"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="1429,1048,1550,1075"/>
+<area shape="rect" id="node5" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,615,136,641"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_weak_ptr.html" title="Urho3D::WeakPtr\&lt; Urho3D\l::SpriteSheet2D \&gt;" alt="" coords="417,327,599,369"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Object *, Urho3D::HashMap\l\&lt; Urho3D::StringHash, Urho3D\l::SharedPtr\&lt; Urho3D::EventReceiverGroup \&gt; \&gt; \&gt;" alt="" coords="891,931,1202,1002"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::EventReceiver\lGroup \&gt; \&gt;" alt="" coords="931,1026,1162,1097"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Object * \&gt;" alt="" coords="971,1121,1122,1162"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="1400,718,1579,759"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="625,628,765,655"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="941,1251,1153,1293"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::Object \&gt; \&gt;" alt="" coords="943,1316,1150,1372"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::HashMap * \&gt;" alt="" coords="969,1186,1125,1227"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="641,521,749,548"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="640,88,749,115"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_vector2.html" title="Two&#45;dimensional vector. " alt="" coords="987,169,1107,196"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Sprite2D \&gt;" alt="" coords="1782,294,1925,335"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_int_rect.html" title="Two&#45;dimensional bounding rectangle with integer values. " alt="" coords="987,376,1106,403"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_int_vector2.html" title="Two&#45;dimensional vector with integer values. " alt="" coords="979,539,1114,565"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::Texture2D \&gt;" alt="" coords="971,271,1123,313"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_color.html" title="RGBA color. " alt="" coords="1800,683,1907,709"/>
+</map>

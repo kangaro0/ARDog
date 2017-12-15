@@ -1,0 +1,7 @@
+<map id="Urho3D::AttributeAccessor" name="Urho3D::AttributeAccessor">
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_attribute_accessor_free_impl.html" title="Template implementation of the attribute accessor that uses free functions invoke helper class..." alt="" coords="444,5,623,46"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_attribute_accessor_impl.html" title="Template implementation of the attribute accessor invoke helper class. " alt="" coords="444,70,623,111"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_enum_attribute_accessor_free_impl.html" title="Template implementation of the enum attribute accessor that uses free functions invoke helper class..." alt="" coords="427,135,640,177"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_enum_attribute_accessor_impl.html" title="Template implementation of the enum attribute accessor invoke helper class. " alt="" coords="427,201,640,242"/>
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="6,111,151,137"/>
+</map>

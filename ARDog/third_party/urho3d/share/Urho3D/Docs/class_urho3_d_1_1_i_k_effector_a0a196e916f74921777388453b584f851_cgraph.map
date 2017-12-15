@@ -1,0 +1,7 @@
+<map id="Urho3D::IKEffector::SetTargetNode" name="Urho3D::IKEffector::SetTargetNode">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_object.html#ab8dbe9844094c04463def7df1fa650d5" title="Return a preallocated map for event data. Used for optimization to avoid constant re&#45;allocation of ev..." alt="" coords="195,5,371,46"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_object.html#a32020dbf77c196b9777eca479e8abb36" title="Send event to all subscribers. " alt="" coords="190,71,375,97"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_node.html#a3c19eb87f2855894c1757659ede5a509" title="Return name. " alt="" coords="197,121,368,148"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_context.html#acb628095602a49ade116c4761ab44004" title="Return a preallocated map for event data. Used for optimization to avoid constant re&#45;allocation of ev..." alt="" coords="424,5,608,46"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_hash_map.html#ac02bdba9ea0d1055a3a75f6bae2ffc69" title="Clear the map. " alt="" coords="656,12,827,39"/>
+</map>

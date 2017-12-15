@@ -1,0 +1,8 @@
+<map id="Urho3D::Camera::SetProjection" name="Urho3D::Camera::SetProjection">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_matrix4.html#ae813f27cd60cef7171ecbe90d7897bee" title="Return inverse. " alt="" coords="262,5,431,32"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_component.html#a8bb866fda8e97e7d7dd92e491b5d5d91" title="Mark for attribute check on the next network update. " alt="" coords="271,57,422,98"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_matrix4.html#aec317947c911d29e85bfdcb5a8a1f7ec" title="Construct an identity matrix. " alt="" coords="495,5,665,32"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_component.html#a892d74a5c954e71c9f0a5f011d451b8b" title="Return the scene the node belongs to. " alt="" coords="505,57,655,98"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_scene.html#ab0c1bffe8101d3bd850519d3b94f03a7" title="Mark for attribute check on the next network update. " alt="" coords="481,122,679,163"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_node.html#aa17d37c07c0025368858274ebb29ffab" title="Return scene. " alt="" coords="729,64,901,91"/>
+</map>

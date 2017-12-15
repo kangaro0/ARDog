@@ -1,0 +1,4 @@
+<map id="Urho3D::AttributeAnimationInfo" name="Urho3D::AttributeAnimationInfo">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_value_animation_info.html" title="Base class for a value animation instance, which includes animation runtime information and updates t..." alt="" coords="13,80,200,107"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="34,5,179,32"/>
+</map>

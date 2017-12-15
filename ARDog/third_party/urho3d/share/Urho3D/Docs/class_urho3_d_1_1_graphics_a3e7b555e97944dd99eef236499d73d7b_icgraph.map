@@ -1,0 +1,9 @@
+<map id="Urho3D::Graphics::Clear" name="Urho3D::Graphics::Clear">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_graphics.html#aac131622deee0f32dffe86943d704f95" title="Set screen mode. Return true if successful. " alt="" coords="221,93,408,120"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_engine.html#ae686bb22644561e57a4aaef3f8665c0e" title="Initialize engine using parameters given and show the application window. Return true if successful..." alt="" coords="473,5,644,32"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_graphics.html#a116de4d90d4b556f408b58878bfd5654" title="Toggle between full screen and windowed mode. Return true if successful. " alt="" coords="471,57,646,98"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_graphics.html#a6bb1ce37325a5ef2f7ba0e3f847b425f" title="Set screen resolution only. Return true if successful. " alt="" coords="465,123,652,149"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_graphics.html#a87d6974090e42a8c0d8ec676ca4da504" title="Begin frame rendering. Return true if device available and can render. " alt="" coords="456,173,661,200"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_engine.html#a9c582d4f4e9a7ea2b1a046dac4dea8e3" title="Render after frame update. " alt="" coords="709,173,875,200"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_engine.html#a7670e665e72f4efd8426ba7a9559d3b0" title="Run one frame. " alt="" coords="923,173,1107,200"/>
+</map>

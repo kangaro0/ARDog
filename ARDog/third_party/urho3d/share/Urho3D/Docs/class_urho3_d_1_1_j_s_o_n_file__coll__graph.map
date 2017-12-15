@@ -1,0 +1,26 @@
+<map id="Urho3D::JSONFile" name="Urho3D::JSONFile">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_resource.html" title="Base class for resources. " alt="" coords="800,87,931,113"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="458,301,571,328"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_event_handler.html" title="Internal helper class for invoking event handler functions. " alt="" coords="788,263,943,289"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_ref_counted.html" title="Base class for intrusively reference&#45;counted objects. These are noncopyable and non&#45;assignable. " alt="" coords="246,411,391,437"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_context.html" title="Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers. " alt="" coords="1247,725,1369,752"/>
+<area shape="rect" id="node5" href="$struct_urho3_d_1_1_ref_count.html" title="Reference count structure. " alt="" coords="5,411,136,437"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::Object *, Urho3D::HashMap\l\&lt; Urho3D::StringHash, Urho3D\l::SharedPtr\&lt; Urho3D::EventReceiverGroup \&gt; \&gt; \&gt;" alt="" coords="710,917,1021,987"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_base.html" title="Hash set/map base class. " alt="" coords="447,888,583,915"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::EventReceiver\lGroup \&gt; \&gt;" alt="" coords="750,1011,981,1082"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="759,691,971,733"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::Object \&gt; \&gt;" alt="" coords="762,756,969,812"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lSharedPtr\&lt; Urho3D::ObjectFactory \&gt; \&gt;" alt="" coords="740,1107,991,1163"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::Vector\l\&lt; Urho3D::StringHash \&gt; \&gt;" alt="" coords="771,1187,959,1243"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::StringHash, Urho3D::\lVector\&lt; Urho3D::AttributeInfo \&gt; \&gt;" alt="" coords="755,836,975,892"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_hash_map.html" title="Hash map template class. " alt="" coords="775,575,956,601"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::Object * \&gt;" alt="" coords="790,509,941,550"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="443,516,586,543"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_p_o_d_vector.html" title="Urho3D::PODVector\&lt;\l Urho3D::HashMap * \&gt;" alt="" coords="787,626,943,667"/>
+<area shape="rect" id="node24" href="$class_urho3_d_1_1_vector.html" title="Vector template class. " alt="" coords="793,407,938,433"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_linked_list.html" title="Urho3D::LinkedList\l\&lt; Urho3D::EventHandler \&gt;" alt="" coords="1219,157,1397,198"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_string_hash.html" title="32&#45;bit hash value for a string. " alt="" coords="445,227,585,253"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_timer.html" title="Low&#45;resolution operating system timer. " alt="" coords="461,5,569,32"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="460,109,569,136"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_j_s_o_n_value.html" title="JSON value class. " alt="" coords="1236,291,1380,317"/>
+</map>

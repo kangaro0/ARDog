@@ -1,0 +1,26 @@
+<map id="Urho3D::NavigationMesh" name="Urho3D::NavigationMesh">
+<area shape="rect" id="node2" href="$class_urho3_d_1_1_component.html" title="Base class for components. Components can be created to scene nodes. " alt="" coords="1499,336,1642,363"/>
+<area shape="rect" id="node3" href="$class_urho3_d_1_1_animatable.html" title="Base class for animatable object, an animatable object can be set animation on it&#39;s attributes..." alt="" coords="682,107,822,133"/>
+<area shape="rect" id="node9" href="$class_urho3_d_1_1_node.html" title="Scene node that may contain components and child nodes. " alt="" coords="1168,387,1275,413"/>
+<area shape="rect" id="node4" href="$class_urho3_d_1_1_serializable.html" title="Base class for objects with automatic serialization through attributes. " alt="" coords="219,5,362,32"/>
+<area shape="rect" id="node5" href="$class_urho3_d_1_1_object.html" title="Base class for objects with type identification, subsystem access and event sending/receiving capabil..." alt="" coords="6,5,119,32"/>
+<area shape="rect" id="node6" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; Urho3D\l::String, Urho3D::SharedPtr\l\&lt; Urho3D::AttributeAnimationInfo \&gt; \&gt;" alt="" coords="171,56,411,112"/>
+<area shape="rect" id="node7" href="$class_urho3_d_1_1_shared_ptr.html" title="Urho3D::SharedPtr\&lt;\l Urho3D::ObjectAnimation \&gt;" alt="" coords="197,135,384,177"/>
+<area shape="rect" id="node8" href="$class_urho3_d_1_1_hash_set.html" title="Urho3D::HashSet\&lt; const\l Urho3D::AttributeInfo * \&gt;" alt="" coords="205,201,376,242"/>
+<area shape="rect" id="node10" href="$class_urho3_d_1_1_scene.html" title="Root scene node, represents the whole scene. " alt="" coords="1515,387,1627,413"/>
+<area shape="rect" id="node11" href="$class_urho3_d_1_1_hash_map.html" title="Urho3D::HashMap\&lt; StringHash,\l Variant \&gt;" alt="" coords="646,158,858,199"/>
+<area shape="rect" id="node12" href="$class_urho3_d_1_1_string.html" title="String class. " alt="" coords="1167,289,1276,316"/>
+<area shape="rect" id="node13" href="$class_urho3_d_1_1_quaternion.html" title="Rotation represented as a four&#45;dimensional normalized vector. " alt="" coords="683,263,821,289"/>
+<area shape="rect" id="node14" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="633,314,871,355"/>
+<area shape="rect" id="node15" href="$class_urho3_d_1_1_vector_base.html" title="Vector base class. " alt="" coords="219,464,362,491"/>
+<area shape="rect" id="node16" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Component \&gt; \&gt;" alt="" coords="630,379,874,421"/>
+<area shape="rect" id="node19" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::SharedPtr\&lt; Urho3D::Node \&gt; \&gt;" alt="" coords="648,510,856,551"/>
+<area shape="rect" id="node21" href="$class_urho3_d_1_1_vector.html" title="Urho3D::Vector\&lt; Urho3D\l::WeakPtr\&lt; Urho3D::NavArea \&gt; \&gt;" alt="" coords="899,865,1120,906"/>
+<area shape="rect" id="node17" href="$class_urho3_d_1_1_vector3.html" title="Three&#45;dimensional vector. " alt="" coords="692,821,812,848"/>
+<area shape="rect" id="node24" title="Temporary data for finding a path. " alt="" coords="1144,675,1299,701"/>
+<area shape="rect" id="node25" href="$class_urho3_d_1_1_bounding_box.html" title="Three&#45;dimensional axis&#45;aligned bounding box. " alt="" coords="1323,765,1475,792"/>
+<area shape="rect" id="node18" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l Urho3D::NodeImpl \&gt;" alt="" coords="679,445,825,486"/>
+<area shape="rect" id="node20" href="$class_urho3_d_1_1_matrix3x4.html" title="3x4 matrix for scene node transform calculations. " alt="" coords="686,629,818,656"/>
+<area shape="rect" id="node22" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l dtQueryFilter \&gt;" alt="" coords="1500,693,1641,734"/>
+<area shape="rect" id="node23" href="$class_urho3_d_1_1_unique_ptr.html" title="Urho3D::UniquePtr\&lt;\l FindPathData \&gt;" alt="" coords="1500,627,1641,669"/>
+</map>
