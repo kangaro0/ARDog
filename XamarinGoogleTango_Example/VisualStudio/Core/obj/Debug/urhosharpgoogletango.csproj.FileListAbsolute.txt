@@ -1,0 +1,6 @@
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\bin\Debug\urhosharpgoogletango.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\bin\Debug\urhosharpgoogletango.pdb
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\bin\Debug\Urho.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\bin\Debug\Urho.xml
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\obj\Debug\urhosharpgoogletango.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\obj\Debug\urhosharpgoogletango.pdb

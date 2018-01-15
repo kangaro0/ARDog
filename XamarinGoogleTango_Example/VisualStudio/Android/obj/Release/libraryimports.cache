@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <ManifestDocuments>
+    <ManifestDocument>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\aapt\AndroidManifest.xml</ManifestDocument>
+  </ManifestDocuments>
+  <NativeLibraries>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libcxsparse.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_3d_reconstruction.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_dataset.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_java_3d_reconstruction_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_java_dataset_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_java_mesh_lib.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_support_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\arm64-v8a\libtango_support_java_lib.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libcxsparse.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_3d_reconstruction.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_dataset.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_java_3d_reconstruction_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_java_dataset_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_java_mesh_lib.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_support_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\armeabi-v7a\libtango_support_java_lib.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libcxsparse.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_3d_reconstruction.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_dataset.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_java_3d_reconstruction_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_java_dataset_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_java_mesh_lib.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_support_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\jni\x86\libtango_support_java_lib.so</NativeLibrary>
+  </NativeLibraries>
+  <Jars>
+    <Jar>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\classes.jar</Jar>
+    <Jar>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\TangoSDK_Biyelgee_Java.jar</Jar>
+    <Jar>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\__reference__tango-cloud-lib.jar</Jar>
+    <Jar>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\bin\classes.jar</Jar>
+    <Jar>obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\bin\classes.jar</Jar>
+  </Jars>
+</Paths>

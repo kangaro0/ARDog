@@ -1,0 +1,13 @@
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\urhosharpgoogletango.Droid.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\GoogleProjectTangoBinding.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\Urho.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\Urho.Droid.SdlBinding.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\Java.Interop.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\Mono.Android.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\mscorlib.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\System.Core.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\System.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\System.Xml.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\urhosharpgoogletango.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\System.Runtime.Serialization.dll
+C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\System.ServiceModel.Internals.dll

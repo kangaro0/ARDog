@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars></Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Urho\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\GoogleProjectTangoBinding.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho.Droid.SdlBinding.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>
