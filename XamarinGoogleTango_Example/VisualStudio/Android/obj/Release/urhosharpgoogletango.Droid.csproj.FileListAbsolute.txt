@@ -39,4 +39,4 @@ C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\A
 C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\urhosharpgoogletango.dll.mdb
 C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\android\assets\urhosharpgoogletango.Droid.dll.mdb
 C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\urhosharpgoogletango.Droid.dll.mdb
-C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\bin\Release\urhosharpgoogletango.Droid.dll.mdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\urhosharpgoogletango.Droid.csprojResolveAssemblyReference.cache

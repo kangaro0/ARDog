@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <ManifestDocuments>
+    <ManifestDocument>obj\Release\__library_projects__\tango-sdk-base\library_project_imports\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\AndroidManifest.xml</ManifestDocument>
+  </ManifestDocuments>
+  <NativeLibraries>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\jni\arm64-v8a\libtango_dataset.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\jni\arm64-v8a\libtango_java_dataset_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\jni\armeabi-v7a\libtango_dataset.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\jni\armeabi-v7a\libtango_java_dataset_api.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\jni\arm64-v8a\libtango_3d_reconstruction.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\jni\arm64-v8a\libtango_java_mesh_lib.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\jni\armeabi-v7a\libtango_3d_reconstruction.so</NativeLibrary>
+    <NativeLibrary>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\jni\armeabi-v7a\libtango_java_mesh_lib.so</NativeLibrary>
+  </NativeLibraries>
+  <Jars>
+    <Jar>obj\Release\__library_projects__\tango-sdk-base\library_project_imports\bin\classes.jar</Jar>
+    <Jar>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\bin\classes.jar</Jar>
+    <Jar>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\bin\classes.jar</Jar>
+  </Jars>
+</Paths>

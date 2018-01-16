@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.google.atap.tango.dataset">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="BuildConfig" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BuildConfig" static="false" type="com.google.atap.tango.dataset.BuildConfig" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="APPLICATION_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.google.atap.tango.dataset&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="BUILD_TYPE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEBUG" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FLAVOR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_CODE" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;0&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDataset.1" static="true" visibility="">
+<implements name="android.os.Parcelable.Creator" name-generic-aware="android.os.Parcelable.Creator&lt;com.google.atap.tango.dataset.TangoDataset&gt;">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="createFromParcel" native="false" return="com.google.atap.tango.dataset.TangoDataset" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.os.Parcel">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="newArray" native="false" return="com.google.atap.tango.dataset.TangoDataset[]" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDataset.2" static="true" visibility=""/>
+<interface abstract="true" deprecated="not deprecated" final="false" name="TangoDataset.Callback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onExportProgress" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.google.atap.tango.dataset.TangoDataset.ExportFormat&gt;" final="true" name="TangoDataset.ExportFormat" static="true" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.google.atap.tango.dataset.TangoDataset.ExportFormat" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="values" native="false" return="com.google.atap.tango.dataset.TangoDataset.ExportFormat[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="COMPRESSED" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.ExportFormat" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.ExportFormat" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="UNCOMPRESSED" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.ExportFormat" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.ExportFormat" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Enum" extends-generic-aware="java.lang.Enum&lt;com.google.atap.tango.dataset.TangoDataset.RecordingMode&gt;" final="true" name="TangoDataset.RecordingMode" static="true" visibility="public">
+<method abstract="false" deprecated="not deprecated" final="false" name="getByOrdinal" native="false" return="com.google.atap.tango.dataset.TangoDataset.RecordingMode" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getName" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getOrdinal" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="valueOf" native="false" return="com.google.atap.tango.dataset.TangoDataset.RecordingMode" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="values" native="false" return="com.google.atap.tango.dataset.TangoDataset.RecordingMode[]" static="true" synchronized="false" visibility="public">
+</method>
+<field deprecated="not deprecated" final="true" name="ALL" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.RecordingMode" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.RecordingMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MOTION_TRACKING" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.RecordingMode" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.RecordingMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MOTION_TRACKING_AND_FISHEYE" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.RecordingMode" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.RecordingMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="SCENE_RECONSTRUCTION" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.RecordingMode" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.RecordingMode" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="UNKNOWN" static="true" transient="false" type="com.google.atap.tango.dataset.TangoDataset.RecordingMode" type-generic-aware="com.google.atap.tango.dataset.TangoDataset.RecordingMode" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetRemote" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoDatasetRemote" static="false" type="com.google.atap.tango.dataset.TangoDatasetRemote" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="copyRemoteToLocal" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.io.File">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="copyRemoteToLocal" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.io.File">
+</parameter>
+<parameter name="p2" type="com.google.atap.tango.dataset.TangoDatasetRemote.ProgressCallback">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="deleteRemote" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCurrentRemoteDataset" native="false" return="com.google.atap.tango.dataset.TangoDatasetRemote" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getRemoteDatasetsList" native="false" return="java.util.List&lt;com.google.atap.tango.dataset.TangoDatasetRemote&gt;" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getUUID" native="false" return="java.lang.String" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="listRemoteFiles" native="false" return="java.lang.Iterable&lt;java.lang.String&gt;" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="listRemoteFiles" native="false" return="java.util.Collection&lt;java.lang.String&gt;" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+<parameter name="p2" type="boolean">
+</parameter>
+<parameter name="p3" type="boolean">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="moveRemoteToLocal" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.io.File">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="moveRemoteToLocal" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="java.io.File">
+</parameter>
+<parameter name="p2" type="com.google.atap.tango.dataset.TangoDatasetRemote.ProgressCallback">
+</parameter>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="TangoDatasetRemote.ProgressCallback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onProgress" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</interface>
+</package>
+<package name="com.google.atap.tango.dataset.player">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ExternalOesSurface" static="false" visibility="">
+<implements name="android.graphics.SurfaceTexture.OnFrameAvailableListener" name-generic-aware="android.graphics.SurfaceTexture.OnFrameAvailableListener">
+</implements>
+<constructor deprecated="not deprecated" final="false" name="ExternalOesSurface" static="false" type="com.google.atap.tango.dataset.player.ExternalOesSurface" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getSurface" native="false" return="android.view.Surface" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="makeCurrent" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onFrameAvailable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="android.graphics.SurfaceTexture">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="release" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setCallback" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tango.dataset.player.ExternalOesSurface.Callback">
+</parameter>
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="ExternalOesSurface.Callback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onFrameAvailable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetOesPlayer.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetOesPlayer.2" static="false" visibility="">
+<implements name="com.google.atap.tango.dataset.player.VideoDecoder.Callback" name-generic-aware="com.google.atap.tango.dataset.player.VideoDecoder.Callback">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onDurationAvailable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onVideoCompleted" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetOesPlayer.2.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetOesPlayer.2.2" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetOesPlayer.3" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="TangoDatasetOesPlayer.Callback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onDurationAvailable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+<parameter name="p1" type="double">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onFrameReady" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onVideoCompleted" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetPlayer.1" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetPlayer.2" static="false" visibility="">
+<implements name="com.google.atap.tango.dataset.player.VideoDecoder.Callback" name-generic-aware="com.google.atap.tango.dataset.player.VideoDecoder.Callback">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="onDurationAvailable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="onVideoCompleted" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetPlayer.3" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="VideoDecoder" static="false" visibility="">
+<constructor deprecated="not deprecated" final="false" name="VideoDecoder" static="false" type="com.google.atap.tango.dataset.player.VideoDecoder" visibility="public">
+<parameter name="p0" type="java.io.File">
+</parameter>
+<parameter name="p1" type="com.google.atap.tango.dataset.player.VideoDecoder.Callback">
+</parameter>
+<parameter name="p2" type="android.view.Surface">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="advanceFrame" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="extractVideoFormat" native="false" return="android.media.MediaFormat" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.io.File">
+</parameter>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getHeight" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getWidth" native="false" return="int" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="release" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="VideoDecoder.Callback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onDurationAvailable" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onVideoCompleted" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</interface>
+</package>
+<package name="com.google.atap.tango.dataset.recorder">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="DatasetMuxer.3" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ExternalTextureRenderer" static="false" visibility=""/>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="ShaderHelper" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="createAndLinkProgram" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="android.content.Context">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="createAndLinkProgram" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="java.lang.String">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="loadShader" native="false" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="java.lang.String">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetRecorder.3" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetRecorder.4" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoDatasetRecorder.5" static="false" visibility="">
+<implements name="java.lang.Runnable" name-generic-aware="java.lang.Runnable">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="run" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="TangoDatasetRecorder.Callback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onTextureReady" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+</interface>
+<interface abstract="true" deprecated="not deprecated" final="false" name="TangoDatasetRecorder.FrameCallback" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="onTextureDrawn" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="onUpdateTexture" native="false" return="long" static="false" synchronized="false" visibility="public">
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="VideoInputSurface" static="false" visibility="">
+<constructor deprecated="not deprecated" final="false" name="VideoInputSurface" static="false" type="com.google.atap.tango.dataset.recorder.VideoInputSurface" visibility="public">
+<parameter name="p0" type="android.view.Surface">
+</parameter>
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="VideoInputSurface" static="false" type="com.google.atap.tango.dataset.recorder.VideoInputSurface" visibility="public">
+<parameter name="p0" type="android.view.Surface">
+</parameter>
+<parameter name="p1" type="android.opengl.EGLContext">
+</parameter>
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getContext" native="false" return="android.opengl.EGLContext" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="makeCurrent" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="release" native="false" return="void" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="setPresentationTime" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="long">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="swapBuffers" native="false" return="boolean" static="false" synchronized="false" visibility="public">
+</method>
+</class>
+</package>
+</api>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.google.tango.markers">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="BuildConfig" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BuildConfig" static="false" type="com.google.tango.markers.BuildConfig" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="APPLICATION_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.google.tango.markers&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="BUILD_TYPE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEBUG" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FLAVOR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_CODE" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;0&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoMarkers" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoMarkers" static="false" type="com.google.tango.markers.TangoMarkers" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="detectMarkers" native="false" return="java.util.List&lt;com.google.tango.markers.TangoMarkers.Marker&gt;" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tangoservice.experimental.TangoImageBuffer">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="double[]">
+</parameter>
+<parameter name="p3" type="double[]">
+</parameter>
+<parameter name="p4" type="com.google.tango.markers.TangoMarkers.DetectParam">
+</parameter>
+<exception name="TangoErrorException" type="com.google.atap.tangoservice.TangoErrorException">
+</exception>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+<field deprecated="not deprecated" final="true" name="MARKER_ARTAG" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="MARKER_QRCODE" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoMarkers.DetectParam" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoMarkers.DetectParam" static="false" type="com.google.tango.markers.TangoMarkers.DetectParam" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="false" name="markerSize" static="false" transient="false" type="double" type-generic-aware="double" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="type" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoMarkers.Marker" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoMarkers.Marker" static="false" type="com.google.tango.markers.TangoMarkers.Marker" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="false" name="content" static="false" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="corners2d" static="false" transient="false" type="float[][]" type-generic-aware="float[][]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="corners3d" static="false" transient="false" type="float[][]" type-generic-aware="float[][]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="orientation" static="false" transient="false" type="double[]" type-generic-aware="double[]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="timestamp" static="false" transient="false" type="double" type-generic-aware="double" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="translation" static="false" transient="false" type="double[]" type-generic-aware="double[]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="type" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoMarkersJNIInterface" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="clearCameraIntrinsicsCache" native="true" return="void" static="true" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="detectMarkers" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tangoservice.experimental.TangoImageBuffer">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="double[]">
+</parameter>
+<parameter name="p3" type="double[]">
+</parameter>
+<parameter name="p4" type="com.google.tango.markers.TangoMarkers.DetectParam">
+</parameter>
+<parameter name="p5" type="java.util.List&lt;com.google.tango.markers.TangoMarkers.Marker&gt;">
+</parameter>
+</method>
+</class>
+</package>
+</api>

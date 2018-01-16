@@ -51,7 +51,6 @@ namespace urhosharpgoogletango.Droid
             surface = UrhoSurface.CreateSurface(this, ()=> _scene = new DemoScene(new ApplicationOptions("Data")), true);
             mLayout.AddView(surface);
 			SetContentView(mLayout);
-            _pointCloudManager = new TangoPointCloudManager();
             _windowManager = this.ApplicationContext.GetSystemService(Android.Content.Context.WindowService).JavaCast<IWindowManager>();
 
 		}
@@ -70,10 +69,11 @@ namespace urhosharpgoogletango.Droid
                     _tango.Connect(_tangoConfig);
                     StartupTango();
                     _isConnected = true;
+                    Log.Debug(Tag, "Attempting to connect to tango");
                 }
                 catch (TangoOutOfDateException e)
                 {
-                    Log.Error(Tag, "TangoOutOfDateException",    e);
+                    Log.Error(Tag, "TangoOutOfDateException", e);
                 }
                 catch (TangoErrorException e)
                 {
@@ -82,6 +82,10 @@ namespace urhosharpgoogletango.Droid
                 catch (TangoInvalidException e)
                 {
                     Log.Error(Tag, "TangoInvalidException", e);
+                }
+                catch (TangoException e)
+                {
+                    Log.Error(Tag, "TangoException", e);
                 }
             }));
         }
@@ -151,6 +155,7 @@ namespace urhosharpgoogletango.Droid
 
 		protected override void OnDestroy()
 		{
+            Log.Debug(Tag, "App shutting down.");
 			UrhoSurface.OnDestroy();
 			base.OnDestroy();
 		}

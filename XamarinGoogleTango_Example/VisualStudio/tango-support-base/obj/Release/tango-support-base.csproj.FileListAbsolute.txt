@@ -1,0 +1,5 @@
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-base\bin\Release\tango-support-base.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-base\bin\Release\tango-support-base.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-base\obj\Release\tango-support-base.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-base\obj\Release\tango-support-base.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-base\obj\Release\tango-support-base.csprojResolveAssemblyReference.cache

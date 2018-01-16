@@ -3,7 +3,7 @@ using Urho;
 
 namespace urhosharpgoogletango.Droid
 {
-    public class TangoUpdateListener : Java.Lang.Object, Tango.IOnTangoUpdateListener
+    public class TangoUpdateListener : Tango.TangoUpdateCallback
     {
         private readonly GameActivity _activity;
 

@@ -7,5 +7,9 @@ C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\C
 C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\obj\Release\urhosharpgoogletango.csprojResolveAssemblyReference.cache
 C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\obj\Release\urhosharpgoogletango.dll.mdb
 C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\bin\Release\urhosharpgoogletango.dll.mdb
-C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\obj\Release\urhosharpgoogletango.dll.mdb
-C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Core\bin\Release\urhosharpgoogletango.dll.mdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Core\bin\Release\urhosharpgoogletango.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Core\bin\Release\urhosharpgoogletango.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Core\bin\Release\Urho.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Core\bin\Release\Urho.xml
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Core\obj\Release\urhosharpgoogletango.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Core\obj\Release\urhosharpgoogletango.pdb

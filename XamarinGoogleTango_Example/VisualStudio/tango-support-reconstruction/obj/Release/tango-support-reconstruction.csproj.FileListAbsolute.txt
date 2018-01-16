@@ -1,0 +1,5 @@
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-reconstruction\bin\Release\tango-support-reconstruction.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-reconstruction\bin\Release\tango-support-reconstruction.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-reconstruction\obj\Release\tango-support-reconstruction.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-reconstruction\obj\Release\tango-support-reconstruction.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-support-reconstruction\obj\Release\tango-support-reconstruction.csprojResolveAssemblyReference.cache

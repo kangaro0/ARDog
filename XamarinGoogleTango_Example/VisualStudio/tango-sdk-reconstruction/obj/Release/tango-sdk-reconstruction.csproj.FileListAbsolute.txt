@@ -1,0 +1,11 @@
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-reconstruction.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-reconstruction.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-base.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-datasets.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-meshing.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-base.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-datasets.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\bin\Release\tango-sdk-meshing.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\obj\Release\tango-sdk-reconstruction.csprojResolveAssemblyReference.cache
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\obj\Release\tango-sdk-reconstruction.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-reconstruction\obj\Release\tango-sdk-reconstruction.pdb

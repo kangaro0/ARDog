@@ -2,19 +2,43 @@
 <Paths>
   <Jars></Jars>
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-base\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-depth-interpolation\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-markers\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-reconstruction\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-support\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-transform-helpers\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-ux\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\Urho\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>obj\Release\__library_projects__\GoogleProjectTangoBinding\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-base\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-datasets\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-depth-interpolation\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-markers\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-meshing\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-reconstruction\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-support\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-transform-helpers\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\__library_projects__\tango-sdk-ux\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Release\__library_projects__\Urho\library_project_imports\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Release\__library_projects__\Urho.Droid.SdlBinding\library_project_imports\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\GoogleProjectTangoBinding.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\kanga\Desktop\glebedev-urhosharpgoogletango-b2763ce24739\VisualStudio\Android\obj\Release\__library_projects__\Urho.Droid.SdlBinding.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-base.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-datasets.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-depth-interpolation.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-markers.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-meshing.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-reconstruction.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-support.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-transform-helpers.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\tango-sdk-ux.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\Urho.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\Android\obj\Release\__library_projects__\Urho.Droid.SdlBinding.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

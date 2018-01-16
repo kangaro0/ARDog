@@ -1,0 +1,4 @@
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-base\bin\Release\tango-sdk-base.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-base\bin\Release\tango-sdk-base.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-base\obj\Release\tango-sdk-base.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-base\obj\Release\tango-sdk-base.pdb

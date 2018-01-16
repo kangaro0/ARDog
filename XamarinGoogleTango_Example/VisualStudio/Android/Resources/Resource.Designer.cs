@@ -28,22 +28,6 @@ namespace urhosharpgoogletango.Droid
 		{
 		}
 		
-		public partial class Array
-		{
-			
-			// aapt resource value: 0x7f040000
-			public const int shared_libraries = 2130968576;
-			
-			static Array()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Array()
-			{
-			}
-		}
-		
 		public partial class Attribute
 		{
 			

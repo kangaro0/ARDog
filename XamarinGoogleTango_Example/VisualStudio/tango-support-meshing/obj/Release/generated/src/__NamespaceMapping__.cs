@@ -1,0 +1,5 @@
+[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tango.mesh", Managed="Com.Google.Atap.Tango.Mesh")]
+[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tango.mesh.io", Managed="Com.Google.Atap.Tango.Mesh.IO")]
+[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tango.mesh.io.obj", Managed="Com.Google.Atap.Tango.Mesh.IO.Obj")]
+[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tango.mesh.io.ply", Managed="Com.Google.Atap.Tango.Mesh.IO.Ply")]
+[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tango.mesh.io.primitives", Managed="Com.Google.Atap.Tango.Mesh.IO.Primitives")]

@@ -1,0 +1,10 @@
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\tango-sdk-depth-interpolation.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\tango-sdk-depth-interpolation.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\tango-sdk-base.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\tango-sdk-support.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\Xamarin.Android.Support.v4.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\tango-sdk-base.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\bin\Release\tango-sdk-support.pdb
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\obj\Release\tango-sdk-depth-interpolation.csprojResolveAssemblyReference.cache
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\obj\Release\tango-sdk-depth-interpolation.dll
+C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-depth-interpolation\obj\Release\tango-sdk-depth-interpolation.pdb

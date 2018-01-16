@@ -1,0 +1,13 @@
+com/google/tango/markers/BuildConfig = Com.Google.Tango.Markers.BuildConfig
+  <init>()V = .ctor()
+  APPLICATION_ID = ApplicationId
+  BUILD_TYPE = BuildType
+  DEBUG = Debug
+  FLAVOR = Flavor
+  VERSION_CODE = VersionCode
+  VERSION_NAME = VersionName
+com/google/tango/markers/TangoMarkers = Com.Google.Tango.Markers.TangoMarkers
+  <init>()V = .ctor()
+  MARKER_ARTAG = MarkerArtag
+  MARKER_QRCODE = MarkerQrcode
+  detectMarkers(Lcom/google/atap/tangoservice/experimental/TangoImageBuffer;I[D[DLcom/google/tango/markers/TangoMarkers$DetectParam;)Ljava/util/List; = DetectMarkers(Com.Google.Atap.Tangoservice.Experimental.TangoImageBuffer, int, double[], double[], Com.Google.Tango.Markers.TangoMarkers.DetectParam)

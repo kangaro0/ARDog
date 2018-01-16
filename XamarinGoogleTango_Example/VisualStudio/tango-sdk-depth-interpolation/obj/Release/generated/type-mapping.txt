@@ -1,0 +1,14 @@
+com/google/tango/depthinterpolation/BuildConfig = Com.Google.Tango.Depthinterpolation.BuildConfig
+  <init>()V = .ctor()
+  APPLICATION_ID = ApplicationId
+  BUILD_TYPE = BuildType
+  DEBUG = Debug
+  FLAVOR = Flavor
+  VERSION_CODE = VersionCode
+  VERSION_NAME = VersionName
+com/google/tango/depthinterpolation/TangoDepthInterpolation = Com.Google.Tango.Depthinterpolation.TangoDepthInterpolation
+  <init>()V = .ctor()
+  getDepthAtPointBilateral(Lcom/google/atap/tangoservice/TangoPointCloudData;[D[DLcom/google/atap/tangoservice/experimental/TangoImageBuffer;FFI[D[D)[F = GetDepthAtPointBilateral(Com.Google.Atap.Tangoservice.TangoPointCloudData, double[], double[], Com.Google.Atap.Tangoservice.Experimental.TangoImageBuffer, float, float, int, double[], double[])
+  getDepthAtPointNearestNeighbor(Lcom/google/atap/tangoservice/TangoPointCloudData;[D[DFFI[D[D)[F = GetDepthAtPointNearestNeighbor(Com.Google.Atap.Tangoservice.TangoPointCloudData, double[], double[], float, float, int, double[], double[])
+  upsampleImageBilateral(ZLcom/google/atap/tangoservice/TangoPointCloudData;Lcom/google/atap/tangoservice/experimental/TangoImageBuffer;Lcom/google/atap/tangoservice/TangoPoseData;)Lcom/google/tango/depthinterpolation/TangoDepthInterpolation$DepthBuffer; = UpsampleImageBilateral(bool, Com.Google.Atap.Tangoservice.TangoPointCloudData, Com.Google.Atap.Tangoservice.Experimental.TangoImageBuffer, Com.Google.Atap.Tangoservice.TangoPoseData)
+  upsampleImageNearestNeighbor(Lcom/google/atap/tangoservice/TangoPointCloudData;IILcom/google/atap/tangoservice/TangoPoseData;)Lcom/google/tango/depthinterpolation/TangoDepthInterpolation$DepthBuffer; = UpsampleImageNearestNeighbor(Com.Google.Atap.Tangoservice.TangoPointCloudData, int, int, Com.Google.Atap.Tangoservice.TangoPoseData)

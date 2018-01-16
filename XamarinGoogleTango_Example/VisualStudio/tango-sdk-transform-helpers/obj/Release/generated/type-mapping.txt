@@ -1,0 +1,17 @@
+com/google/tango/transformhelpers/BuildConfig = Com.Google.Tango.Transformhelpers.BuildConfig
+  <init>()V = .ctor()
+  APPLICATION_ID = ApplicationId
+  BUILD_TYPE = BuildType
+  DEBUG = Debug
+  FLAVOR = Flavor
+  VERSION_CODE = VersionCode
+  VERSION_NAME = VersionName
+com/google/tango/transformhelpers/TangoTransformHelper = Com.Google.Tango.Transformhelpers.TangoTransformHelper
+  <init>()V = .ctor()
+  doubleTransformPoint([D[D)[D = DoubleTransformPoint(double[], double[])
+  doubleTransformPointCloud([DLcom/google/atap/tangoservice/TangoPointCloudData;)Lcom/google/atap/tangoservice/TangoPointCloudData; = DoubleTransformPointCloud(double[], Com.Google.Atap.Tangoservice.TangoPointCloudData)
+  doubleTransformPose([D[D[D[D[D)V = DoubleTransformPose(double[], double[], double[], double[], double[])
+  findCorrespondenceSimilarityTransform([[D[[D)[D = FindCorrespondenceSimilarityTransform(double[][], double[][])
+  transformPoint([F[F)[F = TransformPoint(float[], float[])
+  transformPointCloud([FLcom/google/atap/tangoservice/TangoPointCloudData;)Lcom/google/atap/tangoservice/TangoPointCloudData; = TransformPointCloud(float[], Com.Google.Atap.Tangoservice.TangoPointCloudData)
+  transformPose([F[F[F[F[F)V = TransformPose(float[], float[], float[], float[], float[])

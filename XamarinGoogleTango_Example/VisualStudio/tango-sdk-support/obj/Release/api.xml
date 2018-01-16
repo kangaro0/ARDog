@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<api>
+<package name="com.google.tango.support">
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="true" name="BuildConfig" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="BuildConfig" static="false" type="com.google.tango.support.BuildConfig" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="true" name="APPLICATION_ID" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.google.tango.support&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="BUILD_TYPE" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="DEBUG" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="FLAVOR" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;&quot;" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_CODE" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="VERSION_NAME" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;0&quot;" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoPointCloudManager" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoPointCloudManager" static="false" type="com.google.tango.support.TangoPointCloudManager" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="getLatestPointCloud" native="false" return="com.google.atap.tangoservice.TangoPointCloudData" static="false" synchronized="false" visibility="public">
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="updatePointCloud" native="false" return="void" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tangoservice.TangoPointCloudData">
+</parameter>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoSupport" static="false" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoSupport" static="false" type="com.google.tango.support.TangoSupport" visibility="public">
+</constructor>
+<method abstract="false" deprecated="not deprecated" final="false" name="calculateRelativePose" native="false" return="com.google.atap.tangoservice.TangoPoseData" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="double">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<exception name="TangoErrorException" type="com.google.atap.tangoservice.TangoErrorException">
+</exception>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="fitPlaneModelNearPoint" native="false" return="com.google.tango.support.TangoSupport.IntersectionPointPlaneModelPair" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tangoservice.TangoPointCloudData">
+</parameter>
+<parameter name="p1" type="double[]">
+</parameter>
+<parameter name="p2" type="double[]">
+</parameter>
+<parameter name="p3" type="float">
+</parameter>
+<parameter name="p4" type="float">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<parameter name="p6" type="double[]">
+</parameter>
+<parameter name="p7" type="double[]">
+</parameter>
+<exception name="TangoErrorException" type="com.google.atap.tangoservice.TangoErrorException">
+</exception>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCameraIntrinsicsBasedOnDisplayRotation" native="false" return="com.google.atap.tangoservice.TangoCameraIntrinsics" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDoubleMatrixTransformAtTime" native="false" return="com.google.tango.support.TangoSupport.DoubleMatrixTransformData" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getMatrixTransformAtTime" native="false" return="com.google.tango.support.TangoSupport.MatrixTransformData" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPoseAtTime" native="false" return="com.google.atap.tangoservice.TangoPoseData" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<exception name="TangoErrorException" type="com.google.atap.tangoservice.TangoErrorException">
+</exception>
+<exception name="TangoInvalidException" type="com.google.atap.tangoservice.TangoInvalidException">
+</exception>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getVideoOverlayUVBasedOnDisplayRotation" native="false" return="float[]" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="float[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="initialize" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tangoservice.Tango">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="initialize" native="false" return="void" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.tango.support.TangoSupport.TangoSupportCallbacks">
+</parameter>
+</method>
+<field deprecated="not deprecated" final="true" name="ENGINE_OPENGL" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ENGINE_TANGO" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ENGINE_UNITY" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ENGINE_UNREAL" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ROTATION_0" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ROTATION_180" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ROTATION_270" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ROTATION_90" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="true" name="ROTATION_IGNORED" static="true" transient="false" type="int" type-generic-aware="int" value="-1" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoSupport.1" static="true" visibility="">
+<implements name="com.google.tango.support.TangoSupport.TangoSupportCallbacks" name-generic-aware="com.google.tango.support.TangoSupport.TangoSupportCallbacks">
+</implements>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCameraIntrinsics" native="false" return="com.google.atap.tangoservice.TangoCameraIntrinsics" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPoseAtTime" native="false" return="com.google.atap.tangoservice.TangoPoseData" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="com.google.atap.tangoservice.TangoCoordinateFramePair">
+</parameter>
+</method>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoSupport.DoubleMatrixTransformData" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoSupport.DoubleMatrixTransformData" static="false" type="com.google.tango.support.TangoSupport.DoubleMatrixTransformData" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="false" name="matrix" static="false" transient="false" type="double[]" type-generic-aware="double[]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="statusCode" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="timestamp" static="false" transient="false" type="double" type-generic-aware="double" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoSupport.IntersectionPointPlaneModelPair" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoSupport.IntersectionPointPlaneModelPair" static="false" type="com.google.tango.support.TangoSupport.IntersectionPointPlaneModelPair" visibility="public">
+</constructor>
+<constructor deprecated="not deprecated" final="false" name="TangoSupport.IntersectionPointPlaneModelPair" static="false" type="com.google.tango.support.TangoSupport.IntersectionPointPlaneModelPair" visibility="public">
+<parameter name="p0" type="double[]">
+</parameter>
+<parameter name="p1" type="double[]">
+</parameter>
+</constructor>
+<field deprecated="not deprecated" final="false" name="intersectionPoint" static="false" transient="false" type="double[]" type-generic-aware="double[]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="planeModel" static="false" transient="false" type="double[]" type-generic-aware="double[]" value="null" visibility="public" volatile="false">
+</field>
+</class>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoSupport.MatrixTransformData" static="true" visibility="public">
+<constructor deprecated="not deprecated" final="false" name="TangoSupport.MatrixTransformData" static="false" type="com.google.tango.support.TangoSupport.MatrixTransformData" visibility="public">
+</constructor>
+<field deprecated="not deprecated" final="false" name="matrix" static="false" transient="false" type="float[]" type-generic-aware="float[]" value="null" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="statusCode" static="false" transient="false" type="int" type-generic-aware="int" visibility="public" volatile="false">
+</field>
+<field deprecated="not deprecated" final="false" name="timestamp" static="false" transient="false" type="double" type-generic-aware="double" visibility="public" volatile="false">
+</field>
+</class>
+<interface abstract="true" deprecated="not deprecated" final="false" name="TangoSupport.TangoSupportCallbacks" static="true" visibility="public">
+<method abstract="true" deprecated="not deprecated" final="false" name="getCameraIntrinsics" native="false" return="com.google.atap.tangoservice.TangoCameraIntrinsics" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+</method>
+<method abstract="true" deprecated="not deprecated" final="false" name="getPoseAtTime" native="false" return="com.google.atap.tangoservice.TangoPoseData" static="false" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="com.google.atap.tangoservice.TangoCoordinateFramePair">
+</parameter>
+</method>
+</interface>
+<class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" final="false" name="TangoSupportJNIInterface" static="false" visibility="">
+<method abstract="false" deprecated="not deprecated" final="false" name="calculateRelativePose" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="double">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="com.google.atap.tangoservice.TangoPoseData">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="fitPlaneModelNearPoint" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.atap.tangoservice.TangoPointCloudData">
+</parameter>
+<parameter name="p1" type="double[]">
+</parameter>
+<parameter name="p2" type="double[]">
+</parameter>
+<parameter name="p3" type="float">
+</parameter>
+<parameter name="p4" type="float">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<parameter name="p6" type="double[]">
+</parameter>
+<parameter name="p7" type="double[]">
+</parameter>
+<parameter name="p8" type="double[]">
+</parameter>
+<parameter name="p9" type="double[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getCameraIntrinsicsBasedOnDisplayRotation" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="int">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="com.google.atap.tangoservice.TangoCameraIntrinsics">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getDoubleMatrixTransformAtTime" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<parameter name="p6" type="com.google.tango.support.TangoSupport.DoubleMatrixTransformData">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getMatrixTransformAtTime" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<parameter name="p6" type="com.google.tango.support.TangoSupport.MatrixTransformData">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getPoseAtTime" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="double">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="int">
+</parameter>
+<parameter name="p3" type="int">
+</parameter>
+<parameter name="p4" type="int">
+</parameter>
+<parameter name="p5" type="int">
+</parameter>
+<parameter name="p6" type="com.google.atap.tangoservice.TangoPoseData">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="getVideoOverlayUVBasedOnDisplayRotation" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="float[]">
+</parameter>
+<parameter name="p1" type="int">
+</parameter>
+<parameter name="p2" type="float[]">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="initializeWithCallbacks" native="true" return="int" static="true" synchronized="false" visibility="public">
+<parameter name="p0" type="com.google.tango.support.TangoSupport.TangoSupportCallbacks">
+</parameter>
+</method>
+<method abstract="false" deprecated="not deprecated" final="false" name="reset" native="true" return="void" static="true" synchronized="false" visibility="public">
+</method>
+</class>
+</package>
+</api>
