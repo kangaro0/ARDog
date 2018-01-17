@@ -1,4 +1,0 @@
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-meshing\bin\Release\tango-sdk-meshing.dll
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-meshing\bin\Release\tango-sdk-meshing.pdb
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-meshing\obj\Release\tango-sdk-meshing.dll
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-meshing\obj\Release\tango-sdk-meshing.pdb

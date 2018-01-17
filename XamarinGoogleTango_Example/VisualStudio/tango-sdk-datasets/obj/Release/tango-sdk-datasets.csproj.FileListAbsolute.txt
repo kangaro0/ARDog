@@ -1,7 +1,0 @@
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\bin\Release\tango-sdk-datasets.dll
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\bin\Release\tango-sdk-datasets.pdb
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\bin\Release\tango-sdk-base.dll
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\bin\Release\tango-sdk-base.pdb
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\obj\Release\tango-sdk-datasets.csprojResolveAssemblyReference.cache
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\obj\Release\tango-sdk-datasets.dll
-C:\Users\kangaro0\Desktop\ARDog\XamarinGoogleTango_Example\VisualStudio\tango-sdk-datasets\obj\Release\tango-sdk-datasets.pdb

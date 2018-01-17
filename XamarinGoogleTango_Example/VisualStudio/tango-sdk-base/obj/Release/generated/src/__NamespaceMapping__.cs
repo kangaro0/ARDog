@@ -1,6 +1,0 @@
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tango", Managed="Com.Google.Atap.Tango")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tangohelperlib", Managed="Com.Google.Atap.Tangohelperlib")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tangoservice", Managed="Com.Google.Atap.Tangoservice")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tangoservice.experimental", Managed="Com.Google.Atap.Tangoservice.Experimental")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.atap.tangoservice.fois", Managed="Com.Google.Atap.Tangoservice.Fois")]
-[assembly:global::Android.Runtime.NamespaceMapping (Java = "com.google.tango.loader", Managed="Com.Google.Tango.Loader")]

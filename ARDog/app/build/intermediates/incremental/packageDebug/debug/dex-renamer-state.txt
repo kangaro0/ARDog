@@ -1,4 +1,0 @@
-#Mon Dec 11 13:33:23 CET 2017
-base.0=C\:\\Users\\kanga\\Desktop\\ARDog\\ARDog\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex
