@@ -19,7 +19,12 @@ import org.rajawali3d.animation.Animation;
 import org.rajawali3d.animation.Animation3D;
 import org.rajawali3d.animation.EllipticalOrbitAnimation3D;
 import org.rajawali3d.animation.RotateOnAxisAnimation;
+import org.rajawali3d.animation.mesh.SkeletalAnimationObject3D;
+import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 import org.rajawali3d.lights.DirectionalLight;
+import org.rajawali3d.loader.ParsingException;
+import org.rajawali3d.loader.md5.LoaderMD5Anim;
+import org.rajawali3d.loader.md5.LoaderMD5Mesh;
 import org.rajawali3d.materials.Material;
 import org.rajawali3d.materials.methods.DiffuseMethod;
 import org.rajawali3d.materials.textures.ATexture;
@@ -45,6 +50,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private boolean mSceneCameraConfigured;
     private ScreenQuad mBackgroundQuad;
     private ObjectColorPicker mOnePicker;
+
+    private SkeletalAnimationObject3D mDog;
 
     public GameRenderer( Context context ){
         super( context );
@@ -80,7 +87,36 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         light.setPosition(3, 2, 4);
         getCurrentScene().addLight(light);
 
+        // load model
+        try {
+            LoaderMD5Mesh meshParser = new LoaderMD5Mesh( this,
+                    R.raw.boblampclean_mesh );
+            meshParser.parse();
+
+            LoaderMD5Anim animParser = new LoaderMD5Anim( "attack2", this,
+                    R.raw.boblampclean_anim );
+            animParser.parse();
+
+            SkeletalAnimationSequence sequence = ( SkeletalAnimationSequence ) animParser.getParsedAnimationSequence();
+
+            // add model
+            mDog = ( SkeletalAnimationObject3D ) meshParser.getParsedAnimationObject();
+            mDog.setAnimationSequence( sequence );
+            mDog.setPosition( 0, 0, -30 );
+            mDog.setScale( .5f );
+            mDog.setRotation( Vector3.Axis.Y, 90 );
+            mDog.setRotation( Vector3.Axis.Z, -90 );
+            mDog.play();
+
+            getCurrentScene().addChild( mDog );
+
+        } catch( ParsingException e ){
+            e.printStackTrace();
+        }
+
         mOnePicker.registerObject( mBackgroundQuad );
+        if( mDog != null )
+            mOnePicker.registerObject( mDog );
     }
 
     public void updateColorCameraTextureUvGlThread( int rotation ){
