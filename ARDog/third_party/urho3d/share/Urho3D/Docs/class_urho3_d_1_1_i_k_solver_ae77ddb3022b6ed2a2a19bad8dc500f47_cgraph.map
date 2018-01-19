@@ -1,6 +1,0 @@
-<map id="Urho3D::IKSolver::ComponentIsInOurSubtree" name="Urho3D::IKSolver::ComponentIsInOurSubtree">
-<area shape="rect" id="node2" href="$class_urho3_d_1_1_component.html#aaf7a7d9aea4ae4bcc527a5f0c33f3f1a" title="Return scene node. " alt="" coords="279,5,430,46"/>
-<area shape="rect" id="node3" href="$class_urho3_d_1_1_node.html#a96978345db2ceb1a473bb43f0024dbe7" title="Return component by type. If there are several, returns the first. " alt="" coords="253,71,456,97"/>
-<area shape="rect" id="node5" href="$class_urho3_d_1_1_node.html#ae2f6e5318815bc21dd93febb3dc5b95e" title="Return parent scene node. " alt="" coords="268,121,441,148"/>
-<area shape="rect" id="node4" href="$class_urho3_d_1_1_component.html#ad08f2476047f1bab081256374710431d" title="Return component in the same scene node by type. If there are several, returns the first..." alt="" coords="505,63,655,105"/>
-</map>

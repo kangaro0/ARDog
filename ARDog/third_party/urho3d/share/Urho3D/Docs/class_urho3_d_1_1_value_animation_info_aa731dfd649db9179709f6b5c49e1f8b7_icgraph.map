@@ -1,6 +1,0 @@
-<map id="Urho3D::ValueAnimationInfo::GetEventFrames" name="Urho3D::ValueAnimationInfo::GetEventFrames">
-<area shape="rect" id="node2" href="$class_urho3_d_1_1_value_animation_info.html#a4ad1a89faaaf4bf79dd30b25224ffa15" title="Set time position and apply. Return true when the animation is finished. No&#45;op when the target object..." alt="" coords="243,38,431,79"/>
-<area shape="rect" id="node3" href="$class_urho3_d_1_1_animatable.html#ac86e3bc8579f43a701a3ab2e02dcc700" title="Set attribute animation time position manually. Automatic update should be disabled in this case..." alt="" coords="481,5,668,46"/>
-<area shape="rect" id="node5" href="$class_urho3_d_1_1_value_animation_info.html#aa7ffdc6d200bba0eeef7949e48a4fb80" title="Advance time position and apply. Return true when the animation is finished. No&#45;op when the target ob..." alt="" coords="481,70,669,111"/>
-<area shape="rect" id="node4" href="$class_urho3_d_1_1_animatable.html#adc97255cf6bf43a76a163ab4188ad15c" title="Set time position of all attribute animations or an object animation manually. Automatic update shoul..." alt="" coords="718,5,858,46"/>
-</map>

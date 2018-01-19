@@ -1,6 +1,0 @@
-LOCAL_PATH := $(call my-dir)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := gltf2-loader
-LOCAL_SRC_FILES := libgltf2-loader.a
-include $(PREBUILD_STATIC_LIBRARY)

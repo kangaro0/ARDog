@@ -1,6 +1,4 @@
 
-XamarinGoogleTango_Example/**/.vs
-XamarinGoogleTango_Example/**/bin
-XamarinGoogleTango_Example/**/obj
-
-ARDog/**/build
+ARDog_Java/.gradle
+ARDog_Java/.idea
+ARDog_Java/**/build

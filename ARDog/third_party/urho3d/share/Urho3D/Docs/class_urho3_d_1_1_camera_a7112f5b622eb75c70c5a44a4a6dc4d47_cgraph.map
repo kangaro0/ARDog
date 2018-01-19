@@ -1,8 +1,0 @@
-<map id="Urho3D::Camera::GetFrustumSize" name="Urho3D::Camera::GetFrustumSize">
-<area shape="rect" id="node2" href="$class_urho3_d_1_1_camera.html#a231682d95cd49667d5f63db44e0dce1f" title="Return frustum in view space. " alt="" coords="277,73,493,114"/>
-<area shape="rect" id="node3" href="$class_urho3_d_1_1_camera.html#a146d6fb7fea96d7a404503695f1be54b" title="Recalculate projection matrix. " alt="" coords="792,30,1021,56"/>
-<area shape="rect" id="node4" href="$class_urho3_d_1_1_frustum.html#ae3bb6685c4a3500651952fe03e6442ae" title="Define with projection parameters and a transform matrix. " alt="" coords="822,156,991,183"/>
-<area shape="rect" id="node5" href="$class_urho3_d_1_1_camera.html#acc01c6201d2489565fa9e9b4966e23ad" title="Return near clip distance. If a custom projection matrix is in use, is calculated from it instead of ..." alt="" coords="542,30,743,56"/>
-<area shape="rect" id="node6" href="$class_urho3_d_1_1_camera.html#a2ce91bcd0b92b35b95ae8fe81950dab3" title="Return far clip distance. If a custom projection matrix is in use, is calculated from it instead of t..." alt="" coords="547,80,739,107"/>
-<area shape="rect" id="node7" href="$class_urho3_d_1_1_frustum.html#aca09b9b4205607926beb618374834762" title="Define with orthographic projection parameters and a transform matrix. " alt="" coords="542,182,743,208"/>
-</map>
