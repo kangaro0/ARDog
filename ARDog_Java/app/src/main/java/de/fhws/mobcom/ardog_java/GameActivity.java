@@ -42,21 +42,29 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = GameActivity.class.getSimpleName();
     private static final int INVALID_TEXTURE_ID = 0;
 
+    /* Permissions */
     private static final String CAMERA_PERMISSION = Manifest.permission.CAMERA;
     private static final int CAMERA_PERMISSION_CODE = 0;
 
+    /* Rendering */
     private SurfaceView mSurfaceView;
     private GameRenderer mRenderer;
+
+    /* Tango-specific */
     private Tango mTango;
     private TangoConfig mConfig;
     private boolean mIsConnected = false;
     private double mCameraPoseTimestamp = 0;
 
+    /* OpenGL & Tango synchronization */
     private int mConnectedTextureIdGlThread = INVALID_TEXTURE_ID;
     private AtomicBoolean mIsFrameAvailableTangoThread = new AtomicBoolean(false);
     private double mRgbTimestampGlThread;
 
     private int mDisplayRotation = 0;
+
+    /* Game-specific */
+    private boolean mIsEditMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
