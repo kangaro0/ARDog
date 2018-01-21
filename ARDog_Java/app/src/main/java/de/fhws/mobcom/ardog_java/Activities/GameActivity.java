@@ -1,4 +1,4 @@
-package de.fhws.mobcom.ardog_java;
+package de.fhws.mobcom.ardog_java.Activities;
 
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.Tango.OnTangoUpdateListener;
@@ -35,8 +35,10 @@ import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
 
 import java.util.ArrayList;
-import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import de.fhws.mobcom.ardog_java.GameRenderer;
+import de.fhws.mobcom.ardog_java.R;
 
 public class GameActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = GameActivity.class.getSimpleName();

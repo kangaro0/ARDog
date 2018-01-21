@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.fhws.mobcom.ardog_java.GameActivity">
+    tools:context="de.fhws.mobcom.ardog_java.Activities.GameActivity">
 
     <org.rajawali3d.view.SurfaceView
         android:id="@+id/surfaceview"

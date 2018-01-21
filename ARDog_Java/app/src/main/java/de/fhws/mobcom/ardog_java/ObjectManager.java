@@ -8,9 +8,10 @@ import java.util.Observable;
 import java.util.Observer;
 
 import org.rajawali3d.Object3D;
+import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.renderer.Renderer;
 
-import de.fhws.mobcom.ardog_java.GameObject.GameObject;
+import de.fhws.mobcom.ardog_java.GameObject;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -26,82 +27,56 @@ public class ObjectManager extends Observable {
 
     // ArrayList for holding the 3D-objects
     private ArrayList<GameObject> objects;
-    private Object3D curSelected;
+    private GameObject curSelected;
 
-    // private ctor
-    private ObjectManager(){
-        this.objects = new ArrayList<GameObject>();
-        // initialize all possible objects here..
-    }
-
-    /* Private Interface */
-
-    // setup ObjectManager, loads asset
-    private void setup(final Resources resources, final Renderer mRenderer ){
-        // check if there are any observers to notify
-        if( super.countObservers() < 1 )
-            return;
-        // run loading in new Runnable
+    // ctor
+    public ObjectManager( final ObjectManagerCallback callback ){
         new Runnable(){
             @Override
             public void run(){
-                for( GameObject obj : objects ){
-                    switch( obj.getName() ){
-
-                        // dog requires different loading ( md5-mesh & -animations )
-                        case "Dog":
-
-                            break;
-                        // the rest is just obj
-                        default:
-
-                            break;
-                    }
+                try {
+                    objects = callback.setup();
+                } catch ( ParsingException e ) {
+                    callback.onError( e );
                 }
-
-                // notify Observers when finished loading
-                this.notify();
+                callback.onDone();
             }
         };
     }
 
     /* Public Interface */
 
-    public Object3D getCurrentlySelected(){
+    // currently selected
+    public GameObject getCurrentlySelected(){
         return this.curSelected;
     }
-
-    public void setCurrentlySelected( ObjectType type ){
-        if( type == null ) {
+    public void setCurrentlySelected( String name ){
+        if( name == null ) {
             // deselect item
             this.curSelected = null;
             return;
         } else {
-            this.curSelected = this.objects.get(type);
+            this.curSelected = this.getByName( name );
             // if currently selected make it a little lighter
             // not implemented...
         }
     }
-
     public boolean isCurrentlySelected(){
         if( this.curSelected == null )
             return false;
         return true;
     }
 
-    // Singleton
-    public static ObjectManager getInstance( ){
-        if( ObjectManager.instance == null )
-            ObjectManager.instance = new ObjectManager();
-        return ObjectManager.instance;
+    // access to game-objects
+    public ArrayList<GameObject> getAll(){
+        return this.objects;
     }
-
-    // Observable
-    public void registerObserver( Observer observer ){
-        this.addObserver( observer );
-    }
-
-    public void unregisterObserver( Observer observer ){
-        this.deleteObserver( observer );
+    public GameObject getByName( String name ){
+        for( int i = 0 ; i < this.objects.size() ; i++ ){
+            GameObject current = this.objects.get( i );
+            if( current.getName() == name )
+                return current;
+        }
+        return null;
     }
 }

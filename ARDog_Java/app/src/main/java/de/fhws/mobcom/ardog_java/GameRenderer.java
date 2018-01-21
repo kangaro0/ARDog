@@ -9,6 +9,8 @@ import com.google.tango.support.TangoSupport;
 
 import android.content.Context;
 
+import android.content.Loader;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -22,6 +24,7 @@ import org.rajawali3d.animation.RotateOnAxisAnimation;
 import org.rajawali3d.animation.mesh.SkeletalAnimationObject3D;
 import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 import org.rajawali3d.lights.DirectionalLight;
+import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.loader.md5.LoaderMD5Anim;
 import org.rajawali3d.loader.md5.LoaderMD5Mesh;
@@ -39,7 +42,11 @@ import org.rajawali3d.renderer.Renderer;
 import org.rajawali3d.util.ObjectColorPicker;
 import org.rajawali3d.util.OnObjectPickedListener;
 
+import java.util.ArrayList;
+
 import javax.microedition.khronos.opengles.GL10;
+
+import de.fhws.mobcom.ardog_java.ObjectManager;
 
 public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private static final String TAG = GameRenderer.class.getSimpleName();
@@ -51,6 +58,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private ScreenQuad mBackgroundQuad;
     private ObjectColorPicker mOnePicker;
 
+    private ObjectManager objectManager;
+
     private SkeletalAnimationObject3D mDog;
 
     public GameRenderer( Context context ){
@@ -59,6 +68,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     @Override
     protected void initScene(){
+
         mOnePicker = new ObjectColorPicker( this );
         mOnePicker.setOnObjectPickedListener( this );
 
