@@ -16,16 +16,13 @@
         <uses-library
             android:name="com.projecttango.libtango_device2"
             android:required="true" />
-        <activity android:name=".Activities.LoadingActivity"
-            android:label="ARDog">
+        <activity android:name=".Activities.GameActivity"
+            android:label="@string/app_name_long"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Activities.GameActivity"
-            android:label="@string/app_name_long"
-            android:configChanges="orientation|screenSize">
         </activity>
     </application>
 

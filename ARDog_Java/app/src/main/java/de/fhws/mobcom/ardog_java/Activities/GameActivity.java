@@ -19,6 +19,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.hardware.display.DisplayManager;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
@@ -29,15 +32,22 @@ import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.rajawali3d.loader.LoaderOBJ;
+import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import de.fhws.mobcom.ardog_java.GameObject;
 import de.fhws.mobcom.ardog_java.GameRenderer;
+import de.fhws.mobcom.ardog_java.ObjectManager;
+import de.fhws.mobcom.ardog_java.ObjectManagerCallback;
 import de.fhws.mobcom.ardog_java.R;
 
 public class GameActivity extends Activity implements View.OnTouchListener {
@@ -67,6 +77,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
 
     /* Game-specific */
     private boolean mIsEditMode = false;
+    private ObjectManager objectManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -201,6 +212,8 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     }
 
     private void setupRenderer(){
+        this.onLoadingStart();
+
         mRenderer.getCurrentScene().registerFrameCallback(new ASceneFrameCallback() {
             @Override
             public void onPreFrame(long sceneTime, double deltaTime) {
@@ -265,6 +278,43 @@ public class GameActivity extends Activity implements View.OnTouchListener {
                 return true;
             }
         });
+
+        // load objects
+        objectManager = new ObjectManager( new ObjectManagerCallback() {
+            @Override
+            public ArrayList<GameObject> setup() throws ParsingException {
+                // loading all necessary assets is done here
+                ArrayList<GameObject> objects = new ArrayList<GameObject>();
+
+                Resources resources = getResources();
+                /* Dog */
+                // Mesh
+                //LoaderMD5Mesh dogMeshLoader = new LoaderMD5Mesh( resources, mTextureManager, R.raw.dog );
+                //dogMeshLoader.parse();
+                // Animations
+                //LoaderMD5Anim dogAnimLoader = new LoaderMD5Anim( resources, mTextureManager, R.raw.dog_anim );
+
+                // Bowl
+                LoaderOBJ bowlLoader = new LoaderOBJ( resources, mRenderer.getTextureManager(), R.raw.bowl_obj );
+                bowlLoader.parse();
+                // add to collection
+                objects.add( new GameObject( "Bowl", bowlLoader.getParsedObject() ) );
+
+                return objects;
+            }
+
+            @Override
+            public void onDone() {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Cannot parse objects", e);
+            }
+        });
+
+        this.onLoadingDone();
 
         mSurfaceView.setSurfaceRenderer( mRenderer );
     }
@@ -364,5 +414,24 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     public boolean onTouch( View view, MotionEvent motionEvent ){
         mRenderer.onTouchEvent( motionEvent );
         return true;
+    }
+
+    public void onLoadingStart(){
+        ProgressBar progressBar = ( ProgressBar ) findViewById( R.id.progressBar );
+        progressBar.getIndeterminateDrawable().setColorFilter( Color.WHITE, PorterDuff.Mode.MULTIPLY );
+
+        TextView progressText = ( TextView ) findViewById( R.id.progressText );
+        progressText.setTextColor( Color.WHITE );
+        progressText.setTextSize( 18.0F );
+        progressText.setText( "Loading..." );
+    }
+
+    // this method gets called when loading is done
+    public void onLoadingDone(){
+        ProgressBar progressBar = ( ProgressBar ) findViewById( R.id.progressBar );
+        progressBar.setVisibility( View.GONE );
+
+        TextView progressText = ( TextView ) findViewById( R.id.progressText );
+        progressText.setVisibility( View.GONE );
     }
 }

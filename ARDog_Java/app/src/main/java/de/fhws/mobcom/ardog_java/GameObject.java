@@ -9,6 +9,7 @@ import org.rajawali3d.Object3D;
  */
 
 public class GameObject {
+    // identification
     private String name;
     private int thumbnailId;    // thumbnail for selection bar
 
@@ -19,12 +20,12 @@ public class GameObject {
     ArrayList<GameObject> children;
     private GameObject parent;
 
-
-    GameObject( String name, Object3D object ){
+    // ctors
+    public GameObject( String name, Object3D object ){
         this.name = name;
         this.object = object;
     }
-    GameObject( String name, Object3D object, ArrayList<GameObject> children ){
+    public GameObject( String name, Object3D object, ArrayList<GameObject> children ){
         this( name, object );
         this.children = children;
     }
@@ -33,6 +34,18 @@ public class GameObject {
     public String getName() { return this.name; }
     public int getThumbnailId() { return this.thumbnailId; }
     public Object3D getObject() { return this.object; }
+
+    // Parent
+    public GameObject getParent(){
+        if( this.parent == null )
+            return null;
+        return this.parent;
+    }
+    public void setParent( GameObject parent ){
+        this.parent = parent;
+    }
+
+    // Children
     public ArrayList<GameObject> getChildren() { return this.children; }
     public GameObject getChildByName( String name ){
         for( int i = 0 ; i < this.children.size() ; i++ ){
@@ -42,6 +55,14 @@ public class GameObject {
         }
         return null;
     }
+    public void addChild( GameObject child ){
+        // set parent
+        if( child.getParent() == null )
+            child.setParent( this );
+        // if already has parent -> don't set
+        else
+            return;
 
-    public void addChild( GameObject child ){ this.children.add( child ); }
+        this.children.add( child );
+    }
 }
