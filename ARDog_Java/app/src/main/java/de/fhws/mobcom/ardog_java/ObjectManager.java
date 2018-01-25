@@ -79,4 +79,12 @@ public class ObjectManager extends Observable {
         }
         return null;
     }
+    public ArrayList<GameObject> getPlacedObjects(){
+        ArrayList<GameObject> toReturn = new ArrayList<GameObject>();
+        for( GameObject current : this.objects ){
+            if( current.isPlaced() )
+                toReturn.add( current );
+        }
+        return toReturn;
+    }
 }

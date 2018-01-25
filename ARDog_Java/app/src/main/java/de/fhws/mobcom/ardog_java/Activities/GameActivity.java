@@ -36,14 +36,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
+import org.rajawali3d.loader.md5.LoaderMD5Anim;
+import org.rajawali3d.loader.md5.LoaderMD5Mesh;
+import org.rajawali3d.materials.textures.TextureManager;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.GameObject;
 import de.fhws.mobcom.ardog_java.GameRenderer;
 import de.fhws.mobcom.ardog_java.ObjectManager;
@@ -75,14 +80,19 @@ public class GameActivity extends Activity implements View.OnTouchListener {
 
     private int mDisplayRotation = 0;
 
+    /* Application */
+    GameApplication application;
+
     /* Game-specific */
     private boolean mIsEditMode = false;
-    private ObjectManager objectManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        // get Application
+        application = ( GameApplication ) getApplicationContext();
 
         mSurfaceView = ( SurfaceView ) findViewById( R.id.surfaceview );
         mSurfaceView.setOnTouchListener( this );
@@ -106,7 +116,12 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             }, null );
         }
 
+        this.onLoadingStart();
+
+        initializeApp( mRenderer.getTextureManager() );
         setupRenderer();
+
+        this.onLoadingDone();
     }
 
     @Override
@@ -212,8 +227,6 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     }
 
     private void setupRenderer(){
-        this.onLoadingStart();
-
         mRenderer.getCurrentScene().registerFrameCallback(new ASceneFrameCallback() {
             @Override
             public void onPreFrame(long sceneTime, double deltaTime) {
@@ -276,41 +289,6 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             @Override
             public boolean callPreFrame(){
                 return true;
-            }
-        });
-
-        // load objects
-        objectManager = new ObjectManager( new ObjectManagerCallback() {
-            @Override
-            public ArrayList<GameObject> setup() throws ParsingException {
-                // loading all necessary assets is done here
-                ArrayList<GameObject> objects = new ArrayList<GameObject>();
-
-                Resources resources = getResources();
-                /* Dog */
-                // Mesh
-                //LoaderMD5Mesh dogMeshLoader = new LoaderMD5Mesh( resources, mTextureManager, R.raw.dog );
-                //dogMeshLoader.parse();
-                // Animations
-                //LoaderMD5Anim dogAnimLoader = new LoaderMD5Anim( resources, mTextureManager, R.raw.dog_anim );
-
-                // Bowl
-                LoaderOBJ bowlLoader = new LoaderOBJ( resources, mRenderer.getTextureManager(), R.raw.bowl_obj );
-                bowlLoader.parse();
-                // add to collection
-                objects.add( new GameObject( "Bowl", bowlLoader.getParsedObject() ) );
-
-                return objects;
-            }
-
-            @Override
-            public void onDone() {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-                Log.e(TAG, "Cannot parse objects", e);
             }
         });
 
@@ -416,7 +394,13 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         return true;
     }
 
-    public void onLoadingStart(){
+    /* initializes GameApplication */
+    private void initializeApp( TextureManager textureManager ){
+        Resources resources = getResources();
+        this.application.loadAssets( resources, textureManager );
+    }
+
+    private void onLoadingStart(){
         ProgressBar progressBar = ( ProgressBar ) findViewById( R.id.progressBar );
         progressBar.getIndeterminateDrawable().setColorFilter( Color.WHITE, PorterDuff.Mode.MULTIPLY );
 
@@ -427,7 +411,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     }
 
     // this method gets called when loading is done
-    public void onLoadingDone(){
+    private void onLoadingDone(){
         ProgressBar progressBar = ( ProgressBar ) findViewById( R.id.progressBar );
         progressBar.setVisibility( View.GONE );
 

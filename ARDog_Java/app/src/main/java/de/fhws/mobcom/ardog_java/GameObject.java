@@ -3,6 +3,7 @@ package de.fhws.mobcom.ardog_java;
 import java.util.ArrayList;
 
 import org.rajawali3d.Object3D;
+import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -15,6 +16,8 @@ public class GameObject {
 
     // actual Object3D
     private Object3D object;
+    private ArrayList<SkeletalAnimationSequence> sequences;
+    private boolean isPlaced;
 
     // managing children + parents
     ArrayList<GameObject> children;
@@ -24,6 +27,7 @@ public class GameObject {
     public GameObject( String name, Object3D object ){
         this.name = name;
         this.object = object;
+        this.isPlaced = false;
     }
     public GameObject( String name, Object3D object, ArrayList<GameObject> children ){
         this( name, object );
@@ -34,6 +38,13 @@ public class GameObject {
     public String getName() { return this.name; }
     public int getThumbnailId() { return this.thumbnailId; }
     public Object3D getObject() { return this.object; }
+
+    // Animations
+    public ArrayList<SkeletalAnimationSequence> getSequences() { return this.sequences; }
+    public void setSequences( ArrayList<SkeletalAnimationSequence> sequences ){ this.sequences = sequences; }
+    public void addSequence( SkeletalAnimationSequence sequence ){
+        this.sequences.add( sequence );
+    }
 
     // Parent
     public GameObject getParent(){
@@ -64,5 +75,9 @@ public class GameObject {
             return;
 
         this.children.add( child );
+    }
+
+    public boolean isPlaced(){
+        return this.isPlaced;
     }
 }

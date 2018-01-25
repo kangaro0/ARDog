@@ -58,12 +58,11 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private ScreenQuad mBackgroundQuad;
     private ObjectColorPicker mOnePicker;
 
-    private ObjectManager objectManager;
-
-    private SkeletalAnimationObject3D mDog;
+    private GameApplication application;
 
     public GameRenderer( Context context ){
         super( context );
+        application = ( GameApplication ) context.getApplicationContext();
     }
 
     @Override
@@ -97,36 +96,18 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         light.setPosition(3, 2, 4);
         getCurrentScene().addLight(light);
 
-        // load model
-        try {
-            LoaderMD5Mesh meshParser = new LoaderMD5Mesh( this,
-                    R.raw.boblampclean_mesh );
-            meshParser.parse();
-
-            LoaderMD5Anim animParser = new LoaderMD5Anim( "attack2", this,
-                    R.raw.boblampclean_anim );
-            animParser.parse();
-
-            SkeletalAnimationSequence sequence = ( SkeletalAnimationSequence ) animParser.getParsedAnimationSequence();
-
-            // add model
-            mDog = ( SkeletalAnimationObject3D ) meshParser.getParsedAnimationObject();
-            mDog.setAnimationSequence( sequence );
-            mDog.setPosition( 0, 0, -30 );
-            mDog.setScale( .5f );
-            mDog.setRotation( Vector3.Axis.Y, 90 );
-            mDog.setRotation( Vector3.Axis.Z, -90 );
-            mDog.play();
-
-            getCurrentScene().addChild( mDog );
-
-        } catch( ParsingException e ){
-            e.printStackTrace();
+        // Get objects from Application
+        ArrayList<GameObject> objects = this.application.getObjectManager().getPlacedObjects();
+        for( GameObject current : objects ){
+            Object3D curObject = current.getObject();
+            // add to Scene and register in ObjectPicker
+            getCurrentScene().addChild( curObject );
+            mOnePicker.registerObject( curObject );
         }
 
+        /* ObjectPicker */
         mOnePicker.registerObject( mBackgroundQuad );
-        if( mDog != null )
-            mOnePicker.registerObject( mDog );
+
     }
 
     public void updateColorCameraTextureUvGlThread( int rotation ){
