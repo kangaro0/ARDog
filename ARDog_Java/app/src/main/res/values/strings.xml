@@ -10,5 +10,13 @@
     <string name="permission_camera">"Camera permission needed!"</string>
 
     <!-- SharedPreferences Keys -->
-    <string name="shared_preferences_key">com.fhws.mobcom.ardog.shared_preferences</string>
+    <string name="shared_preferences_key">com.fhws.mobcom.ardog.preferences</string>
+    <string-array name="entities_keys">
+        <item>DOG</item>
+        <item>DOG_pos</item>
+        <item>BOWL</item>
+        <item>BOWL_pos</item>
+        <item>BED</item>
+        <item>BED_pos</item>
+    </string-array>
 </resources>

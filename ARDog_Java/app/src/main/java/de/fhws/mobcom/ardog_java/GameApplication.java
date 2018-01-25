@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
 import android.util.Log;
 
 import org.rajawali3d.loader.LoaderOBJ;
@@ -13,9 +12,10 @@ import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.textures.TextureManager;
 
 import java.util.ArrayList;
-import java.util.Map;
 
-import static java.security.AccessController.getContext;
+import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
+import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
+import de.fhws.mobcom.ardog_java.Helpers.SharedPreferencesHelper;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -28,7 +28,13 @@ public class GameApplication extends Application {
     private static GameApplication instance;
 
     private ObjectManager objectManager;
-    private SharedPreferences sharedPreferences;
+
+    /* SharedPreferences */
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
+
+    /* Booleans */
+    private boolean firstStart;
 
     /* Lifecycle */
     @Override
@@ -42,7 +48,6 @@ public class GameApplication extends Application {
         instance = this;
 
         // get reference to SharedPreferences
-        this.sharedPreferences = getSharedPreferences( getString( R.string.shared_preferences_key ), Context.MODE_PRIVATE );
         this.setupSharedPreferences();
     }
 
@@ -61,7 +66,7 @@ public class GameApplication extends Application {
         return this.objectManager;
     }
 
-    public void loadAssets( final Resources resources, final TextureManager textureManager ){
+    public void loadAssets( final Resources resources, final TextureManager textureManager, final GameApplicationLoadCallback callback ){
         // intialize GameObjects
         objectManager = new ObjectManager( new ObjectManagerCallback() {
             @Override
@@ -105,8 +110,7 @@ public class GameApplication extends Application {
 
             @Override
             public void onDone() {
-                // load SharedPreferences
-
+                callback.onDone();
             }
 
             @Override
@@ -118,9 +122,43 @@ public class GameApplication extends Application {
 
     /* Sets up keys in SharedPreferences if they do not exist */
     public boolean setupSharedPreferences(){
+        this.preferences = getSharedPreferences( getString( R.string.shared_preferences_key ), Context.MODE_PRIVATE );
+
+        String[] keys = getResources().getStringArray( R.array.entities_keys );
+
+        String[] entities = new String[ SharedPreferencesHelper.preferencesPerEntity / keys.length ];
+        for( int i = 0 ; i < keys.length ; i++ ){
+            entities[ i ] = this.preferences.getString( keys[ i ], null );
+        }
+
+        // check if first start
+        this.firstStart = isFirstStart( entities ) ? true : false;
+
+        
+
         return true;
     }
 
+    public void saveSharedPreferences( String[] entities ){
+
+    }
+
+    /* If there are no preferences saved, we assume it is the first start */
+    private boolean isFirstStart( String[] entities ){
+        for( String cur : entities ){
+            if( cur != null )
+                return false;
+        }
+        return true;
+    }
+
+    /* public interface for Activity and Renderer */
+    public boolean isFirstStart(){
+        return this.firstStart;
+    }
+
+
+    /* Singleton */
     public static GameApplication getInstance(){
         return GameApplication.instance;
     }

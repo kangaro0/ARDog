@@ -36,11 +36,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
-import org.rajawali3d.loader.LoaderOBJ;
-import org.rajawali3d.loader.ParsingException;
-import org.rajawali3d.loader.md5.LoaderMD5Anim;
-import org.rajawali3d.loader.md5.LoaderMD5Mesh;
 import org.rajawali3d.materials.textures.TextureManager;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
@@ -48,11 +43,9 @@ import org.rajawali3d.view.SurfaceView;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
-import de.fhws.mobcom.ardog_java.GameObject;
 import de.fhws.mobcom.ardog_java.GameRenderer;
-import de.fhws.mobcom.ardog_java.ObjectManager;
-import de.fhws.mobcom.ardog_java.ObjectManagerCallback;
 import de.fhws.mobcom.ardog_java.R;
 
 public class GameActivity extends Activity implements View.OnTouchListener {
@@ -119,9 +112,8 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         this.onLoadingStart();
 
         initializeApp( mRenderer.getTextureManager() );
-        setupRenderer();
-
-        this.onLoadingDone();
+        // gets called when 3D-Models are loaded
+        // setupRenderer();
     }
 
     @Override
@@ -292,8 +284,6 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             }
         });
 
-        this.onLoadingDone();
-
         mSurfaceView.setSurfaceRenderer( mRenderer );
     }
 
@@ -397,7 +387,19 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     /* initializes GameApplication */
     private void initializeApp( TextureManager textureManager ){
         Resources resources = getResources();
-        this.application.loadAssets( resources, textureManager );
+        this.application.loadAssets(resources, textureManager, new GameApplicationLoadCallback() {
+            @Override
+            public void onDone() {
+                // Loading done here
+                setupRenderer();
+                onLoadingDone();
+            }
+            @Override
+            public void onError( Exception e ){
+                // Error happened
+                Log.e( TAG, "Error while loading assets:", e );
+            }
+        });
     }
 
     private void onLoadingStart(){

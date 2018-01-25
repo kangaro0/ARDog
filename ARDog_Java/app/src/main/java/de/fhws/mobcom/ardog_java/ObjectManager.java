@@ -1,17 +1,11 @@
 package de.fhws.mobcom.ardog_java;
 
-import android.content.res.Resources;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Observable;
-import java.util.Observer;
 
-import org.rajawali3d.Object3D;
 import org.rajawali3d.loader.ParsingException;
-import org.rajawali3d.renderer.Renderer;
 
-import de.fhws.mobcom.ardog_java.GameObject;
+import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
 
 /**
  * Created by kanga on 21.01.2018.
