@@ -11,6 +11,15 @@ import java.util.Vector;
 public class DBObject {
 
     String name;
+
+    public Vector3 getVec() {
+        return vec;
+    }
+
+    public void setVec(Vector3 vec) {
+        this.vec = vec;
+    }
+
     Vector3 vec;
 
     public String getName() {

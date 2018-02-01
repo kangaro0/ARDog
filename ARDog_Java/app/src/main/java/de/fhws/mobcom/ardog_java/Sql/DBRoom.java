@@ -9,7 +9,7 @@ public class DBRoom {
 
     private String uuid;
     private String name;
-    
+
     public String getUuid() {
         return uuid;
     }

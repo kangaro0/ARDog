@@ -117,4 +117,15 @@ public class ARDogQuery {
        return newRowId;
    }
 
+   public long addObjectToRoom(String uuid, DBObject obj){
+       SQLiteDatabase db = adHelper.getWritableDatabase();
+       ContentValues values = new ContentValues();
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_UUID, uuid);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_NAME, obj.getName());
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, obj.getVec().x);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, obj.getVec().y);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
+       return db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
+   }
+
 }
