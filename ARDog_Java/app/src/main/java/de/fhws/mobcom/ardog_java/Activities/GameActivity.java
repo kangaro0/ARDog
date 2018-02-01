@@ -113,7 +113,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
 
         initializeApp( mRenderer.getTextureManager() );
         // gets called when 3D-Models are loaded
-        // setupRenderer();
+        setupRenderer();
     }
 
     @Override
