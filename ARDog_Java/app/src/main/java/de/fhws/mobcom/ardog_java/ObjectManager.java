@@ -75,6 +75,10 @@ public class ObjectManager {
     }
     public ArrayList<GameObject> getPlacedObjects(){
         ArrayList<GameObject> toReturn = new ArrayList<GameObject>();
+        
+        if( this.objects == null )
+            return toReturn;
+
         for( GameObject current : this.objects ){
             if( current.isPlaced() )
                 toReturn.add( current );
