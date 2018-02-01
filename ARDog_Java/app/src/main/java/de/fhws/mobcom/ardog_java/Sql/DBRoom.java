@@ -5,4 +5,22 @@ package de.fhws.mobcom.ardog_java.Sql;
  */
 
 public class DBRoom {
+
+    private String uuid;
+    private String name;
+
+    public DBRoom(String uuid, String name){
+        this.uuid = uuid;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 }
