@@ -124,7 +124,7 @@ public class GameApplication extends Application {
 
             @Override
             public void onError(Exception e) {
-                Log.e(TAG, "Cannot parse objects", e);
+                callback.onError( e );
             }
         });
     }
