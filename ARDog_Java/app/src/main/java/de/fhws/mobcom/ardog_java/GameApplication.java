@@ -1,7 +1,6 @@
 package de.fhws.mobcom.ardog_java;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -11,11 +10,20 @@ import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.textures.TextureManager;
 
+import com.google.atap.tangoservice.Tango;
+import com.google.atap.tangoservice.TangoCameraIntrinsics;
+import com.google.atap.tangoservice.TangoConfig;
+import com.google.atap.tangoservice.TangoCoordinateFramePair;
+import com.google.atap.tangoservice.TangoErrorException;
+import com.google.atap.tangoservice.TangoInvalidException;
+import com.google.atap.tangoservice.TangoOutOfDateException;
+import com.google.tango.support.TangoSupport;
+
 import java.util.ArrayList;
 
+import de.fhws.mobcom.ardog_java.Activities.GameActivity;
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
-import de.fhws.mobcom.ardog_java.Helpers.SharedPreferencesHelper;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -26,6 +34,9 @@ public class GameApplication extends Application {
 
     /* Singleton */
     private static GameApplication instance;
+
+    /* Current ADF */
+    public String uuid;
 
     private ObjectManager objectManager;
 
@@ -46,9 +57,6 @@ public class GameApplication extends Application {
     public void onCreate(){
         super.onCreate();
         instance = this;
-
-        // get reference to SharedPreferences
-        this.setupSharedPreferences();
     }
 
     @Override
@@ -65,8 +73,9 @@ public class GameApplication extends Application {
     public ObjectManager getObjectManager(){
         return this.objectManager;
     }
+    public String getUUID() { return this.uuid; }
 
-    public void loadAssets( final Resources resources, final TextureManager textureManager, final GameApplicationLoadCallback callback ){
+    public void loadAssets( final TextureManager textureManager, final GameApplicationLoadCallback callback ){
         // intialize GameObjects
         objectManager = new ObjectManager( new ObjectManagerCallback() {
             @Override
@@ -119,44 +128,6 @@ public class GameApplication extends Application {
             }
         });
     }
-
-    /* Sets up keys in SharedPreferences if they do not exist */
-    public boolean setupSharedPreferences(){
-        this.preferences = getSharedPreferences( getString( R.string.shared_preferences_key ), Context.MODE_PRIVATE );
-
-        String[] keys = getResources().getStringArray( R.array.entities_keys );
-
-        String[] entities = new String[ SharedPreferencesHelper.preferencesPerEntity / keys.length ];
-        for( int i = 0 ; i < keys.length ; i++ ){
-            entities[ i ] = this.preferences.getString( keys[ i ], null );
-        }
-
-        // check if first start
-        this.firstStart = isFirstStart( entities ) ? true : false;
-
-        
-
-        return true;
-    }
-
-    public void saveSharedPreferences( String[] entities ){
-
-    }
-
-    /* If there are no preferences saved, we assume it is the first start */
-    private boolean isFirstStart( String[] entities ){
-        for( String cur : entities ){
-            if( cur != null )
-                return false;
-        }
-        return true;
-    }
-
-    /* public interface for Activity and Renderer */
-    public boolean isFirstStart(){
-        return this.firstStart;
-    }
-
 
     /* Singleton */
     public static GameApplication getInstance(){
