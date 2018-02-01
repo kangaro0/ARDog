@@ -14,7 +14,7 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + ARDogContract.TangoRoom.TABLE_NAME + " (" +
                     ARDogContract.TangoRoom._ID + " INTEGER PRIMARY KEY," +
-                    ARDogContract.TangoRoom.COLUMN_NAME_UUID + " TEXT," +
+                    ARDogContract.TangoRoom.COLUMN_NAME_UUID + " TEXT PRIMARY KEY," +
                     ARDogContract.TangoRoom.COLUMN_NAME_NAME + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES =

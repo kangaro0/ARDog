@@ -17,9 +17,11 @@ import com.google.tango.support.TangoSupport;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.hardware.display.DisplayManager;
@@ -47,6 +49,8 @@ import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
+import de.fhws.mobcom.ardog_java.Sql.ARDogContract;
+import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 
 public class GameActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = GameActivity.class.getSimpleName();
@@ -79,10 +83,20 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     /* Game-specific */
     private boolean mIsEditMode = false;
 
+    private SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        ARDogDbHelper adHelper = new ARDogDbHelper(getApplicationContext());
+        db = adHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(ARDogContract.TangoRoom.COLUMN_NAME_UUID, "asfafds-asdfassf-adfa");
+        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, "Raumname");
+        long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
+
 
         // get Application
         application = ( GameApplication ) getApplicationContext();
