@@ -12,7 +12,7 @@ import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
  * Singleton-Class for managing 3D-objects available in scene.
  */
 
-public class ObjectManager extends Observable {
+public class ObjectManager {
     // TAG for logcat
     private static final String TAG = ObjectManager.class.getSimpleName();
 

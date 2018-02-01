@@ -143,21 +143,6 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     @Override
     public void onStop(){
         super.onStop();
-
-        synchronized ( this ){
-            try {
-                if( mTango != null ){
-                    mTango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
-                    mTango.disconnect();
-                }
-
-                mConnectedTextureIdGlThread = INVALID_TEXTURE_ID;
-                mTango = null;
-                mIsConnected = false;
-            } catch ( TangoErrorException e ){
-                Log.e(TAG, getString( R.string.exception_tango_error ), e );
-            }
-        }
     }
 
     private void bindTangoService(){
@@ -166,7 +151,8 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             public void run(){
                 synchronized ( GameActivity.this ){
                     try {
-                        mConfig = setupTangoConfig( mTango );
+                        // beware, if no adf loaded this will crash
+                        mConfig = setupTangoConfig( mTango, application.getUUID() );
                         mTango.connect( mConfig );
                         startupTango();
                         TangoSupport.initialize( mTango );
@@ -189,11 +175,12 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         });
     }
 
-    private TangoConfig setupTangoConfig( Tango tango ){
+    private TangoConfig setupTangoConfig( Tango tango, String uuid ){
         TangoConfig config = tango.getConfig( TangoConfig.CONFIG_TYPE_DEFAULT );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_COLORCAMERA, true );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_LOWLATENCYIMUINTEGRATION, true );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_DRIFT_CORRECTION, true );
+        config.putString( TangoConfig.KEY_STRING_AREADESCRIPTION, uuid );
         return config;
     }
 
@@ -401,7 +388,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     /* initializes GameApplication */
     private void initializeApp( TextureManager textureManager ){
         Resources resources = getResources();
-        this.application.loadAssets(resources, textureManager, new GameApplicationLoadCallback() {
+        this.application.loadAssets( textureManager, new GameApplicationLoadCallback() {
             @Override
             public void onDone() {
                 // Loading done here
