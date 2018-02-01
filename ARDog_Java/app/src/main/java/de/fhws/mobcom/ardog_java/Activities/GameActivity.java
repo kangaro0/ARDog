@@ -392,7 +392,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             @Override
             public void onDone() {
                 // Loading done here
-                // setupRenderer();
+
                 onLoadingDone();
             }
             @Override
