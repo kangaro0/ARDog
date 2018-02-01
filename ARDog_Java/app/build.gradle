@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -30,4 +31,5 @@ dependencies {
     compile "com.google.tango:sdk-support:${release_version}"
     compile 'org.rajawali3d:rajawali:1.1.970'
     testCompile 'junit:junit:4.12'
+    testCompile "org.robolectric:robolectric:3.6.1"
 }
