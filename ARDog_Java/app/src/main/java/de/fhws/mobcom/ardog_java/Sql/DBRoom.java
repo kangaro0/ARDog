@@ -6,8 +6,19 @@ package de.fhws.mobcom.ardog_java.Sql;
 
 public class DBRoom {
 
+
     private String uuid;
     private String name;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+
 
     public DBRoom(String uuid, String name){
         this.uuid = uuid;
