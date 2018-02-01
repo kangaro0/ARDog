@@ -116,5 +116,4 @@ public class ARDogQuery {
        long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
        return newRowId;
    }
-
 }
