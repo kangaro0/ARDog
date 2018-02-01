@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import de.fhws.mobcom.ardog_java.R;
+import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 /**
  * Created by kanga on 01.02.2018.
@@ -17,12 +18,15 @@ import de.fhws.mobcom.ardog_java.R;
 
 public class ListViewAdapter extends ArrayAdapter {
     private final Context context;
+    private final int resourceId;
 
-    ArrayList<Object> objects;
+    ArrayList<DBRoom> objects;
 
-    public ListViewAdapter( Context context, int resourceId, ArrayList<Object> objects ){
+    public ListViewAdapter( Context context, int resourceId, ArrayList<DBRoom> objects ){
         super( context, resourceId, objects );
 
+        this.context = context;
+        this.resourceId = resourceId;
         this.objects = objects;
     }
 
@@ -45,12 +49,12 @@ public class ListViewAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        Object obj = this.objects.get( i );
+        DBRoom obj = this.objects.get( i );
 
         LayoutInflater inflater = ( LayoutInflater ) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
-        View itemView = inflater.inflate( R.layout.listview_item, viewGroup, false );
+        View itemView = inflater.inflate( this.resourceId, viewGroup, false );
         TextView textView = ( TextView ) itemView.findViewById( R.id.item_text );
-        textView.setText( "Dummy" );   // obj.getName();
+        textView.setText( obj.getName() );   // obj.getName();
 
         return itemView;
     }
