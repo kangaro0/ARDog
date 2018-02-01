@@ -14,14 +14,24 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + ARDogContract.TangoRoom.TABLE_NAME + " (" +
                     ARDogContract.TangoRoom._ID + " INTEGER PRIMARY KEY," +
-                    ARDogContract.TangoRoom.COLUMN_NAME_UUID + " TEXT," +
-                    ARDogContract.TangoRoom.COLUMN_NAME_NAME + " TEXT)";
+                    ARDogContract.TangoRoom.COLUMN_NAME_UUID + " TEXT UNIQUE," +
+                    ARDogContract.TangoRoom.COLUMN_NAME_NAME + " TEXT UNIQUE);"+
+            "CREATE TABLE " + ARDogContract.TangoObjects.TABLE_NAME + " (" +
+                    ARDogContract.TangoObjects._ID + " INTEGER PRIMARY KEY," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_UUID + " TEXT," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_NAME + " TEXT," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_POS_X + " DOUBLE," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_POS_Y + " DOUBLE," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_POS_Z + " DOUBLE," +
+                    "FOREIGN KEY("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+") REFERENCES " +ARDogContract.TangoRoom.TABLE_NAME +"("+ARDogContract.TangoRoom.COLUMN_NAME_UUID+"));";
+
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + ARDogContract.TangoRoom.TABLE_NAME;
+                    "DROP TABLE IF EXISTS " + ARDogContract.TangoRoom.TABLE_NAME+
+                    "; DROP TABLE IF EXISTS " + ARDogContract.TangoObjects.TABLE_NAME;
 
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "ARDog.db";
 
 

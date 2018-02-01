@@ -17,9 +17,12 @@ import com.google.tango.support.TangoSupport;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.hardware.display.DisplayManager;
@@ -41,12 +44,15 @@ import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
+import de.fhws.mobcom.ardog_java.Sql.ARDogContract;
+import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 
 public class GameActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = GameActivity.class.getSimpleName();
@@ -79,12 +85,13 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     /* Game-specific */
     private boolean mIsEditMode = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // get Application
+         // get Application
         application = ( GameApplication ) getApplicationContext();
 
         mSurfaceView = ( SurfaceView ) findViewById( R.id.surfaceview );
@@ -114,6 +121,34 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         initializeApp( mRenderer.getTextureManager() );
         // gets called when 3D-Models are loaded
         setupRenderer();
+
+
+       /* SQLiteDatabase db = adHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(ARDogContract.TangoRoom.COLUMN_NAME_UUID, "asfafds-asdfassf-adfa");
+        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, "Raumname");
+        long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
+
+       db = adHelper.getReadableDatabase();
+        String [] projection ={
+                ARDogContract.TangoRoom.COLUMN_NAME_UUID,
+                ARDogContract.TangoRoom.COLUMN_NAME_NAME,
+        };
+        String selection = ARDogContract.TangoRoom.COLUMN_NAME_NAME + "= ?";
+        String[] selectionArgs = {"Raumname"};
+        Cursor cursor = db.query(
+                ARDogContract.TangoRoom.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+        cursor.moveToNext();
+        String name = cursor.getString(cursor.getColumnIndexOrThrow(ARDogContract.TangoRoom.COLUMN_NAME_NAME));
+        cursor.close();
+        Log.d("Db result" ,name);*/
     }
 
     @Override

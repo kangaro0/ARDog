@@ -16,13 +16,21 @@ import com.google.tango.support.TangoSupport;
 
 import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.R;
+import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
+import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
 
 /**
  * Created by kanga on 01.02.2018.
  */
 
+
 public class AreaSelectionActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = AreaSelectionActivity.class.getSimpleName();
+
+    ARDogDbHelper adHelper;
+    ARDogQuery adQuery;
+
+
 
     /* Application */
     private GameApplication application;
@@ -40,6 +48,8 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
 
         listView = ( ListView ) findViewById( R.id.list_view );
 
+        this.adHelper = new ARDogDbHelper(this);
+        this.adQuery = new ARDogQuery(adHelper);
         this.application = ( GameApplication ) getApplicationContext();
     }
 
@@ -66,5 +76,11 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         return false;
+    }
+
+    @Override
+    public void onDestroy() {
+        adHelper.close();
+        super.onDestroy();
     }
 }

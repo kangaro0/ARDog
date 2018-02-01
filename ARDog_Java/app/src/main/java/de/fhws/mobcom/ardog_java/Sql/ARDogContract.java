@@ -17,4 +17,14 @@ public class ARDogContract {
         public static final String COLUMN_NAME_NAME = "name";
 
     }
+
+    public static class TangoObjects implements BaseColumns {
+        public static final String TABLE_NAME = "TangoObjects";
+        public static final String COLUMN_NAME_UUID = "room_uuid";
+        public static final String COLUMN_NAME_NAME = "obj_name";
+        public static final String COLUMN_NAME_POS_X= "pos_x";
+        public static final String COLUMN_NAME_POS_Y = "pos_y";
+        public static final String COLUMN_NAME_POS_Z = "pos_z";
+
+    }
 }
