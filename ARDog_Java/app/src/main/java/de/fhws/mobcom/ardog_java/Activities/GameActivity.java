@@ -166,7 +166,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         config.putBoolean( TangoConfig.KEY_BOOLEAN_COLORCAMERA, true );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_LOWLATENCYIMUINTEGRATION, true );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_DRIFT_CORRECTION, true );
-        config.putString( TangoConfig.KEY_STRING_AREADESCRIPTION, uuid );
+        //config.putString( TangoConfig.KEY_STRING_AREADESCRIPTION, uuid );
         return config;
     }
 
@@ -378,7 +378,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             @Override
             public void onDone() {
                 // Loading done here
-                setupRenderer();
+                // setupRenderer();
                 onLoadingDone();
             }
             @Override
