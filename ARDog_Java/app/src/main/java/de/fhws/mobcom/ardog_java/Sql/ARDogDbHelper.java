@@ -11,11 +11,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ARDogDbHelper extends SQLiteOpenHelper {
 
 
-    private static final String SQL_CREATE_ENTRIES =
+    private static final String SQL_CREATE_ENTRIES_TANGO_ROOM =
             "CREATE TABLE " + ARDogContract.TangoRoom.TABLE_NAME + " (" +
                     ARDogContract.TangoRoom._ID + " INTEGER PRIMARY KEY," +
                     ARDogContract.TangoRoom.COLUMN_NAME_UUID + " TEXT UNIQUE," +
-                    ARDogContract.TangoRoom.COLUMN_NAME_NAME + " TEXT UNIQUE);"+
+                    ARDogContract.TangoRoom.COLUMN_NAME_NAME + " TEXT UNIQUE);";
+     private static final String SQL_CREATE_TANGO_OBJECT =
             "CREATE TABLE " + ARDogContract.TangoObjects.TABLE_NAME + " (" +
                     ARDogContract.TangoObjects._ID + " INTEGER PRIMARY KEY," +
                     ARDogContract.TangoObjects.COLUMN_NAME_UUID + " TEXT," +
@@ -40,7 +41,8 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(SQL_CREATE_ENTRIES);
+        db.execSQL(SQL_CREATE_ENTRIES_TANGO_ROOM);
+        db.execSQL(SQL_CREATE_TANGO_OBJECT);
     }
 
 

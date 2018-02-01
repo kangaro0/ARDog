@@ -16,6 +16,7 @@ import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.R;
 import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
+import de.fhws.mobcom.ardog_java.Sql.DBObject;
 import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 /**
@@ -45,7 +46,14 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         this.adQuery = new ARDogQuery(adHelper);
 
         // insert dummy
-        this.adQuery.addRoom("123", "Hello World.");
+        this.adQuery.addRoom("123", "Hello World1.");
+        this.adQuery.addRoom("124", "Hello World2.");
+        this.adQuery.addRoom("125", "Hello World3.");
+
+        this.adQuery.addObjectToRoom("123", new DBObject("objekt", 1.0, 2.0, 3.0));
+
+        ArrayList<DBObject> obj = (ArrayList)this.adQuery.getObjectsByRoom("123");
+        Log.d("dbobject", obj.get(0).getName());
 
         ArrayList<DBRoom> rooms = ( ArrayList ) adQuery.getRooms();
         ListViewAdapter adapter = new ListViewAdapter( this, R.layout.listview_item, rooms );

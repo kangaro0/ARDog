@@ -127,4 +127,19 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
        return db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
    }
+
+   public long deleteRoom(String uuid){
+       return (long) 0;
+   }
+
+   public long deleteObject(String uuid, String name){
+       return (long) 0;
+   }
+
+   public boolean updateObject(String uuid, DBObject obj){
+        return true;
+   }
+
+
+
 }
