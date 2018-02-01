@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ListView;
 
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.TangoConfig;
@@ -32,11 +33,20 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
 
 
     /* Application */
-    GameApplication application;
+    private GameApplication application;
+
+    /* ListView for saved Rooms */
+    private ListView listView;
+
+    /* DB */
+    ARDog
 
     @Override
     protected void onCreate( Bundle savedInstances ){
         super.onCreate( savedInstances );
+        setContentView( R.layout.activity_area_selection );
+
+        listView = ( ListView ) findViewById( R.id.list_view );
 
         this.adHelper = new ARDogDbHelper(this);
         this.adQuery = new ARDogQuery(adHelper);
