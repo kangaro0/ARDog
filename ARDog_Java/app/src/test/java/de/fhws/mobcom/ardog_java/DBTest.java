@@ -16,6 +16,7 @@ import de.fhws.mobcom.ardog_java.Sql.DBObject;
 import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 
 /**
@@ -28,11 +29,13 @@ public class DBTest {
     Context context = RuntimeEnvironment.application.getApplicationContext();
     ARDogDbHelper adHelper = new ARDogDbHelper(context);
     ARDogQuery adQuery = new ARDogQuery(adHelper);
-
+    DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0);
+    DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0);
+    DBObject objUpdate2 = new DBObject("DBObject2", 2.0, 2.0, 3.0);
 
 
     @Test
-    public void testAddRoom(){
+    public void testAddAndGetRoom(){
         adQuery.addRoom("1", "Raum 1");
         adQuery.addRoom("2", "Raum 2");
         adQuery.addRoom("3", "Raum 3");
@@ -48,9 +51,8 @@ public class DBTest {
     }
 
     @Test
-    public void testAddObjectToRoom(){
-        DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0);
-        DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0);
+    public void testAddObjectToRoomAndGetObjectsByRoom(){
+
         adQuery.addObjectToRoom("1", obj1);
         adQuery.addObjectToRoom("1", obj2);
 
@@ -62,7 +64,27 @@ public class DBTest {
         adQuery.addObjectToRoom("1", obj1);
         ArrayList<DBObject> objList2 = (ArrayList) adQuery.getObjectsByRoom("1");
         assertEquals(objList2.size(), 2);
+    }
 
+    @Test
+    public void testDeleteRoom(){
+        adQuery.deleteRoom("1");
+        DBRoom room = adQuery.getRoom("Raum 1");
+        assertNull(room);
 
+        ArrayList<DBObject> objList = (ArrayList) adQuery.getObjectsByRoom("1");
+        assertEquals(objList.size(), 0);
+    }
+
+    @Test
+    public void testUpdateObject(){
+        adQuery.addObjectToRoom("2", obj1);
+        adQuery.addObjectToRoom("2", obj2);
+        ArrayList<DBObject> objList = (ArrayList) adQuery.getObjectsByRoom("2");
+        assertEquals(objList.get(1).getVec().x , 1.0, 0.1);
+
+        adQuery.updateObject("2", objUpdate2);
+        ArrayList<DBObject> objList2 = (ArrayList) adQuery.getObjectsByRoom("2");
+        assertEquals(objList2.get(1).getVec().x , 2.0, 0.1);
     }
 }

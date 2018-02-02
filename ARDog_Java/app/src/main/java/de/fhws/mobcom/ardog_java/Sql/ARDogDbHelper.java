@@ -42,7 +42,6 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES_TANGO_ROOM);
-        System.out.println(SQL_CREATE_TANGO_OBJECT);
         db.execSQL(SQL_CREATE_TANGO_OBJECT);
     }
 
