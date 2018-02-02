@@ -40,10 +40,6 @@ public class GameApplication extends Application {
 
     private ObjectManager objectManager;
 
-    /* SharedPreferences */
-    private SharedPreferences preferences;
-    private SharedPreferences.Editor editor;
-
     /* Booleans */
     private boolean firstStart;
 
@@ -74,6 +70,7 @@ public class GameApplication extends Application {
         return this.objectManager;
     }
     public String getUUID() { return this.uuid; }
+    public void setUUID( String uuid ) { this.uuid = uuid; }
 
     public void loadAssets( final TextureManager textureManager, final GameApplicationLoadCallback callback ){
         // intialize GameObjects

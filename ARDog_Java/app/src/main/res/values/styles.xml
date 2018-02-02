@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:colorAccent">@color/black</item>
+    </style>
+
+    <style name="EditTextCustom" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">#dc8f41</item>
+        <item name="colorControlNormal">#d11472</item>
+    </style>
+
 </resources>
