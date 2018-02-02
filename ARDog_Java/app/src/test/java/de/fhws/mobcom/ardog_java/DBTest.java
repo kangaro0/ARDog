@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
+import de.fhws.mobcom.ardog_java.Sql.DBObject;
 import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 import static org.junit.Assert.assertEquals;
@@ -28,6 +29,8 @@ public class DBTest {
     ARDogDbHelper adHelper = new ARDogDbHelper(context);
     ARDogQuery adQuery = new ARDogQuery(adHelper);
 
+
+
     @Test
     public void testAddRoom(){
         adQuery.addRoom("1", "Raum 1");
@@ -37,11 +40,29 @@ public class DBTest {
 
         DBRoom room = adQuery.getRoom("Raum 1");
         System.out.println(room.getName());
-
         assertEquals(room.getUuid(), "1");
 
         ArrayList<DBRoom> rooms = (ArrayList) adQuery.getRooms();
         assertEquals(rooms.size(), 4);
         assertEquals(rooms.get(3).getUuid(), "4" );
+    }
+
+    @Test
+    public void testAddObjectToRoom(){
+        DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0);
+        DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0);
+        adQuery.addObjectToRoom("1", obj1);
+        adQuery.addObjectToRoom("1", obj2);
+
+        ArrayList<DBObject> objList = (ArrayList) adQuery.getObjectsByRoom("1");
+        assertEquals(objList.size(), 2);
+        assertEquals(objList.get(0).getName(), obj1.getName() );
+        assertEquals(objList.get(1).getName(), obj2.getName() );
+
+        adQuery.addObjectToRoom("1", obj1);
+        ArrayList<DBObject> objList2 = (ArrayList) adQuery.getObjectsByRoom("1");
+        assertEquals(objList2.size(), 2);
+
+
     }
 }

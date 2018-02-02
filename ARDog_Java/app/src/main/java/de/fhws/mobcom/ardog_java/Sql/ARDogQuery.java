@@ -113,10 +113,11 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, name);
        values.put(ARDogContract.TangoRoom.COLUMN_NAME_UUID, uuid);
        long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
+
        return newRowId;
    }
 
-   public long addObjectToRoom(String uuid, DBObject obj){
+   public void addObjectToRoom(String uuid, DBObject obj){
        SQLiteDatabase db = adHelper.getWritableDatabase();
        ContentValues values = new ContentValues();
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_UUID, uuid);
@@ -124,7 +125,7 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, obj.getVec().x);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, obj.getVec().y);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
-       return db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
+       db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
    }
 
    public void deleteRoom(String uuid){

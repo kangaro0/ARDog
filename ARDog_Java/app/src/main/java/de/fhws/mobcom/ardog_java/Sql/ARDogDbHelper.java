@@ -24,15 +24,15 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_X + " DOUBLE," +
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_Y + " DOUBLE," +
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_Z + " DOUBLE," +
-                    "FOREIGN KEY("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+") REFERENCES " +ARDogContract.TangoRoom.TABLE_NAME +"("+ARDogContract.TangoRoom.COLUMN_NAME_UUID+"));";
-
+                    "FOREIGN KEY("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+") REFERENCES " +ARDogContract.TangoRoom.TABLE_NAME +"("+ARDogContract.TangoRoom.COLUMN_NAME_UUID+")," +
+                    "unique("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+","+ ARDogContract.TangoObjects.COLUMN_NAME_NAME+"));";
 
     private static final String SQL_DELETE_ENTRIES =
                     "DROP TABLE IF EXISTS " + ARDogContract.TangoRoom.TABLE_NAME+
                     "; DROP TABLE IF EXISTS " + ARDogContract.TangoObjects.TABLE_NAME;
 
 
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 3;
     public static final String DATABASE_NAME = "ARDog.db";
 
 
@@ -42,6 +42,7 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES_TANGO_ROOM);
+        System.out.println(SQL_CREATE_TANGO_OBJECT);
         db.execSQL(SQL_CREATE_TANGO_OBJECT);
     }
 
