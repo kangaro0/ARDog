@@ -145,21 +145,46 @@ public class ARDogQuery {
        db.delete(ARDogContract.TangoObjects.TABLE_NAME, selection, selectionArgs);
    }
 
-   public void updateObject(String uuid, DBObject obj){
+   public void updateObject(String uuid, DBObject updatedObj){
        SQLiteDatabase db = adHelper.getWritableDatabase();
        ContentValues values = new ContentValues();
-       values.put(ARDogContract.TangoObjects.COLUMN_NAME_NAME, obj.getName());
-       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, obj.getVec().x);
-       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, obj.getVec().y);
-       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_NAME, updatedObj.getName());
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, updatedObj.getVec().x);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, updatedObj.getVec().y);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getVec().z);
 
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";
-       String[] selectionArgs = { uuid, obj.getName() };
+       String[] selectionArgs = { uuid, updatedObj.getName() };
        db.update(
                ARDogContract.TangoObjects.TABLE_NAME,
                values,
                selection,
                selectionArgs);
+   }
 
+   public void updateRoomByUuid (String uuid, String newName ){
+       SQLiteDatabase db = adHelper.getWritableDatabase();
+       ContentValues values = new ContentValues();
+       values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, newName);
+       String selection = ARDogContract.TangoRoom.COLUMN_NAME_UUID + " = ?";
+       String[] selectionArgs = { uuid };
+       db.update(
+               ARDogContract.TangoRoom.TABLE_NAME,
+               values,
+               selection,
+               selectionArgs);
+
+   }
+   public void updateRoomByName (String name, String newName ){
+       SQLiteDatabase db = adHelper.getWritableDatabase();
+       ContentValues values = new ContentValues();
+       values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, newName);
+       String selection = ARDogContract.TangoRoom.COLUMN_NAME_NAME + " = ?";
+       String[] selectionArgs = { name };
+       db.update(
+               ARDogContract.TangoRoom.TABLE_NAME,
+               values,
+               selection,
+               selectionArgs);
    }
 }
