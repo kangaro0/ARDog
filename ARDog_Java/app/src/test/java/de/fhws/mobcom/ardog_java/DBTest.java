@@ -116,4 +116,17 @@ public class DBTest {
         assertEquals(room.getUuid(), roomUpdated.getUuid());
         assertEquals(roomNameUpdated, roomUpdated.getName());
     }
+
+    @Test
+    public void testDeleteObj(){
+        String uuid = "5";
+        String roomName = "Raum 5";
+        String objName = "obj 5";
+        DBObject obj = new DBObject(objName, 1.0, 2.0, 3.0);
+        adQuery.addRoom(uuid, roomName);
+        adQuery.addObjectToRoom(uuid, obj);
+        adQuery.deleteObject(uuid, obj.getName());
+        ArrayList<DBObject> objs = (ArrayList) adQuery.getObjectsByRoom(uuid);
+        assertEquals(objs.size(), 0);
+    }
 }
