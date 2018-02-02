@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -128,18 +127,38 @@ public class ARDogQuery {
        return db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
    }
 
-   public long deleteRoom(String uuid){
-       return (long) 0;
+   public void deleteRoom(String uuid){
+       SQLiteDatabase db = adHelper.getWritableDatabase();
+       String selection = ARDogContract.TangoRoom.COLUMN_NAME_UUID + " LIKE ?";
+       String[] selectionArgs = { uuid };
+       db.delete(ARDogContract.TangoRoom.TABLE_NAME, selection, selectionArgs);
+
+       selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ?";
+       db.delete(ARDogContract.TangoObjects.TABLE_NAME, selection, selectionArgs);
    }
 
-   public long deleteObject(String uuid, String name){
-       return (long) 0;
+   public void deleteObject(String uuid, String name){
+       SQLiteDatabase db = adHelper.getWritableDatabase();
+       String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";
+       String[] selectionArgs = { uuid, name};
+       db.delete(ARDogContract.TangoObjects.TABLE_NAME, selection, selectionArgs);
    }
 
-   public boolean updateObject(String uuid, DBObject obj){
-        return true;
+   public void updateObject(String uuid, DBObject obj){
+       SQLiteDatabase db = adHelper.getWritableDatabase();
+       ContentValues values = new ContentValues();
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_NAME, obj.getName());
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, obj.getVec().x);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, obj.getVec().y);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
+
+       String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";
+       String[] selectionArgs = { uuid, obj.getName() };
+       db.update(
+               ARDogContract.TangoObjects.TABLE_NAME,
+               values,
+               selection,
+               selectionArgs);
+
    }
-
-
-
 }
