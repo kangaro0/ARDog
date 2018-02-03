@@ -42,25 +42,27 @@
         app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
 
         <com.github.clans.fab.FloatingActionButton
+            style="@style/MenuButtonsSmall.Green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
-            app:fab_label="@string/fab_build_item_1"
+            app:fab_label="@string/delete" />
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            app:fab_label="@string/bowl"
             style="@style/MenuButtonsSmall.Green" />
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
-            app:fab_label="@string/fab_build_item_2"
+            app:fab_label="@string/bed"
             style="@style/MenuButtonsSmall.Green" />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            app:fab_label="@string/fab_build_item_3"
-            style="@style/MenuButtonsSmall.Green" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
@@ -84,21 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
-            app:fab_label="@string/fab_object_item_1" />
-
-        <com.github.clans.fab.FloatingActionButton
-            style="@style/MenuButtonsSmall.Green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            app:fab_label="@string/fab_object_item_2" />
-
-        <com.github.clans.fab.FloatingActionButton
-            style="@style/MenuButtonsSmall.Green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            app:fab_label="@string/fab_object_item_3" />
+            app:fab_label="@string/delete" />
 
     </com.github.clans.fab.FloatingActionMenu>
 
