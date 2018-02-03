@@ -12,12 +12,9 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -67,21 +64,21 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         setContentView( R.layout.activity_area_selection );
 
         // DB
-        this.adHelper = new ARDogDbHelper(this);
-        this.adQuery = new ARDogQuery(adHelper);
+        adHelper = new ARDogDbHelper(this);
+        adQuery = new ARDogQuery(adHelper);
 
         // insert dummy
-        this.adQuery.addRoom("123", "Hello World1.");
-        this.adQuery.addRoom("124", "Hello World2.");
-        this.adQuery.addRoom("125", "Hello World3.");
+        adQuery.addRoom("123", "Hello World1.");
+        adQuery.addRoom("124", "Hello World2.");
+        adQuery.addRoom("125", "Hello World3.");
 
-        this.adQuery.addObjectToRoom("123", new DBObject("objekt", 1.0, 2.0, 3.0));
+        adQuery.addObjectToRoom("123", new DBObject("objekt", 1.0, 2.0, 3.0));
 
-        this.setupFrameLayout();
-        this.setupListView();
-        this.setupActionButtons();
+        setupFrameLayout();
+        setupListView();
+        setupActionButtons();
 
-        this.application = ( GameApplication ) getApplicationContext();
+        application = ( GameApplication ) getApplicationContext();
     }
 
     @Override
@@ -134,7 +131,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         ArrayList<DBObject> obj = (ArrayList)this.adQuery.getObjectsByRoom("123");
         Log.d("dbobject", obj.get(0).getName());
 
-        final ArrayList<DBRoom> rooms = ( ArrayList ) adQuery.getRooms();
+        rooms = ( ArrayList ) adQuery.getRooms();
         final ListViewAdapter adapter = new ListViewAdapter( this, R.layout.listview_item, rooms );
 
         listView = ( ListView ) findViewById( R.id.list_view );
@@ -161,8 +158,8 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d( TAG, "Itm long clicked." );
-                resetBackgroundColors();
 
+                resetBackgroundColors();
                 // set as currently selected
                 currentId = position;
 
@@ -184,6 +181,9 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                     startActivity( intent );
                 } else {
                     // create new adf
+                    Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
+                    intent.putExtra( "KEY_AREA_EXISTS", false );
+                    startActivity( intent );
                 }
             }
         });
@@ -194,7 +194,10 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         this.actionButtonDelete.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                adQuery.deleteRoom( rooms.get( currentId ).getUuid() );
 
+                listView.invalidateViews();
+                setupListView();
             }
         });
 
@@ -252,7 +255,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                renameRoom( input.getText().toString() );
+                renameCurrentRoom( input.getText().toString() );
             }
         });
         builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
@@ -265,11 +268,16 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         builder.show();
     }
 
-    private void renameRoom( String name ){
+    private void createNewRoom(){
+        Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
+        startActivity( intent );
+    }
+
+    private void renameCurrentRoom(String name ){
         if( name == null || name == "" )
             return;
 
-        DBRoom room = rooms.get(currentId);
+        DBRoom room = rooms.get( currentId );
         room.setName( name );
 
         listView.invalidateViews();

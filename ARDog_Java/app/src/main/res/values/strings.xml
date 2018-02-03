@@ -8,8 +8,4 @@
     <string name="exception_tango_invalid">"Tango invalid exception! Try again!"</string>
     <string name="exception_out_of_date">"Tango service outdated!"</string>
     <string name="permission_camera">"Camera permission needed!"</string>
-
-    <!-- SharedPreferences Keys -->
-    <string name="shared_preferences_key">com.fhws.mobcom.ardog.preferences</string>
-    <string name="first_start">first_start</string>
 </resources>

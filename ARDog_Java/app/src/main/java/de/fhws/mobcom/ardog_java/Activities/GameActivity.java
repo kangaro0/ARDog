@@ -17,12 +17,9 @@ import com.google.tango.support.TangoSupport;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.hardware.display.DisplayManager;
@@ -44,15 +41,13 @@ import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
-import de.fhws.mobcom.ardog_java.GameRenderer;
+import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
+import de.fhws.mobcom.ardog_java.Renderers.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
-import de.fhws.mobcom.ardog_java.Sql.ARDogContract;
-import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 
 public class GameActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = GameActivity.class.getSimpleName();
@@ -253,7 +248,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
                             TangoCameraIntrinsics intrinsics = TangoSupport.getCameraIntrinsicsBasedOnDisplayRotation(
                                     TangoCameraIntrinsics.TANGO_CAMERA_COLOR, mDisplayRotation
                             );
-                            mRenderer.setProjectionMatrix( projectionMatrixFromCameraIntrinsics(intrinsics) );
+                            mRenderer.setProjectionMatrix(ThreeDimHelper.projectionMatrixFromCameraIntrinsics(intrinsics) );
                         }
 
                         if( mConnectedTextureIdGlThread != mRenderer.getTextureId() ){
@@ -307,32 +302,6 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         });
 
         mSurfaceView.setSurfaceRenderer( mRenderer );
-    }
-
-    private static float[] projectionMatrixFromCameraIntrinsics( TangoCameraIntrinsics intrinsics ){
-        float cx = ( float ) intrinsics.cx;
-        float cy = ( float ) intrinsics.cy;
-        float width = ( float ) intrinsics.width;
-        float height = ( float ) intrinsics.height;
-        float fx = ( float ) intrinsics.fx;
-        float fy = ( float ) intrinsics.fy;
-
-        float near = 0.1f;
-        float far = 100;
-
-        float xScale = near / fx;
-        float yScale = near / fy;
-        float xOffset = -( cy - ( width / 2.0f ) ) * xScale;
-        float yOffset = -( cy - ( height / 2.0f ) ) * yScale;
-
-        float m[] = new float[16];
-        Matrix.frustumM( m, 0,
-                xScale * ( float ) - width / 2.0f - xOffset,
-                xScale * ( float ) width / 2.0f - xOffset,
-                yScale * ( float ) - height / 2.0f - yOffset,
-                yScale * ( float ) height / 2.0f - yOffset,
-                near, far );
-        return m;
     }
 
     private void setDisplayRotation(){
@@ -413,7 +382,6 @@ public class GameActivity extends Activity implements View.OnTouchListener {
             @Override
             public void onDone() {
                 // Loading done here
-
                 onLoadingDone();
             }
             @Override

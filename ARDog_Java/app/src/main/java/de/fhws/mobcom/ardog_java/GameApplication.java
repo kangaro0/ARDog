@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import de.fhws.mobcom.ardog_java.Activities.GameActivity;
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
+import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -36,7 +37,9 @@ public class GameApplication extends Application {
     private static GameApplication instance;
 
     /* Current ADF */
-    public String uuid;
+    private String uuid;
+    /* Current Room */
+    private DBRoom room;
 
     private ObjectManager objectManager;
 
@@ -69,8 +72,12 @@ public class GameApplication extends Application {
     public ObjectManager getObjectManager(){
         return this.objectManager;
     }
+    // UUID
     public String getUUID() { return this.uuid; }
     public void setUUID( String uuid ) { this.uuid = uuid; }
+    // Room
+    public DBRoom getRoom(){ return this.room; }
+    public void setRoom( DBRoom room ){ this.room = room; }
 
     public void loadAssets( final TextureManager textureManager, final GameApplicationLoadCallback callback ){
         // intialize GameObjects

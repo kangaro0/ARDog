@@ -38,14 +38,13 @@
         android:layout_width="match_parent"
         android:layout_gravity="top"
         android:layout_marginTop="85dp"
-        android:paddingTop="25dp"
+        android:paddingTop="20dp"
         android:paddingLeft="9dp"
         android:paddingBottom="25dp"
         android:textSize="22sp"
         android:textColor="@color/white"
         android:text="Choose a room:"
         android:background="@color/colorSecondary"
-
         />
     <ListView
         android:id="@+id/list_view"

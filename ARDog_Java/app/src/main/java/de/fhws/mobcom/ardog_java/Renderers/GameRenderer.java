@@ -1,4 +1,4 @@
-package de.fhws.mobcom.ardog_java;
+package de.fhws.mobcom.ardog_java.Renderers;
 
 /**
  * Created by kanga on 19.01.2018.
@@ -9,35 +9,18 @@ import com.google.tango.support.TangoSupport;
 
 import android.content.Context;
 
-import android.content.Loader;
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.animation.LinearInterpolator;
 
 import org.rajawali3d.Object3D;
-import org.rajawali3d.animation.Animation;
-import org.rajawali3d.animation.Animation3D;
-import org.rajawali3d.animation.EllipticalOrbitAnimation3D;
-import org.rajawali3d.animation.RotateOnAxisAnimation;
-import org.rajawali3d.animation.mesh.SkeletalAnimationObject3D;
-import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 import org.rajawali3d.lights.DirectionalLight;
-import org.rajawali3d.loader.LoaderOBJ;
-import org.rajawali3d.loader.ParsingException;
-import org.rajawali3d.loader.md5.LoaderMD5Anim;
-import org.rajawali3d.loader.md5.LoaderMD5Mesh;
 import org.rajawali3d.materials.Material;
-import org.rajawali3d.materials.methods.DiffuseMethod;
 import org.rajawali3d.materials.textures.ATexture;
 import org.rajawali3d.materials.textures.StreamingTexture;
-import org.rajawali3d.materials.textures.Texture;
 import org.rajawali3d.math.Matrix4;
 import org.rajawali3d.math.Quaternion;
-import org.rajawali3d.math.vector.Vector3;
 import org.rajawali3d.primitives.ScreenQuad;
-import org.rajawali3d.primitives.Sphere;
 import org.rajawali3d.renderer.Renderer;
 import org.rajawali3d.util.ObjectColorPicker;
 import org.rajawali3d.util.OnObjectPickedListener;
@@ -46,7 +29,8 @@ import java.util.ArrayList;
 
 import javax.microedition.khronos.opengles.GL10;
 
-import de.fhws.mobcom.ardog_java.ObjectManager;
+import de.fhws.mobcom.ardog_java.GameApplication;
+import de.fhws.mobcom.ardog_java.GameObject;
 
 public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private static final String TAG = GameRenderer.class.getSimpleName();

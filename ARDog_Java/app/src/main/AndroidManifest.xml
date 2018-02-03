@@ -29,6 +29,9 @@
             android:label="ARDog"
             android:configChanges="orientation|screenSize"
             />
+        <activity android:name=".Activities.AreaLearningActivity"
+            android:configChanges="orientation|screenSize"
+            />
     </application>
 
 </manifest>
