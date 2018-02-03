@@ -87,4 +87,46 @@ public class DBTest {
         ArrayList<DBObject> objList2 = (ArrayList) adQuery.getObjectsByRoom("2");
         assertEquals(objList2.get(1).getVec().x , 2.0, 0.1);
     }
+
+    @Test
+    public void testUpdateRoomByUuid(){
+        adQuery.addRoom("3", "Raum 3");
+        DBRoom room = adQuery.getRoom("Raum 3");
+        assertEquals(room.getUuid(), "3");
+
+        String roomNameUpdated = "Raum 3 updated";
+        adQuery.updateRoomByUuid("3", roomNameUpdated);
+        DBRoom roomUpdated = adQuery.getRoom(roomNameUpdated);
+
+        assertEquals(room.getUuid(), roomUpdated.getUuid());
+        assertEquals(roomNameUpdated, roomUpdated.getName());
+    }
+
+    @Test
+    public void testUpdateRoomByName(){
+        String roomName = "Raum 4";
+        String roomNameUpdated = "Raum 4 updated";
+        adQuery.addRoom("4", roomName);
+        DBRoom room = adQuery.getRoom(roomName);
+        assertEquals(room.getUuid(), "4");
+
+        adQuery.updateRoomByName(roomName, roomNameUpdated);
+        DBRoom roomUpdated = adQuery.getRoom(roomNameUpdated);
+
+        assertEquals(room.getUuid(), roomUpdated.getUuid());
+        assertEquals(roomNameUpdated, roomUpdated.getName());
+    }
+
+    @Test
+    public void testDeleteObj(){
+        String uuid = "5";
+        String roomName = "Raum 5";
+        String objName = "obj 5";
+        DBObject obj = new DBObject(objName, 1.0, 2.0, 3.0);
+        adQuery.addRoom(uuid, roomName);
+        adQuery.addObjectToRoom(uuid, obj);
+        adQuery.deleteObject(uuid, obj.getName());
+        ArrayList<DBObject> objs = (ArrayList) adQuery.getObjectsByRoom(uuid);
+        assertEquals(objs.size(), 0);
+    }
 }
