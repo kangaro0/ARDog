@@ -42,14 +42,6 @@
         app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
 
         <com.github.clans.fab.FloatingActionButton
-            style="@style/MenuButtonsSmall.Green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            app:fab_label="@string/delete" />
-
-
-        <com.github.clans.fab.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
@@ -81,12 +73,6 @@
         app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
         app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
 
-        <com.github.clans.fab.FloatingActionButton
-            style="@style/MenuButtonsSmall.Green"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            app:fab_label="@string/delete" />
 
     </com.github.clans.fab.FloatingActionMenu>
 

@@ -1,5 +1,7 @@
 package de.fhws.mobcom.ardog_java.Activities;
 
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.Tango.OnTangoUpdateListener;
 import com.google.atap.tangoservice.TangoCameraIntrinsics;
@@ -45,6 +47,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
+import de.fhws.mobcom.ardog_java.GameObject;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.Renderers.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
@@ -79,6 +82,9 @@ public class GameActivity extends Activity implements View.OnTouchListener {
 
     /* Game-specific */
     private boolean mIsEditMode = false;
+
+    private FloatingActionMenu mFabBuild;
+    private FloatingActionMenu mFabObject;
 
 
     @Override
@@ -144,6 +150,9 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         String name = cursor.getString(cursor.getColumnIndexOrThrow(ARDogContract.TangoRoom.COLUMN_NAME_NAME));
         cursor.close();
         Log.d("Db result" ,name);*/
+
+       mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
+       mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
     }
 
     @Override
@@ -412,6 +421,16 @@ public class GameActivity extends Activity implements View.OnTouchListener {
     }
 
     // UI FAB  code
+
+    private void buildObjectFab(GameObject object){
+        for(GameObject o : object.getChildren()) {
+            final FloatingActionButton fab = new FloatingActionButton(this);
+            fab.setButtonSize(FloatingActionButton.SIZE_MINI);
+            fab.setLabelText(o.getName());
+            fab.setImageResource(o.getThumbnailId());
+            mFabObject.addMenuButton(fab);
+        }
+    }
 
 
 }
