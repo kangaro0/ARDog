@@ -1,14 +1,18 @@
 package de.fhws.mobcom.ardog_java.Activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.display.DisplayManager;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
+import android.widget.EditText;
 
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.TangoCameraIntrinsics;
@@ -323,8 +327,28 @@ public class AreaLearningActivity extends Activity {
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showNameRoomAlert();
+            }
+        });
+    }
 
-                saveAdfTask = new SaveAdfTask( application, tango, new SaveAdfTaskCallback(){
+    private void showNameRoomAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(
+                this,
+                R.style.AlertDialogCustom
+        );
+
+        final EditText input = new EditText( this );
+        input.setInputType( InputType.TYPE_CLASS_TEXT );
+
+        builder.setView( input );
+        builder.setTitle( "Name:                               " );
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = input.getText().toString();
+
+                saveAdfTask = new SaveAdfTask( application, tango, name, new SaveAdfTaskCallback(){
                     @Override
                     public void onDone() {
 
@@ -336,8 +360,17 @@ public class AreaLearningActivity extends Activity {
                     }
                 });
                 saveAdfTask.execute();
+
             }
         });
+        builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
 
     private void setDisplayRotation(){

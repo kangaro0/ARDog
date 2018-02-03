@@ -1,6 +1,5 @@
 package de.fhws.mobcom.ardog_java.Tasks;
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.google.atap.tangoservice.Tango;
@@ -23,7 +22,7 @@ public class SaveAdfTask extends AsyncTask<Void, Integer, String> {
     private String name;
 
 
-    public SaveAdfTask(GameApplication context, Tango tango, SaveAdfTaskCallback callback ){
+    public SaveAdfTask(GameApplication context, Tango tango, String name, SaveAdfTaskCallback callback ){
         this.context = context;
         this.callback = callback;
         this.tango = tango;
