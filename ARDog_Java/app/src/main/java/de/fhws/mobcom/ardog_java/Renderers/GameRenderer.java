@@ -54,7 +54,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     public GameRenderer( Context context, GameRendererCallback rendererCallback ){
         super( context );
         application = ( GameApplication ) context.getApplicationContext();
-        callback = callback;
+        callback = rendererCallback;
     }
 
     @Override
