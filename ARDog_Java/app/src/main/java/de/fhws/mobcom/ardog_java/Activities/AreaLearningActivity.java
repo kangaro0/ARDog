@@ -323,6 +323,7 @@ public class AreaLearningActivity extends Activity {
         actionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 saveAdfTask = new SaveAdfTask( application, tango, new SaveAdfTaskCallback(){
                     @Override
                     public void onDone() {

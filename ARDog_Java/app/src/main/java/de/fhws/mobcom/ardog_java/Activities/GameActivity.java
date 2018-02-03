@@ -59,7 +59,8 @@ import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.Renderers.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
 
-public class GameActivity extends Activity implements View.OnTouchListener {
+public class GameActivity extends Activity implements View.OnTouchListener, GameRendererCallback {
+
     private class TouchPoint {
         public double timestamp;
         public float[] depthPoint;
@@ -120,12 +121,7 @@ public class GameActivity extends Activity implements View.OnTouchListener {
 
         mSurfaceView = ( SurfaceView ) findViewById( R.id.surfaceview );
         mSurfaceView.setOnTouchListener( this );
-        mRenderer = new GameRenderer(this, new GameRendererCallback() {
-            @Override
-            public void onObjectPicked(GameObject obj) {
-
-            }
-        });
+        mRenderer = new GameRenderer(this, this );
 
         DisplayManager displayManager = ( DisplayManager ) getSystemService( DISPLAY_SERVICE );
         if( displayManager != null ){
@@ -554,6 +550,11 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         );
 
         touchPoint = new TouchPoint( rgbTimestamp, depthPoint );
+
+    }
+
+    @Override
+    public void onObjectPicked(GameObject obj) {
 
     }
 }

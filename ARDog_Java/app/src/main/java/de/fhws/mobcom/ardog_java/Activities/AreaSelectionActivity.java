@@ -260,7 +260,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 renameCurrentRoom( input.getText().toString() );
             }
         });
-        builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
