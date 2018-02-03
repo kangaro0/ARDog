@@ -5,8 +5,10 @@
 
     <org.rajawali3d.view.SurfaceView
         android:id="@+id/area_learn_surfaceview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        />
 
     <android.support.design.widget.FloatingActionButton
         xmlns:app="http://schemas.android.com/apk/res-auto"

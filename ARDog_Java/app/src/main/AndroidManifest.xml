@@ -26,10 +26,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.GameActivity"
-            android:label="ARDog"
+            android:label="GameActivity"
             android:configChanges="orientation|screenSize"
             />
         <activity android:name=".Activities.AreaLearningActivity"
+            android:label="AreaLearningActivity"
             android:configChanges="orientation|screenSize"
             />
     </application>

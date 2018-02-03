@@ -3,6 +3,7 @@ package de.fhws.mobcom.ardog_java;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import org.rajawali3d.Object3D;
 import org.rajawali3d.loader.ParsingException;
 
 import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
@@ -69,6 +70,14 @@ public class ObjectManager {
         for( int i = 0 ; i < this.objects.size() ; i++ ){
             GameObject current = this.objects.get( i );
             if( current.getName() == name )
+                return current;
+        }
+        return null;
+    }
+    public GameObject getByObject3D( Object3D obj ){
+        for( int i = 0 ; i < this.objects.size() ; i++ ){
+            GameObject current = this.objects.get( i );
+            if( current.getObject() == obj )
                 return current;
         }
         return null;

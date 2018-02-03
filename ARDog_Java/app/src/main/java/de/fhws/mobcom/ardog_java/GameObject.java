@@ -12,7 +12,6 @@ import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 public class GameObject {
     // identification
     private String name;
-    private int thumbnailId;    // thumbnail for selection bar
 
     // actual Object3D
     private Object3D object;
@@ -36,7 +35,6 @@ public class GameObject {
 
     /* Getter & Setter */
     public String getName() { return this.name; }
-    public int getThumbnailId() { return this.thumbnailId; }
     public Object3D getObject() { return this.object; }
 
     // Animations

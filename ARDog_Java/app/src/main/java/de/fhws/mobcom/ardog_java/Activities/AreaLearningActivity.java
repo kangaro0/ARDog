@@ -42,12 +42,13 @@ import de.fhws.mobcom.ardog_java.Tasks.SaveAdfTask;
 
 public class AreaLearningActivity extends Activity {
     public final String TAG = AreaLearningActivity.class.getSimpleName();
-    private final static int INVALID_TEXTURE_ID = -1;
+    private final static int INVALID_TEXTURE_ID = 0;
 
     /* Tango */
     private Tango tango;
     private TangoConfig config;
     private boolean isConnected = false;
+    private double cameraPoseTimestamp = 0;
 
     /* Application */
     GameApplication application;
@@ -60,7 +61,6 @@ public class AreaLearningActivity extends Activity {
     private int connectedTextureIdGlThread = INVALID_TEXTURE_ID;
     private AtomicBoolean isFrameAvailableTangoThread = new AtomicBoolean(false);
     private double rgbTimestampGlThread;
-    private double cameraPoseTimestamp = 0;
 
     /* Elements */
     private FloatingActionButton actionButton;
@@ -74,21 +74,19 @@ public class AreaLearningActivity extends Activity {
     /* SaveAdfTask */
     private SaveAdfTask saveAdfTask;
 
-    /* Lock */
-    private final Object sharedLock = new Object();
+    private boolean hasPermissions = false;
 
     private int displayRotation = 0;
 
 
     @Override
-    protected void onCreate( Bundle savedInstances ){
+    protected void onCreate( Bundle savedInstances ) {
 
-        super.onCreate( savedInstances );
+        super.onCreate(savedInstances);
         setContentView(R.layout.activity_area_learning);
 
         application = ( GameApplication ) getApplicationContext();
         actionButton = ( FloatingActionButton ) findViewById( R.id.area_learn_fab );
-
         surfaceView = ( SurfaceView ) findViewById( R.id.area_learn_surfaceview );
         renderer = new AreaLearningRenderer( application );
 
@@ -110,10 +108,6 @@ public class AreaLearningActivity extends Activity {
             }, null );
         }
 
-
-        startActivityForResult(
-                Tango.getRequestPermissionIntent(Tango.PERMISSIONTYPE_ADF_LOAD_SAVE), 0);
-
         Intent intent = getIntent();
         isNewRoom = intent.getBooleanExtra( "AREA_EXISTS", false );
 
@@ -121,8 +115,9 @@ public class AreaLearningActivity extends Activity {
     }
 
     @Override
-    protected void onStart(){
-        super.onStart();
+    protected void onResume(){
+        Log.d( TAG, "onResume()" );
+        super.onResume();
 
         surfaceView.setRenderMode( GLSurfaceView.RENDERMODE_CONTINUOUSLY );
         bindTangoService();
@@ -130,21 +125,13 @@ public class AreaLearningActivity extends Activity {
 
     @Override
     protected void onPause(){
+        Log.d( TAG, "onPause()" );
         super.onPause();
-        isLocalized = false;
-        synchronized (this) {
-            try {
-                tango.disconnect();
-            } catch (TangoErrorException e) {
-                Log.e( TAG, getString( R.string.exception_tango_error ), e );
-            }
+        try {
+            tango.disconnect();
+        } catch ( TangoErrorException e ){
+            Log.e( TAG, "Tango error.", e );
         }
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        bindTangoService();
     }
 
     @Override
@@ -153,9 +140,7 @@ public class AreaLearningActivity extends Activity {
     }
 
     private void bindTangoService(){
-        // Initialize Tango Service as a normal Android Service. Since we call mTango.disconnect()
-        // in onPause, this will unbind Tango Service, so every time onResume gets called we
-        // should create a new Tango object.
+        Log.d( TAG, "bindTangoService()" );
         tango = new Tango(AreaLearningActivity.this, new Runnable() {
             // Pass in a Runnable to be called from UI thread when Tango is ready; this Runnable
             // will be running on a new thread.
@@ -165,11 +150,12 @@ public class AreaLearningActivity extends Activity {
             public void run() {
                 synchronized ( AreaLearningActivity.this ) {
                     try {
-                        config = setTangoConfig( tango, false);
+                        config = setupTangoConfig( tango, false);
                         tango.connect(config);
-                        isConnected = true;
-                        TangoSupport.initialize( tango );
                         startupTango();
+                        TangoSupport.initialize( tango );
+                        isConnected = true;
+                        setDisplayRotation();
                     } catch (TangoOutOfDateException e) {
                         Log.e(TAG, getString( R.string.exception_out_of_date ), e);
                     } catch (TangoErrorException e) {
@@ -186,12 +172,13 @@ public class AreaLearningActivity extends Activity {
         });
     }
 
-    private TangoConfig setTangoConfig(Tango tango, boolean isLoadAdf) {
-        // Use default configuration for Tango Service.
-        TangoConfig config = tango.getConfig(TangoConfig.CONFIG_TYPE_DEFAULT);
+    private TangoConfig setupTangoConfig( Tango tango, boolean loadAdf ) {
+        TangoConfig config = tango.getConfig( TangoConfig.CONFIG_TYPE_DEFAULT );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_LEARNINGMODE, true );
-        if (isLoadAdf)
-            config.putString(TangoConfig.KEY_STRING_AREADESCRIPTION, application.getUUID());
+        config.putBoolean( TangoConfig.KEY_BOOLEAN_COLORCAMERA, true );
+        config.putBoolean( TangoConfig.KEY_BOOLEAN_LOWLATENCYIMUINTEGRATION, true );
+        if( loadAdf )
+            config.putString( TangoConfig.KEY_STRING_AREADESCRIPTION, application.getUUID() );
         return config;
     }
 
@@ -210,7 +197,7 @@ public class AreaLearningActivity extends Activity {
         tango.connectListener(framePairs, new Tango.OnTangoUpdateListener() {
             @Override
             public void onPoseAvailable(TangoPoseData pose) {
-                synchronized ( sharedLock ) {
+                synchronized ( AreaLearningActivity.this ) {
                     if (pose.baseFrame == TangoPoseData.COORDINATE_FRAME_AREA_DESCRIPTION
                             && pose.targetFrame == TangoPoseData
                             .COORDINATE_FRAME_START_OF_SERVICE) {

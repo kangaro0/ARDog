@@ -20,6 +20,7 @@ import org.rajawali3d.materials.textures.ATexture;
 import org.rajawali3d.materials.textures.StreamingTexture;
 import org.rajawali3d.math.Matrix4;
 import org.rajawali3d.math.Quaternion;
+import org.rajawali3d.math.vector.Vector3;
 import org.rajawali3d.primitives.ScreenQuad;
 import org.rajawali3d.renderer.Renderer;
 import org.rajawali3d.util.ObjectColorPicker;
@@ -31,6 +32,7 @@ import javax.microedition.khronos.opengles.GL10;
 
 import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.GameObject;
+import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
 
 public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private static final String TAG = GameRenderer.class.getSimpleName();
@@ -42,11 +44,17 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private ScreenQuad mBackgroundQuad;
     private ObjectColorPicker mOnePicker;
 
-    private GameApplication application;
+    private GameObject toBeAdded;
+    private Vector3 touchPoint;
+    private boolean hasTouched = false;
 
-    public GameRenderer( Context context ){
+    private GameApplication application;
+    private GameRendererCallback callback;
+
+    public GameRenderer( Context context, GameRendererCallback rendererCallback ){
         super( context );
         application = ( GameApplication ) context.getApplicationContext();
+        callback = callback;
     }
 
     @Override
@@ -92,6 +100,19 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         /* ObjectPicker */
         mOnePicker.registerObject( mBackgroundQuad );
 
+    }
+
+    @Override
+    protected void onRender( long elapsedRealTime, double deltaTime ){
+        synchronized ( GameRenderer.this ){
+            if( hasTouched && toBeAdded != null ){
+                // render click
+                Object3D obj = toBeAdded.getObject();
+                obj.setPosition( touchPoint );
+
+                getCurrentScene().addChild( obj );
+            }
+        }
     }
 
     public void updateColorCameraTextureUvGlThread( int rotation ){
@@ -146,11 +167,23 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     @Override
     public void onObjectPicked( @NonNull Object3D object ){
         Log.d(TAG, "Picked object: " + object );
+        GameObject picked = application.getObjectManager().getByObject3D( object );
+        if( picked != null )
+            callback.onObjectPicked( picked );
     }
 
     @Override
     public void onNoObjectPicked(){
         Log.d(TAG, "Picked no object.");
+    }
+
+    public void showTouch( Vector3 point ){
+        touchPoint = point;
+        hasTouched = true;
+    }
+
+    public void setToPlace( GameObject obj ){
+        this.toBeAdded = obj;
     }
 
 }
