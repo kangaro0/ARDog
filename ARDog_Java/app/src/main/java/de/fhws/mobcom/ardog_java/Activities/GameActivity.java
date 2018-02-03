@@ -410,4 +410,8 @@ public class GameActivity extends Activity implements View.OnTouchListener {
         TextView progressText = ( TextView ) findViewById( R.id.progressText );
         progressText.setVisibility( View.GONE );
     }
+
+    // UI FAB  code
+
+
 }
