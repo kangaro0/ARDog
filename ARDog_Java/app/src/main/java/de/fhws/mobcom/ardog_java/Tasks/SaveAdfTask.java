@@ -19,14 +19,14 @@ public class SaveAdfTask extends AsyncTask<Void, Integer, String> {
     private GameApplication context;
     private SaveAdfTaskCallback callback;
     private Tango tango;
-    private String name;
+    private byte[] name;
 
 
     public SaveAdfTask(GameApplication context, Tango tango, String name, SaveAdfTaskCallback callback ){
         this.context = context;
         this.callback = callback;
         this.tango = tango;
-        this.name = context.getUUID();
+        this.name = name.getBytes();
     }
 
 
@@ -39,7 +39,7 @@ public class SaveAdfTask extends AsyncTask<Void, Integer, String> {
 
             // Read the ADF Metadata, set the desired name, and save it back.
             TangoAreaDescriptionMetaData metadata = tango.loadAreaDescriptionMetaData(adfUuid);
-            metadata.set(TangoAreaDescriptionMetaData.KEY_NAME, name.getBytes());
+            metadata.set(TangoAreaDescriptionMetaData.KEY_NAME, name);
             tango.saveAreaDescriptionMetadata(adfUuid, metadata);
 
         } catch (TangoErrorException e) {
