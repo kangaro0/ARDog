@@ -7,7 +7,7 @@ import com.google.atap.tangoservice.TangoAreaDescriptionMetaData;
 import com.google.atap.tangoservice.TangoErrorException;
 import com.google.atap.tangoservice.TangoInvalidException;
 
-import de.fhws.mobcom.ardog_java.Callbacks.SaveAdfTaskCallback;
+import de.fhws.mobcom.ardog_java.Callbacks.AdfTaskCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
 
 /**
@@ -17,12 +17,12 @@ import de.fhws.mobcom.ardog_java.GameApplication;
 public class SaveAdfTask extends AsyncTask<Void, Integer, String> {
 
     private GameApplication context;
-    private SaveAdfTaskCallback callback;
+    private AdfTaskCallback callback;
     private Tango tango;
     private byte[] name;
 
 
-    public SaveAdfTask(GameApplication context, Tango tango, String name, SaveAdfTaskCallback callback ){
+    public SaveAdfTask(GameApplication context, Tango tango, String name, AdfTaskCallback callback ){
         this.context = context;
         this.callback = callback;
         this.tango = tango;
@@ -53,7 +53,7 @@ public class SaveAdfTask extends AsyncTask<Void, Integer, String> {
     @Override
     protected void onPostExecute(String adfUuid) {
         if (callback != null) {
-            if (adfUuid == null) {
+            if (adfUuid != null) {
                 callback.onDone();
             } else {
                 callback.onError( new Exception( "Error when saving adf." ) );

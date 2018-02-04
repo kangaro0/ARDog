@@ -1,11 +1,9 @@
 package de.fhws.mobcom.ardog_java;
 
 import android.support.test.runner.AndroidJUnit4;
-import static org.junit.Assert.*;
 
 import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
-import de.fhws.mobcom.ardog_java.ObjectManager;
-import de.fhws.mobcom.ardog_java.GameObject;
+import de.fhws.mobcom.ardog_java.Objects.GameObject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

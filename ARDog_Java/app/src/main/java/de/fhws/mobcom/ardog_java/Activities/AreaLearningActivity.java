@@ -33,7 +33,7 @@ import org.rajawali3d.view.SurfaceView;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import de.fhws.mobcom.ardog_java.Callbacks.SaveAdfTaskCallback;
+import de.fhws.mobcom.ardog_java.Callbacks.AdfTaskCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.R;
@@ -119,28 +119,37 @@ public class AreaLearningActivity extends Activity {
     }
 
     @Override
-    protected void onResume(){
-        Log.d( TAG, "onResume()" );
-        super.onResume();
+    protected void onStart(){
+        Log.d( TAG, "AreaLearningActivity: onStart()" );
+        super.onStart();
 
         surfaceView.setRenderMode( GLSurfaceView.RENDERMODE_CONTINUOUSLY );
         bindTangoService();
     }
 
     @Override
-    protected void onPause(){
-        Log.d( TAG, "onPause()" );
-        super.onPause();
-        try {
+    protected void onResume(){
+        Log.d( TAG, "AreaLearningActivity: onResume()" );
+        super.onResume();
+        if( isConnected )
             tango.disconnect();
-        } catch ( TangoErrorException e ){
-            Log.e( TAG, "Tango error.", e );
-        }
+        bindTangoService();
+    }
+
+    @Override
+    protected void onPause(){
+        Log.d( TAG, "AreaLearningActivity: onPause()" );
+        super.onPause();
+        if( isConnected )
+            tango.disconnect();
     }
 
     @Override
     protected void onStop(){
+        Log.d( TAG, "AreaLearningActivity: onStop()" );
         super.onStop();
+        if( isConnected )
+            tango.disconnect();
     }
 
     private void bindTangoService(){
@@ -159,6 +168,7 @@ public class AreaLearningActivity extends Activity {
                         startupTango();
                         TangoSupport.initialize( tango );
                         isConnected = true;
+                        setup();
                         setDisplayRotation();
                     } catch (TangoOutOfDateException e) {
                         Log.e(TAG, getString( R.string.exception_out_of_date ), e);
@@ -221,7 +231,12 @@ public class AreaLearningActivity extends Activity {
                 if (timeToNextUpdate < 0.0) {
                     timeToNextUpdate = 1000;
 
-                    actionButton.setVisibility( View.VISIBLE );
+                    runOnUiThread( new Runnable(){
+                        @Override
+                        public void run(){
+                            actionButton.setVisibility( View.VISIBLE );
+                        }
+                    });
                 }
             }
 
@@ -321,6 +336,15 @@ public class AreaLearningActivity extends Activity {
         surfaceView.setSurfaceRenderer( renderer );
     }
 
+    private void setup(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                setupActionButton();
+            }
+        });
+    }
+
     private void setupActionButton(){
         actionButton = ( FloatingActionButton ) findViewById( R.id.area_learn_fab );
         actionButton.setVisibility( View.INVISIBLE );
@@ -348,10 +372,13 @@ public class AreaLearningActivity extends Activity {
             public void onClick(DialogInterface dialog, int which) {
                 String name = input.getText().toString();
 
-                saveAdfTask = new SaveAdfTask( application, tango, name, new SaveAdfTaskCallback(){
+                saveAdfTask = new SaveAdfTask( application, tango, name, new AdfTaskCallback(){
                     @Override
                     public void onDone() {
-
+                        Log.d( TAG, "AreaLearningAcitivty: ADF saved." );
+                        // Switch back to AreaSelectionActivity
+                        Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaSelectionActivity.class );
+                        startActivity( intent );
                     }
 
                     @Override
