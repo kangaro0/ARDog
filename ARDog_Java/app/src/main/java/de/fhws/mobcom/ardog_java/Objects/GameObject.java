@@ -1,4 +1,4 @@
-package de.fhws.mobcom.ardog_java;
+package de.fhws.mobcom.ardog_java.Objects;
 
 import java.util.ArrayList;
 

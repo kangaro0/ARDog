@@ -1,29 +1,20 @@
 package de.fhws.mobcom.ardog_java;
 
 import android.app.Application;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.Log;
 
+import org.rajawali3d.Object3D;
 import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.textures.TextureManager;
 
-import com.google.atap.tangoservice.Tango;
-import com.google.atap.tangoservice.TangoCameraIntrinsics;
-import com.google.atap.tangoservice.TangoConfig;
-import com.google.atap.tangoservice.TangoCoordinateFramePair;
-import com.google.atap.tangoservice.TangoErrorException;
-import com.google.atap.tangoservice.TangoInvalidException;
-import com.google.atap.tangoservice.TangoOutOfDateException;
-import com.google.tango.support.TangoSupport;
-
 import java.util.ArrayList;
 
-import de.fhws.mobcom.ardog_java.Activities.GameActivity;
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.Callbacks.ObjectManagerCallback;
+import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 /**
@@ -80,6 +71,7 @@ public class GameApplication extends Application {
     public void setRoom( DBRoom room ){ this.room = room; }
 
     public void loadAssets( final TextureManager textureManager, final GameApplicationLoadCallback callback ){
+        Log.d( TAG, "GameApplication: loadAssets()" );
         // intialize GameObjects
         objectManager = new ObjectManager( new ObjectManagerCallback() {
             @Override
@@ -98,15 +90,20 @@ public class GameApplication extends Application {
                 //dogAnimLoader.parse();
                 //SkeletalAnimationSequence sequence = ( SkeletalAnimationSequence ) dogAnimLoader.getParsedAnimationSequence();
                 // setup GameObject
-                //GameObject dog = new GameObject( "Dog", dogMeshLoader.getParsedObject() );
+                //Object3D dogObj = dogMeshLoader.getParsedObject();
+                //dogObj.setName( "Dog" );
+                //GameObject dog = new GameObject( "Dog", dogObj );
                 //dog.addSequence( sequence );
                 //objects.add( dog );
 
                 // Bowl
                 LoaderOBJ bowlLoader = new LoaderOBJ( resources, textureManager, R.raw.bowl_obj );
                 bowlLoader.parse();
+
+                Object3D bowlObj = bowlLoader.getParsedObject();
+                bowlObj.setName( "Bowl" );
                 // add to collection
-                GameObject bowl = new GameObject( "Bowl", bowlLoader.getParsedObject() );
+                GameObject bowl = new GameObject( "Bowl", bowlObj );
                 // set initial properties of object
                 //bowl.getObject().setScale( 1.0 );
                 objects.add( bowl );
@@ -114,7 +111,10 @@ public class GameApplication extends Application {
                 // Bed
                 LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );
                 bedLoader.parse();
-                GameObject bed = new GameObject( "Bed", bedLoader.getParsedObject() );
+
+                Object3D bedObj = bedLoader.getParsedObject();
+                bedObj.setName( "Bed" );
+                GameObject bed = new GameObject( "Bed", bedObj );
 
                 objects.add( bed );
 

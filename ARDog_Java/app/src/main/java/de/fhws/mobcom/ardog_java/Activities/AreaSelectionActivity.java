@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,15 +19,24 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.atap.tangoservice.Tango;
+import com.google.atap.tangoservice.TangoAreaDescriptionMetaData;
+import com.google.atap.tangoservice.TangoConfig;
+import com.google.atap.tangoservice.TangoErrorException;
+import com.google.atap.tangoservice.TangoInvalidException;
+import com.google.atap.tangoservice.TangoOutOfDateException;
+import com.google.tango.support.TangoSupport;
+
 import java.util.ArrayList;
 
-import de.fhws.mobcom.ardog_java.Adapters.ListViewAdapter;
+import de.fhws.mobcom.ardog_java.Adapters.RoomAdapter;
+import de.fhws.mobcom.ardog_java.Callbacks.AdfTaskCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
+import de.fhws.mobcom.ardog_java.Objects.Room;
 import de.fhws.mobcom.ardog_java.R;
 import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
-import de.fhws.mobcom.ardog_java.Sql.DBObject;
-import de.fhws.mobcom.ardog_java.Sql.DBRoom;
+import de.fhws.mobcom.ardog_java.Tasks.RenameAdfTask;
 
 /**
  * Created by kanga on 01.02.2018.
@@ -34,6 +44,11 @@ import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
 public class AreaSelectionActivity extends Activity implements View.OnTouchListener {
     private static final String TAG = AreaSelectionActivity.class.getSimpleName();
+
+    /* Tango */
+    private Tango tango;
+    private TangoConfig config;
+    private boolean isConnected = false;
 
     /* DB */
     ARDogDbHelper adHelper;
@@ -51,12 +66,12 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
 
     private FrameLayout frameLayout;
     private ListView listView;
-    private ArrayList<DBRoom> rooms;
+    private ArrayList<Room> rooms;
 
     /* State */
     private int currentId = -1;
 
-    /* Booleans */
+    private int displayRotation;
 
     @Override
     protected void onCreate( Bundle savedInstances ){
@@ -64,6 +79,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         setContentView( R.layout.activity_area_selection );
 
         // DB
+        /*
         adHelper = new ARDogDbHelper(this);
         adQuery = new ARDogQuery(adHelper);
 
@@ -73,32 +89,46 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         adQuery.addRoom("125", "Hello World3.");
 
         adQuery.addObjectToRoom("123", new DBObject("objekt", 1.0, 2.0, 3.0));
-
-        setupFrameLayout();
-        setupListView();
-        setupActionButtons();
+        */
 
         application = ( GameApplication ) getApplicationContext();
     }
 
     @Override
     protected void onStart(){
+        Log.d( TAG, "AreaSelectionActivity: onStart()" );
         super.onStart();
+
+        startActivityForResult(
+                Tango.getRequestPermissionIntent(Tango.PERMISSIONTYPE_ADF_LOAD_SAVE),
+                Tango.TANGO_INTENT_ACTIVITYCODE);
+
+        bindTangoService();
     }
 
     @Override
     protected void onPause(){
+        Log.d( TAG, "AreaSelectionActivity: onPause()" );
         super.onPause();
+        if( isConnected )
+            tango.disconnect();
     }
 
     @Override
     protected void onResume(){
+        Log.d( TAG, "AreaSelectionActivity: onResume()" );
         super.onResume();
+        if( isConnected )
+            tango.disconnect();
+        bindTangoService();
     }
 
     @Override
     protected void onStop(){
+        Log.d( TAG, "AreaSelectionActivity: onStop()" );
         super.onStop();
+        if( isConnected )
+            tango.disconnect();
     }
 
     @Override
@@ -110,6 +140,80 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         return false;
+    }
+
+    private void bindTangoService(){
+        Log.d( TAG, "bindTangoService()" );
+        tango = new Tango(AreaSelectionActivity.this, new Runnable() {
+            // Pass in a Runnable to be called from UI thread when Tango is ready; this Runnable
+            // will be running on a new thread.
+            // When Tango is ready, we can call Tango functions safely here only when there are no
+            // UI thread changes involved.
+            @Override
+            public void run() {
+                synchronized ( AreaSelectionActivity.this ) {
+                    try {
+                        config = setupTangoConfig( tango );
+                        tango.connect(config);
+                        TangoSupport.initialize( tango );
+                        isConnected = true;
+                        rooms = getRooms();
+                        setup();
+                        setDisplayRotation();
+                    } catch (TangoOutOfDateException e) {
+                        Log.e(TAG, getString( R.string.exception_out_of_date ), e);
+                    } catch (TangoErrorException e) {
+                        Log.e(TAG, getString( R.string.exception_tango_error ), e);
+                    } catch (TangoInvalidException e) {
+                        Log.e(TAG, getString( R.string.exception_tango_invalid ), e);
+                    } catch (SecurityException e) {
+                        // Area Learning permissions are required. If they are not available,
+                        // SecurityException is thrown.
+                        Log.e(TAG, getString( R.string.permission_camera ), e);
+                    }
+                }
+            }
+        });
+    }
+
+    private TangoConfig setupTangoConfig( Tango tango ) {
+        TangoConfig config = tango.getConfig( TangoConfig.CONFIG_TYPE_DEFAULT );
+        return config;
+    }
+
+    private ArrayList<Room> getRooms(){
+        ArrayList<Room> toReturn = new ArrayList<Room>();
+
+        try {
+            ArrayList<String> uuids = tango.listAreaDescriptions();
+            int size = uuids.size();
+            for( int i = 0 ; i < size ; i++ ){
+                String uuid = uuids.get( i );
+                TangoAreaDescriptionMetaData metadata = new TangoAreaDescriptionMetaData();
+                metadata = tango.loadAreaDescriptionMetaData( uuid );
+
+                byte[] nameBytes = metadata.get(TangoAreaDescriptionMetaData.KEY_NAME);
+
+                Room room = new Room( new String( nameBytes ), uuid );
+                toReturn.add( room );
+            }
+
+            return toReturn;
+        } catch( TangoErrorException e ){
+            Log.e( TAG, "Error when reading saved adfs.", e );
+            return toReturn;
+        }
+    }
+
+    private void setup(){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                setupFrameLayout();
+                setupListView();
+                setupActionButtons();
+            }
+        });
     }
 
     private void setupFrameLayout(){
@@ -128,11 +232,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     }
 
     private void setupListView(){
-        ArrayList<DBObject> obj = (ArrayList)this.adQuery.getObjectsByRoom("123");
-        Log.d("dbobject", obj.get(0).getName());
-
-        rooms = ( ArrayList ) adQuery.getRooms();
-        final ListViewAdapter adapter = new ListViewAdapter( this, R.layout.listview_item, rooms );
+        final RoomAdapter adapter = new RoomAdapter( this, R.layout.listview_item, rooms);
 
         listView = ( ListView ) findViewById( R.id.list_view );
         listView.setAdapter( adapter );
@@ -279,11 +379,26 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         if( name == null || name == "" )
             return;
 
-        DBRoom room = rooms.get( currentId );
-        room.setName( name );
+        Room room = rooms.get( currentId );
+        RenameAdfTask task = new RenameAdfTask(application, tango, room.getUuid(), name, new AdfTaskCallback() {
+            @Override
+            public void onDone() {
+                Log.d( TAG, "ADF sucessfully renamed." );
+                listView.invalidateViews();
+                setupListView();
+            }
 
-        listView.invalidateViews();
-        setupListView();
+            @Override
+            public void onError(Exception e) {
+                Log.e( TAG, "Error when renaming ADF.", e );
+            }
+        });
+        task.execute();
+    }
+
+    private void setDisplayRotation(){
+        Display display = getWindowManager().getDefaultDisplay();
+        displayRotation = display.getRotation();
     }
 
 }

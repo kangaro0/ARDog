@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import javax.microedition.khronos.opengles.GL10;
 
 import de.fhws.mobcom.ardog_java.GameApplication;
-import de.fhws.mobcom.ardog_java.GameObject;
+import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
 
 public class GameRenderer extends Renderer implements OnObjectPickedListener {

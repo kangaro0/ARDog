@@ -32,7 +32,6 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.text.method.Touch;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -48,13 +47,12 @@ import org.rajawali3d.view.SurfaceView;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.Stack;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
-import de.fhws.mobcom.ardog_java.GameObject;
+import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.Renderers.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
