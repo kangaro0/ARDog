@@ -1,5 +1,6 @@
 package de.fhws.mobcom.ardog_java.Activities;
 
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.Tango.OnTangoUpdateListener;
 import com.google.atap.tangoservice.TangoCameraIntrinsics;
@@ -107,6 +108,9 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     /* Game-specific */
     private boolean isEditMode = false;
     private boolean isPlacing = true;      // true when user wants to place an object instead of selecting it
+
+    private FloatingActionMenu mFabBuild;
+    private FloatingActionMenu mFabObject;
 
 
     @Override
