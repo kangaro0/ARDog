@@ -62,6 +62,9 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         callback = rendererCallback;
     }
 
+    /* Getter & Setter */
+    public ObjectManager getObjectManager(){ return this.objectManager; }
+
     @Override
     protected void initScene(){
 
