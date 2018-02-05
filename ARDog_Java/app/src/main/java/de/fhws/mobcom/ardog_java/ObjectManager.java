@@ -25,16 +25,17 @@ public class ObjectManager {
     private GameObject curSelected;
 
     // ctor
-    public ObjectManager( final ObjectManagerCallback callback ){
-        try {
-            objects = callback.setup();
-            callback.onDone();
-        } catch ( ParsingException e ) {
-            callback.onError( e );
-        }
+    public ObjectManager(  ){
+        objects = new ArrayList<GameObject>();
+        curSelected = null;
     }
 
     /* Public Interface */
+
+    public void add( GameObject obj ){
+        if( obj != null )
+            objects.add( obj );
+    }
 
     // currently selected
     public GameObject getCurrentlySelected(){

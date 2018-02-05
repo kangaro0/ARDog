@@ -15,6 +15,8 @@ import android.view.MotionEvent;
 
 import org.rajawali3d.Object3D;
 import org.rajawali3d.lights.DirectionalLight;
+import org.rajawali3d.loader.LoaderOBJ;
+import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.Material;
 import org.rajawali3d.materials.textures.ATexture;
 import org.rajawali3d.materials.textures.StreamingTexture;
@@ -31,8 +33,10 @@ import java.util.ArrayList;
 import javax.microedition.khronos.opengles.GL10;
 
 import de.fhws.mobcom.ardog_java.GameApplication;
+import de.fhws.mobcom.ardog_java.ObjectManager;
 import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
+import de.fhws.mobcom.ardog_java.R;
 
 public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private static final String TAG = GameRenderer.class.getSimpleName();
@@ -50,6 +54,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     private GameApplication application;
     private GameRendererCallback callback;
+    private ObjectManager objectManager;
 
     public GameRenderer( Context context, GameRendererCallback rendererCallback ){
         super( context );
@@ -59,6 +64,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     @Override
     protected void initScene(){
+
+        initializeObjects();
 
         mOnePicker = new ObjectColorPicker( this );
         mOnePicker.setOnObjectPickedListener( this );
@@ -80,6 +87,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         }
 
         getCurrentScene().addChildAt( mBackgroundQuad, 0 );
+        mOnePicker.registerObject( mBackgroundQuad );
 
         // Add a directional light in an arbitrary direction.
         DirectionalLight light = new DirectionalLight(1, 0.2, -1);
@@ -89,7 +97,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         getCurrentScene().addLight(light);
 
         // Get objects from Application
-        ArrayList<GameObject> objects = this.application.getObjectManager().getPlacedObjects();
+        ArrayList<GameObject> objects = objectManager.getPlacedObjects();
         for( GameObject current : objects ){
             Object3D curObject = current.getObject();
             // add to Scene and register in ObjectPicker
@@ -97,9 +105,54 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             mOnePicker.registerObject( curObject );
         }
 
-        /* ObjectPicker */
-        mOnePicker.registerObject( mBackgroundQuad );
+    }
 
+    private void initializeObjects( ){
+        Log.d( TAG, "GameActivity: initializeApp()" );
+        objectManager = new ObjectManager();
+
+        try {
+                /* Dog */
+            // Mesh
+            //LoaderMD5Mesh dogMeshLoader = new LoaderMD5Mesh( resources, mRenderer.getTextureManager(), R.raw.dog );
+            //dogMeshLoader.parse();
+            // Animations
+            //LoaderMD5Anim dogAnimLoader = new LoaderMD5Anim( resources, mRenderer.getTextureManager(), R.raw.dog_anim );
+            //dogAnimLoader.parse();
+            //SkeletalAnimationSequence sequence = ( SkeletalAnimationSequence ) dogAnimLoader.getParsedAnimationSequence();
+            // setup GameObject
+            //Object3D dogObj = dogMeshLoader.getParsedObject();
+            //dogObj.setName( "Dog" );
+            //GameObject dog = new GameObject( "Dog", dogObj );
+            //dog.addSequence( sequence );
+            //objects.add( dog );
+
+            // Bowl
+            LoaderOBJ bowlLoader = new LoaderOBJ( getContext().getResources(), mTextureManager, R.raw.bowl_obj);
+            bowlLoader.parse();
+
+            Object3D bowlObj = bowlLoader.getParsedObject();
+            bowlObj.setName("Bowl");
+            // add to collection
+            GameObject bowl = new GameObject("Bowl", bowlObj);
+            // set initial properties of object
+            //bowl.getObject().setScale( 1.0 );
+            objectManager.add( bowl );
+            // for test
+            toBePlaced = bowl;
+
+            // Bed
+            //LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );
+            //bedLoader.parse();
+
+            //Object3D bedObj = bedLoader.getParsedObject();
+            //bedObj.setName( "Bed" );
+            //GameObject bed = new GameObject( "Bed", bedObj );
+
+            //objects.add( bed );
+        } catch( ParsingException e ){
+            Log.e( TAG, "Error while parsing objects.", e );
+        }
     }
 
     @Override
@@ -169,7 +222,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     @Override
     public void onObjectPicked( @NonNull Object3D object ){
         Log.d(TAG, "Picked object: " + object );
-        GameObject picked = application.getObjectManager().getByObject3D( object );
+        GameObject picked = objectManager.getByObject3D( object );
         if( picked != null )
             callback.onObjectPicked( picked );
     }
@@ -180,8 +233,10 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     }
 
     public void showTouch( Vector3 point ){
-        touchPoint = point;
-        hasTouched = true;
+        if( point != null ) {
+            touchPoint = point;
+            hasTouched = true;
+        }
     }
 
     public void setToPlace( GameObject obj ){

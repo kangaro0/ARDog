@@ -52,6 +52,7 @@ public class AreaLearningActivity extends Activity {
     private Tango tango;
     private TangoConfig config;
     private boolean isConnected = false;
+    private boolean isConnecting = false;
     private double cameraPoseTimestamp = 0;
 
     /* Application */
@@ -131,18 +132,15 @@ public class AreaLearningActivity extends Activity {
     protected void onResume(){
         Log.d( TAG, "AreaLearningActivity: onResume()" );
         super.onResume();
-        if( isConnected ) {
-            tango.disconnect();
-            isConnected = false;
-        }
-        bindTangoService();
+        if( !isConnecting || !isConnected )
+            bindTangoService();
     }
 
     @Override
     protected void onPause(){
         Log.d( TAG, "AreaLearningActivity: onPause()" );
         super.onPause();
-        if( isConnected ) {
+        if( isConnected && isConnecting ) {
             tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
             tango.disconnect();
             isConnected = false;
@@ -153,10 +151,18 @@ public class AreaLearningActivity extends Activity {
     protected void onStop(){
         Log.d( TAG, "AreaLearningActivity: onStop()" );
         super.onStop();
-        if( isConnected ) {
-            tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
-            tango.disconnect();
-            isConnected = false;
+        synchronized ( AreaLearningActivity.this ){
+            try {
+                if( tango != null ){
+                    tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
+                    tango.disconnect();
+                }
+
+                connectedTextureIdGlThread = INVALID_TEXTURE_ID;
+                isConnected = false;
+            } catch ( TangoErrorException e ){
+                Log.e( TAG, getString( R.string.exception_tango_error ), e );
+            }
         }
     }
 
