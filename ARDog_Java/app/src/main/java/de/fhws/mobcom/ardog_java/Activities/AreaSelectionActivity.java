@@ -49,6 +49,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     private Tango tango;
     private TangoConfig config;
     private boolean isConnected = false;
+    private boolean isConnecting = false;
 
     /* Task */
     RenameAdfTask task;
@@ -123,11 +124,8 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     protected void onResume(){
         Log.d( TAG, "AreaSelectionActivity: onResume()" );
         super.onResume();
-        if( isConnected ) {
-            tango.disconnect();
-            isConnected = false;
-        }
-        bindTangoService();
+        if( !isConnecting && !isConnected )
+            bindTangoService();
     }
 
     @Override
@@ -157,6 +155,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     }
 
     private void bindTangoService(){
+        isConnecting = true;
         Log.d( TAG, "bindTangoService()" );
         tango = new Tango(AreaSelectionActivity.this, new Runnable() {
             // Pass in a Runnable to be called from UI thread when Tango is ready; this Runnable
@@ -187,6 +186,8 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                         // SecurityException is thrown.
                         Log.e(TAG, getString( R.string.permission_camera ), e);
                     }
+
+                    isConnecting = false;
                 }
             }
         });
@@ -416,6 +417,19 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     private void setDisplayRotation(){
         Display display = getWindowManager().getDefaultDisplay();
         displayRotation = display.getRotation();
+    }
+
+    @Override
+    protected void onActivityResult( int requestCode, int resultCode, Intent data ){
+        if( requestCode == Tango.TANGO_INTENT_ACTIVITYCODE ){
+            if( resultCode == RESULT_OK ){
+                // if permission was granted, reset tango
+                tango.disconnect();
+                tango = null;
+
+                bindTangoService();
+            }
+        }
     }
 
 }

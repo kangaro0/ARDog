@@ -24,7 +24,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.hardware.display.DisplayManager;
@@ -40,7 +39,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.rajawali3d.materials.textures.TextureManager;
 import org.rajawali3d.math.vector.Vector3;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
@@ -49,7 +47,6 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import de.fhws.mobcom.ardog_java.Callbacks.GameApplicationLoadCallback;
 import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.Objects.GameObject;
@@ -85,6 +82,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private TangoConfig config;
     private TangoPointCloudManager pointCloudManager;
     private boolean isConnected = false;
+    private boolean isConnecting = false;
     private double cameraPoseTimestamp = 0;
 
     /* OpenGL & Tango synchronization */
@@ -109,6 +107,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d( TAG, "GameActivity: onCreate()" );
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
@@ -139,39 +138,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             }, null );
         }
 
-        this.onLoadingStart();
-
-        initializeApp( mRenderer.getTextureManager() );
         // gets called when 3D-Models are loaded
         setupRenderer();
-
-
-       /* SQLiteDatabase db = adHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(ARDogContract.TangoRoom.COLUMN_NAME_UUID, "asfafds-asdfassf-adfa");
-        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, "Raumname");
-        long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
-
-       db = adHelper.getReadableDatabase();
-        String [] projection ={
-                ARDogContract.TangoRoom.COLUMN_NAME_UUID,
-                ARDogContract.TangoRoom.COLUMN_NAME_NAME,
-        };
-        String selection = ARDogContract.TangoRoom.COLUMN_NAME_NAME + "= ?";
-        String[] selectionArgs = {"Raumname"};
-        Cursor cursor = db.query(
-                ARDogContract.TangoRoom.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
-        cursor.moveToNext();
-        String name = cursor.getString(cursor.getColumnIndexOrThrow(ARDogContract.TangoRoom.COLUMN_NAME_NAME));
-        cursor.close();
-        Log.d("Db result" ,name);*/
     }
 
     @Override
@@ -182,6 +150,18 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         if( checkAndRequestPermissions() ){
             bindTangoService();
         }
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if( !isConnected && !isConnected )
+            bindTangoService();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
     }
 
     @Override
@@ -205,6 +185,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     }
 
     private void bindTangoService(){
+        isConnecting = true;
         Log.d( TAG, "GameActivity: bindTangoService()" );
         tango = new Tango( GameActivity.this,  new Runnable(){
             @Override
@@ -217,6 +198,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                         startupTango();
                         TangoSupport.initialize(tango);
                         isConnected = true;
+                        isConnecting = false;
                         setDisplayRotation();
                     } catch (TangoOutOfDateException e) {
                         Log.e(TAG, getString(R.string.exception_out_of_date), e);
@@ -363,7 +345,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                                         touchPoint.depthPoint
                                 );
 
-                                touchInOpenGl = new Vector3( p0[ 0 ], p0[ 1 ], p0[ 2 ] );
+                                mRenderer.showTouch( new Vector3( p0[ 0 ], p0[ 1 ], p0[ 2 ] ) );
                             }
                         }
                     }
@@ -482,43 +464,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         return true;
     }
 
-    /* initializes GameApplication */
-    private void initializeApp( TextureManager textureManager ){
-        Log.d( TAG, "GameActivity: initializeApp()" );
-        Resources resources = getResources();
-        this.application.loadAssets( getResources(), textureManager, new GameApplicationLoadCallback() {
-            @Override
-            public void onDone() {
-                // Loading done here
-                onLoadingDone();
-            }
-            @Override
-            public void onError( Exception e ){
-                // Error happened
-                Log.e( TAG, "Error while loading assets:", e );
-            }
-        });
-    }
-
-    private void onLoadingStart(){
-        ProgressBar progressBar = ( ProgressBar ) findViewById( R.id.progressBar );
-        progressBar.getIndeterminateDrawable().setColorFilter( Color.WHITE, PorterDuff.Mode.MULTIPLY );
-
-        TextView progressText = ( TextView ) findViewById( R.id.progressText );
-        progressText.setTextColor( Color.WHITE );
-        progressText.setTextSize( 18.0F );
-        progressText.setText( "Loading..." );
-    }
-
-    // this method gets called when loading is done
-    private void onLoadingDone(){
-        ProgressBar progressBar = ( ProgressBar ) findViewById( R.id.progressBar );
-        progressBar.setVisibility( View.GONE );
-
-        TextView progressText = ( TextView ) findViewById( R.id.progressText );
-        progressText.setVisibility( View.GONE );
-    }
-
     private void getDepthAtTouchPosition( float u, float v ){
         TangoPointCloudData pointCloud = pointCloudManager.getLatestPointCloud();
         if( pointCloud == null )
@@ -541,18 +486,25 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             return;
         }
 
-        float[] depthPoint = TangoDepthInterpolation.getDepthAtPointNearestNeighbor(
+        float[] depthPoint = TangoDepthInterpolation.getDepthAtPointBilateral(
                 pointCloud,
                 new double[] { 0.0, 0.0, 0.0 },
                 new double[] { 0.0, 0.0, 0.0, 1.0 },
+                imageBuffer,
                 u, v,
                 displayRotation,
                 depthlTcolorPose.translation,
                 depthlTcolorPose.rotation
         );
 
-        touchPoint = new TouchPoint( rgbTimestamp, depthPoint );
+        if( depthPoint == null ){
+            Log.e( TAG, "There is no depth point." );
+            // reset touchpoint from before
+            touchPoint = null;
+            return;
+        }
 
+        touchPoint = new TouchPoint( rgbTimestamp, depthPoint );
     }
 
     @Override

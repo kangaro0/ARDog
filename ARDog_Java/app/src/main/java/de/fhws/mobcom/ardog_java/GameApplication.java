@@ -32,8 +32,6 @@ public class GameApplication extends Application {
     /* Current Room */
     private DBRoom room;
 
-    private ObjectManager objectManager;
-
     /* Booleans */
     private boolean firstStart;
 
@@ -60,9 +58,6 @@ public class GameApplication extends Application {
     }
 
     /* Getter & Setter */
-    public ObjectManager getObjectManager(){
-        return this.objectManager;
-    }
     // UUID
     public String getUUID() { return this.uuid; }
     public void setUUID( String uuid ) { this.uuid = uuid; }
@@ -70,67 +65,6 @@ public class GameApplication extends Application {
     public DBRoom getRoom(){ return this.room; }
     public void setRoom( DBRoom room ){ this.room = room; }
 
-    public void loadAssets( final Resources resources, final TextureManager textureManager, final GameApplicationLoadCallback callback ){
-        Log.d( TAG, "GameApplication: loadAssets()" );
-        // intialize GameObjects
-        objectManager = new ObjectManager( new ObjectManagerCallback() {
-            @Override
-            public ArrayList<GameObject> setup() throws ParsingException {
-                // loading all necessary assets is done here
-                ArrayList<GameObject> objects = new ArrayList<GameObject>();
-                // Get resources from Context
-
-                /* Dog */
-                // Mesh
-                //LoaderMD5Mesh dogMeshLoader = new LoaderMD5Mesh( resources, mRenderer.getTextureManager(), R.raw.dog );
-                //dogMeshLoader.parse();
-                // Animations
-                //LoaderMD5Anim dogAnimLoader = new LoaderMD5Anim( resources, mRenderer.getTextureManager(), R.raw.dog_anim );
-                //dogAnimLoader.parse();
-                //SkeletalAnimationSequence sequence = ( SkeletalAnimationSequence ) dogAnimLoader.getParsedAnimationSequence();
-                // setup GameObject
-                //Object3D dogObj = dogMeshLoader.getParsedObject();
-                //dogObj.setName( "Dog" );
-                //GameObject dog = new GameObject( "Dog", dogObj );
-                //dog.addSequence( sequence );
-                //objects.add( dog );
-
-                // Bowl
-                LoaderOBJ bowlLoader = new LoaderOBJ( resources, textureManager, R.raw.bowl_obj );
-                bowlLoader.parse();
-
-                Object3D bowlObj = bowlLoader.getParsedObject();
-                bowlObj.setName( "Bowl" );
-                // add to collection
-                GameObject bowl = new GameObject( "Bowl", bowlObj );
-                // set initial properties of object
-                //bowl.getObject().setScale( 1.0 );
-                objects.add( bowl );
-
-                // Bed
-                //LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );
-                //bedLoader.parse();
-
-                //Object3D bedObj = bedLoader.getParsedObject();
-                //bedObj.setName( "Bed" );
-                //GameObject bed = new GameObject( "Bed", bedObj );
-
-                //objects.add( bed );
-
-                return objects;
-            }
-
-            @Override
-            public void onDone() {
-                callback.onDone();
-            }
-
-            @Override
-            public void onError(Exception e) {
-                callback.onError( e );
-            }
-        });
-    }
 
     /* Singleton */
     public static GameApplication getInstance(){
