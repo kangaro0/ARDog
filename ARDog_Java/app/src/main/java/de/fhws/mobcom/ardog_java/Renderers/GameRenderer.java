@@ -139,7 +139,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             //bowl.getObject().setScale( 1.0 );
             objectManager.add( bowl );
             // for test
-            toBePlaced = bowl;
+            //toBePlaced = bowl;
 
             // Bed
             //LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );

@@ -110,7 +110,13 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     /* UI */
     private FloatingActionMenu mFabBuild;
     private FloatingActionMenu mFabObject;
+    private FloatingActionButton mBowlButton;
+    private FloatingActionButton mBedButton;
     private String mLastObjectName;
+
+    /*Ui Listeners*/
+    private View.OnClickListener mBowlListener;
+    private View.OnClickListener mBedListener;
 
 
     @Override
@@ -150,6 +156,9 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         setupRenderer();
 
        mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
+       mBowlButton = (FloatingActionButton) findViewById(R.id.bowl_button);
+       mBedButton = (FloatingActionButton) findViewById(R.id.bed_button);
+
        mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
        mFabObject.open(true);
 
@@ -574,5 +583,21 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             });
         }
     }
+
+    private void initBuildFabListeners(){
+        mBowlListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        };
+        mBedListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        };
+    }
+
 
 }
