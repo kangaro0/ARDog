@@ -137,7 +137,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
                 @Override
                 public void onDisplayChanged( int displayId ){
-                    synchronized ( this ) {
+                    synchronized ( GameActivity.this ) {
                         setDisplayRotation();
                     }
                 }
@@ -218,7 +218,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     }
 
     private void bindTangoService(){
-        tango = new Tango( GameActivity.this, new Runnable(){
+        Log.d( TAG, "GameActivity: bindTangoService()" );
+        tango = new Tango( GameActivity.this,  new Runnable(){
             @Override
             public void run(){
                 synchronized ( GameActivity.this ){
@@ -251,15 +252,15 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         TangoConfig config = tango.getConfig( TangoConfig.CONFIG_TYPE_DEFAULT );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_COLORCAMERA, true );
         config.putBoolean( TangoConfig.KEY_BOOLEAN_LOWLATENCYIMUINTEGRATION, true );
-        //config.putBoolean( TangoConfig.KEY_BOOLEAN_DRIFT_CORRECTION, true );
-        config.putBoolean(TangoConfig.KEY_BOOLEAN_DEPTH, true);
-        config.putInt(TangoConfig.KEY_INT_DEPTH_MODE, TangoConfig.TANGO_DEPTH_MODE_POINT_CLOUD);
+        config.putBoolean( TangoConfig.KEY_BOOLEAN_DEPTH, true );
+        config.putInt( TangoConfig.KEY_INT_DEPTH_MODE, TangoConfig.TANGO_DEPTH_MODE_POINT_CLOUD );
         if( loadAdf )
             config.putString( TangoConfig.KEY_STRING_AREADESCRIPTION, application.getUUID() );
         return config;
     }
 
     private void startupTango(){
+        Log.d( TAG, "GameActivity: startupTango()" );
         ArrayList<TangoCoordinateFramePair> framePairs = new ArrayList<TangoCoordinateFramePair>();
 
         tango.connectListener(framePairs, new OnTangoUpdateListener() {
@@ -314,6 +315,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     }
 
     private void setupRenderer(){
+        Log.d( TAG, "GameActivity: setupRenderer()" );
         mRenderer.getCurrentScene().registerFrameCallback(new ASceneFrameCallback() {
             @Override
             public void onPreFrame(long sceneTime, double deltaTime) {
@@ -471,6 +473,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     public boolean onTouch( View view, MotionEvent motionEvent ){
+        Log.d( TAG, "GameActivity: onTouch(...)" );
         if( isPlacing ) {
             // convert to uv-coords
             float u = motionEvent.getX() / view.getWidth();
@@ -494,8 +497,9 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     /* initializes GameApplication */
     private void initializeApp( TextureManager textureManager ){
+        Log.d( TAG, "GameActivity: initializeApp()" );
         Resources resources = getResources();
-        this.application.loadAssets( textureManager, new GameApplicationLoadCallback() {
+        this.application.loadAssets( getResources(), textureManager, new GameApplicationLoadCallback() {
             @Override
             public void onDone() {
                 // Loading done here

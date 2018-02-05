@@ -44,7 +44,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private ScreenQuad mBackgroundQuad;
     private ObjectColorPicker mOnePicker;
 
-    private GameObject toBeAdded;
+    private GameObject toBePlaced;
     private Vector3 touchPoint;
     private boolean hasTouched = false;
 
@@ -105,14 +105,16 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     @Override
     protected void onRender( long elapsedRealTime, double deltaTime ){
         synchronized ( GameRenderer.this ){
-            if( hasTouched && toBeAdded != null ){
+            if( hasTouched && toBePlaced != null ){
                 // render click
-                Object3D obj = toBeAdded.getObject();
+                Object3D obj = toBePlaced.getObject();
                 obj.setPosition( touchPoint );
 
                 getCurrentScene().addChild( obj );
             }
         }
+
+        super.onRender( elapsedRealTime, deltaTime );
     }
 
     public void updateColorCameraTextureUvGlThread( int rotation ){
@@ -183,7 +185,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     }
 
     public void setToPlace( GameObject obj ){
-        this.toBeAdded = obj;
+        this.toBePlaced = obj;
     }
 
 }

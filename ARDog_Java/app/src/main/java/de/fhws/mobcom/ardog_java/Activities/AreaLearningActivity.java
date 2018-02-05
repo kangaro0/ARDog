@@ -75,7 +75,7 @@ public class AreaLearningActivity extends Activity {
     private boolean isNewRoom;
     private boolean isLocalized;
 
-    /* SaveAdfTask */
+    /* Task */
     private SaveAdfTask saveAdfTask;
 
     private boolean hasPermissions = false;
@@ -131,8 +131,10 @@ public class AreaLearningActivity extends Activity {
     protected void onResume(){
         Log.d( TAG, "AreaLearningActivity: onResume()" );
         super.onResume();
-        if( isConnected )
+        if( isConnected ) {
             tango.disconnect();
+            isConnected = false;
+        }
         bindTangoService();
     }
 
@@ -140,16 +142,34 @@ public class AreaLearningActivity extends Activity {
     protected void onPause(){
         Log.d( TAG, "AreaLearningActivity: onPause()" );
         super.onPause();
-        if( isConnected )
+        if( isConnected ) {
+            tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
             tango.disconnect();
+            isConnected = false;
+        }
     }
 
     @Override
     protected void onStop(){
         Log.d( TAG, "AreaLearningActivity: onStop()" );
         super.onStop();
-        if( isConnected )
+        if( isConnected ) {
+            tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
             tango.disconnect();
+            isConnected = false;
+        }
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d( TAG, "AreaLearningActivity: onDestroy()" );
+        if( isConnected ) {
+            tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
+            tango.disconnect();
+            isConnected = false;
+        }
+        tango = null;
     }
 
     private void bindTangoService(){
