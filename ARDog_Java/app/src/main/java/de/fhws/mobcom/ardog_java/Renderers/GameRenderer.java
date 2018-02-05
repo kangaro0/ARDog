@@ -134,7 +134,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             Object3D bowlObj = bowlLoader.getParsedObject();
             bowlObj.setName("Bowl");
             // add to collection
-            GameObject bowl = new GameObject("Bowl", bowlObj);
+            GameObject bowl = new GameObject("Bowl", bowlObj, R.drawable.ic_do_not_disturb_alt_black_24dp);
             // set initial properties of object
             //bowl.getObject().setScale( 1.0 );
             objectManager.add( bowl );

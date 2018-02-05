@@ -149,34 +149,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         // gets called when 3D-Models are loaded
         setupRenderer();
 
-
-       /* SQLiteDatabase db = adHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(ARDogContract.TangoRoom.COLUMN_NAME_UUID, "asfafds-asdfassf-adfa");
-        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, "Raumname");
-        long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
-
-       db = adHelper.getReadableDatabase();
-        String [] projection ={
-                ARDogContract.TangoRoom.COLUMN_NAME_UUID,
-                ARDogContract.TangoRoom.COLUMN_NAME_NAME,
-        };
-        String selection = ARDogContract.TangoRoom.COLUMN_NAME_NAME + "= ?";
-        String[] selectionArgs = {"Raumname"};
-        Cursor cursor = db.query(
-                ARDogContract.TangoRoom.TABLE_NAME,
-                projection,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
-        cursor.moveToNext();
-        String name = cursor.getString(cursor.getColumnIndexOrThrow(ARDogContract.TangoRoom.COLUMN_NAME_NAME));
-        cursor.close();
-        Log.d("Db result" ,name);*/
-
        mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
        mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
        mFabObject.open(true);
