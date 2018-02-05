@@ -8,5 +8,5 @@ import de.fhws.mobcom.ardog_java.Objects.GameObject;
 
 public interface GameRendererCallback {
     public void onObjectPicked( GameObject obj );
-    public void onObjectUnpicked();
+    public void onNoObjectPicked();
 }

@@ -531,14 +531,14 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     @Override
     public void onObjectPicked(GameObject obj) {
 
-    if(TextUtils.isEmpty(mLastObjectName))
-        mLastObjectName = obj.getName();
-    else
-        buildObjectFab(obj);
+        if(TextUtils.isEmpty(mLastObjectName))
+            mLastObjectName = obj.getName();
+        else
+            buildObjectFab(obj);
     }
 
     @Override
-    public void onObjectUnpicked() {
+    public void onNoObjectPicked() {
         mFabObject.setVisibility(View.GONE);
         mFabBuild.setVisibility(View.VISIBLE);
 

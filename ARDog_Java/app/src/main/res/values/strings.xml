@@ -9,4 +9,6 @@
     <string name="exception_out_of_date">"Tango service outdated!"</string>
     <string name="permission_camera">"Camera permission needed!"</string>
     <string name="delete">Delete Object</string>
+    <string name="add_bowl">Add Bowl</string>
+    <string name="add_bed">Add Bed</string>
 </resources>

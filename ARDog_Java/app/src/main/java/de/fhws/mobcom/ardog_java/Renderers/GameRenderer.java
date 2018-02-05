@@ -229,6 +229,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     @Override
     public void onNoObjectPicked(){
+        callback.onNoObjectPicked();
         Log.d(TAG, "Picked no object.");
     }
 
