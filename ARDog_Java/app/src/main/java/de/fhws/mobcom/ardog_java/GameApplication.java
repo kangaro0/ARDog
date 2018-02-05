@@ -70,7 +70,7 @@ public class GameApplication extends Application {
     public DBRoom getRoom(){ return this.room; }
     public void setRoom( DBRoom room ){ this.room = room; }
 
-    public void loadAssets( final TextureManager textureManager, final GameApplicationLoadCallback callback ){
+    public void loadAssets( final Resources resources, final TextureManager textureManager, final GameApplicationLoadCallback callback ){
         Log.d( TAG, "GameApplication: loadAssets()" );
         // intialize GameObjects
         objectManager = new ObjectManager( new ObjectManagerCallback() {
@@ -79,7 +79,6 @@ public class GameApplication extends Application {
                 // loading all necessary assets is done here
                 ArrayList<GameObject> objects = new ArrayList<GameObject>();
                 // Get resources from Context
-                Resources resources = getResources();
 
                 /* Dog */
                 // Mesh
@@ -109,14 +108,14 @@ public class GameApplication extends Application {
                 objects.add( bowl );
 
                 // Bed
-                LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );
-                bedLoader.parse();
+                //LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );
+                //bedLoader.parse();
 
-                Object3D bedObj = bedLoader.getParsedObject();
-                bedObj.setName( "Bed" );
-                GameObject bed = new GameObject( "Bed", bedObj );
+                //Object3D bedObj = bedLoader.getParsedObject();
+                //bedObj.setName( "Bed" );
+                //GameObject bed = new GameObject( "Bed", bedObj );
 
-                objects.add( bed );
+                //objects.add( bed );
 
                 return objects;
             }

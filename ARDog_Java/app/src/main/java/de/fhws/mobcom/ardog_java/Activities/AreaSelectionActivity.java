@@ -50,6 +50,9 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     private TangoConfig config;
     private boolean isConnected = false;
 
+    /* Task */
+    RenameAdfTask task;
+
     /* DB */
     ARDogDbHelper adHelper;
     ARDogQuery adQuery;
@@ -110,16 +113,20 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     protected void onPause(){
         Log.d( TAG, "AreaSelectionActivity: onPause()" );
         super.onPause();
-        if( isConnected )
+        if( isConnected ) {
             tango.disconnect();
+            isConnected = false;
+        }
     }
 
     @Override
     protected void onResume(){
         Log.d( TAG, "AreaSelectionActivity: onResume()" );
         super.onResume();
-        if( isConnected )
+        if( isConnected ) {
             tango.disconnect();
+            isConnected = false;
+        }
         bindTangoService();
     }
 
@@ -127,14 +134,21 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     protected void onStop(){
         Log.d( TAG, "AreaSelectionActivity: onStop()" );
         super.onStop();
-        if( isConnected )
+        if( isConnected ) {
             tango.disconnect();
+            isConnected = false;
+        }
     }
 
     @Override
     protected void onDestroy() {
         adHelper.close();
         super.onDestroy();
+        if( isConnected ) {
+            tango.disconnect();
+            isConnected = false;
+        }
+        tango = null;
     }
 
     @Override
@@ -156,8 +170,10 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                         config = setupTangoConfig( tango );
                         tango.connect(config);
                         TangoSupport.initialize( tango );
+                        // init state
                         isConnected = true;
-                        rooms = getRooms();
+                        getRooms();
+                        // init elements
                         setup();
                         setDisplayRotation();
                     } catch (TangoOutOfDateException e) {
@@ -181,7 +197,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         return config;
     }
 
-    private ArrayList<Room> getRooms(){
+    private void getRooms(){
         ArrayList<Room> toReturn = new ArrayList<Room>();
 
         try {
@@ -198,11 +214,10 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 toReturn.add( room );
             }
 
-            return toReturn;
         } catch( TangoErrorException e ){
             Log.e( TAG, "Error when reading saved adfs.", e );
-            return toReturn;
         }
+        rooms = toReturn;
     }
 
     private void setup(){
@@ -380,10 +395,11 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
             return;
 
         Room room = rooms.get( currentId );
-        RenameAdfTask task = new RenameAdfTask(application, tango, room.getUuid(), name, new AdfTaskCallback() {
+        task = new RenameAdfTask( application, tango, room.getUuid(), name, new AdfTaskCallback() {
             @Override
             public void onDone() {
                 Log.d( TAG, "ADF sucessfully renamed." );
+                getRooms();
                 listView.invalidateViews();
                 setupListView();
             }
@@ -391,6 +407,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
             @Override
             public void onError(Exception e) {
                 Log.e( TAG, "Error when renaming ADF.", e );
+                task = null;
             }
         });
         task.execute();

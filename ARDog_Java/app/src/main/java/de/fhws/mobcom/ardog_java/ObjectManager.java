@@ -26,17 +26,12 @@ public class ObjectManager {
 
     // ctor
     public ObjectManager( final ObjectManagerCallback callback ){
-        new Runnable(){
-            @Override
-            public void run(){
-                try {
-                    objects = callback.setup();
-                } catch ( ParsingException e ) {
-                    callback.onError( e );
-                }
-                callback.onDone();
-            }
-        };
+        try {
+            objects = callback.setup();
+            callback.onDone();
+        } catch ( ParsingException e ) {
+            callback.onError( e );
+        }
     }
 
     /* Public Interface */
