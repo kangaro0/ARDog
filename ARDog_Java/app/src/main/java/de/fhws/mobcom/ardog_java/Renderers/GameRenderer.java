@@ -137,7 +137,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             Object3D bowlObj = bowlLoader.getParsedObject();
             bowlObj.setName("Bowl");
             // add to collection
-            GameObject bowl = new GameObject("Bowl", bowlObj, R.drawable.ic_do_not_disturb_alt_black_24dp);
+            GameObject bowl = new GameObject("Bowl", bowlObj, R.drawable.placeholder_thumbnail);
             // set initial properties of object
             //bowl.getObject().setScale( 1.0 );
             objectManager.add( bowl );
@@ -150,7 +150,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
             //Object3D bedObj = bedLoader.getParsedObject();
             //bedObj.setName( "Bed" );
-            //GameObject bed = new GameObject( "Bed", bedObj );
+            //GameObject bed = new GameObject( "Bed", bedObj,  );
 
             //objects.add( bed );
         } catch( ParsingException e ){
@@ -243,8 +243,16 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         }
     }
 
-    public void setToPlace( GameObject obj ){
-        this.toBePlaced = obj;
+    public void setToPlace( String name ){
+        this.toBePlaced = objectManager.getByName(name);
+    }
+
+    public void resetPlaceState(){
+        this.toBePlaced = null;
+    }
+
+    public void removeFromScene(String name){
+
     }
 
 }

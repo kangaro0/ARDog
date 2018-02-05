@@ -105,7 +105,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     /* Game-specific */
     private boolean isEditMode = false;
-    private boolean isPlacing = true;      // true when user wants to place an object instead of selecting it
 
     /* UI */
     private FloatingActionMenu mFabBuild;
@@ -115,8 +114,13 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private String mLastObjectName;
 
     /*Ui Listeners*/
+    private boolean bowlWasPressed = false;
+    private boolean bedWasPressed = false;
+    private boolean bowlIsPlaced = false;
+    private boolean bedIsPlaced = false;
     private View.OnClickListener mBowlListener;
     private View.OnClickListener mBedListener;
+    private View.OnClickListener mDeleteObjectListener;
 
 
     @Override
@@ -155,12 +159,15 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         // gets called when 3D-Models are loaded
         setupRenderer();
 
-       mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
-       mBowlButton = (FloatingActionButton) findViewById(R.id.bowl_button);
-       mBedButton = (FloatingActionButton) findViewById(R.id.bed_button);
+        initBuildFabListeners();
+        mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
+        mBowlButton = (FloatingActionButton) findViewById(R.id.bowl_button);
+        mBowlButton.setOnClickListener(mBowlListener);
+        mBedButton = (FloatingActionButton) findViewById(R.id.bed_button);
+        mBedButton.setOnClickListener(mBedListener);
 
-       mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
-       mFabObject.open(true);
+        mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
+        mFabObject.open(true);
 
     }
 
@@ -472,7 +479,9 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     @Override
     public boolean onTouch( View view, MotionEvent motionEvent ){
         Log.d( TAG, "GameActivity: onTouch(...)" );
-        if( isPlacing ) {
+        if( bowlWasPressed || bedWasPressed) {
+            bowlWasPressed = false;
+            bedWasPressed = false;
             // convert to uv-coords
             float u = motionEvent.getX() / view.getWidth();
             float v = motionEvent.getY() / view.getHeight();
@@ -536,7 +545,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         touchPoint = new TouchPoint( rgbTimestamp, depthPoint );
     }
 
-    // Builds a Fab Menu for the picked object
     @Override
     public void onObjectPicked(GameObject obj) {
 
@@ -553,7 +561,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     }
 
-    private void buildObjectFab(GameObject obj){
+    // builds a Fab menu with a button for every action(child)
+    private void buildObjectFab(final GameObject obj){
 
         if(mLastObjectName != obj.getName()){
             mFabObject.removeAllMenuButtons();
@@ -562,6 +571,12 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             deleteFab.setButtonSize(FloatingActionButton.SIZE_MINI);
             deleteFab.setLabelText(getString(R.string.delete));
             deleteFab.setImageResource(R.drawable.ic_delete_forever_black_18dp);
+            deleteFab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRenderer.removeFromScene(obj.getName());
+                }
+            });
             mFabObject.addMenuButton(deleteFab);
 
             for(GameObject o : obj.getChildren()) {
@@ -588,16 +603,31 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mBowlListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mRenderer.resetPlaceState();
+                if(bowlWasPressed){
+                    bowlWasPressed = false;
+                }
+                else{
+                    bowlWasPressed = true;
+                    mRenderer.setToPlace("Bowl");
+                }
 
             }
         };
         mBedListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mRenderer.resetPlaceState();
+                if(bedWasPressed){
+                    bedWasPressed = false;
+                    mRenderer.resetPlaceState();
+                }
+                else{
+                    bedWasPressed = true;
+                    mRenderer.setToPlace("Bed");
+                }
             }
         };
     }
-
 
 }
