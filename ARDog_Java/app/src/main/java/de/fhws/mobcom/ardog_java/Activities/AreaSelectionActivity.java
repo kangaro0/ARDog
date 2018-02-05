@@ -107,14 +107,14 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 Tango.getRequestPermissionIntent(Tango.PERMISSIONTYPE_ADF_LOAD_SAVE),
                 Tango.TANGO_INTENT_ACTIVITYCODE);
 
-        bindTangoService();
+        //bindTangoService();
     }
 
     @Override
     protected void onPause(){
         Log.d( TAG, "AreaSelectionActivity: onPause()" );
         super.onPause();
-        if( isConnected ) {
+        if( isConnected || isConnecting ) {
             tango.disconnect();
             isConnected = false;
         }

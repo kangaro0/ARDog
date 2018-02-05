@@ -148,26 +148,32 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
         mSurfaceView.setRenderMode( GLSurfaceView.RENDERMODE_CONTINUOUSLY );
         if( checkAndRequestPermissions() ){
-            bindTangoService();
+            if( !isConnected && !isConnecting )
+                bindTangoService();
         }
     }
 
     @Override
     protected void onResume(){
+
         super.onResume();
-        if( !isConnected && !isConnected )
+        if( !isConnected && !isConnecting )
             bindTangoService();
     }
 
     @Override
     protected void onPause(){
         super.onPause();
+        shutdownTango();
     }
 
     @Override
     public void onStop(){
         super.onStop();
+        shutdownTango();
+    }
 
+    private void shutdownTango(){
         synchronized ( GameActivity.this ){
             try {
                 mRenderer.getCurrentScene().clearFrameCallbacks();
@@ -195,10 +201,9 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                         // beware, if no adf loaded this will crash
                         config = setupTangoConfig(tango, false );
                         tango.connect(config);
-                        startupTango();
                         TangoSupport.initialize(tango);
                         isConnected = true;
-                        isConnecting = false;
+                        startupTango();
                         setDisplayRotation();
                     } catch (TangoOutOfDateException e) {
                         Log.e(TAG, getString(R.string.exception_out_of_date), e);
@@ -212,6 +217,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
+
+                    isConnecting = false;
                 }
             }
         });
