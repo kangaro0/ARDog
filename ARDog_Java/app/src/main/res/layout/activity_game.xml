@@ -33,7 +33,6 @@
         android:id="@+id/fab_build"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,12 +72,6 @@
         app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
         app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
 
-        <com.github.clans.fab.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            app:fab_label="Delete"
-            style="@style/MenuButtonsSmall.Green" />
 
     </com.github.clans.fab.FloatingActionMenu>
 

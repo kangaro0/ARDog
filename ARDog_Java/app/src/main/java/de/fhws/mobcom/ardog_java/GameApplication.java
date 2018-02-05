@@ -103,7 +103,7 @@ public class GameApplication extends Application {
                 Object3D bowlObj = bowlLoader.getParsedObject();
                 bowlObj.setName( "Bowl" );
                 // add to collection
-                GameObject bowl = new GameObject( "Bowl", bowlObj );
+                GameObject bowl = new GameObject( "Bowl", bowlObj, R.drawable.ic_do_not_disturb_alt_black_24dp );
                 // set initial properties of object
                 //bowl.getObject().setScale( 1.0 );
                 objects.add( bowl );
@@ -114,7 +114,7 @@ public class GameApplication extends Application {
 
                 Object3D bedObj = bedLoader.getParsedObject();
                 bedObj.setName( "Bed" );
-                GameObject bed = new GameObject( "Bed", bedObj );
+                GameObject bed = new GameObject( "Bed", bedObj, R.drawable.ic_do_not_disturb_alt_black_24dp );
 
                 objects.add( bed );
 

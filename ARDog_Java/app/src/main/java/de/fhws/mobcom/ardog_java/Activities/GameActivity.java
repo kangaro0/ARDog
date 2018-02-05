@@ -1,5 +1,6 @@
 package de.fhws.mobcom.ardog_java.Activities;
 
+import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.Tango.OnTangoUpdateListener;
@@ -33,6 +34,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -107,8 +109,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private boolean isEditMode = false;
     private boolean isPlacing = true;      // true when user wants to place an object instead of selecting it
 
+    /* UI */
     private FloatingActionMenu mFabBuild;
     private FloatingActionMenu mFabObject;
+    private String mLastObjectName;
 
 
     @Override
@@ -176,6 +180,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         String name = cursor.getString(cursor.getColumnIndexOrThrow(ARDogContract.TangoRoom.COLUMN_NAME_NAME));
         cursor.close();
         Log.d("Db result" ,name);*/
+
+       mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
+       mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
+       mFabObject.open(true);
+
     }
 
     @Override
@@ -555,8 +564,52 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     }
 
+    // Builds a Fab Menu for the picked object
     @Override
     public void onObjectPicked(GameObject obj) {
 
+    if(TextUtils.isEmpty(mLastObjectName))
+        mLastObjectName = obj.getName();
+    else
+        buildObjectFab(obj);
     }
+
+    @Override
+    public void onObjectUnpicked() {
+        mFabObject.setVisibility(View.GONE);
+        mFabBuild.setVisibility(View.VISIBLE);
+
+    }
+
+    private void buildObjectFab(GameObject obj){
+
+        if(mLastObjectName != obj.getName()){
+            mFabObject.removeAllMenuButtons();
+
+            final FloatingActionButton deleteFab = new FloatingActionButton(this);
+            deleteFab.setButtonSize(FloatingActionButton.SIZE_MINI);
+            deleteFab.setLabelText(getString(R.string.delete));
+            deleteFab.setImageResource(R.drawable.ic_delete_forever_black_18dp);
+            mFabObject.addMenuButton(deleteFab);
+
+            for(GameObject o : obj.getChildren()) {
+                final FloatingActionButton fab = new FloatingActionButton(this);
+                fab.setButtonSize(FloatingActionButton.SIZE_MINI);
+                fab.setLabelText(o.getName());
+                fab.setImageResource(o.getThumbnailId());
+                mFabObject.addMenuButton(fab);
+            }
+        }
+        else{
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mFabBuild.setVisibility(View.GONE);
+                    mFabObject.setVisibility(View.VISIBLE);
+                    finish();
+                }
+            });
+        }
+    }
+
 }

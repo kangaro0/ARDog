@@ -12,6 +12,7 @@ import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 public class GameObject {
     // identification
     private String name;
+    private int thumbnailId;
 
     // actual Object3D
     private Object3D object;
@@ -23,18 +24,20 @@ public class GameObject {
     private GameObject parent;
 
     // ctors
-    public GameObject( String name, Object3D object ){
+    public GameObject( String name, Object3D object, int thumbnailId ){
         this.name = name;
+        this.thumbnailId = thumbnailId;
         this.object = object;
         this.isPlaced = false;
     }
-    public GameObject( String name, Object3D object, ArrayList<GameObject> children ){
-        this( name, object );
+    public GameObject( String name, Object3D object, int thumbnailId, ArrayList<GameObject> children ){
+        this( name, object, thumbnailId );
         this.children = children;
     }
 
     /* Getter & Setter */
     public String getName() { return this.name; }
+    public int getThumbnailId() {return thumbnailId;}
     public Object3D getObject() { return this.object; }
 
     // Animations
