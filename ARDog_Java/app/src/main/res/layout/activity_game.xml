@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="de.fhws.mobcom.ardog_java.Activities.GameActivity"
     android:layout_gravity="center"
-    android:clickable="true"
-    >
+    android:clickable="true">
 
     <org.rajawali3d.view.SurfaceView
         android:id="@+id/surfaceview"
@@ -14,4 +14,51 @@
         android:layout_height="fill_parent"
         android:layout_gravity="top"
         />
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_build"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            app:fab_label="Add Bowl"
+            style="@style/MenuButtonsSmall.Green" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            app:fab_label="Add Bed"
+            style="@style/MenuButtonsSmall.Green" />
+
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:menu_colorNormal="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu_labels_singleLine="true"
+        app:menu_openDirection="up"
+        app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
+
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
 </FrameLayout>

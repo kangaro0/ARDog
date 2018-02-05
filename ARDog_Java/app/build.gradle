@@ -33,6 +33,7 @@ dependencies {
     compile "com.google.tango:sdk-depth-interpolation:${release_version}"
     compile "com.google.tango:sdk-transform-helpers:${release_version}"
     compile 'org.rajawali3d:rajawali:1.1.970'
+    compile 'com.github.clans:fab:1.6.4'
     testCompile 'junit:junit:4.12'
     testCompile "org.robolectric:robolectric:3.6.1"
 }
