@@ -262,5 +262,9 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     }
 
+    // Placeholder for GameObject Child Action (e.g feed dog with bowl)
+    public void doChildAction(String name){
+
+    }
 
 }

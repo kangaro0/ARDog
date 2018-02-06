@@ -118,7 +118,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private boolean bedWasPressed = false;
     private View.OnClickListener mBowlListener;
     private View.OnClickListener mBedListener;
-    private View.OnClickListener mDeleteObjectListener;
 
 
     @Override
@@ -609,7 +608,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     }
 
-    // builds a Fab menu with a button for every action(child)
+    // builds a Fab menu with a button for every object action(child)
     private void buildObjectFab(final GameObject obj){
 
         if(mLastObjectName != obj.getName()){
@@ -632,6 +631,12 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 fab.setButtonSize(FloatingActionButton.SIZE_MINI);
                 fab.setLabelText(o.getName());
                 fab.setImageResource(o.getThumbnailId());
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mRenderer.doChildAction(obj.getName());
+                    }
+                });
                 mFabObject.addMenuButton(fab);
             }
         }
