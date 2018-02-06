@@ -116,8 +116,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     /*Ui Listeners*/
     private boolean bowlWasPressed = false;
     private boolean bedWasPressed = false;
-    private boolean bowlIsPlaced = false;
-    private boolean bedIsPlaced = false;
     private View.OnClickListener mBowlListener;
     private View.OnClickListener mBedListener;
     private View.OnClickListener mDeleteObjectListener;
@@ -561,6 +559,56 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     }
 
+    @Override
+    public void onObjectPlaced(String name) {
+        Log.d("", "entered onObjectPlaced on GameActivity");
+        switch(name){
+            case "Bowl":
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mBowlButton.setEnabled(false);
+                    }
+                });
+                break;
+            case "Bed":
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mBedButton.setEnabled(false);
+                    }
+                });
+                break;
+
+        }
+
+    }
+
+    @Override
+    public void onObjectRemoved(String name) {
+        Log.d(TAG, "entered onObjectRemoved on GameActivity");
+        switch(name){
+            case "Bowl":
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mBowlButton.setEnabled(true);
+                    }
+                });
+                break;
+
+            case "Bed":
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mBedButton.setEnabled(true);
+                    }
+                });
+                break;
+        }
+
+    }
+
     // builds a Fab menu with a button for every action(child)
     private void buildObjectFab(final GameObject obj){
 
@@ -593,7 +641,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 public void run() {
                     mFabBuild.setVisibility(View.GONE);
                     mFabObject.setVisibility(View.VISIBLE);
-                    finish();
                 }
             });
         }

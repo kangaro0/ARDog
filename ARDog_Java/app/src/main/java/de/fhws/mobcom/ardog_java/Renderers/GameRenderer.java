@@ -167,6 +167,13 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 obj.setPosition( touchPoint );
 
                 getCurrentScene().addChild( obj );
+
+                Log.d(TAG, "before onObjectPlaced callback");
+                callback.onObjectPlaced(toBePlaced.getName());
+                Log.d(TAG, "onObjectPlaced callback called");
+
+                hasTouched = false;
+                toBePlaced = null;
             }
         }
 
@@ -254,5 +261,6 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     public void removeFromScene(String name){
 
     }
+
 
 }
