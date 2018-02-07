@@ -54,7 +54,7 @@ public class SaveAdfTask extends AsyncTask<Void, Integer, String> {
     protected void onPostExecute(String adfUuid) {
         if (callback != null) {
             if (adfUuid != null) {
-                callback.onDone();
+                callback.onDone( adfUuid );
             } else {
                 callback.onError( new Exception( "Error when saving adf." ) );
             }

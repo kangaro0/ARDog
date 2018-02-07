@@ -52,7 +52,7 @@ public class DeleteAdfTask extends AsyncTask<Void, Integer, Boolean> {
     protected void onPostExecute( Boolean state ){
         if (callback != null) {
             if ( state ) {
-                callback.onDone();
+                callback.onDone( null );
             } else {
                 callback.onError( new Exception( "Error when deleting adf." ) );
             }
