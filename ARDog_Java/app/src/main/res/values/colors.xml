@@ -9,4 +9,7 @@
     <color name="deep_red">#F00317</color>
     <color name="green">#2E7D32</color>
     <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="light_red">#FA5858</color>
+
 </resources>

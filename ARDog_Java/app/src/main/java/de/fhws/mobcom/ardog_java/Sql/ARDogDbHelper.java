@@ -24,6 +24,7 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_X + " DOUBLE," +
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_Y + " DOUBLE," +
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_Z + " DOUBLE," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_SCALE + " DOUBLE," +
                     "FOREIGN KEY("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+") REFERENCES " +ARDogContract.TangoRoom.TABLE_NAME +"("+ARDogContract.TangoRoom.COLUMN_NAME_UUID+")," +
                     "unique("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+","+ ARDogContract.TangoObjects.COLUMN_NAME_NAME+"));";
 
@@ -32,7 +33,7 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
                     "; DROP TABLE IF EXISTS " + ARDogContract.TangoObjects.TABLE_NAME;
 
 
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 4;
     public static final String DATABASE_NAME = "ARDog.db";
 
 

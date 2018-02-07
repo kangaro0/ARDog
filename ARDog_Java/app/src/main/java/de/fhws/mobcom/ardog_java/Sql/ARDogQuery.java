@@ -47,6 +47,22 @@ public class ARDogQuery {
        return list;
    }
 
+   public boolean hasObject(String uuid, String object){
+       SQLiteDatabase db = adHelper.getReadableDatabase();
+       String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + "= ? AND " + ARDogContract.TangoObjects.COLUMN_NAME_NAME +"= ?";
+       String[] selectionArgs = {uuid, object};
+       Cursor cursor = db.query(
+               ARDogContract.TangoObjects.TABLE_NAME,
+               null,
+               selection,
+               selectionArgs,
+               null,
+               null,
+               null
+       );
+       return cursor.getCount()>0;
+   }
+
    public List<DBObject> getObjectsByRoom(String uuid){
        SQLiteDatabase db = adHelper.getReadableDatabase();
        ArrayList<DBObject> list = new ArrayList<>();
@@ -56,6 +72,7 @@ public class ARDogQuery {
                ARDogContract.TangoObjects.COLUMN_NAME_POS_X,
                ARDogContract.TangoObjects.COLUMN_NAME_POS_Y,
                ARDogContract.TangoObjects.COLUMN_NAME_POS_Z,
+               ARDogContract.TangoObjects.COLUMN_NAME_SCALE,
        };
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + "= ?";
        String[] selectionArgs = {uuid};
@@ -74,7 +91,8 @@ public class ARDogQuery {
            double x = cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_POS_X));
            double y = cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y));
            double z =  cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z));
-           list.add(new DBObject(name, x, y, z));
+           double scale = cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_SCALE));
+           list.add(new DBObject(name, x, y, z, scale));
        }
        cursor.close();
        return list;
@@ -125,6 +143,7 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, obj.getVec().x);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, obj.getVec().y);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_SCALE, obj.getScale());
        db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
    }
 
@@ -152,6 +171,7 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, updatedObj.getVec().x);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, updatedObj.getVec().y);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getVec().z);
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getScale());
 
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";
        String[] selectionArgs = { uuid, updatedObj.getName() };

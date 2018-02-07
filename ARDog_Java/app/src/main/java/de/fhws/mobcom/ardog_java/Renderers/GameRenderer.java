@@ -12,6 +12,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import org.rajawali3d.Object3D;
 import org.rajawali3d.lights.DirectionalLight;
@@ -268,13 +269,15 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         this.touchPoint = null;
     }
 
-    public void removeFromScene(String name){
-
-    }
+    // Remove given object from scene
+    public void removeFromScene(String name){}
 
     // Placeholder for GameObject Child Action (e.g feed dog with bowl)
-    public void doChildAction(String name){
+    public void doChildAction(String name){}
 
+    // Remove all placed objects from scene
+    public void removeAllObjects() {
+        Log.d(TAG, "remove all objects entered");
     }
 
     private double calculateScale( String name ){
@@ -285,5 +288,4 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         }
         return 0.0;
     }
-
 }

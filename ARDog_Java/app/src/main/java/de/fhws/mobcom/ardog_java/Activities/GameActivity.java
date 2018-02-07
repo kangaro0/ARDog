@@ -33,11 +33,13 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -118,6 +120,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private FloatingActionMenu mFabObject;
     private FloatingActionButton mBowlButton;
     private FloatingActionButton mBedButton;
+    private FloatingActionButton mDeleteAllButton;
     private String mLastObjectName;
 
     /*Ui Listeners*/
@@ -125,6 +128,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private boolean bedWasPressed = false;
     private View.OnClickListener mBowlListener;
     private View.OnClickListener mBedListener;
+    private View.OnClickListener mDeleteAllListener;
 
 
     @Override
@@ -172,6 +176,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mBowlButton.setOnClickListener(mBowlListener);
         mBedButton = (FloatingActionButton) findViewById(R.id.bed_button);
         mBedButton.setOnClickListener(mBedListener);
+        mDeleteAllButton = (FloatingActionButton) findViewById(R.id.delete_all);
+        mDeleteAllButton.setOnClickListener(mDeleteAllListener);
 
         mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
         mFabObject.open(true);
@@ -646,7 +652,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             final FloatingActionButton deleteFab = new FloatingActionButton(this);
             deleteFab.setButtonSize(FloatingActionButton.SIZE_MINI);
             deleteFab.setLabelText(getString(R.string.delete));
-            deleteFab.setImageResource(R.drawable.ic_delete_forever_black_18dp);
+            deleteFab.setImageResource(R.drawable.ic_delete_forever_white_3x);
             deleteFab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -690,6 +696,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 }
                 else{
                     bowlWasPressed = true;
+                    Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
                     mRenderer.setToPlace("Bowl");
                 }
 
@@ -705,10 +712,41 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 }
                 else{
                     bedWasPressed = true;
+                    Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
                     mRenderer.setToPlace("Bed");
                 }
             }
         };
+
+        mDeleteAllListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showConfirmDeleteAlert();
+            }
+        };
+    }
+
+    private void showConfirmDeleteAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(
+                this,
+                R.style.AlertDialogCustom
+        );
+
+        builder.setTitle( "Do you want to delete all placed objects?" );
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mRenderer.removeAllObjects();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
 
     private void setupDb(){

@@ -292,23 +292,28 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         });
     }
 
+    private void callAreaLearning(){
+        Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
+        intent.putExtra( "KEY_AREA_EXISTS", false );
+        startActivity( intent );
+
+    }
+
     private void setupDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(
                 this,
                 R.style.AlertDialogCustom
         );
 
-        final TextView dialog = new TextView( this );
-        dialog.setText( "hallo" );
+       /* final TextView dialog = new TextView( this );
+        dialog.setText( "Please scan the whole room!" );
 
-        builder.setView( dialog );
-        builder.setTitle( "Name:                               " );
+        builder.setView( dialog );*/
+        builder.setTitle("For better results, please scan the whole room and keep the device stable.!");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
-                intent.putExtra( "KEY_AREA_EXISTS", false );
-                startActivity( intent );
+                callAreaLearning();
             }
 
         });
@@ -332,7 +337,6 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 if( currentId > 0 ) {
                     // is start button
                     application.setUUID( rooms.get( currentId ).getUuid() );
-
                     Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.GameActivity.class );
                     startActivity( intent );
                 } else {
