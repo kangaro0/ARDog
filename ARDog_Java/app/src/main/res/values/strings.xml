@@ -11,4 +11,6 @@
     <string name="delete">Delete Object</string>
     <string name="add_bowl">Add Bowl</string>
     <string name="add_bed">Add Bed</string>
+    <string name="place_object_notification">Touch where you want to place the object</string>
+    <string name="delete_all_objects">delete all objects</string>
 </resources>

@@ -118,6 +118,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private boolean bedWasPressed = false;
     private View.OnClickListener mBowlListener;
     private View.OnClickListener mBedListener;
+    private View.OnClickListener mDeleteAllListener;
 
 
     @Override
@@ -661,6 +662,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 }
                 else{
                     bowlWasPressed = true;
+                    Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
                     mRenderer.setToPlace("Bowl");
                 }
 
@@ -676,8 +678,16 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 }
                 else{
                     bedWasPressed = true;
+                    Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
                     mRenderer.setToPlace("Bed");
                 }
+            }
+        };
+
+        mDeleteAllListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
             }
         };
     }
