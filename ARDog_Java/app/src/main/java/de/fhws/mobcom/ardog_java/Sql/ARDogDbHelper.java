@@ -25,6 +25,7 @@ public class ARDogDbHelper extends SQLiteOpenHelper {
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_Y + " DOUBLE," +
                     ARDogContract.TangoObjects.COLUMN_NAME_POS_Z + " DOUBLE," +
                     ARDogContract.TangoObjects.COLUMN_NAME_SCALE + " DOUBLE," +
+                    ARDogContract.TangoObjects.COLUMN_NAME_IS_SET + " INTEGER,"+
                     "FOREIGN KEY("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+") REFERENCES " +ARDogContract.TangoRoom.TABLE_NAME +"("+ARDogContract.TangoRoom.COLUMN_NAME_UUID+")," +
                     "unique("+ARDogContract.TangoObjects.COLUMN_NAME_UUID+","+ ARDogContract.TangoObjects.COLUMN_NAME_NAME+"));";
 

@@ -11,7 +11,15 @@ public class DBObject {
     private String name;
     private Vector3 vec;
     private double scale;
+    private boolean isSet;
 
+    public boolean isSet(){
+        return this.isSet();
+    }
+
+    public boolean isSet(boolean isSet){
+        return this.isSet = isSet;
+    }
 
     public Vector3 getVec() {
         return vec;
@@ -37,10 +45,11 @@ public class DBObject {
         this.scale = scale;
     }
 
-    public DBObject(String name, double x, double y, double z, double scale){
+    public DBObject(String name, double x, double y, double z, double scale, boolean isSet){
         this.name = name;
         this.scale = scale;
         this.vec = new Vector3(x, y, z);
+        this.isSet = isSet;
     }
 
 }
