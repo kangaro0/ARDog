@@ -19,6 +19,7 @@ import org.rajawali3d.lights.DirectionalLight;
 import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.Material;
+import org.rajawali3d.materials.methods.DiffuseMethod;
 import org.rajawali3d.materials.textures.ATexture;
 import org.rajawali3d.materials.textures.StreamingTexture;
 import org.rajawali3d.math.Matrix4;
@@ -99,10 +100,9 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         mDirLight = new DirectionalLight(1, 0.2, -1);
         mDirLight.setColor(1, 1, 1);
         mDirLight.setPower(0.8f);
-        mDirLight.setPosition(3, 2, 4);
         getCurrentScene().addLight(mDirLight);
 
-        // Get objects from Application
+        // Get places objects from objectManager
         ArrayList<GameObject> objects = objectManager.getPlacedObjects();
         for( GameObject current : objects ){
             Object3D curObject = current.getObject();
@@ -171,10 +171,20 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 obj.setScale( calculateScale( "Bowl" ) );
 
                 // enable lighting
-                //for( int i = 0 ; i < obj.getNumChildren() ; i++ ){
-                //    Object3D curChild = obj.getChildAt( i );
-                //    curChild.getMaterial().
-                //}
+                for( int i = 0 ; i < obj.getNumChildren() ; i++ ){
+                    Material curMaterial = obj.getChildAt( i ).getMaterial();
+                    curMaterial.enableLighting( true );
+                    curMaterial.setDiffuseMethod( new DiffuseMethod.Lambert() );
+                }
+
+                // add light for object
+                DirectionalLight objLight = new DirectionalLight( touchPoint.x, touchPoint.y + 5, touchPoint.z );
+                objLight.resetToLookAt( touchPoint );
+                objLight.setColor( 1.0f, 1.0f, 1.0f );
+                objLight.setPower( 0.8f );
+
+                toBePlaced.setLight( objLight );
+                getCurrentScene().addLight( objLight );
 
                 getCurrentScene().addChild( obj );
                 mOnePicker.registerObject( obj );

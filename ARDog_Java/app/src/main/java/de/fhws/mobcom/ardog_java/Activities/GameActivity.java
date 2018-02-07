@@ -758,11 +758,13 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             DBObject currentDBObject = objects.get( i );
             // get object from objectManager in Renderer
             GameObject currentGameObject = mRenderer.getObjectManager().getByName( objects.get( i ).getName() );
-            // set position and scale
-            currentGameObject.getObject().setPosition( currentDBObject.getVec() );
-            // scale...
-            // add to gameScene
-            mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
+            if( currentGameObject != null ) {
+                // set position and scale
+                currentGameObject.getObject().setPosition( currentDBObject.getVec() );
+                // scale...
+                // add to gameScene
+                mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
+            }
         }
     }
 
