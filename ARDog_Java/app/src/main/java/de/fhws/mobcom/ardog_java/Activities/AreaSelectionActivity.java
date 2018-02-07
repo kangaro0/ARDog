@@ -297,11 +297,11 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 R.style.AlertDialogCustom
         );
 
-        final TextView dialog = new TextView( this );
-        dialog.setText( "hallo" );
+       /* final TextView dialog = new TextView( this );
+        dialog.setText( "Please scan the whole room!" );
 
-        builder.setView( dialog );
-        builder.setTitle( "Name:                               " );
+        builder.setView( dialog );*/
+        builder.setTitle("For better results, please scan the whole room and keep the device stable.!");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
