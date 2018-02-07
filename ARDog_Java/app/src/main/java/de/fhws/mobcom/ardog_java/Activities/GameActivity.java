@@ -627,7 +627,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             final FloatingActionButton deleteFab = new FloatingActionButton(this);
             deleteFab.setButtonSize(FloatingActionButton.SIZE_MINI);
             deleteFab.setLabelText(getString(R.string.delete));
-            deleteFab.setImageResource(R.drawable.ic_delete_forever_black_18dp);
+            deleteFab.setImageResource(R.drawable.ic_delete_forever_white_3x);
             deleteFab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

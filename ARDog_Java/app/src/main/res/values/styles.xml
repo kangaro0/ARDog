@@ -43,7 +43,7 @@
 
     <style name="MenuButtonsSmall.Red">
         <item name="fab_colorNormal">@color/deep_red</item>
-        <item name="fab_colorPressed"></item>
-        <item name="fab_colorRipple">#1B5E20</item>
+        <item name="fab_colorPressed">@color/red</item>
+        <item name="fab_colorRipple">@color/light_red</item>
     </style>
 </resources>
