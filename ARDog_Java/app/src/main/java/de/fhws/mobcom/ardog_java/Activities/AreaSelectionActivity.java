@@ -299,6 +299,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                     startActivity( intent );
                 } else {
                     // create new adf
+
                     Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
                     intent.putExtra( "KEY_AREA_EXISTS", false );
                     startActivity( intent );
