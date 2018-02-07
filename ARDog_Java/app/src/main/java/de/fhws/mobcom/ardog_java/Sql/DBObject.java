@@ -56,5 +56,6 @@ public class DBObject {
 
     public static DBObject convert(Object3D obj, boolean isPlaced){
         DBObject db = new DBObject(obj.getName(), obj.getX(), obj.getY(), obj.getZ(), obj.getScale().x, isPlaced);
+        return db;
     }
 }
