@@ -689,7 +689,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mDeleteAllListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                showConfirmDeleteAlert();
             }
         };
     }

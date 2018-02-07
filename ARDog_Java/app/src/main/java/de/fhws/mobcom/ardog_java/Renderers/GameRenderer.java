@@ -268,5 +268,6 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     // Remove all placed objects from scene
     public void removeAllObjects() {
+        Log.d(TAG, "remove all objects entered");
     }
 }
