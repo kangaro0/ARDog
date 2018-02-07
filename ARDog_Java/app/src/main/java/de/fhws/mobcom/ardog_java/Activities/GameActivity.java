@@ -553,9 +553,13 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     public void onNoObjectPicked() {
-        mFabObject.setVisibility(View.GONE);
-        mFabBuild.setVisibility(View.VISIBLE);
-
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mFabObject.setVisibility(View.GONE);
+                mFabBuild.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override

@@ -125,7 +125,8 @@ public class AreaLearningActivity extends Activity {
         super.onStart();
 
         surfaceView.setRenderMode( GLSurfaceView.RENDERMODE_CONTINUOUSLY );
-        bindTangoService();
+        if( !isConnected && !isConnecting )
+            bindTangoService();
     }
 
     @Override
