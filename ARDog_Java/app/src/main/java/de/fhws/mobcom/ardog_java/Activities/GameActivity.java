@@ -124,6 +124,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private View.OnClickListener mPillowListener;
     private View.OnClickListener mDeleteAllListener;
 
+    /*Placed Objects*/
+    private boolean bowlIsPlaced = false;
+    private boolean pillowIsPlaced = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -205,8 +209,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     public void onStop(){
+        if(bowlIsPlaced){
+        }
+
         super.onStop();
-        
+
 
         // save object position in db
 
@@ -593,6 +600,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         Log.d("", "entered onObjectPlaced on GameActivity");
         switch(name){
             case "Bowl":
+                bowlIsPlaced = true;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -601,6 +609,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 });
                 break;
             case "Pillow":
+                pillowIsPlaced = true;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -618,6 +627,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         Log.d(TAG, "entered onObjectRemoved on GameActivity");
         switch(name){
             case "Bowl":
+                bowlIsPlaced = false;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -627,6 +637,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 break;
 
             case "Pillow":
+                pillowIsPlaced = false;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

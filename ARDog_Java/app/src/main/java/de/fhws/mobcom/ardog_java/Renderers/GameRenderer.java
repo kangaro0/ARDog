@@ -288,4 +288,5 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         }
         return 0.0;
     }
+
 }
