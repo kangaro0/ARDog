@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.rajawali3d.Object3D;
 import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
+import org.rajawali3d.lights.DirectionalLight;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -18,6 +19,9 @@ public class GameObject {
     private Object3D object;
     private ArrayList<SkeletalAnimationSequence> sequences;
     private boolean isPlaced;
+
+    // light
+    private DirectionalLight light;
 
     // managing children + parents
     ArrayList<GameObject> children;
@@ -39,6 +43,9 @@ public class GameObject {
     public String getName() { return this.name; }
     public int getThumbnailId() {return thumbnailId;}
     public Object3D getObject() { return this.object; }
+
+    public DirectionalLight getLight() { return this.light; }
+    public void setLight( DirectionalLight light ) { this.light = light; }
 
     // Animations
     public ArrayList<SkeletalAnimationSequence> getSequences() { return this.sequences; }

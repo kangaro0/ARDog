@@ -38,6 +38,8 @@ import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.R;
 import de.fhws.mobcom.ardog_java.Renderers.AreaLearningRenderer;
+import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
+import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
 import de.fhws.mobcom.ardog_java.Tasks.SaveAdfTask;
 
 /**
@@ -79,6 +81,10 @@ public class AreaLearningActivity extends Activity {
     /* Task */
     private SaveAdfTask saveAdfTask;
 
+    /* DB */
+    ARDogDbHelper helper;
+    ARDogQuery query;
+
     private boolean hasPermissions = false;
 
     private int displayRotation = 0;
@@ -113,6 +119,9 @@ public class AreaLearningActivity extends Activity {
             }, null );
         }
 
+        helper = new ARDogDbHelper( this );
+        query = new ARDogQuery( helper );
+
         Intent intent = getIntent();
         isNewRoom = intent.getBooleanExtra( "AREA_EXISTS", false );
 
@@ -141,10 +150,18 @@ public class AreaLearningActivity extends Activity {
     protected void onPause(){
         Log.d( TAG, "AreaLearningActivity: onPause()" );
         super.onPause();
-        if( isConnected && isConnecting ) {
-            tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
-            tango.disconnect();
-            isConnected = false;
+        synchronized ( AreaLearningActivity.this ){
+            try {
+                if( tango != null ){
+                    tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
+                    tango.disconnect();
+                }
+
+                connectedTextureIdGlThread = INVALID_TEXTURE_ID;
+                isConnected = false;
+            } catch ( TangoErrorException e ){
+                Log.e( TAG, getString( R.string.exception_tango_error ), e );
+            }
         }
     }
 
@@ -401,8 +418,9 @@ public class AreaLearningActivity extends Activity {
 
                 saveAdfTask = new SaveAdfTask( application, tango, name, new AdfTaskCallback(){
                     @Override
-                    public void onDone() {
+                    public void onDone( String uuid ) {
                         Log.d( TAG, "AreaLearningAcitivty: ADF saved." );
+                        query.addRoom( uuid );
                         // Switch back to AreaSelectionActivity
                         Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaSelectionActivity.class );
                         startActivity( intent );

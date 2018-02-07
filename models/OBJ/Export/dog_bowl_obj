@@ -1,7 +1,7 @@
 # Blender v2.79 (sub 0) OBJ File: ''
 # www.blender.org
 mtllib dog_bowl.mtl
-o food_bowl
+o dog_bowl
 v 1.412706 -0.458771 -0.815627
 v 0.815627 -0.458771 -1.412706
 v 0.571793 0.457560 -0.990375

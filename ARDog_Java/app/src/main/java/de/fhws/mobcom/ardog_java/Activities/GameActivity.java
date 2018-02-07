@@ -58,6 +58,9 @@ import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.Renderers.GameRenderer;
 import de.fhws.mobcom.ardog_java.R;
+import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
+import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
+import de.fhws.mobcom.ardog_java.Sql.DBObject;
 
 public class GameActivity extends Activity implements View.OnTouchListener, GameRendererCallback {
 
@@ -99,6 +102,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private volatile TangoImageBuffer mCurrentImageBuffer;
     private TouchPoint touchPoint;
     private Vector3 touchInOpenGl;
+
+    /* SQLite */
+    private ARDogDbHelper helper;
+    private ARDogQuery query;
 
     private int displayRotation = 0;
 
@@ -157,8 +164,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             }, null );
         }
 
-        // gets called when 3D-Models are loaded
         setupRenderer();
+
+        /* db */
+        helper = new ARDogDbHelper( this );
+        query = new ARDogQuery( helper );
 
         initBuildFabListeners();
         mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
@@ -202,6 +212,12 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     @Override
     public void onStop(){
         super.onStop();
+
+        // save object position in db
+
+        //query.addObjectToRoom( );
+
+
         shutdownTango();
     }
 
@@ -479,6 +495,15 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         });
     }
 
+    private void showToast( final String content ){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText( GameActivity.this, content, Toast.LENGTH_LONG ).show();
+            }
+        });
+    }
+
     @Override
     public boolean onTouch( View view, MotionEvent motionEvent ){
         Log.d( TAG, "GameActivity: onTouch(...)" );
@@ -722,6 +747,25 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         });
 
         builder.show();
+    }
+
+    private void setupDb(){
+        String currentUuid = application.getUUID();
+        ArrayList<DBObject> objects = ( ArrayList ) query.getObjectsByRoom( currentUuid );
+
+        int listSize = objects.size();
+        for( int i = 0 ; i < listSize ; i++ ){
+            DBObject currentDBObject = objects.get( i );
+            // get object from objectManager in Renderer
+            GameObject currentGameObject = mRenderer.getObjectManager().getByName( objects.get( i ).getName() );
+            if( currentGameObject != null ) {
+                // set position and scale
+                currentGameObject.getObject().setPosition( currentDBObject.getVec() );
+                // scale...
+                // add to gameScene
+                mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
+            }
+        }
     }
 
 }

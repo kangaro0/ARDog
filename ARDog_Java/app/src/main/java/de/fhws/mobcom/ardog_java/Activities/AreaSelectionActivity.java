@@ -36,6 +36,7 @@ import de.fhws.mobcom.ardog_java.Objects.Room;
 import de.fhws.mobcom.ardog_java.R;
 import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
+import de.fhws.mobcom.ardog_java.Tasks.DeleteAdfTask;
 import de.fhws.mobcom.ardog_java.Tasks.RenameAdfTask;
 
 /**
@@ -52,7 +53,8 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     private boolean isConnecting = false;
 
     /* Task */
-    RenameAdfTask task;
+    RenameAdfTask renameAdfTask;
+    DeleteAdfTask deleteAdfTask;
 
     /* DB */
     ARDogDbHelper adHelper;
@@ -114,9 +116,16 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     protected void onPause(){
         Log.d( TAG, "AreaSelectionActivity: onPause()" );
         super.onPause();
-        if( isConnected || isConnecting ) {
-            tango.disconnect();
-            isConnected = false;
+        synchronized ( AreaSelectionActivity.this ){
+            try {
+                if( tango != null ){
+                    tango.disconnect();
+                }
+
+                isConnected = false;
+            } catch ( TangoErrorException e ){
+                Log.e( TAG, getString( R.string.exception_tango_error ), e );
+            }
         }
     }
 
@@ -343,10 +352,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         this.actionButtonDelete.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                adQuery.deleteRoom( rooms.get( currentId ).getUuid() );
-
-                listView.invalidateViews();
-                setupListView();
+                deleteCurrentRoom();
             }
         });
 
@@ -427,22 +433,45 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
             return;
 
         Room room = rooms.get( currentId );
-        task = new RenameAdfTask( application, tango, room.getUuid(), name, new AdfTaskCallback() {
+        renameAdfTask = new RenameAdfTask( application, tango, room.getUuid(), name, new AdfTaskCallback() {
             @Override
             public void onDone() {
                 Log.d( TAG, "ADF sucessfully renamed." );
                 getRooms();
                 listView.invalidateViews();
                 setupListView();
+                renameAdfTask = null;
             }
 
             @Override
             public void onError(Exception e) {
                 Log.e( TAG, "Error when renaming ADF.", e );
-                task = null;
+                renameAdfTask = null;
             }
         });
-        task.execute();
+        renameAdfTask.execute();
+    }
+
+    private void deleteCurrentRoom(){
+
+        Room room = rooms.get( currentId );
+        deleteAdfTask = new DeleteAdfTask( application, tango, room.getUuid(), new AdfTaskCallback(){
+            @Override
+            public void onDone(){
+                Log.d( TAG, "ADF successfully deleted." );
+                getRooms();
+                listView.invalidateViews();
+                setupListView();
+                deleteAdfTask = null;
+            }
+
+            @Override
+            public void onError( Exception e ){
+                Log.e( TAG, "Error when deleting ADF.", e );
+                deleteAdfTask = null;
+            }
+        });
+        deleteAdfTask.execute();
     }
 
     private void setDisplayRotation(){

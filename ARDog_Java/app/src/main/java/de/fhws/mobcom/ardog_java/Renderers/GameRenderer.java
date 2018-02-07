@@ -19,6 +19,7 @@ import org.rajawali3d.lights.DirectionalLight;
 import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.Material;
+import org.rajawali3d.materials.methods.DiffuseMethod;
 import org.rajawali3d.materials.textures.ATexture;
 import org.rajawali3d.materials.textures.StreamingTexture;
 import org.rajawali3d.math.Matrix4;
@@ -34,6 +35,7 @@ import java.util.ArrayList;
 import javax.microedition.khronos.opengles.GL10;
 
 import de.fhws.mobcom.ardog_java.GameApplication;
+import de.fhws.mobcom.ardog_java.Helpers.MathHelper;
 import de.fhws.mobcom.ardog_java.ObjectManager;
 import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
@@ -47,6 +49,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private ATexture mTangoCameraTexture;
     private boolean mSceneCameraConfigured;
     private ScreenQuad mBackgroundQuad;
+    private DirectionalLight mDirLight;
     private ObjectColorPicker mOnePicker;
 
     private GameObject toBePlaced;
@@ -94,13 +97,12 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         mOnePicker.registerObject( mBackgroundQuad );
 
         // Add a directional light in an arbitrary direction.
-        DirectionalLight light = new DirectionalLight(1, 0.2, -1);
-        light.setColor(1, 1, 1);
-        light.setPower(0.8f);
-        light.setPosition(3, 2, 4);
-        getCurrentScene().addLight(light);
+        mDirLight = new DirectionalLight(1, 0.2, -1);
+        mDirLight.setColor(1, 1, 1);
+        mDirLight.setPower(0.8f);
+        getCurrentScene().addLight(mDirLight);
 
-        // Get objects from Application
+        // Get places objects from objectManager
         ArrayList<GameObject> objects = objectManager.getPlacedObjects();
         for( GameObject current : objects ){
             Object3D curObject = current.getObject();
@@ -137,7 +139,6 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
             Object3D bowlObj = bowlLoader.getParsedObject();
             bowlObj.setName( "Bowl" );
-            bowlObj.setScale( 0.03 );
             // add to collection
             GameObject bowl = new GameObject("Bowl", bowlObj, R.drawable.placeholder_thumbnail );
             // set initial properties of object
@@ -146,15 +147,15 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             // for test
             //toBePlaced = bowl;
 
-            // Bed
-            //LoaderOBJ bedLoader = new LoaderOBJ( resources, textureManager, R.raw.bed_obj );
-            //bedLoader.parse();
+            // Pillow
+            LoaderOBJ pillowLoader = new LoaderOBJ( getContext().getResources(), mTextureManager, R.raw.pillow_obj );
+            pillowLoader.parse();
 
-            //Object3D bedObj = bedLoader.getParsedObject();
-            //bedObj.setName( "Bed" );
-            //GameObject bed = new GameObject( "Bed", bedObj,  );
+            Object3D pillowObj = pillowLoader.getParsedObject();
+            pillowObj.setName( "Pillow" );
+            GameObject bed = new GameObject( "Pillow", pillowObj, R.drawable.placeholder_thumbnail );
 
-            //objects.add( bed );
+            objectManager.add( bed );
         } catch( ParsingException e ){
             Log.e( TAG, "Error while parsing objects.", e );
         }
@@ -167,15 +168,32 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 // render click
                 Object3D obj = toBePlaced.getObject();
                 obj.setPosition( touchPoint );
+                obj.setScale( calculateScale( "Bowl" ) );
+
+                // enable lighting
+                for( int i = 0 ; i < obj.getNumChildren() ; i++ ){
+                    Material curMaterial = obj.getChildAt( i ).getMaterial();
+                    curMaterial.enableLighting( true );
+                    curMaterial.setDiffuseMethod( new DiffuseMethod.Lambert() );
+                }
+
+                // add light for object
+                DirectionalLight objLight = new DirectionalLight( touchPoint.x, touchPoint.y + 5, touchPoint.z );
+                objLight.resetToLookAt( touchPoint );
+                objLight.setColor( 1.0f, 1.0f, 1.0f );
+                objLight.setPower( 0.8f );
+
+                toBePlaced.setLight( objLight );
+                getCurrentScene().addLight( objLight );
 
                 getCurrentScene().addChild( obj );
+                mOnePicker.registerObject( obj );
 
                 Log.d(TAG, "before onObjectPlaced callback");
                 callback.onObjectPlaced(toBePlaced.getName());
                 Log.d(TAG, "onObjectPlaced callback called");
 
-                hasTouched = false;
-                toBePlaced = null;
+                resetPlaceState();
             }
         }
 
@@ -258,6 +276,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
     public void resetPlaceState(){
         this.toBePlaced = null;
+        this.touchPoint = null;
     }
 
     // Remove given object from scene
@@ -269,5 +288,14 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     // Remove all placed objects from scene
     public void removeAllObjects() {
         Log.d(TAG, "remove all objects entered");
+    }
+
+    private double calculateScale( String name ){
+        double depth = touchPoint.z;
+        switch( name ){
+            case "Bowl":
+                return MathHelper.clampMax( MathHelper.clampMin( 0.1 / ( (-1) * depth * 5 ) ,0.02 ), 0.05 );
+        }
+        return 0.0;
     }
 }
