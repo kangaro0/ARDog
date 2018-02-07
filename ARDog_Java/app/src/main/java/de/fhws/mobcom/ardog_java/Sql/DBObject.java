@@ -14,7 +14,7 @@ public class DBObject {
     private boolean isSet;
 
     public boolean isSet(){
-        return this.isSet();
+        return this.isSet;
     }
 
     public boolean isSet(boolean isSet){
