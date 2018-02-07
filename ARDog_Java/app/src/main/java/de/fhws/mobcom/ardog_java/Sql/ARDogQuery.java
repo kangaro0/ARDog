@@ -13,13 +13,15 @@ import java.util.List;
 
 public class ARDogQuery {
 
+    private final static String[] OBJECTS = {"Bowl", "Pillow"};
+
     ARDogDbHelper adHelper;
 
     public ARDogQuery(ARDogDbHelper adHelper){
         this.adHelper = adHelper;
     };
 
-   public List<DBRoom> getRooms(){
+  /* public List<DBRoom> getRooms(){
        SQLiteDatabase db = adHelper.getReadableDatabase();
        ArrayList<DBRoom> list = new ArrayList<>();
        String [] projection ={
@@ -45,9 +47,9 @@ public class ARDogQuery {
        }
        cursor.close();
        return list;
-   }
+   }*/
 
-   public boolean hasObject(String uuid, String object){
+   /*public boolean hasObject(String uuid, String object){
        SQLiteDatabase db = adHelper.getReadableDatabase();
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + "= ? AND " + ARDogContract.TangoObjects.COLUMN_NAME_NAME +"= ?";
        String[] selectionArgs = {uuid, object};
@@ -61,7 +63,7 @@ public class ARDogQuery {
                null
        );
        return cursor.getCount()>0;
-   }
+   }*/
 
    public List<DBObject> getObjectsByRoom(String uuid){
        SQLiteDatabase db = adHelper.getReadableDatabase();
@@ -73,6 +75,7 @@ public class ARDogQuery {
                ARDogContract.TangoObjects.COLUMN_NAME_POS_Y,
                ARDogContract.TangoObjects.COLUMN_NAME_POS_Z,
                ARDogContract.TangoObjects.COLUMN_NAME_SCALE,
+               ARDogContract.TangoObjects.COLUMN_NAME_IS_SET,
        };
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + "= ?";
        String[] selectionArgs = {uuid};
@@ -92,13 +95,14 @@ public class ARDogQuery {
            double y = cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y));
            double z =  cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z));
            double scale = cursor.getDouble(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_SCALE));
-           list.add(new DBObject(name, x, y, z, scale));
+           boolean isSet = cursor.getInt(cursor.getColumnIndexOrThrow(ARDogContract.TangoObjects.COLUMN_NAME_IS_SET)) > 0;
+           list.add(new DBObject(name, x, y, z, scale, isSet));
        }
        cursor.close();
        return list;
    }
 
-   public DBRoom getRoom(String name){
+   /*public DBRoom getRoom(String name){
        SQLiteDatabase db = adHelper.getReadableDatabase();
        String [] projection ={
                ARDogContract.TangoRoom.COLUMN_NAME_UUID,
@@ -123,19 +127,20 @@ public class ARDogQuery {
        }
        cursor.close();
        return dbRoom;
-   }
+   }*/
 
-   public long addRoom(String uuid, String name){
+   public void addRoom(String uuid){
        SQLiteDatabase db = adHelper.getWritableDatabase();
-       ContentValues values = new ContentValues();
-       values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, name);
-       values.put(ARDogContract.TangoRoom.COLUMN_NAME_UUID, uuid);
-       long newRowId = db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
-
-       return newRowId;
+       for(String object : ARDogQuery.OBJECTS) {
+           ContentValues values = new ContentValues();
+           values.put(ARDogContract.TangoObjects.COLUMN_NAME_UUID, uuid);
+           values.put(ARDogContract.TangoObjects.COLUMN_NAME_NAME, object);
+           values.put(ARDogContract.TangoObjects.COLUMN_NAME_IS_SET, 0);
+           db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
+       }
    }
 
-   public void addObjectToRoom(String uuid, DBObject obj){
+  /* public void addObjectToRoom(String uuid, DBObject obj){
        SQLiteDatabase db = adHelper.getWritableDatabase();
        ContentValues values = new ContentValues();
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_UUID, uuid);
@@ -145,24 +150,25 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, obj.getVec().z);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_SCALE, obj.getScale());
        db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
-   }
+   }*/
 
    public void deleteRoom(String uuid){
        SQLiteDatabase db = adHelper.getWritableDatabase();
-       String selection = ARDogContract.TangoRoom.COLUMN_NAME_UUID + " LIKE ?";
        String[] selectionArgs = { uuid };
-       db.delete(ARDogContract.TangoRoom.TABLE_NAME, selection, selectionArgs);
 
-       selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ?";
+      /* String selection = ARDogContract.TangoRoom.COLUMN_NAME_UUID + " LIKE ?";
+       db.delete(ARDogContract.TangoRoom.TABLE_NAME, selection, selectionArgs);*/
+
+       String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ?";
        db.delete(ARDogContract.TangoObjects.TABLE_NAME, selection, selectionArgs);
    }
 
-   public void deleteObject(String uuid, String name){
+   /*public void deleteObject(String uuid, String name){
        SQLiteDatabase db = adHelper.getWritableDatabase();
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";
        String[] selectionArgs = { uuid, name};
        db.delete(ARDogContract.TangoObjects.TABLE_NAME, selection, selectionArgs);
-   }
+   }*/
 
    public void updateObject(String uuid, DBObject updatedObj){
        SQLiteDatabase db = adHelper.getWritableDatabase();
@@ -172,6 +178,7 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, updatedObj.getVec().y);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getVec().z);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getScale());
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_IS_SET, updatedObj.isSet() ? 1:0);
 
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";
        String[] selectionArgs = { uuid, updatedObj.getName() };
@@ -182,7 +189,7 @@ public class ARDogQuery {
                selectionArgs);
    }
 
-   public void updateRoomByUuid (String uuid, String newName ){
+   /*public void updateRoomByUuid (String uuid, String newName ){
        SQLiteDatabase db = adHelper.getWritableDatabase();
        ContentValues values = new ContentValues();
        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, newName);
@@ -193,9 +200,10 @@ public class ARDogQuery {
                values,
                selection,
                selectionArgs);
+   }*/
 
-   }
-   public void updateRoomByName (String name, String newName ){
+
+  /* public void updateRoomByName (String name, String newName ){
        SQLiteDatabase db = adHelper.getWritableDatabase();
        ContentValues values = new ContentValues();
        values.put(ARDogContract.TangoRoom.COLUMN_NAME_NAME, newName);
@@ -206,5 +214,5 @@ public class ARDogQuery {
                values,
                selection,
                selectionArgs);
-   }
+   }*/
 }

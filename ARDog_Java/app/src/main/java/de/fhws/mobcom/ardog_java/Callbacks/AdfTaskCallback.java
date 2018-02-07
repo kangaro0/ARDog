@@ -5,6 +5,6 @@ package de.fhws.mobcom.ardog_java.Callbacks;
  */
 
 public interface AdfTaskCallback {
-    public void onDone();
+    public void onDone( String uuid );
     public void onError( Exception e );
 }

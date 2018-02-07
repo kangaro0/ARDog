@@ -38,6 +38,8 @@ import de.fhws.mobcom.ardog_java.GameApplication;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.R;
 import de.fhws.mobcom.ardog_java.Renderers.AreaLearningRenderer;
+import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
+import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
 import de.fhws.mobcom.ardog_java.Tasks.SaveAdfTask;
 
 /**
@@ -79,6 +81,10 @@ public class AreaLearningActivity extends Activity {
     /* Task */
     private SaveAdfTask saveAdfTask;
 
+    /* DB */
+    ARDogDbHelper helper;
+    ARDogQuery query;
+
     private boolean hasPermissions = false;
 
     private int displayRotation = 0;
@@ -112,6 +118,9 @@ public class AreaLearningActivity extends Activity {
                 public void onDisplayRemoved( int displayId ){}
             }, null );
         }
+
+        helper = new ARDogDbHelper( this );
+        query = new ARDogQuery( helper );
 
         Intent intent = getIntent();
         isNewRoom = intent.getBooleanExtra( "AREA_EXISTS", false );
@@ -409,8 +418,9 @@ public class AreaLearningActivity extends Activity {
 
                 saveAdfTask = new SaveAdfTask( application, tango, name, new AdfTaskCallback(){
                     @Override
-                    public void onDone() {
+                    public void onDone( String uuid ) {
                         Log.d( TAG, "AreaLearningAcitivty: ADF saved." );
+                        query.addRoom( uuid );
                         // Switch back to AreaSelectionActivity
                         Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaSelectionActivity.class );
                         startActivity( intent );
