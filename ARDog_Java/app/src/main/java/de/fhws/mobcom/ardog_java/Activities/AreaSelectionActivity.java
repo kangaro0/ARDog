@@ -298,7 +298,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         );
 
         final TextView dialog = new TextView( this );
-        dialog.setText("hallo");
+        dialog.setText( "hallo" );
 
         builder.setView( dialog );
         builder.setTitle( "Name:                               " );
