@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="de.fhws.mobcom.ardog_java.AreaSelectionDialog">
+    tools:context="de.fhws.mobcom.ardog_java.Fragments.AreaSelectionDialog">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

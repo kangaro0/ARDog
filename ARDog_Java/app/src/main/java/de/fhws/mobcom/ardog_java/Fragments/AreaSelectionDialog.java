@@ -1,12 +1,15 @@
-package de.fhws.mobcom.ardog_java;
+package de.fhws.mobcom.ardog_java.Fragments;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import de.fhws.mobcom.ardog_java.R;
 
 
 /**
@@ -17,18 +20,12 @@ import android.view.ViewGroup;
  * Use the {@link AreaSelectionDialog#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AreaSelectionDialog extends Fragment {
+public class AreaSelectionDialog extends DialogFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String DIALOG = "dialog";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
-
+    String dialogText;
     public AreaSelectionDialog() {
         // Required empty public constructor
     }
@@ -42,11 +39,10 @@ public class AreaSelectionDialog extends Fragment {
      * @return A new instance of fragment AreaSelectionDialog.
      */
     // TODO: Rename and change types and number of parameters
-    public static AreaSelectionDialog newInstance(String param1, String param2) {
+    public static AreaSelectionDialog newInstance(String dialogText) {
         AreaSelectionDialog fragment = new AreaSelectionDialog();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putString(DIALOG, dialogText);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,8 +51,7 @@ public class AreaSelectionDialog extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            dialogText = getArguments().getString(DIALOG);
         }
     }
 
