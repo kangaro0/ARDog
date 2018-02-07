@@ -133,7 +133,7 @@ public class AreaLearningActivity extends Activity {
     protected void onResume(){
         Log.d( TAG, "AreaLearningActivity: onResume()" );
         super.onResume();
-        if( !isConnecting || !isConnected )
+        if( !isConnecting && !isConnected )
             bindTangoService();
     }
 
