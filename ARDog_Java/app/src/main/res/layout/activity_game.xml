@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
-            app:fab_label="@string/add_bed"
+            app:fab_label="@string/add_pillow"
             style="@style/MenuButtonsSmall.Green" />
 
 
