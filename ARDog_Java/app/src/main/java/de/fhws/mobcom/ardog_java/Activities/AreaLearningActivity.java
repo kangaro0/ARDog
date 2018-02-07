@@ -141,10 +141,18 @@ public class AreaLearningActivity extends Activity {
     protected void onPause(){
         Log.d( TAG, "AreaLearningActivity: onPause()" );
         super.onPause();
-        if( isConnected && isConnecting ) {
-            tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
-            tango.disconnect();
-            isConnected = false;
+        synchronized ( AreaLearningActivity.this ){
+            try {
+                if( tango != null ){
+                    tango.disconnectCamera( TangoCameraIntrinsics.TANGO_CAMERA_COLOR );
+                    tango.disconnect();
+                }
+
+                connectedTextureIdGlThread = INVALID_TEXTURE_ID;
+                isConnected = false;
+            } catch ( TangoErrorException e ){
+                Log.e( TAG, getString( R.string.exception_tango_error ), e );
+            }
         }
     }
 

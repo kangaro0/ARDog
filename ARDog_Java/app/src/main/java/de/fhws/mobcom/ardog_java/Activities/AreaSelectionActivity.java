@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.google.atap.tangoservice.Tango;
 import com.google.atap.tangoservice.TangoAreaDescriptionMetaData;
+import com.google.atap.tangoservice.TangoCameraIntrinsics;
 import com.google.atap.tangoservice.TangoConfig;
 import com.google.atap.tangoservice.TangoErrorException;
 import com.google.atap.tangoservice.TangoInvalidException;
@@ -114,9 +115,16 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     protected void onPause(){
         Log.d( TAG, "AreaSelectionActivity: onPause()" );
         super.onPause();
-        if( isConnected || isConnecting ) {
-            tango.disconnect();
-            isConnected = false;
+        synchronized ( AreaSelectionActivity.this ){
+            try {
+                if( tango != null ){
+                    tango.disconnect();
+                }
+
+                isConnected = false;
+            } catch ( TangoErrorException e ){
+                Log.e( TAG, getString( R.string.exception_tango_error ), e );
+            }
         }
     }
 
