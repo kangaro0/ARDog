@@ -284,6 +284,36 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         });
     }
 
+    private void setupDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(
+                this,
+                R.style.AlertDialogCustom
+        );
+
+        final TextView dialog = new TextView( this );
+        dialog.setText("hallo");
+
+        builder.setView( dialog );
+        builder.setTitle( "Name:                               " );
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
+                intent.putExtra( "KEY_AREA_EXISTS", false );
+                startActivity( intent );
+            }
+
+        });
+        builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+    }
+
     private void setupActionButtons(){
         // Add
         this.actionButtonAdd = ( FloatingActionButton ) findViewById( R.id.area_fab_add );
@@ -298,10 +328,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                     Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.GameActivity.class );
                     startActivity( intent );
                 } else {
-                    // create new adf
-                    Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaLearningActivity.class );
-                    intent.putExtra( "KEY_AREA_EXISTS", false );
-                    startActivity( intent );
+                    setupDialog();
                 }
             }
         });
