@@ -2,15 +2,16 @@ package de.fhws.mobcom.ardog_java.Sql;
 
 import org.rajawali3d.math.vector.Vector3;
 
-import java.util.Vector;
-
 /**
  * Created by Patrick on 01/02/2018.
  */
 
 public class DBObject {
 
-    String name;
+    private String name;
+    private Vector3 vec;
+    private double scale;
+
 
     public Vector3 getVec() {
         return vec;
@@ -20,8 +21,6 @@ public class DBObject {
         this.vec = vec;
     }
 
-    Vector3 vec;
-
     public String getName() {
         return name;
     }
@@ -30,10 +29,17 @@ public class DBObject {
         this.name = name;
     }
 
+    public double getScale() {
+        return scale;
+    }
 
+    public void setScale(double scale) {
+        this.scale = scale;
+    }
 
-    public DBObject(String name, Double x, Double y, Double z){
+    public DBObject(String name, double x, double y, double z, double scale){
         this.name = name;
+        this.scale = scale;
         this.vec = new Vector3(x, y, z);
     }
 

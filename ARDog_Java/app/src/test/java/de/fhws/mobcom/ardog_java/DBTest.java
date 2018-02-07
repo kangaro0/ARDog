@@ -29,9 +29,9 @@ public class DBTest {
     Context context = RuntimeEnvironment.application.getApplicationContext();
     ARDogDbHelper adHelper = new ARDogDbHelper(context);
     ARDogQuery adQuery = new ARDogQuery(adHelper);
-    DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0);
-    DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0);
-    DBObject objUpdate2 = new DBObject("DBObject2", 2.0, 2.0, 3.0);
+    DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0, 1.0);
+    DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0, 1.0);
+    DBObject objUpdate2 = new DBObject("DBObject2", 2.0, 2.0, 3.0, 1.0);
 
 
     @Test
@@ -122,11 +122,25 @@ public class DBTest {
         String uuid = "5";
         String roomName = "Raum 5";
         String objName = "obj 5";
-        DBObject obj = new DBObject(objName, 1.0, 2.0, 3.0);
+        DBObject obj = new DBObject(objName, 1.0, 2.0, 3.0, 1.0);
         adQuery.addRoom(uuid, roomName);
         adQuery.addObjectToRoom(uuid, obj);
         adQuery.deleteObject(uuid, obj.getName());
         ArrayList<DBObject> objs = (ArrayList) adQuery.getObjectsByRoom(uuid);
         assertEquals(objs.size(), 0);
+    }
+
+    @Test
+    public void testHasObject(){
+        String uuid = "6";
+        String objName = "obj6";
+        DBObject obj = new DBObject(objName, 1.0, 2.0, 3.0,1.0);
+        adQuery.addRoom(uuid, "room6");
+        adQuery.addObjectToRoom(uuid, obj);
+        boolean hasObject = adQuery.hasObject(uuid, objName);
+        assertEquals(hasObject, true);
+
+        boolean hasNotObject = adQuery.hasObject(uuid, "abc");
+        assertEquals(hasNotObject, false);
     }
 }

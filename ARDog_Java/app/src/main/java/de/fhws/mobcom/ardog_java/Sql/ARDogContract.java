@@ -25,6 +25,7 @@ public class ARDogContract {
         public static final String COLUMN_NAME_POS_X= "pos_x";
         public static final String COLUMN_NAME_POS_Y = "pos_y";
         public static final String COLUMN_NAME_POS_Z = "pos_z";
+        public static final String COLUMN_NAME_SCALE = "scale";
 
     }
 }
