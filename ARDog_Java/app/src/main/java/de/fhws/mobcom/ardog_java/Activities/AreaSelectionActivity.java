@@ -352,10 +352,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         this.actionButtonDelete.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                adQuery.deleteRoom( rooms.get( currentId ).getUuid() );
-
-                listView.invalidateViews();
-                setupListView();
+                deleteCurrentRoom();
             }
         });
 
