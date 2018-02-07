@@ -33,11 +33,13 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -687,9 +689,32 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mDeleteAllListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
             }
         };
+    }
+
+    private void showConfirmDeleteAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(
+                this,
+                R.style.AlertDialogCustom
+        );
+
+        builder.setTitle( "Do you want to delete all placed objects?" );
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mRenderer.removeAllObjects();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
 
 }
