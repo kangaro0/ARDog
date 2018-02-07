@@ -1,5 +1,6 @@
 package de.fhws.mobcom.ardog_java.Sql;
 
+import org.rajawali3d.Object3D;
 import org.rajawali3d.math.vector.Vector3;
 
 /**
@@ -52,4 +53,8 @@ public class DBObject {
         this.isSet = isSet;
     }
 
+
+    public static DBObject convert(Object3D obj, boolean isPlaced){
+        DBObject db = new DBObject(obj.getName(), obj.getX(), obj.getY(), obj.getZ(), obj.getScale().x, isPlaced);
+    }
 }

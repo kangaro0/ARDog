@@ -1,10 +1,10 @@
 package de.fhws.mobcom.ardog_java.Objects;
 
-import java.util.ArrayList;
-
 import org.rajawali3d.Object3D;
 import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 import org.rajawali3d.lights.DirectionalLight;
+
+import java.util.ArrayList;
 
 /**
  * Created by kanga on 21.01.2018.
@@ -19,6 +19,7 @@ public class GameObject {
     private Object3D object;
     private ArrayList<SkeletalAnimationSequence> sequences;
     private boolean isPlaced;
+
 
     // light
     private DirectionalLight light;
