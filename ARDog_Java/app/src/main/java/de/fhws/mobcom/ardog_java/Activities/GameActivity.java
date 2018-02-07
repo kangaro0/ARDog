@@ -113,6 +113,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private FloatingActionMenu mFabObject;
     private FloatingActionButton mBowlButton;
     private FloatingActionButton mBedButton;
+    private FloatingActionButton mDeleteAllButton;
     private String mLastObjectName;
 
     /*Ui Listeners*/
@@ -165,6 +166,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mBowlButton.setOnClickListener(mBowlListener);
         mBedButton = (FloatingActionButton) findViewById(R.id.bed_button);
         mBedButton.setOnClickListener(mBedListener);
+        mDeleteAllButton = (FloatingActionButton) findViewById(R.id.delete_all);
+        mDeleteAllButton.setOnClickListener(mDeleteAllListener);
 
         mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
         mFabObject.open(true);
