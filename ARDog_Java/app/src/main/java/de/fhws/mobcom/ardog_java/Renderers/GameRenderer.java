@@ -151,8 +151,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             pillowLoader.parse();
 
             Object3D pillowObj = pillowLoader.getParsedObject();
-            pillowObj.setName( "Bed" );
-            GameObject bed = new GameObject( "Bed", pillowObj, R.drawable.placeholder_thumbnail );
+            pillowObj.setName( "Pillow" );
+            GameObject bed = new GameObject( "Pillow", pillowObj, R.drawable.placeholder_thumbnail );
 
             objectManager.add( bed );
         } catch( ParsingException e ){
