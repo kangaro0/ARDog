@@ -15,13 +15,16 @@ import android.view.MotionEvent;
 import android.widget.Toast;
 
 import org.rajawali3d.Object3D;
+import org.rajawali3d.animation.mesh.VertexAnimationObject3D;
 import org.rajawali3d.lights.DirectionalLight;
+import org.rajawali3d.loader.LoaderMD2;
 import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
 import org.rajawali3d.materials.Material;
 import org.rajawali3d.materials.methods.DiffuseMethod;
 import org.rajawali3d.materials.textures.ATexture;
 import org.rajawali3d.materials.textures.StreamingTexture;
+import org.rajawali3d.materials.textures.Texture;
 import org.rajawali3d.math.Matrix4;
 import org.rajawali3d.math.Quaternion;
 import org.rajawali3d.math.vector.Vector3;
@@ -55,6 +58,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     private GameObject toBePlaced;
     private Vector3 touchPoint;
     private boolean hasTouched = false;
+    private boolean hasPlacedDog = false;
 
     private GameApplication application;
     private GameRendererCallback callback;
@@ -118,20 +122,15 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         objectManager = new ObjectManager();
 
         try {
-                /* Dog */
-            // Mesh
-            //LoaderMD5Mesh dogMeshLoader = new LoaderMD5Mesh( resources, mRenderer.getTextureManager(), R.raw.dog );
-            //dogMeshLoader.parse();
-            // Animations
-            //LoaderMD5Anim dogAnimLoader = new LoaderMD5Anim( resources, mRenderer.getTextureManager(), R.raw.dog_anim );
-            //dogAnimLoader.parse();
-            //SkeletalAnimationSequence sequence = ( SkeletalAnimationSequence ) dogAnimLoader.getParsedAnimationSequence();
-            // setup GameObject
-            //Object3D dogObj = dogMeshLoader.getParsedObject();
-            //dogObj.setName( "Dog" );
-            //GameObject dog = new GameObject( "Dog", dogObj );
-            //dog.addSequence( sequence );
-            //objects.add( dog );
+
+            // Dog
+            LoaderMD2 dogLoader = new LoaderMD2( mContext.getResources(), mTextureManager, R.raw.dog );
+            dogLoader.parse();
+
+            VertexAnimationObject3D dog = ( VertexAnimationObject3D ) dogLoader.getParsedAnimationObject();
+            GameObject dogObj = new GameObject( "Dog", dog );
+
+            objectManager.add( dogObj );
 
             // Bowl
             LoaderOBJ bowlLoader = new LoaderOBJ( getContext().getResources(), mTextureManager, R.raw.dog_bowl_obj );
@@ -140,7 +139,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             Object3D bowlObj = bowlLoader.getParsedObject();
             bowlObj.setName( "Bowl" );
             // add to collection
-            GameObject bowl = new GameObject("Bowl", bowlObj, R.drawable.placeholder_thumbnail );
+            GameObject bowl = new GameObject("Bowl", bowlObj );
             // set initial properties of object
             //bowl.getObject().setScale( 1.0 );
             objectManager.add( bowl );
@@ -153,11 +152,11 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
             Object3D pillowObj = pillowLoader.getParsedObject();
             pillowObj.setName( "Pillow" );
-            GameObject bed = new GameObject( "Pillow", pillowObj, R.drawable.placeholder_thumbnail );
+            GameObject bed = new GameObject( "Pillow", pillowObj );
 
             objectManager.add( bed );
-        } catch( ParsingException e ){
-            Log.e( TAG, "Error while parsing objects.", e );
+        } catch( ParsingException e ) {
+            Log.e(TAG, "Error while parsing objects.", e);
         }
     }
 
@@ -299,5 +298,4 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         }
         return 0.0;
     }
-
 }

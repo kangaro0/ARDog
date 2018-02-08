@@ -108,9 +108,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     /* Application */
     GameApplication application;
 
-    /* Game-specific */
-    private boolean isEditMode = false;
-
     /* UI */
     private FloatingActionMenu mFabBuild;
     private FloatingActionMenu mFabObject;
@@ -482,6 +479,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 @Override
                 public void onClick( DialogInterface dialogInterface, int i ){
                     ActivityCompat.requestPermissions( GameActivity.this, new String[]{ CAMERA_PERMISSION }, CAMERA_PERMISSION_CODE  );
+                    if( !isConnected || !isConnecting )
+                        bindTangoService();
                 }
             })
             .create();
@@ -819,7 +818,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         String currentUuid = application.getUUID();
         ArrayList<DBObject> objects = (ArrayList) query.getObjectsByRoom(currentUuid);
         Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
-        ;
         for (DBObject currentDBObject : objects) {
             // get object from objectManager in Renderer
             if (currentDBObject.isSet() && (currentDBObject.getName() == "Bowl" || currentDBObject.getName() == "Pillow")) {
