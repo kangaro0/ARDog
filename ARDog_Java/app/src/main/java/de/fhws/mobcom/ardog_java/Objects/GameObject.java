@@ -29,14 +29,13 @@ public class GameObject {
     private GameObject parent;
 
     // ctors
-    public GameObject( String name, Object3D object, int thumbnailId ){
+    public GameObject( String name, Object3D object ){
         this.name = name;
-        this.thumbnailId = thumbnailId;
         this.object = object;
         this.isPlaced = false;
     }
-    public GameObject( String name, Object3D object, int thumbnailId, ArrayList<GameObject> children ){
-        this( name, object, thumbnailId );
+    public GameObject( String name, Object3D object, ArrayList<GameObject> children ){
+        this( name, object );
         this.children = children;
     }
 

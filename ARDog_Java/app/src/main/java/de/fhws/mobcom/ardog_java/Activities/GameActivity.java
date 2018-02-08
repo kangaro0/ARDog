@@ -112,9 +112,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     /* Application */
     GameApplication application;
 
-    /* Game-specific */
-    private boolean isEditMode = false;
-
     /* UI */
     private FloatingActionMenu mFabBuild;
     private FloatingActionMenu mFabObject;
@@ -471,6 +468,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 @Override
                 public void onClick( DialogInterface dialogInterface, int i ){
                     ActivityCompat.requestPermissions( GameActivity.this, new String[]{ CAMERA_PERMISSION }, CAMERA_PERMISSION_CODE  );
+                    if( !isConnected || !isConnecting )
+                        bindTangoService();
                 }
             })
             .create();
@@ -613,7 +612,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                     }
                 });
                 break;
-
         }
 
     }
@@ -767,5 +765,4 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             }
         }
     }
-
 }
