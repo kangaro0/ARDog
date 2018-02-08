@@ -127,10 +127,11 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             LoaderMD2 dogLoader = new LoaderMD2( mContext.getResources(), mTextureManager, R.raw.dog );
             dogLoader.parse();
 
-            VertexAnimationObject3D dog = ( VertexAnimationObject3D ) dogLoader.getParsedAnimationObject();
-            GameObject dogObj = new GameObject( "Dog", dog );
+            VertexAnimationObject3D dogObj = ( VertexAnimationObject3D ) dogLoader.getParsedAnimationObject();
+            dogObj.setName( "Dog" );
 
-            objectManager.add( dogObj );
+            GameObject dog = new GameObject( "Dog", dogObj );
+            objectManager.add( dog );
 
             // Bowl
             LoaderOBJ bowlLoader = new LoaderOBJ( getContext().getResources(), mTextureManager, R.raw.dog_bowl_obj );
@@ -167,8 +168,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 // render click
                 Object3D obj = toBePlaced.getObject();
                 obj.setPosition( touchPoint );
-                obj.setScale( calculateScale( "Bowl" ) );
-                objectManager.getByName(toBePlaced.getName()).setPlaced(true);
+                obj.setScale( calculateScale( obj.getName() ) );
+                objectManager.getByName( toBePlaced.getName() ).setPlaced( true );
 
                 // enable lighting
                 for( int i = 0 ; i < obj.getNumChildren() ; i++ ){
@@ -195,9 +196,9 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
                 resetPlaceState();
             }
-        }
 
-        super.onRender( elapsedRealTime, deltaTime );
+            super.onRender( elapsedRealTime, deltaTime );
+        }
     }
 
     public void updateColorCameraTextureUvGlThread( int rotation ){
@@ -295,6 +296,10 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         switch( name ){
             case "Bowl":
                 return MathHelper.clampMax( MathHelper.clampMin( 0.1 / ( (-1) * depth * 5 ) ,0.02 ), 0.05 );
+            case "Pillow":
+                return MathHelper.clampMax( MathHelper.clampMin( 0.1 / (-1) * depth * 5, 0.02 ), 0.05 );
+            case "Dog":
+                return MathHelper.clampMax( MathHelper.clampMin( 0.1 / (-1) * depth * 5, 0.02 ), 0.05 );
         }
         return 0.0;
     }
