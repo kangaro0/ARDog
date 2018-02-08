@@ -285,6 +285,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     public void removeFromScene(String name){
         getCurrentScene().removeChild(objectManager.getByName(name).getObject());
         objectManager.getByName(name).setPlaced(false);
+        callback.onObjectRemoved(name);
     }
 
     // Placeholder for GameObject Child Action (e.g feed dog with bowl)
