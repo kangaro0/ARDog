@@ -335,7 +335,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
             @Override
             public void onClick(View v) {
                 // check if item is selected
-                if( currentId >= 0 ) {
+                if( currentId > 0 ) {
                     // is start button
                     application.setUUID( rooms.get( currentId ).getUuid() );
                     Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.GameActivity.class );
@@ -435,7 +435,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         Room room = rooms.get( currentId );
         renameAdfTask = new RenameAdfTask( application, tango, room.getUuid(), name, new AdfTaskCallback() {
             @Override
-            public void onDone(String a) {
+            public void onDone(String onDone) {
                 Log.d( TAG, "ADF sucessfully renamed." );
                 getRooms();
                 listView.invalidateViews();
@@ -457,7 +457,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         Room room = rooms.get( currentId );
         deleteAdfTask = new DeleteAdfTask( application, tango, room.getUuid(), new AdfTaskCallback(){
             @Override
-            public void onDone(String a){
+            public void onDone(String onDone){
                 Log.d( TAG, "ADF successfully deleted." );
                 getRooms();
                 listView.invalidateViews();
@@ -470,6 +470,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 Log.e( TAG, "Error when deleting ADF.", e );
                 deleteAdfTask = null;
             }
+
         });
         deleteAdfTask.execute();
     }

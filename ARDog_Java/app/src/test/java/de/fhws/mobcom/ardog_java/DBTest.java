@@ -13,10 +13,8 @@ import java.util.ArrayList;
 import de.fhws.mobcom.ardog_java.Sql.ARDogDbHelper;
 import de.fhws.mobcom.ardog_java.Sql.ARDogQuery;
 import de.fhws.mobcom.ardog_java.Sql.DBObject;
-import de.fhws.mobcom.ardog_java.Sql.DBRoom;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static junit.framework.Assert.assertEquals;
 
 
 /**
@@ -29,12 +27,44 @@ public class DBTest {
     Context context = RuntimeEnvironment.application.getApplicationContext();
     ARDogDbHelper adHelper = new ARDogDbHelper(context);
     ARDogQuery adQuery = new ARDogQuery(adHelper);
-    DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0, 1.0);
-    DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0, 1.0);
-    DBObject objUpdate2 = new DBObject("DBObject2", 2.0, 2.0, 3.0, 1.0);
+   /* DBObject obj1 = new DBObject("DBObject1", 1.0, 2.0, 3.0, 1.0, true);
+    DBObject obj2 = new DBObject("DBObject2", 1.0, 2.0, 3.0, 1.0, false);
+    DBObject objUpdate2 = new DBObject("DBObject2", 2.0, 2.0, 3.0, 1.0, true);*/
 
+    private final String uuid1 = "1";
 
     @Test
+    public void testAddRoomAndGetObjects(){
+        adQuery.addRoom(uuid1);
+        ArrayList<DBObject> obj = (ArrayList) adQuery.getObjectsByRoom(uuid1);
+        System.out.println(obj.size());
+        assertEquals(ARDogQuery.OBJECTS.length, obj.size());
+    }
+
+    @Test
+    public void testDeleteRoom(){
+        adQuery.deleteRoom(uuid1);
+        ArrayList<DBObject> obj = (ArrayList) adQuery.getObjectsByRoom(uuid1);
+        assertEquals(0, obj.size());
+    }
+
+    @Test
+    public void updateObjects(){
+        adQuery.addRoom(uuid1);
+        ArrayList<DBObject> obj = (ArrayList) adQuery.getObjectsByRoom(uuid1);
+        for(DBObject current : obj){
+            assertEquals(false, current.isSet());
+        }
+        DBObject updated = obj.get(0);
+        updated.isSet(true);
+        adQuery.updateObject(uuid1, updated);
+
+        ArrayList<DBObject> updatedList = (ArrayList) adQuery.getObjectsByRoom(uuid1);
+        assertEquals(true, updatedList.get(0).isSet());
+        assertEquals(false, updatedList.get(1).isSet());
+    }
+
+   /* @Test
     public void testAddAndGetRoom(){
         adQuery.addRoom("1", "Raum 1");
         adQuery.addRoom("2", "Raum 2");
@@ -142,5 +172,5 @@ public class DBTest {
 
         boolean hasNotObject = adQuery.hasObject(uuid, "abc");
         assertEquals(hasNotObject, false);
-    }
+    }*/
 }
