@@ -114,6 +114,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
             getCurrentScene().addChild( curObject );
             mOnePicker.registerObject( curObject );
         }
+        callback.onRendererResume();
 
     }
 
@@ -195,6 +196,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
 
                 resetPlaceState();
             }
+
         }
 
         super.onRender( elapsedRealTime, deltaTime );
@@ -280,13 +282,21 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     }
 
     // Remove given object from scene
-    public void removeFromScene(String name){}
+    public void removeFromScene(String name){
+        getCurrentScene().removeChild(objectManager.getByName(name).getObject());
+        objectManager.getByName(name).setPlaced(false);
+    }
 
     // Placeholder for GameObject Child Action (e.g feed dog with bowl)
     public void doChildAction(String name){}
 
     // Remove all placed objects from scene
     public void removeAllObjects() {
+        for(GameObject obj : objectManager.getPlacedObjects()){
+            getCurrentScene().removeChild(obj.getObject());
+            callback.onObjectRemoved(obj.getName());
+        }
+
         Log.d(TAG, "remove all objects entered");
     }
 

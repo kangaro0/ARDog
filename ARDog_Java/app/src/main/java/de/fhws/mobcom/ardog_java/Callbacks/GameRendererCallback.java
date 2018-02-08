@@ -11,4 +11,5 @@ public interface GameRendererCallback {
     public void onNoObjectPicked();
     public void onObjectPlaced(String name);
     public void onObjectRemoved(String name);
+    public void onRendererResume();
 }

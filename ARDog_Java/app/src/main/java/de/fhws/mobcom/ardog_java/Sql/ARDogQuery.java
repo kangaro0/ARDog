@@ -177,7 +177,7 @@ public class ARDogQuery {
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_X, updatedObj.getVec().x);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Y, updatedObj.getVec().y);
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getVec().z);
-       values.put(ARDogContract.TangoObjects.COLUMN_NAME_POS_Z, updatedObj.getScale());
+       values.put(ARDogContract.TangoObjects.COLUMN_NAME_SCALE, updatedObj.getScale());
        values.put(ARDogContract.TangoObjects.COLUMN_NAME_IS_SET, updatedObj.isSet() ? 1:0);
 
        String selection = ARDogContract.TangoObjects.COLUMN_NAME_UUID + " LIKE ? AND + " + ARDogContract.TangoObjects.COLUMN_NAME_NAME+ " LIKE ?";

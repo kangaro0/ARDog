@@ -28,6 +28,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.hardware.display.DisplayManager;
+import android.nfc.Tag;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -50,6 +51,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import de.fhws.mobcom.ardog_java.Callbacks.GameRendererCallback;
 import de.fhws.mobcom.ardog_java.GameApplication;
+import de.fhws.mobcom.ardog_java.ObjectManager;
 import de.fhws.mobcom.ardog_java.Objects.GameObject;
 import de.fhws.mobcom.ardog_java.Helpers.ThreeDimHelper;
 import de.fhws.mobcom.ardog_java.Renderers.GameRenderer;
@@ -193,7 +195,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             if( !isConnected && !isConnecting )
                 bindTangoService();
         }
-        setupDb();
     }
 
     @Override
@@ -202,7 +203,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         super.onResume();
         if( !isConnected && !isConnecting )
             bindTangoService();
-        setupDb();
     }
 
     @Override
@@ -670,6 +670,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     }
 
+    @Override
+    public void onRendererResume(){
+        setupDb();
+    }
+
     // builds a Fab menu with a button for every object action(child)
     private void buildObjectFab(final GameObject obj){
 
@@ -820,11 +825,13 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
         for (DBObject currentDBObject : objects) {
             // get object from objectManager in Renderer
-            if (currentDBObject.isSet() && (currentDBObject.getName() == "Bowl" || currentDBObject.getName() == "Pillow")) {
-                GameObject currentGameObject = mRenderer.getObjectManager().getByName(currentDBObject.getName());
+            if (currentDBObject.isSet() && (currentDBObject.getName().equals("Bowl") || currentDBObject.getName().equals("Pillow"))) {
+                ObjectManager objectManager = mRenderer.getObjectManager();
+                GameObject currentGameObject = objectManager.getByName(currentDBObject.getName());
                 if (currentGameObject != null) {
                     // set position and scale
                     currentGameObject.getObject().setPosition(currentDBObject.getVec());
+                    currentGameObject.getObject().setScale(currentDBObject.getScale());
                     // scale...
                     // add to gameScene
                     mRenderer.getCurrentScene().addChild(currentGameObject.getObject());

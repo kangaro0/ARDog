@@ -65,7 +65,7 @@ public class ObjectManager {
     public GameObject getByName( String name ){
         for( int i = 0 ; i < this.objects.size() ; i++ ){
             GameObject current = this.objects.get( i );
-            if( current.getName() == name )
+            if( current.getName().equals(name))
                 return current;
         }
         return null;
@@ -73,7 +73,7 @@ public class ObjectManager {
     public GameObject getByObject3D( Object3D obj ){
         for( int i = 0 ; i < this.objects.size() ; i++ ){
             GameObject current = this.objects.get( i );
-            if( current.getName() == obj.getName() )
+            if( current.getName().equals(obj.getName()) )
                 return current;
         }
         return null;

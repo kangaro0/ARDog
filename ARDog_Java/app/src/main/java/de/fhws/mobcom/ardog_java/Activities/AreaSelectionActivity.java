@@ -335,7 +335,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
             @Override
             public void onClick(View v) {
                 // check if item is selected
-                if( currentId > 0 ) {
+                if( currentId >= 0 ) {
                     // is start button
                     application.setUUID( rooms.get( currentId ).getUuid() );
                     Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.GameActivity.class );
