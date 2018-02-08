@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ARDogQuery {
 
-    private final static String[] OBJECTS = {"Bowl", "Pillow"};
+    public final static String[] OBJECTS = {"Bowl", "Pillow"};
 
     ARDogDbHelper adHelper;
 
@@ -136,7 +136,7 @@ public class ARDogQuery {
            values.put(ARDogContract.TangoObjects.COLUMN_NAME_UUID, uuid);
            values.put(ARDogContract.TangoObjects.COLUMN_NAME_NAME, object);
            values.put(ARDogContract.TangoObjects.COLUMN_NAME_IS_SET, 0);
-           db.insert(ARDogContract.TangoRoom.TABLE_NAME, null, values);
+           db.insert(ARDogContract.TangoObjects.TABLE_NAME, null, values);
        }
    }
 
