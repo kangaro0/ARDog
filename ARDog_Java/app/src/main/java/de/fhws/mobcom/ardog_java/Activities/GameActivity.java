@@ -38,6 +38,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import org.rajawali3d.Object3D;
 import org.rajawali3d.math.vector.Vector3;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
@@ -210,6 +211,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     @Override
     public void onStop(){
         if(bowlIsPlaced){
+
+           // query.updateObject(application.getUUID(), );
         }
 
         super.onStop();
@@ -221,6 +224,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
 
         shutdownTango();
+    }
+
+    private Object3D getObject3DByGameObject(String name){
+
+        return mRenderer.ge;
     }
 
     private void shutdownTango(){
