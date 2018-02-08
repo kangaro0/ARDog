@@ -22,6 +22,7 @@ import com.google.tango.support.TangoSupport;
 import com.google.tango.transformhelpers.TangoTransformHelper;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -69,7 +70,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         }
     }
 
-    private static final String TAG = GameActivity.class.getSimpleName();
+    private static final String TAG = GameActivity.class.getSimpleName() + "aaaaa";
     private static final int INVALID_TEXTURE_ID = 0;
 
     /* Permissions */
@@ -116,14 +117,18 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private FloatingActionButton mBowlButton;
     private FloatingActionButton mPillowButton;
     private FloatingActionButton mDeleteAllButton;
+    private FloatingActionButton mDogButton;
     private String mLastObjectName;
 
     /*Ui Listeners*/
     private boolean bowlWasPressed = false;
     private boolean pillowWasPressed = false;
+    private boolean dogWasPressed = false;
+
     private View.OnClickListener mBowlListener;
     private View.OnClickListener mPillowListener;
     private View.OnClickListener mDeleteAllListener;
+    private View.OnClickListener mDogListener;
 
 
     @Override
@@ -173,6 +178,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mPillowButton.setOnClickListener(mPillowListener);
         mDeleteAllButton = (FloatingActionButton) findViewById(R.id.delete_all);
         mDeleteAllButton.setOnClickListener(mDeleteAllListener);
+        mDogButton = (FloatingActionButton) findViewById(R.id.dog_button);
+        mDogButton.setOnClickListener(mDogListener);
 
         mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
         mFabObject.open(true);
@@ -181,6 +188,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     protected void onStart(){
+        Log.d(TAG, "onStart entered");
         super.onStart();
 
         mSurfaceView.setRenderMode( GLSurfaceView.RENDERMODE_CONTINUOUSLY );
@@ -193,7 +201,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     protected void onResume(){
-
+        Log.d(TAG, "onResume entered");
         super.onResume();
         if( !isConnected && !isConnecting )
             bindTangoService();
@@ -208,9 +216,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     public void onStop(){
+        Log.d(TAG, "onStop entered");
         for(GameObject obj : mRenderer.getObjectManager().getAll()){
             if(obj.getName() == "Bowl") {
                 query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
+                Log.d(TAG, "Bowl saved" + obj.getObject().getName());
             }
             else if (obj.getName() == "Pillow"){
                 query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
@@ -430,6 +440,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mSurfaceView.setSurfaceRenderer( mRenderer );
     }
 
+    @SuppressLint("WrongConstant")
     private void setDisplayRotation(){
         Display display = getWindowManager().getDefaultDisplay();
         displayRotation = display.getRotation();
@@ -507,9 +518,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     @Override
     public boolean onTouch( View view, MotionEvent motionEvent ){
         Log.d( TAG, "GameActivity: onTouch(...)" );
-        if( bowlWasPressed || pillowWasPressed) {
+        if( bowlWasPressed || pillowWasPressed || dogWasPressed) {
             bowlWasPressed = false;
             pillowWasPressed = false;
+            dogWasPressed = false;
             // convert to uv-coords
             float u = motionEvent.getX() / view.getWidth();
             float v = motionEvent.getY() / view.getHeight();
@@ -724,6 +736,22 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 showConfirmDeleteAlert();
             }
         };
+
+        mDogListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mRenderer.resetPlaceState();
+                if(dogWasPressed){
+                    dogWasPressed = false;
+                    mRenderer.resetPlaceState();
+                }
+                else{
+                    dogWasPressed = true;
+                    Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
+                    mRenderer.setToPlace("Dog");
+                }
+            }
+        };
     }
 
     private void showConfirmDeleteAlert(){
@@ -749,10 +777,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         builder.show();
     }
 
-    private void setupDb(){
+    private void setupDb2(){
         String currentUuid = application.getUUID();
         ArrayList<DBObject> objects = ( ArrayList ) query.getObjectsByRoom( currentUuid );
-
+        Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
         int listSize = objects.size();
         for( int i = 0 ; i < listSize ; i++ ){
             DBObject currentDBObject = objects.get( i );
@@ -766,8 +794,31 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
                 //disable place object button for this object
                 onObjectPlaced(currentGameObject.getName());
+                Log.d(TAG, "setup DB: added object");
             }
         }
     }
 
+    private void setupDb() {
+        String currentUuid = application.getUUID();
+        ArrayList<DBObject> objects = (ArrayList) query.getObjectsByRoom(currentUuid);
+        Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
+        ;
+        for (DBObject currentDBObject : objects) {
+            // get object from objectManager in Renderer
+            if (currentDBObject.isSet() && (currentDBObject.getName() == "Bowl" || currentDBObject.getName() == "Pillow")) {
+                GameObject currentGameObject = mRenderer.getObjectManager().getByName(currentDBObject.getName());
+                if (currentGameObject != null) {
+                    // set position and scale
+                    currentGameObject.getObject().setPosition(currentDBObject.getVec());
+                    // scale...
+                    // add to gameScene
+                    mRenderer.getCurrentScene().addChild(currentGameObject.getObject());
+                    //disable place object button for this object
+                    onObjectPlaced(currentGameObject.getName());
+                    Log.d(TAG, "setup DB: added object");
+                }
+            }
+        }
+    }
 }

@@ -169,6 +169,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 Object3D obj = toBePlaced.getObject();
                 obj.setPosition( touchPoint );
                 obj.setScale( calculateScale( "Bowl" ) );
+                objectManager.getByName(toBePlaced.getName()).setPlaced(true);
 
                 // enable lighting
                 for( int i = 0 ; i < obj.getNumChildren() ; i++ ){

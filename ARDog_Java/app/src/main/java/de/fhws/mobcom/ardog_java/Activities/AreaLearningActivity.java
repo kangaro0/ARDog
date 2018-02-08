@@ -420,6 +420,7 @@ public class AreaLearningActivity extends Activity {
                     @Override
                     public void onDone( String uuid ) {
                         Log.d( TAG, "AreaLearningAcitivty: ADF saved." );
+                        Log.d( TAG, "AreaLearningAcitivty: uuid =" + uuid);
                         query.addRoom( uuid );
                         // Switch back to AreaSelectionActivity
                         Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaSelectionActivity.class );
