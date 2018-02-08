@@ -125,10 +125,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private View.OnClickListener mPillowListener;
     private View.OnClickListener mDeleteAllListener;
 
-    /*Placed Objects*/
-    private boolean bowlIsPlaced = false;
-    private boolean pillowIsPlaced = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,6 +188,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             if( !isConnected && !isConnecting )
                 bindTangoService();
         }
+        setupDb();
     }
 
     @Override
@@ -200,6 +197,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         super.onResume();
         if( !isConnected && !isConnecting )
             bindTangoService();
+        setupDb();
     }
 
     @Override
@@ -210,25 +208,17 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     public void onStop(){
-        if(bowlIsPlaced){
-
-           // query.updateObject(application.getUUID(), );
+        for(GameObject obj : mRenderer.getObjectManager().getAll()){
+            if(obj.getName() == "Bowl") {
+                query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
+            }
+            else if (obj.getName() == "Pillow"){
+                query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
+            }
         }
 
         super.onStop();
-
-
-        // save object position in db
-
-        //query.addObjectToRoom( );
-
-
         shutdownTango();
-    }
-
-    private Object3D getObject3DByGameObject(String name){
-
-        return mRenderer.ge;
     }
 
     private void shutdownTango(){
@@ -608,7 +598,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         Log.d("", "entered onObjectPlaced on GameActivity");
         switch(name){
             case "Bowl":
-                bowlIsPlaced = true;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -617,7 +606,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 });
                 break;
             case "Pillow":
-                pillowIsPlaced = true;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -635,7 +623,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         Log.d(TAG, "entered onObjectRemoved on GameActivity");
         switch(name){
             case "Bowl":
-                bowlIsPlaced = false;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -645,7 +632,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 break;
 
             case "Pillow":
-                pillowIsPlaced = false;
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -778,6 +764,8 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 // scale...
                 // add to gameScene
                 mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
+                //disable place object button for this object
+                onObjectPlaced(currentGameObject.getName());
             }
         }
     }
