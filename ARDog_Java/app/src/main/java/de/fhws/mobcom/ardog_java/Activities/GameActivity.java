@@ -625,6 +625,14 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                     }
                 });
                 break;
+            case "Dog":
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDogButton.setEnabled(false);
+                    }
+                });
+                break;
 
         }
 
@@ -648,6 +656,14 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                     @Override
                     public void run() {
                         mPillowButton.setEnabled(true);
+                    }
+                });
+                break;
+            case "Dog":
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDogButton.setEnabled(true);
                     }
                 });
                 break;
