@@ -29,6 +29,13 @@
         app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
         app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right">
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/dog_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            app:fab_label="@string/add_dog"
+            style="@style/MenuButtonsSmall.Green" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/bowl_button"
@@ -43,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
-            app:fab_label="@string/add_bed"
+            app:fab_label="@string/add_pillow"
             style="@style/MenuButtonsSmall.Green" />
 
 

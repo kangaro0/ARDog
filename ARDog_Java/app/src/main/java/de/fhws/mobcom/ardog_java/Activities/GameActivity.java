@@ -22,28 +22,24 @@ import com.google.tango.support.TangoSupport;
 import com.google.tango.transformhelpers.TangoTransformHelper;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.hardware.display.DisplayManager;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import org.rajawali3d.Object3D;
 import org.rajawali3d.math.vector.Vector3;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
@@ -74,7 +70,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         }
     }
 
-    private static final String TAG = GameActivity.class.getSimpleName();
+    private static final String TAG = GameActivity.class.getSimpleName() + "aaaaa";
     private static final int INVALID_TEXTURE_ID = 0;
 
     /* Permissions */
@@ -116,16 +112,20 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     private FloatingActionMenu mFabBuild;
     private FloatingActionMenu mFabObject;
     private FloatingActionButton mBowlButton;
-    private FloatingActionButton mBedButton;
+    private FloatingActionButton mPillowButton;
     private FloatingActionButton mDeleteAllButton;
+    private FloatingActionButton mDogButton;
     private String mLastObjectName;
 
     /*Ui Listeners*/
     private boolean bowlWasPressed = false;
-    private boolean bedWasPressed = false;
+    private boolean pillowWasPressed = false;
+    private boolean dogWasPressed = false;
+
     private View.OnClickListener mBowlListener;
-    private View.OnClickListener mBedListener;
+    private View.OnClickListener mPillowListener;
     private View.OnClickListener mDeleteAllListener;
+    private View.OnClickListener mDogListener;
 
 
     @Override
@@ -171,10 +171,12 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mFabBuild = (FloatingActionMenu) findViewById(R.id.fab_build);
         mBowlButton = (FloatingActionButton) findViewById(R.id.bowl_button);
         mBowlButton.setOnClickListener(mBowlListener);
-        mBedButton = (FloatingActionButton) findViewById(R.id.bed_button);
-        mBedButton.setOnClickListener(mBedListener);
+        mPillowButton = (FloatingActionButton) findViewById(R.id.bed_button);
+        mPillowButton.setOnClickListener(mPillowListener);
         mDeleteAllButton = (FloatingActionButton) findViewById(R.id.delete_all);
         mDeleteAllButton.setOnClickListener(mDeleteAllListener);
+        mDogButton = (FloatingActionButton) findViewById(R.id.dog_button);
+        mDogButton.setOnClickListener(mDogListener);
 
         mFabObject = (FloatingActionMenu) findViewById(R.id.fab_object);
         mFabObject.open(true);
@@ -183,6 +185,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     protected void onStart(){
+        Log.d(TAG, "onStart entered");
         super.onStart();
 
         mSurfaceView.setRenderMode( GLSurfaceView.RENDERMODE_CONTINUOUSLY );
@@ -190,14 +193,16 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             if( !isConnected && !isConnecting )
                 bindTangoService();
         }
+        setupDb();
     }
 
     @Override
     protected void onResume(){
-
+        Log.d(TAG, "onResume entered");
         super.onResume();
         if( !isConnected && !isConnecting )
             bindTangoService();
+        setupDb();
     }
 
     @Override
@@ -208,13 +213,18 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
     @Override
     public void onStop(){
+        Log.d(TAG, "onStop entered");
+        for(GameObject obj : mRenderer.getObjectManager().getAll()){
+            if(obj.getName() == "Bowl") {
+                query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
+                Log.d(TAG, "Bowl saved" + obj.getObject().getName());
+            }
+            else if (obj.getName() == "Pillow"){
+                query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
+            }
+        }
+
         super.onStop();
-
-        // save object position in db
-
-        //query.addObjectToRoom( );
-
-
         shutdownTango();
     }
 
@@ -427,6 +437,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         mSurfaceView.setSurfaceRenderer( mRenderer );
     }
 
+    @SuppressLint("WrongConstant")
     private void setDisplayRotation(){
         Display display = getWindowManager().getDefaultDisplay();
         displayRotation = display.getRotation();
@@ -506,9 +517,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
     @Override
     public boolean onTouch( View view, MotionEvent motionEvent ){
         Log.d( TAG, "GameActivity: onTouch(...)" );
-        if( bowlWasPressed || bedWasPressed) {
+        if( bowlWasPressed || pillowWasPressed || dogWasPressed) {
             bowlWasPressed = false;
-            bedWasPressed = false;
+            pillowWasPressed = false;
+            dogWasPressed = false;
             // convert to uv-coords
             float u = motionEvent.getX() / view.getWidth();
             float v = motionEvent.getY() / view.getHeight();
@@ -604,11 +616,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                     }
                 });
                 break;
-            case "Bed":
+            case "Pillow":
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mBedButton.setEnabled(false);
+                        mPillowButton.setEnabled(false);
                     }
                 });
                 break;
@@ -629,11 +641,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 });
                 break;
 
-            case "Bed":
+            case "Pillow":
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mBedButton.setEnabled(true);
+                        mPillowButton.setEnabled(true);
                     }
                 });
                 break;
@@ -700,18 +712,18 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
 
             }
         };
-        mBedListener = new View.OnClickListener() {
+        mPillowListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mRenderer.resetPlaceState();
-                if(bedWasPressed){
-                    bedWasPressed = false;
+                if(pillowWasPressed){
+                    pillowWasPressed = false;
                     mRenderer.resetPlaceState();
                 }
                 else{
-                    bedWasPressed = true;
+                    pillowWasPressed = true;
                     Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
-                    mRenderer.setToPlace("Bed");
+                    mRenderer.setToPlace("Pillow");
                 }
             }
         };
@@ -720,6 +732,22 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             @Override
             public void onClick(View view) {
                 showConfirmDeleteAlert();
+            }
+        };
+
+        mDogListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mRenderer.resetPlaceState();
+                if(dogWasPressed){
+                    dogWasPressed = false;
+                    mRenderer.resetPlaceState();
+                }
+                else{
+                    dogWasPressed = true;
+                    Toast.makeText(GameActivity.this, getString(R.string.place_object_notification),Toast.LENGTH_SHORT).show();
+                    mRenderer.setToPlace("Dog");
+                }
             }
         };
     }
@@ -747,10 +775,10 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         builder.show();
     }
 
-    private void setupDb(){
+    private void setupDb2(){
         String currentUuid = application.getUUID();
         ArrayList<DBObject> objects = ( ArrayList ) query.getObjectsByRoom( currentUuid );
-
+        Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
         int listSize = objects.size();
         for( int i = 0 ; i < listSize ; i++ ){
             DBObject currentDBObject = objects.get( i );
@@ -762,6 +790,31 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 // scale...
                 // add to gameScene
                 mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
+                //disable place object button for this object
+                onObjectPlaced(currentGameObject.getName());
+                Log.d(TAG, "setup DB: added object");
+            }
+        }
+    }
+
+    private void setupDb() {
+        String currentUuid = application.getUUID();
+        ArrayList<DBObject> objects = (ArrayList) query.getObjectsByRoom(currentUuid);
+        Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
+        for (DBObject currentDBObject : objects) {
+            // get object from objectManager in Renderer
+            if (currentDBObject.isSet() && (currentDBObject.getName() == "Bowl" || currentDBObject.getName() == "Pillow")) {
+                GameObject currentGameObject = mRenderer.getObjectManager().getByName(currentDBObject.getName());
+                if (currentGameObject != null) {
+                    // set position and scale
+                    currentGameObject.getObject().setPosition(currentDBObject.getVec());
+                    // scale...
+                    // add to gameScene
+                    mRenderer.getCurrentScene().addChild(currentGameObject.getObject());
+                    //disable place object button for this object
+                    onObjectPlaced(currentGameObject.getName());
+                    Log.d(TAG, "setup DB: added object");
+                }
             }
         }
     }

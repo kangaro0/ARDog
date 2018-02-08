@@ -88,4 +88,8 @@ public class GameObject {
     public boolean isPlaced(){
         return this.isPlaced;
     }
+
+    public void setPlaced(boolean placeState) {
+        isPlaced = placeState;
+    }
 }

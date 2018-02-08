@@ -168,6 +168,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 Object3D obj = toBePlaced.getObject();
                 obj.setPosition( touchPoint );
                 obj.setScale( calculateScale( "Bowl" ) );
+                objectManager.getByName(toBePlaced.getName()).setPlaced(true);
 
                 // enable lighting
                 for( int i = 0 ; i < obj.getNumChildren() ; i++ ){
@@ -266,11 +267,6 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         if( point != null ) {
             touchPoint = point;
             hasTouched = true;
-
-            if( !hasPlacedDog ){
-                placeDog();
-                resetPlaceState();
-            }
         }
     }
 
@@ -301,14 +297,5 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 return MathHelper.clampMax( MathHelper.clampMin( 0.1 / ( (-1) * depth * 5 ) ,0.02 ), 0.05 );
         }
         return 0.0;
-    }
-
-    private void placeDog(){
-        GameObject dog = objectManager.getByName( "Dog" );
-        if( dog != null ){
-            Object3D obj = dog.getObject();
-            obj.setPosition( touchPoint );
-            getCurrentScene().addChild( obj );
-        }
     }
 }
