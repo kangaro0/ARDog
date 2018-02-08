@@ -12,14 +12,19 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.animation.AnimationSet;
 import android.widget.Toast;
 
 import org.rajawali3d.Object3D;
+import org.rajawali3d.animation.mesh.SkeletalAnimationObject3D;
+import org.rajawali3d.animation.mesh.SkeletalAnimationSequence;
 import org.rajawali3d.animation.mesh.VertexAnimationObject3D;
 import org.rajawali3d.lights.DirectionalLight;
 import org.rajawali3d.loader.LoaderMD2;
 import org.rajawali3d.loader.LoaderOBJ;
 import org.rajawali3d.loader.ParsingException;
+import org.rajawali3d.loader.md5.LoaderMD5Anim;
+import org.rajawali3d.loader.md5.LoaderMD5Mesh;
 import org.rajawali3d.materials.Material;
 import org.rajawali3d.materials.methods.DiffuseMethod;
 import org.rajawali3d.materials.textures.ATexture;
@@ -124,10 +129,27 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         try {
 
             // Dog
-            LoaderMD2 dogLoader = new LoaderMD2( mContext.getResources(), mTextureManager, R.raw.dog );
+            /*
+            LoaderMD5Mesh dogLoader = new LoaderMD5Mesh( this, R.raw.dog );
             dogLoader.parse();
 
-            VertexAnimationObject3D dogObj = ( VertexAnimationObject3D ) dogLoader.getParsedAnimationObject();
+            LoaderMD5Anim dogWalkLoader = new LoaderMD5Anim( "Walk", this, R.raw.dog_walk );
+            dogWalkLoader.parse();
+
+            SkeletalAnimationSequence walkSequence = ( SkeletalAnimationSequence ) dogWalkLoader.getParsedAnimationSequence();
+
+            SkeletalAnimationObject3D dog = ( SkeletalAnimationObject3D ) dogLoader.getParsedAnimationObject();
+
+            GameObject dogObj = new GameObject( "Dog", dog );
+            dogObj.addSequence( walkSequence );
+
+            objectManager.add( dogObj );
+            */
+
+            LoaderOBJ dogLoader = new LoaderOBJ( getContext().getResources(), mTextureManager, R.raw.dog );
+            dogLoader.parse();
+
+            Object3D dogObj = dogLoader.getParsedObject();
             dogObj.setName( "Dog" );
 
             GameObject dog = new GameObject( "Dog", dogObj );
@@ -190,11 +212,11 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 getCurrentScene().addChild( obj );
                 mOnePicker.registerObject( obj );
 
-                Log.d(TAG, "before onObjectPlaced callback");
-                callback.onObjectPlaced(toBePlaced.getName());
-                Log.d(TAG, "onObjectPlaced callback called");
-
                 resetPlaceState();
+
+                Log.d(TAG, "before onObjectPlaced callback");
+                callback.onObjectPlaced(obj.getName());
+                Log.d(TAG, "onObjectPlaced callback called");
             }
 
             super.onRender( elapsedRealTime, deltaTime );
@@ -271,13 +293,16 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         }
     }
 
-    public void setToPlace( String name ){
-        this.toBePlaced = objectManager.getByName(name);
+    public void setToPlace( String name ) {
+        synchronized (GameRenderer.this) {
+            this.toBePlaced = objectManager.getByName(name);
+        }
     }
 
     public void resetPlaceState(){
         this.toBePlaced = null;
         this.touchPoint = null;
+        this.hasTouched = false;
     }
 
     // Remove given object from scene

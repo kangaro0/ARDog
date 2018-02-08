@@ -408,6 +408,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                                 );
 
                                 mRenderer.showTouch( new Vector3( p0[ 0 ], p0[ 1 ], p0[ 2 ] ) );
+                                touchPoint = null;
                             }
                         }
                     }
@@ -479,8 +480,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 @Override
                 public void onClick( DialogInterface dialogInterface, int i ){
                     ActivityCompat.requestPermissions( GameActivity.this, new String[]{ CAMERA_PERMISSION }, CAMERA_PERMISSION_CODE  );
-                    if( !isConnected || !isConnecting )
-                        bindTangoService();
                 }
             })
             .create();
@@ -718,7 +717,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
             @Override
             public void onClick(View view) {
                 mRenderer.resetPlaceState();
-                if(bowlWasPressed){
+                if( bowlWasPressed ){
                     bowlWasPressed = false;
                 }
                 else{
