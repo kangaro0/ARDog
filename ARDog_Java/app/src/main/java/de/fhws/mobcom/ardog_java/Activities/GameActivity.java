@@ -218,10 +218,11 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         for(GameObject obj : mRenderer.getObjectManager().getAll()){
             if(obj.getName() == "Bowl") {
                 query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
-                Log.d(TAG, "Bowl saved" + obj.getObject().getName());
+                Log.d(TAG, "Bowl saved" + obj.getObject().getName() + "isPlaced: " +obj.isPlaced());
             }
             else if (obj.getName() == "Pillow"){
                 query.updateObject(application.getUUID(), DBObject.convert(obj.getObject(), obj.isPlaced()));
+                Log.d(TAG, "Pillow saved" + obj.getObject().getName()+ "isPlaced: " +obj.isPlaced());
             }
         }
 
@@ -827,6 +828,7 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                     // scale...
                     // add to gameScene
                     mRenderer.getCurrentScene().addChild(currentGameObject.getObject());
+                    objectManager.getByName(currentGameObject.getName()).setPlaced(true);
                     //disable place object button for this object
                     onObjectPlaced(currentGameObject.getName());
                     Log.d(TAG, "setup DB: added object");
