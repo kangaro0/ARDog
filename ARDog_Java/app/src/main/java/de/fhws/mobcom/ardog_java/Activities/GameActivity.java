@@ -41,6 +41,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import org.rajawali3d.Object3D;
+import org.rajawali3d.lights.DirectionalLight;
 import org.rajawali3d.math.vector.Vector3;
 import org.rajawali3d.scene.ASceneFrameCallback;
 import org.rajawali3d.view.SurfaceView;
@@ -807,9 +808,22 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
                 ObjectManager objectManager = mRenderer.getObjectManager();
                 GameObject currentGameObject = objectManager.getByName(currentDBObject.getName());
                 if (currentGameObject != null) {
+                    Vector3 pos = currentDBObject.getVec();
                     // set position and scale
-                    currentGameObject.getObject().setPosition(currentDBObject.getVec());
+                    currentGameObject.getObject().setPosition( pos );
                     currentGameObject.getObject().setScale(currentDBObject.getScale());
+
+                    // lighting
+                    DirectionalLight light = new DirectionalLight( pos.x, pos.y + 5, pos.z );
+                    light.resetToLookAt( pos );
+                    light.setColor( 1.0f, 1.0f, 1.0f );
+                    light.setPower( 0.8f );
+
+                    currentGameObject.setLight( light );
+
+                    // add to scene
+                    mRenderer.getCurrentScene().addLight( light );
+
                     // scale...
                     // add to gameScene
                     mRenderer.getCurrentScene().addChild(currentGameObject.getObject());

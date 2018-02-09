@@ -423,8 +423,7 @@ public class AreaLearningActivity extends Activity {
                         Log.d( TAG, "AreaLearningAcitivty: uuid =" + uuid);
                         query.addRoom( uuid );
                         // Switch back to AreaSelectionActivity
-                        Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaSelectionActivity.class );
-                        startActivity( intent );
+                        returnToAreaSelection();
                     }
 
                     @Override
@@ -436,10 +435,11 @@ public class AreaLearningActivity extends Activity {
 
             }
         });
-        builder.setNegativeButton("Cancle", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
+                returnToAreaSelection();
             }
         });
 
@@ -457,5 +457,10 @@ public class AreaLearningActivity extends Activity {
                     renderer.updateColorCameraTextureUvGlThread( displayRotation );
             }
         });
+    }
+
+    private void returnToAreaSelection(){
+        Intent intent = new Intent( application, de.fhws.mobcom.ardog_java.Activities.AreaSelectionActivity.class );
+        startActivity( intent );
     }
 }
