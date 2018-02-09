@@ -73,6 +73,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         super( context );
         application = ( GameApplication ) context.getApplicationContext();
         callback = rendererCallback;
+
+        setMaxLights( 100 );
     }
 
     /* Getter & Setter */
@@ -187,6 +189,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     @Override
     protected void onRender( long elapsedRealTime, double deltaTime ){
         synchronized ( GameRenderer.this ){
+            super.onRender( elapsedRealTime, deltaTime );
+
             if( hasTouched && toBePlaced != null ){
                 // render click
                 Object3D obj = toBePlaced.getObject();
@@ -195,6 +199,11 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 objectManager.getByName( toBePlaced.getName() ).setPlaced( true );
 
                 // enable lighting
+                Material objMaterial = obj.getMaterial();
+                if( objMaterial != null ){
+                    objMaterial.enableLighting( true );
+                    objMaterial.setDiffuseMethod( new DiffuseMethod.Lambert() );
+                }
                 for( int i = 0 ; i < obj.getNumChildren() ; i++ ){
                     Material curMaterial = obj.getChildAt( i ).getMaterial();
                     curMaterial.enableLighting( true );
@@ -219,8 +228,6 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
                 callback.onObjectPlaced(obj.getName());
                 Log.d(TAG, "onObjectPlaced callback called");
             }
-
-            super.onRender( elapsedRealTime, deltaTime );
         }
     }
 
