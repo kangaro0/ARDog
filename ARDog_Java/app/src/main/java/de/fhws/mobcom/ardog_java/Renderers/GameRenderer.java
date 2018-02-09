@@ -321,6 +321,7 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
         for(GameObject obj : objectManager.getPlacedObjects()){
             getCurrentScene().removeChild( obj.getObject() );
             getCurrentScene().removeLight( obj.getLight() );
+            objectManager.getByName(obj.getName()).setPlaced(false);
             callback.onObjectRemoved(obj.getName());
         }
 
