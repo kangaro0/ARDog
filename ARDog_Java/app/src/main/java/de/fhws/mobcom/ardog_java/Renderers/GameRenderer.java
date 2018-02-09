@@ -319,7 +319,8 @@ public class GameRenderer extends Renderer implements OnObjectPickedListener {
     // Remove all placed objects from scene
     public void removeAllObjects() {
         for(GameObject obj : objectManager.getPlacedObjects()){
-            getCurrentScene().removeChild(obj.getObject());
+            getCurrentScene().removeChild( obj.getObject() );
+            getCurrentScene().removeLight( obj.getLight() );
             callback.onObjectRemoved(obj.getName());
         }
 

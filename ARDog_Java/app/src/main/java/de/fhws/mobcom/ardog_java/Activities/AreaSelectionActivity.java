@@ -116,6 +116,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
     protected void onPause(){
         Log.d( TAG, "AreaSelectionActivity: onPause()" );
         super.onPause();
+        currentId = -1;
         synchronized ( AreaSelectionActivity.this ){
             try {
                 if( tango != null ){
@@ -310,7 +311,7 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
         dialog.setText( "Please scan the whole room!" );
 
         builder.setView( dialog );*/
-        builder.setTitle("For better results, please scan the whole room and keep the device stable.!");
+        builder.setTitle("For better results, please scan the whole room and keep the device stable!");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -366,17 +367,19 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 showRenameRoomAlert();
             }
         });
+
+        updateActionButtons();
     }
 
     private void updateActionButtons(){
-        if( currentId < 0 ){
-            this.actionButtonAdd.setImageResource( R.drawable.ic_add_black_18dp );
-            this.actionButtonDelete.setVisibility( View.INVISIBLE );
-            this.actionButtonRename.setVisibility( View.INVISIBLE );
+        if( currentId < 0 ) {
+            actionButtonAdd.setImageResource(R.drawable.ic_add_black_18dp);
+            actionButtonDelete.setVisibility(View.INVISIBLE);
+            actionButtonRename.setVisibility(View.INVISIBLE);
         } else {
-            this.actionButtonAdd.setImageResource( R.drawable.ic_play_arrow_black_18dp );
-            this.actionButtonDelete.setVisibility( View.VISIBLE );
-            this.actionButtonRename.setVisibility( View.VISIBLE );
+            actionButtonAdd.setImageResource( R.drawable.ic_play_arrow_black_18dp );
+            actionButtonDelete.setVisibility( View.VISIBLE );
+            actionButtonRename.setVisibility( View.VISIBLE );
         }
     }
 
