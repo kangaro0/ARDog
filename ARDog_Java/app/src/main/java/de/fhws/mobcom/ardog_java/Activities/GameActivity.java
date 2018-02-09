@@ -796,27 +796,6 @@ public class GameActivity extends Activity implements View.OnTouchListener, Game
         builder.show();
     }
 
-    private void setupDb2(){
-        String currentUuid = application.getUUID();
-        ArrayList<DBObject> objects = ( ArrayList ) query.getObjectsByRoom( currentUuid );
-        Log.d(TAG, "setup DB entered, size DBobjects = " + objects.size());
-        int listSize = objects.size();
-        for( int i = 0 ; i < listSize ; i++ ){
-            DBObject currentDBObject = objects.get( i );
-            // get object from objectManager in Renderer
-            GameObject currentGameObject = mRenderer.getObjectManager().getByName( objects.get( i ).getName() );
-            if( currentGameObject != null ) {
-                // set position and scale
-                currentGameObject.getObject().setPosition( currentDBObject.getVec() );
-                // scale...
-                // add to gameScene
-                mRenderer.getCurrentScene().addChild( currentGameObject.getObject() );
-                //disable place object button for this object
-                onObjectPlaced(currentGameObject.getName());
-                Log.d(TAG, "setup DB: added object");
-            }
-        }
-    }
 
     private void setupDb() {
         String currentUuid = application.getUUID();
