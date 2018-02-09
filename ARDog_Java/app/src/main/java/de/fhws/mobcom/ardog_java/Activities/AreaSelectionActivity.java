@@ -465,6 +465,8 @@ public class AreaSelectionActivity extends Activity implements View.OnTouchListe
                 getRooms();
                 listView.invalidateViews();
                 setupListView();
+                currentId = -1;
+                updateActionButtons();
                 deleteAdfTask = null;
             }
 
